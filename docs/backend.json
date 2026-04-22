@@ -1,0 +1,400 @@
+
+{
+  "entities": {
+    "Campaign": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Campaign",
+      "type": "object",
+      "description": "Represents a single Mothership campaign.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Campaign entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the campaign."
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the campaign setting and goals."
+        },
+        "startingLocation": {
+            "type": "string",
+            "description": "The description of the starting location for the campaign."
+        },
+        "imageUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL for the campaign's cover image."
+        },
+        "initialMessage": {
+            "type": "string",
+            "description": "The first message the player sees when starting the campaign."
+        },
+        "prompt": {
+            "type": "string",
+            "description": "The full prompt provided to the AI Warden to run the campaign."
+        },
+        "status": {
+            "type": "string",
+            "description": "The publication status of the campaign.",
+            "enum": ["draft", "published"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the campaign was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the campaign was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "startingLocation",
+        "imageUrl",
+        "initialMessage",
+        "prompt",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Game": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Game",
+      "type": "object",
+      "description": "Represents a multiplayer game session.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Game session."
+        },
+        "gameCode": {
+          "type": "string",
+          "description": "A 6-character code for players to join the game."
+        },
+        "campaignId": {
+          "type": "string",
+          "description": "Reference to the Campaign this game is based on."
+        },
+        "hostUid": {
+          "type": "string",
+          "description": "The UID of the user who created the game."
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of UIDs of players in the game."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the game was created.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "gameCode",
+        "hostUid",
+        "players",
+        "createdAt"
+      ]
+    },
+    "Session": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Session",
+      "type": "object",
+      "description": "Represents a single game session within a campaign.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Session entity."
+        },
+        "campaignId": {
+          "type": "string",
+          "description": "Reference to Campaign. (Relationship: Campaign 1:N Session)"
+        },
+        "startTime": {
+          "type": "string",
+          "description": "Timestamp indicating when the session started.",
+          "format": "date-time"
+        },
+        "endTime": {
+          "type": "string",
+          "description": "Timestamp indicating when the session ended (if applicable).",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Any notes or summaries for the session."
+        },
+        "state": {
+          "type": "string",
+          "description": "JSON string representing the game state at the end of the session."
+        }
+      },
+      "required": [
+        "id",
+        "campaignId",
+        "startTime",
+        "state"
+      ]
+    },
+    "Character": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Character",
+      "type": "object",
+      "description": "Represents a player character in the Mothership game.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Character entity."
+        },
+        "campaignId": {
+          "type": "string",
+          "description": "Reference to Campaign. (Relationship: Campaign 1:N Character)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Character's name."
+        },
+        "stats": {
+          "type": "string",
+          "description": "JSON string representing the character's stats."
+        },
+        "skills": {
+          "type": "string",
+          "description": "JSON string representing the character's skills."
+        },
+        "inventory": {
+          "type": "string",
+          "description": "JSON string representing the character's inventory."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the Character."
+        }
+      },
+      "required": [
+        "id",
+        "campaignId",
+        "name",
+        "stats",
+        "skills",
+        "inventory"
+      ]
+    },
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Represents a user's profile in the database.",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The user's unique ID from Firebase Authentication."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's chosen display name."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp indicating when the user profile was created."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "Indicates if the user has administrative privileges."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "email",
+        "createdAt"
+      ]
+    },
+    "AppSettings": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AppSettings",
+      "type": "object",
+      "description": "Stores global application settings.",
+      "properties": {
+        "titleScreenImageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL for the title screen background image."
+        },
+        "titleScreenMusicUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL for the title screen background music."
+        }
+      }
+    },
+    "Contract": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Contract",
+        "type": "object",
+        "description": "Represents a job or mission within a campaign.",
+        "properties": {
+            "id": { "type": "string", "description": "Unique identifier for the contract." },
+            "title": { "type": "string", "description": "The title of the contract." },
+            "description": { "type": "string", "description": "A detailed description of the contract." },
+            "reward": { "type": "string", "description": "The reward for completing the contract (e.g., credits, items)." },
+            "requirements": { "type": "string", "description": "Any prerequisites for undertaking the contract." }
+        },
+        "required": ["id", "title", "description", "reward"]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "google"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Stores user profile information. Users can only access their own profile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The user's unique identifier (UID)."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/campaigns/{campaignId}",
+        "definition": {
+          "entityName": "Campaign",
+          "schema": {
+            "$ref": "#/backend/entities/Campaign"
+          },
+          "description": "Stores campaign data. Requires authentication to read and write.",
+          "params": [
+            {
+              "name": "campaignId",
+              "description": "Unique identifier for the campaign."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/games/{gameId}",
+        "definition": {
+          "entityName": "Game",
+          "schema": {
+            "$ref": "#/backend/entities/Game"
+          },
+          "description": "Stores multiplayer game session data. Requires authentication.",
+          "params": [
+            {
+              "name": "gameId",
+              "description": "Unique identifier for the game session (game code)."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/games/{gameId}/characters/{characterId}",
+        "definition": {
+            "entityName": "Character",
+            "schema": {
+                "$ref": "#/entities/Character"
+            },
+            "description": "Stores the characters associated with a specific game session.",
+            "params": [
+                {
+                    "name": "gameId",
+                    "description": "The ID of the game session."
+                },
+                {
+                    "name": "characterId",
+                    "description": "Unique identifier for the character."
+                }
+            ]
+        }
+      },
+      {
+        "path": "/campaigns/{campaignId}/sessions/{sessionId}",
+        "definition": {
+          "entityName": "Session",
+          "schema": {
+            "$ref": "#/backend/entities/Session"
+          },
+          "description": "Stores session data within a specific campaign. Requires authentication to read and write.",
+          "params": [
+            {
+              "name": "campaignId",
+              "description": "Unique identifier for the campaign."
+            },
+            {
+              "name": "sessionId",
+              "description": "Unique identifier for the session."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/campaigns/{campaignId}/characters/{characterId}",
+        "definition": {
+          "entityName": "Character",
+          "schema": {
+            "$ref": "#/backend/entities/Character"
+          },
+          "description": "Stores character data within a specific campaign. Requires authentication to read and write.",
+          "params": [
+            {
+              "name": "campaignId",
+              "description": "Unique identifier for the campaign."
+            },
+            {
+              "name": "characterId",
+              "description": "Unique identifier for the character."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/app-settings/{settingsId}",
+        "definition": {
+          "entityName": "AppSettings",
+          "schema": {
+            "$ref": "#/backend/entities/AppSettings"
+          },
+          "description": "Stores global application settings. Typically a single document. Requires admin privileges to write.",
+          "params": [
+            {
+              "name": "settingsId",
+              "description": "The identifier for the settings document (e.g., 'global')."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the AI Mothership Master application, focusing on Campaigns, Sessions, and Characters. User authentication is handled by Firebase Authentication with 'password' and 'anonymous' providers. The structure prioritizes authorization independence and clarity of intent.\n\nCampaigns, Sessions, and Characters are organized in top-level collections. Authorization is managed via path-based ownership in the `users` collection. Every document under a user (`/users/{userId}/*`) is owned by them. This design ensures Authorization Independence as no `get()` calls are needed in the security rules to validate data. Security rules are simple and robust due to the segregation. List operations are secured by ensuring that only authenticated users can read their own campaigns, sessions, and characters."
+  }
+}
