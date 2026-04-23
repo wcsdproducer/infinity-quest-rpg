@@ -152,12 +152,12 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
     return (
         <div className="w-full h-full text-white flex flex-col">
             {/* Header — always visible */}
-            <div className="text-center mb-3 flex-shrink-0">
-                <div className="flex items-center justify-center gap-3">
-                    <Users className="h-6 w-6 text-blue-400" />
-                    <h2 className="text-2xl font-bold font-headline">ASSEMBLE YOUR CREW</h2>
+            <div className="text-center mb-2 flex-shrink-0">
+                <div className="flex items-center justify-center gap-2">
+                    <Users className="h-5 w-5 text-blue-400" />
+                    <h2 className="text-xl font-bold font-headline">ASSEMBLE YOUR CREW</h2>
                 </div>
-                <p className="text-sm text-white/80 mt-1">
+                <p className="text-xs text-white/70 mt-0.5">
                     Players are assigned to characters in the order they joined the lobby.
                 </p>
             </div>
@@ -170,7 +170,7 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
                         const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
                         
                         return (
-                            <div key={character.id} className="w-[170px] flex-shrink-0 h-full">
+                            <div key={character.id} className="w-[175px] flex-shrink-0 h-full">
                                 <CharacterPanel character={character} playerNumber={playerNumber} compact />
                             </div>
                         );

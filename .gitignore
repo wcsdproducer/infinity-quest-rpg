@@ -45,3 +45,6 @@ firebase-debug.log
 firestore-debug.log
 # Deployment utility scripts (one-off)
 scripts/
+
+# Firebase deploy cache
+.firebase/
