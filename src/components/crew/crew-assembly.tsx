@@ -14,7 +14,7 @@ import { useToast } from '@/hooks/use-toast';
 
 type CrewAssemblyProps = {
     gameId: string;
-    onComplete: () => void;
+    onComplete?: () => void;
 };
 
 // This function is now a local helper inside the component.
@@ -161,25 +161,29 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
                 </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">
-                {sortedCrew.map((character) => {
-                    const playerIndex = game?.players.findIndex(p => p === character.playerId);
-                    const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
-                    
-                    return (
-                        <div key={character.id} className="w-full">
-                            <CharacterPanel character={character} playerNumber={playerNumber} />
-                        </div>
-                    );
-                })}
+            <div className="overflow-x-auto pb-4 mb-8 -mx-4 px-4">
+                <div className="flex gap-4" style={{ minWidth: 'max-content' }}>
+                    {sortedCrew.map((character) => {
+                        const playerIndex = game?.players.findIndex(p => p === character.playerId);
+                        const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
+                        
+                        return (
+                            <div key={character.id} className="w-[220px] flex-shrink-0">
+                                <CharacterPanel character={character} playerNumber={playerNumber} />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
 
-            <div className="text-center">
-                <Button size="lg" onClick={onComplete} disabled={finalCrew.length === 0 || isLoading} className="bg-blue-600 hover:bg-blue-700 h-12 text-lg">
-                     {isLoading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
-                    Continue to Campaign Selection
-                </Button>
-            </div>
+            {onComplete && (
+                <div className="text-center">
+                    <Button size="lg" onClick={onComplete} disabled={finalCrew.length === 0 || isLoading} className="bg-blue-600 hover:bg-blue-700 h-12 text-lg">
+                         {isLoading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
+                        Continue to Campaign Selection
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }
