@@ -150,35 +150,38 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
     }
 
     return (
-        <div className="w-full text-white">
-            <div className="text-center mb-8">
+        <div className="w-full h-full text-white flex flex-col">
+            {/* Header — always visible */}
+            <div className="text-center mb-3 flex-shrink-0">
                 <div className="flex items-center justify-center gap-3">
-                    <Users className="h-8 w-8 text-blue-400" />
-                    <h2 className="text-4xl font-bold font-headline">ASSEMBLE YOUR CREW</h2>
+                    <Users className="h-6 w-6 text-blue-400" />
+                    <h2 className="text-2xl font-bold font-headline">ASSEMBLE YOUR CREW</h2>
                 </div>
-                <p className="text-lg text-white/80 mt-2">
-                    Here is your crew for the mission. Players are assigned to characters in the order they joined the lobby.
+                <p className="text-sm text-white/80 mt-1">
+                    Players are assigned to characters in the order they joined the lobby.
                 </p>
             </div>
             
-            <div className="overflow-x-auto pb-4 mb-8 -mx-4 px-4">
-                <div className="flex gap-4" style={{ minWidth: 'max-content' }}>
+            {/* Cards — scrollable, takes all remaining space */}
+            <div className="flex-1 min-h-0 overflow-x-auto overflow-y-hidden pb-2 -mx-4 px-4">
+                <div className="flex gap-3 h-full" style={{ minWidth: 'max-content' }}>
                     {sortedCrew.map((character) => {
                         const playerIndex = game?.players.findIndex(p => p === character.playerId);
                         const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
                         
                         return (
-                            <div key={character.id} className="w-[220px] flex-shrink-0">
-                                <CharacterPanel character={character} playerNumber={playerNumber} />
+                            <div key={character.id} className="w-[170px] flex-shrink-0 h-full">
+                                <CharacterPanel character={character} playerNumber={playerNumber} compact />
                             </div>
                         );
                     })}
                 </div>
             </div>
 
+            {/* Footer button — always visible */}
             {onComplete && (
-                <div className="text-center">
-                    <Button size="lg" onClick={onComplete} disabled={finalCrew.length === 0 || isLoading} className="bg-blue-600 hover:bg-blue-700 h-12 text-lg">
+                <div className="text-center flex-shrink-0 pt-3">
+                    <Button size="lg" onClick={onComplete} disabled={finalCrew.length === 0 || isLoading} className="bg-blue-600 hover:bg-blue-700 h-10 text-base">
                          {isLoading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
                         Continue to Campaign Selection
                     </Button>

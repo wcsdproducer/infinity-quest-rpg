@@ -12,7 +12,7 @@ function AssembleCrewPage({ params: { gameId } }: { params: { gameId: string } }
 
     return (
         <FirebaseClientProvider>
-            <div className="relative min-h-screen w-full bg-black">
+            <div className="relative h-screen w-full overflow-hidden bg-black flex flex-col">
                 {backgroundImage && (
                     <Image
                         src={backgroundImage.imageUrl}
@@ -23,7 +23,7 @@ function AssembleCrewPage({ params: { gameId } }: { params: { gameId: string } }
                     />
                 )}
                 <div className="absolute inset-0 bg-black/60" />
-                <div className="relative z-10 p-4">
+                <div className="relative z-10 flex-1 flex flex-col min-h-0 p-4">
                     <CrewAssembly gameId={gameId} />
                 </div>
             </div>

@@ -37,6 +37,7 @@ type CharacterPanelProps = {
   character: Character;
   activeStat?: string;
   playerNumber?: number;
+  compact?: boolean;
 };
 
 const StatBlock = ({
@@ -102,7 +103,7 @@ const SkillLevelIndicator = ({ level }: { level: Skill['level'] }) => {
     );
   };
 
-export function CharacterPanel({ character, activeStat, playerNumber }: CharacterPanelProps) {
+export function CharacterPanel({ character, activeStat, playerNumber, compact }: CharacterPanelProps) {
   let avatarId = 'character-avatar';
   if (character.class === 'Android') {
     avatarId = 'character-avatar-android';
@@ -152,7 +153,7 @@ export function CharacterPanel({ character, activeStat, playerNumber }: Characte
 
   return (
     <Card className="overflow-hidden flex-1 flex flex-col">
-      <div className="relative aspect-[3/4] w-full">
+      <div className={cn("relative w-full", compact ? "aspect-[3/2]" : "aspect-[3/4]")}>
         {avatarImage && (
           <Image
             src={avatarImage.imageUrl}
@@ -165,103 +166,87 @@ export function CharacterPanel({ character, activeStat, playerNumber }: Characte
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute top-2 right-2">
             {character.playerId ? (
-                <Badge variant="default" className="bg-green-600/80 text-white">
-                    PLAYER {playerNumber}
+                <Badge variant="default" className="bg-green-600/80 text-white text-[10px] px-1.5 py-0">
+                    P{playerNumber}
                 </Badge>
             ) : (
-                <Badge variant="secondary" className="bg-gray-600/80 text-white">NPC</Badge>
+                <Badge variant="secondary" className="bg-gray-600/80 text-white text-[10px] px-1.5 py-0">NPC</Badge>
             )}
         </div>
-        <div className="absolute bottom-0 left-0 p-4 text-left">
-            <h2 className="font-headline text-lg font-bold text-white">{character.name}</h2>
-            <p className="text-base text-white/80">{character.class}</p>
+        <div className="absolute bottom-0 left-0 p-2 text-left">
+            <h2 className={cn("font-headline font-bold text-white leading-tight", compact ? "text-sm" : "text-lg")}>{character.name}</h2>
+            <p className={cn("text-white/80", compact ? "text-xs" : "text-base")}>{character.class}</p>
         </div>
       </div>
-      <CardContent className="p-4 flex-1 flex flex-col">
-        <div className="space-y-2">
+      <CardContent className={cn("flex-1 flex flex-col", compact ? "p-2" : "p-4")}>
+        <div className="space-y-1">
           <TooltipProvider>
-            <div className="grid grid-cols-4 gap-4 text-center">
+            <div className={cn("grid grid-cols-4 text-center", compact ? "gap-1" : "gap-4")}>
               <Tooltip>
                 <TooltipTrigger>
                   <div>
-                    <p className="text-xs text-muted-foreground">HEALTH</p>
-                    <p className="font-mono text-xl font-bold">
+                    <p className="text-[9px] text-muted-foreground uppercase">HP</p>
+                    <p className={cn("font-mono font-bold", compact ? "text-xs" : "text-xl")}>
                       {character.health.current}/{character.health.max}
                     </p>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    {character.health.current} out of {character.health.max} max health
-                  </p>
-                </TooltipContent>
+                <TooltipContent><p>Health: {character.health.current} / {character.health.max}</p></TooltipContent>
               </Tooltip>
                <Tooltip>
                 <TooltipTrigger>
                   <div>
-                    <p className="text-xs text-muted-foreground">ARMOR</p>
-                    <p className="font-mono text-xl font-bold">
+                    <p className="text-[9px] text-muted-foreground uppercase">ARM</p>
+                    <p className={cn("font-mono font-bold", compact ? "text-xs" : "text-xl")}>
                       {character.armorPoints}
                     </p>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    Armor Points: {character.armorPoints}
-                  </p>
-                </TooltipContent>
+                <TooltipContent><p>Armor Points: {character.armorPoints}</p></TooltipContent>
               </Tooltip>
               <Tooltip>
                 <TooltipTrigger>
                   <div>
-                    <p className="text-xs text-muted-foreground">WOUNDS</p>
-                    <p className="font-mono text-xl font-bold">
+                    <p className="text-[9px] text-muted-foreground uppercase">WND</p>
+                    <p className={cn("font-mono font-bold", compact ? "text-xs" : "text-xl")}>
                       {character.wounds.current}/{character.wounds.max}
                     </p>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    {character.wounds.current} out of {character.wounds.max} max wounds. Taking {character.wounds.max} wounds results in death.
-                  </p>
-                </TooltipContent>
+                <TooltipContent><p>Wounds: {character.wounds.current} / {character.wounds.max}</p></TooltipContent>
               </Tooltip>
               <Tooltip>
                 <TooltipTrigger>
                    <div>
-                    <p className="text-xs text-muted-foreground">STRESS</p>
-                    <p className="font-mono text-xl font-bold">
+                    <p className="text-[9px] text-muted-foreground uppercase">STR</p>
+                    <p className={cn("font-mono font-bold", compact ? "text-xs" : "text-xl")}>
                       {character.stress.current}/{character.stress.min}
                     </p>
                   </div>
                 </TooltipTrigger>
-                <TooltipContent>
-                  <p>
-                    Current Stress: {character.stress.current} / Minimum Stress: {character.stress.min}
-                  </p>
-                </TooltipContent>
+                <TooltipContent><p>Stress: {character.stress.current} / Min: {character.stress.min}</p></TooltipContent>
               </Tooltip>
             </div>
           </TooltipProvider>
         </div>
 
-        <Tabs defaultValue="stats" className="w-full mt-2">
-            <TabsList className="grid w-full grid-cols-4 mt-2">
-              <TabsTrigger value="bio">
-                <BookUser className="mr-1 h-4 w-4" />
-                Bio
+        <Tabs defaultValue="stats" className="w-full mt-1">
+            <TabsList className="grid w-full grid-cols-4 mt-1">
+              <TabsTrigger value="bio" className={compact ? "px-1" : ""}>
+                <BookUser className={cn("h-3.5 w-3.5", !compact && "mr-1")} />
+                {!compact && "Bio"}
               </TabsTrigger>
-              <TabsTrigger value="stats">
-                <Brain className="mr-1 h-4 w-4" />
-                Stats
+              <TabsTrigger value="stats" className={compact ? "px-1" : ""}>
+                <Brain className={cn("h-3.5 w-3.5", !compact && "mr-1")} />
+                {!compact && "Stats"}
               </TabsTrigger>
-              <TabsTrigger value="skills">
-                <Wrench className="mr-1 h-4 w-4" />
-                Skills
+              <TabsTrigger value="skills" className={compact ? "px-1" : ""}>
+                <Wrench className={cn("h-3.5 w-3.5", !compact && "mr-1")} />
+                {!compact && "Skills"}
               </TabsTrigger>
-              <TabsTrigger value="inventory">
-                <Boxes className="mr-1 h-4 w-4" />
-                Items
+              <TabsTrigger value="inventory" className={compact ? "px-1" : ""}>
+                <Boxes className={cn("h-3.5 w-3.5", !compact && "mr-1")} />
+                {!compact && "Items"}
               </TabsTrigger>
             </TabsList>
             <TabsContent value="bio" className="mt-4 space-y-4 text-sm text-muted-foreground text-left flex-1 min-h-0">
