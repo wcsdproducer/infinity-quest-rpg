@@ -1,3 +1,5 @@
 env:
   - variable: GEMINI_API_KEY
     secret: GEMINI_API_KEY
+
+buildCommand: NODE_OPTIONS="--max-old-space-size=1024" npm run build
