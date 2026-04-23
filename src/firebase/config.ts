@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  "projectId": "studio-9711986680-85356",
-  "appId": "1:582888143395:web:053841e03447d70e574f96",
-  "apiKey": "AIzaSyA3Mspnt6hEoX6nJXXXBhr5R3gV_5tN8rw",
-  "authDomain": "studio-9711986680-85356.firebaseapp.com",
-  "storageBucket": "studio-9711986680-85356.firebasestorage.app",
-  "measurementId": "",
-  "messagingSenderId": "582888143395"
+  projectId: "infinity-quest-rpg-c1eeb",
+  appId: "1:303268477201:web:2f9063a526c9080d23f4b0",
+  apiKey: "AIzaSyDf-cEnWO-yVcq7g0AIZkUDerbdF_FjhLU",
+  authDomain: "infinity-quest-rpg-c1eeb.firebaseapp.com",
+  storageBucket: "infinity-quest-rpg-c1eeb.firebasestorage.app",
+  messagingSenderId: "303268477201",
+  measurementId: "G-CQBEJDVHT6",
 };
