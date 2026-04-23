@@ -1,12 +1,10 @@
 {
-  "hosting": {
-    "source": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  },
+  "apphosting": [
+    {
+      "backendId": "infinity-quest",
+      "location": "us-central1"
+    }
+  ],
   "firestore": {
     "rules": "firestore.rules"
   }
