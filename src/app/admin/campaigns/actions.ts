@@ -182,7 +182,8 @@ export async function saveCampaign(
                             item.mediaUrls.map(async (media, index) => {
                                 if (media.url && media.url.startsWith('data:')) {
                                     const { extension } = getMimeTypeAndExtension(media.url);
-                                    const filePath = `campaigns/${storageFolderName}/${field}/${item.uuid}/${index}${extension}`;
+                                    const fieldFolder = field === 'locations' ? 'Locations' : field;
+                                    const filePath = `campaigns/${storageFolderName}/${fieldFolder}/${item.uuid}/${index}${extension}`;
                                     const storageRef = ref(storage, filePath);
                                     const snapshot = await uploadString(storageRef, media.url, 'data_url');
                                     const downloadURL = await getDownloadURL(snapshot.ref);
