@@ -77,7 +77,13 @@ export const ContinueAdventureInputSchema = z.object({
   crew: z.array(CharacterSchema).optional().describe('The entire crew of characters in the game, including the acting character.'),
   diceRollResult: z.number().optional().describe('The result of a dice roll, if one was requested.'),
   campaignPrompt: z.string().describe('The prompt for the selected campaign.'),
+  campaignLore: z.string().optional().describe('Relevant lore retrieved from the database based on the player action.'),
   currentLocationIsLocked: z.boolean().optional().describe('If true, the character is outside a LOCKED location and has NOT gained entry. The Warden must NOT describe the interior and must only suggest entry-gaining actions.'),
+  locationDiscovery: z.record(z.string(), z.boolean()).optional().describe(
+    'A map of locationUuid → isKnown for this game session. If a location UUID maps to false, that location is UNKNOWN to the players and must not be revealed, named, or described without the player first earning that knowledge through active investigation or NPC interaction.'
+  ),
+  currentLocationId: z.string().optional().describe('The UUID of the location the active character is currently in.'),
+  localEnvironmentContext: z.string().optional().describe('Pre-built localized context detailing the immediate sector, location details, and accessible adjacent paths. Prioritize this information for setting the scene and offering movement options.'),
 });
 export type ContinueAdventureInput = z.infer<typeof ContinueAdventureInputSchema>;
 
@@ -118,6 +124,9 @@ export const ContinueAdventureOutputSchema = z.object({
   combatants: z.array(CombatantSchema).optional().describe("A list of all combatants (player and enemies) if inCombat is true."),
   suggestedActions: z.array(z.string()).optional().describe('A few short, clear, and action-oriented suggested actions for the player.'),
   highScore: z.number().optional().describe('The character\'s updated high score based on gameplay events.'),
+  newlyDiscoveredLocationId: z.string().optional().describe(
+    'If the player just earned discovery of a previously unknown location through active investigation, NPC interaction, or successful exploration — set this to that location\'s UUID. Only set this when the discovery is genuinely earned; never reveal locations proactively or in response to simple map-scanning or direct asking.'
+  ),
 });
 export type ContinueAdventureOutput = z.infer<typeof ContinueAdventureOutputSchema>;
 
@@ -173,4 +182,33 @@ export const GenerateCharacterCreativesOutputSchema = z.object({
 });
 export type GenerateCharacterCreativesOutput = z.infer<typeof GenerateCharacterCreativesOutputSchema>;
 
-    
+export const GenerateEstablishmentInputSchema = z.object({
+  sectorName: z.string().describe("The name of the sector where the establishment is located."),
+  sectorDescription: z.string().optional().describe("A brief description of the sector's vibe or theme."),
+  locationName: z.string().describe("The name of the parent location this establishment belongs to."),
+  establishmentPrompt: z.string().optional().describe("Any specific prompt or idea from the GM/player (e.g., 'A shady dive bar', 'A high-end cybernetics clinic')."),
+});
+export type GenerateEstablishmentInput = z.infer<typeof GenerateEstablishmentInputSchema>;
+
+export const GenerateEstablishmentOutputSchema = z.object({
+  name: z.string().describe("The name of the establishment."),
+  type: z.string().describe("The type of establishment (e.g., Bar, Clinic, Vendor, Safehouse)."),
+  description: z.string().describe("A gritty, atmospheric description of the establishment."),
+  prices: z.string().optional().describe("General pricing or specific items available here."),
+  npcHooks: z.string().optional().describe("1-2 potential NPCs or plot hooks found here."),
+  imageUrl: z.string().optional().describe("A generated image URL (e.g., base64 data URI) of the establishment."),
+  isLocked: z.boolean().describe("Whether the establishment is currently locked or requires special access."),
+  lockRequirements: z.string().optional().describe("If locked, what is required to access it (e.g., 'Requires VIP Pass', 'Hacking Skill Check')."),
+});
+export type GenerateEstablishmentOutput = z.infer<typeof GenerateEstablishmentOutputSchema>;
+
+export const QueryLocationInputSchema = z.object({
+  locationNameOrId: z.string().describe('The name or UUID of the location to query.'),
+});
+export type QueryLocationInput = z.infer<typeof QueryLocationInputSchema>;
+
+export const QueryLoreInputSchema = z.object({
+  query: z.string().describe('The lore topic, character name, or item to search for in the database.'),
+});
+export type QueryLoreInput = z.infer<typeof QueryLoreInputSchema>;
+

@@ -1,0 +1,317 @@
+extend type Query {
+  """
+  ✨ Look up a single `CampaignLore` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  campaignLore(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CampaignLore_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CampaignLore_FirstRow
+  ): CampaignLore @fdc_generated(from: "CampaignLore", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Establishment` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  establishment(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Establishment_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Establishment_FirstRow
+  ): Establishment @fdc_generated(from: "Establishment", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Location` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  location(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Location_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Location_FirstRow
+  ): Location @fdc_generated(from: "Location", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Path` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  path(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Path_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Path_FirstRow
+  ): Path @fdc_generated(from: "Path", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Sector` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  sector(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Sector_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Sector_FirstRow
+  ): Sector @fdc_generated(from: "Sector", purpose: QUERY_SINGLE)
+  """
+  ✨ List `CampaignLore` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  campaignLores(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: CampaignLore_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [CampaignLore_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: CampaignLore_Having
+  ): [CampaignLore!]! @fdc_generated(from: "CampaignLore", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Establishment` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  establishments(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Establishment_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Establishment_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Establishment_Having
+  ): [Establishment!]! @fdc_generated(from: "Establishment", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Location` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  locations(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Location_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Location_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Location_Having
+  ): [Location!]! @fdc_generated(from: "Location", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Path` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  paths(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Path_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Path_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Path_Having
+  ): [Path!]! @fdc_generated(from: "Path", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Sector` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  sectors(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Sector_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Sector_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Sector_Having
+  ): [Sector!]! @fdc_generated(from: "Sector", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `CampaignLore` objects and return selected fields, ordered by vector similarity between the `embedding` field and `compare_embed`.
+  (Alternatively, `compare` can be used if the input is a raw Vector.)
+  """
+  campaignLores_embedding_similarity(
+    """
+    Vector to compare with the stored vectors.
+    """
+    compare: Vector
+
+    """
+    ✨ `_embed` server value variant of `compare` (Vector to compare with the stored vectors.)
+    """
+    compare_embed: Vector_Embed
+
+    """
+    Similarity method to use for vector comparison (defaults to `INNER_PRODUCT`).
+    """
+    method: VectorSimilarityMethod = INNER_PRODUCT
+
+    """
+    Threshold for distance comparison.
+    """
+    within: Float
+
+    """
+    Filter condition to apply when searching for similar vectors.
+    """
+    where: CampaignLore_Filter
+
+    """
+    Limit the number of similar vectors returned (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+  ): [CampaignLore!]! @fdc_generated(from: "CampaignLore.embedding", purpose: QUERY_MULTIPLE_BY_SIMILARITY)
+}

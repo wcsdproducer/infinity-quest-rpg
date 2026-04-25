@@ -49,8 +49,16 @@ function cosineSimilarity(a: number[], b: number[]): number {
 /**
  * Reads the game state doc.  On every call we start a fresh session
  * (increment the counter + new UUID) so each page load = one session.
+ *
+ * @param gameId - The game document ID.
+ * @param allLocationIds - All location UUIDs for this campaign (used to seed discovery on first creation).
+ * @param startingLocationId - The campaign's starting location UUID (set to isKnown = true from the start).
  */
-export async function getOrCreateGameState(gameId: string): Promise<GameState> {
+export async function getOrCreateGameState(
+  gameId: string,
+  allLocationIds?: string[],
+  startingLocationId?: string
+): Promise<GameState> {
   const { firestore } = initializeServerFirebase();
   const stateRef = doc(firestore, 'games', gameId, 'state', 'current');
   const snap = await getDoc(stateRef);
@@ -64,6 +72,8 @@ export async function getOrCreateGameState(gameId: string): Promise<GameState> {
       sessionId: newSessionId,
       sessionCount: (data.sessionCount ?? 0) + 1,
       lastPlayedAt: Date.now(),
+      // Backfill locationDiscovery if it was missing (migration safety)
+      locationDiscovery: data.locationDiscovery ?? buildInitialDiscovery(allLocationIds, startingLocationId),
     };
     await setDoc(stateRef, updated);
     return updated;
@@ -74,9 +84,72 @@ export async function getOrCreateGameState(gameId: string): Promise<GameState> {
     sessionCount: 1,
     lastPlayedAt: Date.now(),
     questFlags: {},
+    locationDiscovery: buildInitialDiscovery(allLocationIds, startingLocationId),
   };
   await setDoc(stateRef, initial);
   return initial;
+}
+
+/** Build the initial locationDiscovery map: all false except the starting location. */
+function buildInitialDiscovery(
+  allLocationIds?: string[],
+  startingLocationId?: string
+): Record<string, boolean> {
+  if (!allLocationIds || allLocationIds.length === 0) return {};
+  return allLocationIds.reduce<Record<string, boolean>>((acc, id) => {
+    acc[id] = id === startingLocationId;
+    return acc;
+  }, {});
+}
+
+// ── Location Discovery ────────────────────────────────────────────────────────
+
+/**
+ * Read the current locationDiscovery map from the game state document.
+ * Returns an empty object if the state doc doesn't exist yet.
+ */
+export async function getLocationDiscovery(
+  gameId: string
+): Promise<Record<string, boolean>> {
+  try {
+    const { firestore } = initializeServerFirebase();
+    const stateRef = doc(firestore, 'games', gameId, 'state', 'current');
+    const snap = await getDoc(stateRef);
+    if (!snap.exists()) return {};
+    const data = snap.data() as GameState;
+    return data.locationDiscovery ?? {};
+  } catch (e) {
+    console.warn('[Memory] getLocationDiscovery failed:', e);
+    return {};
+  }
+}
+
+/**
+ * Mark a location as discovered (isKnown = true) for this game.
+ * Idempotent — safe to call multiple times for the same location.
+ * Returns the updated discovery map.
+ */
+export async function discoverLocation(
+  gameId: string,
+  locationId: string
+): Promise<Record<string, boolean>> {
+  try {
+    const { firestore } = initializeServerFirebase();
+    const stateRef = doc(firestore, 'games', gameId, 'state', 'current');
+    const snap = await getDoc(stateRef);
+    if (!snap.exists()) return {};
+
+    const data = snap.data() as GameState;
+    const updated: Record<string, boolean> = {
+      ...(data.locationDiscovery ?? {}),
+      [locationId]: true,
+    };
+    await setDoc(stateRef, { ...data, locationDiscovery: updated });
+    return updated;
+  } catch (e) {
+    console.warn('[Memory] discoverLocation failed:', e);
+    return {};
+  }
 }
 
 // ── Layer 1: Message Log ──────────────────────────────────────────────────────

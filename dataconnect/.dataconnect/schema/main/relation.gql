@@ -1,0 +1,522 @@
+extend type CampaignLore {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "CampaignLore", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `CampaignLore` table.
+  """
+  _count: Int! @fdc_generated(from: "CampaignLore.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CampaignLore` table where the `content` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  content_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CampaignLore.content", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CampaignLore` table where the `embedding` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  embedding_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CampaignLore.embedding", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CampaignLore` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CampaignLore.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `CampaignLore` table where the `metadata` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  metadata_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "CampaignLore.metadata", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `metadata` field in the `CampaignLore` table.
+  """
+  metadata_min: Any @fdc_generated(from: "CampaignLore.metadata", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `metadata` field in the `CampaignLore` table.
+  """
+  metadata_max: Any @fdc_generated(from: "CampaignLore.metadata", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "CampaignLore.id", purpose: ENTITY_ID)
+}
+extend type Establishment {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Establishment", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Establishment` table.
+  """
+  _count: Int! @fdc_generated(from: "Establishment.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `imageUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  imageUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.imageUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `isLocked` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isLocked_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.isLocked", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `isProcedural` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isProcedural_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.isProcedural", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `locationId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  locationId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.locationId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `lockRequirements` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  lockRequirements_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.lockRequirements", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `npcHooks` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  npcHooks_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.npcHooks", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `prices` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  prices_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.prices", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Establishment` table where the `type` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  type_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment.type", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Establishment.id", purpose: ENTITY_ID)
+}
+extend type Location {
+  """
+  ✨ List `Establishment` objects in a one-to-many relationship (where `Establishment`.`location` is this object).
+  """
+  establishments_on_location(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Establishment_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Establishment_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Establishment_Having
+  ): [Establishment!]! @fdc_generated(from: "Establishment.location", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Location", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Location` table.
+  """
+  _count: Int! @fdc_generated(from: "Location.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `isLocked` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  isLocked_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.isLocked", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `lockRequirements` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  lockRequirements_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.lockRequirements", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `mapCoordinates` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mapCoordinates_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.mapCoordinates", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Location` table where the `sectorId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  sectorId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Location.sectorId", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Location.id", purpose: ENTITY_ID)
+}
+extend type Path {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Path", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Path` table.
+  """
+  _count: Int! @fdc_generated(from: "Path.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `accessibility` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  accessibility_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.accessibility", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `dangerLevel` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  dangerLevel_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.dangerLevel", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `sourceNodeId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  sourceNodeId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.sourceNodeId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `sourceNodeType` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  sourceNodeType_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.sourceNodeType", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `targetNodeId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  targetNodeId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.targetNodeId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `targetNodeType` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  targetNodeType_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.targetNodeType", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `travelTimeMinutes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  travelTimeMinutes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.travelTimeMinutes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Path` table where the `type` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  type_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Path.type", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `dangerLevel` field in the `Path` table.
+  """
+  dangerLevel_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Path.dangerLevel", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `travelTimeMinutes` field in the `Path` table.
+  """
+  travelTimeMinutes_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Path.travelTimeMinutes", purpose: QUERY_SUM)
+  """
+  ✨ Average the `dangerLevel` field in the `Path` table.
+  """
+  dangerLevel_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Path.dangerLevel", purpose: QUERY_AVG)
+  """
+  ✨ Average the `travelTimeMinutes` field in the `Path` table.
+  """
+  travelTimeMinutes_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Path.travelTimeMinutes", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `dangerLevel` field in the `Path` table.
+  """
+  dangerLevel_min: Int @fdc_generated(from: "Path.dangerLevel", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `travelTimeMinutes` field in the `Path` table.
+  """
+  travelTimeMinutes_min: Int @fdc_generated(from: "Path.travelTimeMinutes", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `dangerLevel` field in the `Path` table.
+  """
+  dangerLevel_max: Int @fdc_generated(from: "Path.dangerLevel", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `travelTimeMinutes` field in the `Path` table.
+  """
+  travelTimeMinutes_max: Int @fdc_generated(from: "Path.travelTimeMinutes", purpose: QUERY_MAX)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Path.id", purpose: ENTITY_ID)
+}
+extend type Sector {
+  """
+  ✨ List `Location` objects in a one-to-many relationship (where `Location`.`sector` is this object).
+  """
+  locations_on_sector(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Location_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Location_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Location_Having
+  ): [Location!]! @fdc_generated(from: "Location.sector", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Sector", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Sector` table.
+  """
+  _count: Int! @fdc_generated(from: "Sector.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Sector` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Sector.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Sector` table where the `encounterTableId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  encounterTableId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Sector.encounterTableId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Sector` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Sector.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Sector` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Sector.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Sector` table where the `phaseAlterationRules` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  phaseAlterationRules_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Sector.phaseAlterationRules", purpose: QUERY_COUNT)
+  """
+  A generated field that is used for caching results in SDKs.
+  """
+  _id: ID! @fdc_generated(from: "Sector.id", purpose: ENTITY_ID)
+}

@@ -1,0 +1,11 @@
+specVersion: "v1alpha"
+serviceId: "infinity-quest-rpg"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "infinity"
+      cloudSql:
+        instanceId: "infinity-fdc"
+connectorDirs: ["./connector"]

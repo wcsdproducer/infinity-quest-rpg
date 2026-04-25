@@ -15,14 +15,36 @@ export function GameControls({ rootRef, onQuit }: GameControlsProps) {
 
   // Track fullscreen changes (e.g. user presses Escape)
   useEffect(() => {
-    const onFsChange = () => setIsFullscreen(!!document.fullscreenElement);
+    const onFsChange = () => {
+      const doc = document as any;
+      setIsFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement));
+    };
+    
     document.addEventListener('fullscreenchange', onFsChange);
-    return () => document.removeEventListener('fullscreenchange', onFsChange);
+    document.addEventListener('webkitfullscreenchange', onFsChange);
+    document.addEventListener('mozfullscreenchange', onFsChange);
+    document.addEventListener('MSFullscreenChange', onFsChange);
+    
+    return () => {
+      document.removeEventListener('fullscreenchange', onFsChange);
+      document.removeEventListener('webkitfullscreenchange', onFsChange);
+      document.removeEventListener('mozfullscreenchange', onFsChange);
+      document.removeEventListener('MSFullscreenChange', onFsChange);
+    };
   }, []);
 
   const handleQuit = async () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
+    const doc = document as any;
+    if (doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement) {
+      if (doc.exitFullscreen) {
+        doc.exitFullscreen().catch(() => {});
+      } else if (doc.webkitExitFullscreen) {
+        doc.webkitExitFullscreen();
+      } else if (doc.mozCancelFullScreen) {
+        doc.mozCancelFullScreen();
+      } else if (doc.msExitFullscreen) {
+        doc.msExitFullscreen();
+      }
     }
     if (onQuit) {
       setIsSaving(true);
@@ -32,14 +54,18 @@ export function GameControls({ rootRef, onQuit }: GameControlsProps) {
   };
 
   const handleFullscreen = () => {
+    if (!rootRef?.current) return;
+
     if (!document.fullscreenElement) {
-      // Prefer the whole document for maximum compatibility
-      const target = rootRef?.current || document.documentElement;
+      // Prefer the whole document for maximum compatibility to hide URL bars
+      const target = document.documentElement;
       target.requestFullscreen().catch(err => {
         console.warn(`Fullscreen request failed: ${err.message}`);
       });
     } else {
-      document.exitFullscreen();
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
     }
   };
 

@@ -1,0 +1,202 @@
+# 1. 01 Dry Dock
+mutation createSectorDryDock @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "01_dry_dock"
+    name: "01 Dry Dock"
+    description: "Sparks fly as the harsh screeching of metal grinding fills the air..."
+  })
+}
+
+mutation createDryDockLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "01_dry_dock_clean_room", sectorId: "01_dry_dock", name: "1. Clean Room", description: "Spartan, concrete room with rusty drains." }
+    { id: "01_dry_dock_loshes_office", sectorId: "01_dry_dock", name: "2. Loshe's Office", description: "Cramped, greasy office littered with tools." }
+    { id: "01_dry_dock_repair_bay", sectorId: "01_dry_dock", name: "3. Repair Bay", description: "Giant robotic limbs move independently." }
+    { id: "01_dry_dock_hangar_bay", sectorId: "01_dry_dock", name: "4. Hangar Bay", description: "Where ships are docked." }
+  ])
+}
+
+# 2. 02 The Stellar Burn
+mutation createSectorStellarBurn @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "02_the_stellar_burn"
+    name: "02 The Stellar Burn"
+    description: "Dark, smoky, filled with strobing lights and flashing lasers..."
+  })
+}
+
+mutation createStellarBurnLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "02_stellar_burn_sems_bar", sectorId: "02_the_stellar_burn", name: "1. Sem's Bar (Club Level)", description: "Jury Semenov runs the club level." }
+    { id: "02_stellar_burn_heaven", sectorId: "02_the_stellar_burn", name: "2. Heaven (Upper Level)", description: "Overlooks the bar, sonic muting." }
+    { id: "02_stellar_burn_the_ecstasy", sectorId: "02_the_stellar_burn", name: "3. The Ecstacy (Lower Level)", description: "Indyl's exclusive domain." }
+  ])
+}
+
+# 3. 03 The Chop Shop
+mutation createSectorChopShop @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "03_the_chop_shop"
+    name: "03 The Chop Shop"
+    description: "Overflowing with trash and grime, kept by The Babushka."
+  })
+}
+
+mutation createChopShopLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "03_chop_shop_entrance", sectorId: "03_the_chop_shop", name: "1. Cramped Entrance", description: "Cluttered to the ceiling." }
+    { id: "03_chop_shop_recovery", sectorId: "03_the_chop_shop", name: "2. Recovery Room", description: "Six dingy bunks." }
+    { id: "03_chop_shop_sycorax_stash", sectorId: "03_the_chop_shop", name: "3. Sycorax Stash", description: "Guarded by an Augmented Toy." }
+    { id: "03_chop_shop_operating_theaters", sectorId: "03_the_chop_shop", name: "4-7. Operating Theaters", description: "Nearly always occupied." }
+    { id: "03_chop_shop_babushkas_room", sectorId: "03_the_chop_shop", name: "8. Babushka's Room", description: "Cramped, single cot hovel." }
+    { id: "03_chop_shop_cybermod_storage", sectorId: "03_the_chop_shop", name: "9. Cybermod Storage & Reaper Barn", description: "Leads down to The Choke." }
+  ])
+}
+
+# 4. 04 The Ice Box
+mutation createSectorIceBox @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "04_the_ice_box"
+    name: "04 The Ice Box"
+    description: "Highly illegal Synthetic Sleeving Facility and Slickbay venue."
+  })
+}
+
+mutation createIceBoxLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "04_ice_box_slickbays", sectorId: "04_the_ice_box", name: "1. The Slickbays", description: "Hundreds of human sized pods." }
+    { id: "04_ice_box_runway", sectorId: "04_the_ice_box", name: "2. The Runway", description: "Minimalistic, surgically-lit fashion runway." }
+    { id: "04_ice_box_nemo_machine", sectorId: "04_the_ice_box", name: "3. The Nemo Machine", description: "Outlawed Neural Monitoring Machine." }
+    { id: "04_ice_box_cryovats", sectorId: "04_the_ice_box", name: "4. The Cryovats", description: "Enormous facility where Sleeves are vat-grown." }
+    { id: "04_ice_box_stacks", sectorId: "04_the_ice_box", name: "5. The Stacks", description: "Data storage of remote uplinked Sleeve backups." }
+  ])
+}
+
+# 5. 05 The Farm
+mutation createSectorFarm @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "05_the_farm"
+    name: "05 The Farm"
+    description: "Run by the EVANGELICAL SOLARIAN CHURCH, principal grower of food."
+  })
+}
+
+mutation createFarmLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "05_farm_sanctuary", sectorId: "05_the_farm", name: "1. The Sanctuary", description: "Grand sunlit chapel." }
+    { id: "05_farm_sun_market", sectorId: "05_the_farm", name: "2. The Sun Market", description: "Bustling farmer's market." }
+    { id: "05_farm_gardens", sectorId: "05_the_farm", name: "3. The Gardens", description: "Silent meditation gardens." }
+    { id: "05_farm_monastery", sectorId: "05_the_farm", name: "4. The Monastery", description: "Access restricted to Solarian Gardener Monks." }
+    { id: "05_farm_tree", sectorId: "05_the_farm", name: "9. The Tree (Aarnivalkea)", description: "Important holy site." }
+    { id: "05_farm_two", sectorId: "05_the_farm", name: "10. Farm Two", description: "Restricted and hidden underwater entrance." }
+  ])
+}
+
+# 6. 06 CANYONHEAVY.market
+mutation createSectorCanyonheavy @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "06_canyonheavy_market"
+    name: "06 CANYONHEAVY.market"
+    description: "Intergalactic haven for hackers run by prodigy hacker Angus."
+  })
+}
+
+mutation createCanyonheavyLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "06_canyonheavy_battlestations", sectorId: "06_canyonheavy_market", name: "1. The Battlestations", description: "Zero-G rough sphere workspace." }
+    { id: "06_canyonheavy_datacache", sectorId: "06_canyonheavy_market", name: "2. The Datacache", description: "Humming nest of servers and terminals." }
+    { id: "06_canyonheavy_sysops", sectorId: "06_canyonheavy_market", name: "3. Sysops", description: "Planning room for major operations." }
+    { id: "06_canyonheavy_angus_office", sectorId: "06_canyonheavy_market", name: "4. Angus's Office", description: "Cramped and dingy office crammed with blinking terminals." }
+  ])
+}
+
+# 7. 07 The Court
+mutation createSectorCourt @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "07_the_court"
+    name: "07 The Court"
+    description: "Presided over by Chief Adjudicator Brunhild, the only law on a lawless station."
+  })
+}
+
+mutation createCourtLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "07_court_main", sectorId: "07_the_court", name: "1. The Court", description: "Throngs of spectators, thick stench of body odor." }
+    { id: "07_court_cage", sectorId: "07_the_court", name: "2. The Cage", description: "An elevated, revolving stage fenced in with electrified cage." }
+    { id: "07_court_bench", sectorId: "07_the_court", name: "3. The Bench", description: "Balcony boxed seating reserved for power brokers." }
+    { id: "07_court_holding_cells", sectorId: "07_the_court", name: "4. Holding Cells", description: "Guarded by Tempest Co. Probies." }
+    { id: "07_court_pit", sectorId: "07_the_court", name: "5. The Pit", description: "Musty animal odor, contains horrific beasts." }
+    { id: "07_court_executioners_quarters", sectorId: "07_the_court", name: "6. Executioners' Quarters", description: "Spartan rooms with small bunks." }
+    { id: "07_court_adjudicators_quarters", sectorId: "07_the_court", name: "7. Adjudicator's Quarters", description: "Lavish suite decorated in old leather." }
+  ])
+}
+
+# 8. 08 Tempest Co. HQ
+mutation createSectorTempestHQ @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "08_tempest_co_hq"
+    name: "08 Tempest Co. HQ"
+    description: "Detachment of the Czernobog Private Military Corporation."
+  })
+}
+
+mutation createTempestHQLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "08_tempest_habitat", sectorId: "08_tempest_co_hq", name: "Level 1 - Habitat", description: "Client consultation officers, barracks, clinic." }
+    { id: "08_tempest_operations", sectorId: "08_tempest_co_hq", name: "Level 2 - Operations", description: "The nerve center of all operations." }
+    { id: "08_tempest_commanders_mansion", sectorId: "08_tempest_co_hq", name: "Level 3 - Commander's Mansion", description: "Cutter's lavish penthouse." }
+    { id: "08_tempest_armament", sectorId: "08_tempest_co_hq", name: "Sublevel A - Armament", description: "Massive stores of weaponry." }
+    { id: "08_tempest_rd", sectorId: "08_tempest_co_hq", name: "Sublevel B - R&D", description: "Experimental exosuit development." }
+    { id: "08_tempest_containment", sectorId: "08_tempest_co_hq", name: "Sublevel C - Containment", description: "Enhanced interrogation cells, deep cryostorage." }
+  ])
+}
+
+# 9. 09 Doptown
+mutation createSectorDoptown @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "09_doptown"
+    name: "09 Doptown"
+    description: "Hellish slum filled with suffocating people imprisoned for oxygen debt."
+  })
+}
+
+mutation createDoptownLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "09_doptown_airlock", sectorId: "09_doptown", name: "1. The Airlock", description: "A heavily armed gate flanked by two cement turret bunkers." }
+    { id: "09_doptown_auction", sectorId: "09_doptown", name: "2. The Auction", description: "A silent market where Doptownians offer their services." }
+    { id: "09_doptown_slums", sectorId: "09_doptown", name: "3. The Slums", description: "Sprawling and cramped, filled with the stench of death." }
+    { id: "09_doptown_lottery", sectorId: "09_doptown", name: "4. The Lottery", description: "Distribution of scavenged O2 tanks based on lottery." }
+  ])
+}
+
+# 10. 10 The Choke
+mutation createSectorChoke @auth(level: PUBLIC) {
+  sector_insert(data: {
+    id: "10_the_choke"
+    name: "10 The Choke"
+    description: "Dark, decaying depths of the station."
+  })
+}
+
+mutation createChokeLocations @auth(level: PUBLIC) {
+  location_insertMany(data: [
+    { id: "10_choke_airlock", sectorId: "10_the_choke", name: "1. The Airlock", description: "Gigantic locked gate." }
+    { id: "10_choke_doptown", sectorId: "10_the_choke", name: "2. Doptown", description: "Deoxygenated People's Town." }
+    { id: "10_choke_life_support", sectorId: "10_the_choke", name: "3. Life Support 01", description: "The sole remaining semi-functional Life Support System." }
+    { id: "10_choke_doctor", sectorId: "10_the_choke", name: "4. The Doctor", description: "Hidden behind the sludge waterfall." }
+    { id: "10_choke_sink", sectorId: "10_the_choke", name: "5. The Sink", description: "Sunken city wasteland filled with sewage." }
+    { id: "10_choke_veins", sectorId: "10_the_choke", name: "6. The Veins", description: "Drainage pipes and maintenance tunnels." }
+    { id: "10_choke_mass_grave", sectorId: "10_the_choke", name: "7. Mass Grave", description: "One story high pile of corpses." }
+    { id: "10_choke_burrows", sectorId: "10_the_choke", name: "8. The Burrows", description: "Cluster of cybernetic veins." }
+    { id: "10_choke_calibans_heart", sectorId: "10_the_choke", name: "9. Caliban's Heart", description: "The awful, pulsating center of the Choke." }
+  ])
+}
+
+# Campaign Lore Ingestion
+mutation insertCampaignLore($content: String!, $metadata: Any) @auth(level: PUBLIC) {
+  campaignLore_insert(data: {
+    content: $content
+    metadata: $metadata
+    embedding_embed: {model: "text-embedding-004", text: $content}
+  })
+}

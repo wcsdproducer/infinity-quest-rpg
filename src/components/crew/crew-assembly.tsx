@@ -165,8 +165,8 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
             {/* Cards — 80% width, centered, fills remaining height */}
             <div className="h-[80vh] flex items-stretch justify-center gap-4 py-2 mb-4 w-4/5 mx-auto">
                 {sortedCrew.map((character) => {
-                    const playerIndex = game?.players.findIndex(p => p === character.playerId);
-                    const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
+                    const playerIndex = game?.players?.findIndex(p => p === character.playerId);
+                    const playerNumber = (playerIndex !== undefined && playerIndex !== -1) ? playerIndex + 1 : undefined;
                     
                     return (
                         <div key={character.id} className="flex-1 min-w-0 h-full flex flex-col">

@@ -1,0 +1,12 @@
+extend type Establishment {
+  """
+  ✨ Implicit foreign key field based on `Establishment`.`location`. It must match the value of `Location`.`id`. See `@ref` for how to customize it.
+  """
+  locationId: String! @fdc_generated(from: "Establishment.location", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Location {
+  """
+  ✨ Implicit foreign key field based on `Location`.`sector`. It must match the value of `Sector`.`id`. See `@ref` for how to customize it.
+  """
+  sectorId: String! @fdc_generated(from: "Location.sector", purpose: IMPLICIT_REF_FIELD)
+}

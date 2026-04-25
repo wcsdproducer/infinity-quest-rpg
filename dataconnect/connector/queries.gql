@@ -1,0 +1,77 @@
+query GetLocationDetails($locationId: String!) @auth(level: PUBLIC) {
+  location(id: $locationId) {
+    id
+    name
+    description
+    mapCoordinates
+    isLocked
+    lockRequirements
+    sector {
+      id
+      name
+      description
+    }
+  }
+}
+
+query GetLocationByName($name: String!) @auth(level: PUBLIC) {
+  locations(where: { name: { eq: $name } }) {
+    id
+    name
+    description
+    mapCoordinates
+    isLocked
+    lockRequirements
+    sector {
+      id
+      name
+    }
+  }
+}
+
+query GetLocationPaths($locationId: String!) @auth(level: PUBLIC) {
+  sourcePaths: paths(where: { sourceNodeId: { eq: $locationId }, sourceNodeType: { eq: "Location" } }) {
+    id
+    targetNodeId
+    targetNodeType
+    type
+    accessibility
+    travelTimeMinutes
+    dangerLevel
+  }
+  targetPaths: paths(where: { targetNodeId: { eq: $locationId }, targetNodeType: { eq: "Location" } }) {
+    id
+    sourceNodeId
+    sourceNodeType
+    type
+    accessibility
+    travelTimeMinutes
+    dangerLevel
+  }
+}
+
+query GetEstablishmentsForLocation($locationId: String!) @auth(level: PUBLIC) {
+  establishments(where: { locationId: { eq: $locationId } }) {
+    id
+    name
+    type
+    description
+    prices
+    npcHooks
+    isProcedural
+    isLocked
+    lockRequirements
+  }
+}
+
+query searchCampaignLore($query: String!) @auth(level: PUBLIC) {
+  campaignLores_embedding_similarity(
+    compare_embed: {model: "text-embedding-004", text: $query},
+    method: COSINE,
+    limit: 3
+  ) {
+    id
+    content
+    metadata
+  }
+}

@@ -206,12 +206,12 @@ export async function saveCampaign(
             updatedAt: serverTimestamp(),
         };
         
-        if (finalData.acts) finalData.acts = finalData.acts.filter(i => i.name || i.narrative);
-        if (finalData.locations) finalData.locations = finalData.locations.filter(i => i.name || i.narrative || (i.mediaUrls && i.mediaUrls.length > 0));
-        if (finalData.events) finalData.events = finalData.events.filter(i => i.name || i.narrative || (i.trigger && i.trigger.value) || (i.mediaUrls && i.mediaUrls.length > 0));
-        if (finalData.npcs) finalData.npcs = finalData.npcs.filter(i => i.name || i.narrative || (i.mediaUrls && i.mediaUrls.length > 0));
-        if (finalData.ships) finalData.ships = finalData.ships.filter(s => s.name || s.condition);
-        if (finalData.contracts) finalData.contracts = finalData.contracts.filter(c => c.title || c.description || c.reward);
+        if (finalData.acts) finalData.acts = finalData.acts.filter((i: any) => i.name || i.narrative);
+        if (finalData.locations) finalData.locations = finalData.locations.filter((i: any) => i.name || i.narrative || (i.mediaUrls && i.mediaUrls.length > 0));
+        if (finalData.events) finalData.events = finalData.events.filter((i: any) => i.name || i.narrative || (i.trigger && i.trigger.value) || (i.mediaUrls && i.mediaUrls.length > 0));
+        if (finalData.npcs) finalData.npcs = finalData.npcs.filter((i: any) => i.name || i.narrative || (i.mediaUrls && i.mediaUrls.length > 0));
+        if (finalData.ships) finalData.ships = finalData.ships.filter((s: any) => s.name || s.condition);
+        if (finalData.contracts) finalData.contracts = finalData.contracts.filter((c: any) => c.title || c.description || c.reward);
 
 
         let newCampaignId = campaignId;

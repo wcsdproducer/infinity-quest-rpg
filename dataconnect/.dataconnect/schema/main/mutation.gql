@@ -1,0 +1,582 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `CampaignLore` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  campaignLore_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: CampaignLore_Data!
+  ): CampaignLore_KeyOutput! @fdc_generated(from: "CampaignLore", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Establishment` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  establishment_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Establishment_Data!
+  ): Establishment_KeyOutput! @fdc_generated(from: "Establishment", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Location` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  location_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Location_Data!
+  ): Location_KeyOutput! @fdc_generated(from: "Location", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Path` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  path_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Path_Data!
+  ): Path_KeyOutput! @fdc_generated(from: "Path", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Sector` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sector_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Sector_Data!
+  ): Sector_KeyOutput! @fdc_generated(from: "Sector", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `CampaignLore` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  campaignLore_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [CampaignLore_Data!]!
+  ): [CampaignLore_KeyOutput!]! @fdc_generated(from: "CampaignLore", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Establishment` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  establishment_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Establishment_Data!]!
+  ): [Establishment_KeyOutput!]! @fdc_generated(from: "Establishment", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Location` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  location_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Location_Data!]!
+  ): [Location_KeyOutput!]! @fdc_generated(from: "Location", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Path` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  path_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Path_Data!]!
+  ): [Path_KeyOutput!]! @fdc_generated(from: "Path", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Sector` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sector_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Sector_Data!]!
+  ): [Sector_KeyOutput!]! @fdc_generated(from: "Sector", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `CampaignLore` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CampaignLore`.
+  """
+  campaignLore_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: CampaignLore_Data!
+  ): CampaignLore_KeyOutput! @fdc_generated(from: "CampaignLore", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Establishment` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Establishment`.
+  """
+  establishment_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Establishment_Data!
+  ): Establishment_KeyOutput! @fdc_generated(from: "Establishment", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Location` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Location`.
+  """
+  location_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Location_Data!
+  ): Location_KeyOutput! @fdc_generated(from: "Location", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Path` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Path`.
+  """
+  path_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Path_Data!
+  ): Path_KeyOutput! @fdc_generated(from: "Path", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Sector` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Sector`.
+  """
+  sector_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Sector_Data!
+  ): Sector_KeyOutput! @fdc_generated(from: "Sector", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `CampaignLore` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `CampaignLore`.
+  """
+  campaignLore_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [CampaignLore_Data!]!
+  ): [CampaignLore_KeyOutput!]! @fdc_generated(from: "CampaignLore", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Establishment` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Establishment`.
+  """
+  establishment_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Establishment_Data!]!
+  ): [Establishment_KeyOutput!]! @fdc_generated(from: "Establishment", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Location` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Location`.
+  """
+  location_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Location_Data!]!
+  ): [Location_KeyOutput!]! @fdc_generated(from: "Location", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Path` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Path`.
+  """
+  path_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Path_Data!]!
+  ): [Path_KeyOutput!]! @fdc_generated(from: "Path", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Sector` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Sector`.
+  """
+  sector_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Sector_Data!]!
+  ): [Sector_KeyOutput!]! @fdc_generated(from: "Sector", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `CampaignLore` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `CampaignLore` or `null` if not found.
+  """
+  campaignLore_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CampaignLore_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CampaignLore_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: CampaignLore_Data!
+  ): CampaignLore_KeyOutput @fdc_generated(from: "CampaignLore", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Establishment` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Establishment` or `null` if not found.
+  """
+  establishment_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Establishment_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Establishment_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Establishment_Data!
+  ): Establishment_KeyOutput @fdc_generated(from: "Establishment", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Location` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Location` or `null` if not found.
+  """
+  location_update(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Location_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Location_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Location_Data!
+  ): Location_KeyOutput @fdc_generated(from: "Location", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Path` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Path` or `null` if not found.
+  """
+  path_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Path_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Path_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Path_Data!
+  ): Path_KeyOutput @fdc_generated(from: "Path", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Sector` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Sector` or `null` if not found.
+  """
+  sector_update(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Sector_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Sector_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Sector_Data!
+  ): Sector_KeyOutput @fdc_generated(from: "Sector", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `CampaignLore` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  campaignLore_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: CampaignLore_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: CampaignLore_Data!
+  ): Int! @fdc_generated(from: "CampaignLore", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Establishment` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  establishment_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Establishment_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Establishment_Data!
+  ): Int! @fdc_generated(from: "Establishment", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Location` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  location_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Location_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Location_Data!
+  ): Int! @fdc_generated(from: "Location", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Path` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  path_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Path_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Path_Data!
+  ): Int! @fdc_generated(from: "Path", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Sector` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  sector_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Sector_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Sector_Data!
+  ): Int! @fdc_generated(from: "Sector", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `CampaignLore` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  campaignLore_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: CampaignLore_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: CampaignLore_FirstRow
+  ): CampaignLore_KeyOutput @fdc_generated(from: "CampaignLore", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Establishment` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  establishment_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Establishment_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Establishment_FirstRow
+  ): Establishment_KeyOutput @fdc_generated(from: "Establishment", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Location` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  location_delete(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Location_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Location_FirstRow
+  ): Location_KeyOutput @fdc_generated(from: "Location", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Path` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  path_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Path_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Path_FirstRow
+  ): Path_KeyOutput @fdc_generated(from: "Path", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Sector` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  sector_delete(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Sector_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Sector_FirstRow
+  ): Sector_KeyOutput @fdc_generated(from: "Sector", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `CampaignLore` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  campaignLore_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: CampaignLore_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "CampaignLore", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Establishment` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  establishment_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Establishment_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Establishment", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Location` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  location_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Location_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Location", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Path` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  path_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Path_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Path", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Sector` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  sector_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Sector_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Sector", purpose: DELETE_MULTIPLE)
+}

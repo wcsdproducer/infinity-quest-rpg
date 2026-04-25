@@ -9,7 +9,7 @@
     {
       "id": "character-avatar-android",
       "description": "A placeholder for an Android character's avatar.",
-      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/character-classes/android-avatar.png",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/infinity-quest-rpg.firebasestorage.app/o/character-classes%2FAndroids%2FAndroid.png?alt=media&token=150a82ec-a6bb-4c48-a7bc-d035e0bbcf13",
       "imageHint": "sci-fi android"
     },
     {

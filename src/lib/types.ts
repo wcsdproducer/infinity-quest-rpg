@@ -4,10 +4,29 @@ export type Skill = {
   level: 'Trained' | 'Expert' | 'Master';
 }
 
+/** A directional edge between two locations (corridor, hatch, passage, etc.) */
+export type LocationConnection = {
+  toLocationId: string;
+  /** Set if this connection crosses a sector boundary */
+  toSectorId?: string;
+  passageName: string;             // e.g. "Maintenance Hatch 3A"
+  travelDescription: string;       // What the player sees/experiences
+  travelMinutes: number;
+  encounterChance: number;         // 0–100 %
+  encounterTable?: string;         // Which roll table to use
+  isBlocked: boolean;
+  blockedReason?: string;
+  requiredItems?: string[];        // Items needed to pass
+};
+
 export type Location = {
   uuid: string;
+  /** Parent sector this location belongs to */
+  sectorId?: string;
   name?: string;
   context?: string;
+  /** Warden-only information not revealed to players */
+  wardenNotes?: string;
   actions?: string[];
   narrative?: string;
   mediaUrls?: MediaURL[];
@@ -15,6 +34,46 @@ export type Location = {
   isHidden?: boolean;
   /** Warden-only: players know the location exists but cannot enter it. */
   isLocked?: boolean;
+  /** NPC IDs present at this location */
+  npcs?: string[];
+  /** Graph edges to adjacent locations */
+  connections?: LocationConnection[];
+};
+
+/** A directional edge between two sectors (corridor, transit, etc.) */
+export type SectorConnection = {
+  toSectorId: string;
+  corridorName: string;            // e.g. "Service Corridor B7"
+  travelDescription: string;       // Narrated when traversing
+  travelMinutes: number;
+  encounterChance: number;         // 0–100 %
+  encounterTable?: string;
+  isBlocked: boolean;
+  blockedReason?: string;
+};
+
+/** A sector is a named zone of the station containing multiple locations */
+export type Sector = {
+  id: string;                      // e.g. "sector-01-dry-dock"
+  number: number;                  // 1–10 (module number)
+  name: string;                    // e.g. "Dry Dock"
+  description: string;             // Player-facing description
+  wardenNotes?: string;            // Warden-only GM info
+  atmosphere: string;              // Tone/feel ("industrial, loud, dangerous")
+  pageRef: number;                 // Module page reference
+  faction?: string;                // Controlling faction if any
+  isHidden?: boolean;
+  isLocked?: boolean;
+  /** Adjacent sectors the players can travel to */
+  sectorConnections: SectorConnection[];
+  /** IDs of locations within this sector */
+  locationIds: string[];
+};
+
+/** Denormalized graph stored on the campaign doc for the Warden to read in one pass */
+export type StationGraph = {
+  sectors: Sector[];
+  locations: Location[];
 };
 
 export type Character = {
@@ -173,6 +232,8 @@ export type Campaign = {
   name:string;
   description: string;
   startingLocationId?: string;
+  /** Starting sector ID (used with stationGraph) */
+  startingSectorId?: string;
   imageUrl: string;
   initialMessage: string;
   initialMediaUrl?: string;
@@ -180,11 +241,14 @@ export type Campaign = {
   status: 'draft' | 'published';
   storageFolderName?: string;
   acts?: ActItem[];
+  /** Legacy flat location list — prefer stationGraph for new campaigns */
   locations?: Location[];
   events?: MediaItem[];
   npcs?: MediaItem[];
   ships?: ShipItem[];
   contracts?: Contract[];
+  /** Full station navigation graph — sectors + locations with connections */
+  stationGraph?: StationGraph;
 };
 
 export type CommMessage = {
@@ -215,6 +279,16 @@ export type GameState = {
   sessionCount: number;
   lastPlayedAt: number;
   questFlags: Record<string, boolean>;
+  /**
+   * Per-game location discovery state.
+   * Key = location UUID, value = true if players have discovered (isKnown) the location.
+   * All locations default to false except the campaign starting location.
+   */
+  locationDiscovery: Record<string, boolean>;
+  /** Current sector the party is in */
+  currentSectorId?: string;
+  /** Current specific location within the sector */
+  currentLocationId?: string;
 };
 
 /** Gemini-generated recap stored at the end of each session. */

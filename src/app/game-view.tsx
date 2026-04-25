@@ -7,7 +7,7 @@ import { CharacterPanel } from '@/components/game/character-panel';
 import { DiceRoller } from '@/components/game/dice-roller';
 import { CombatTracker } from '@/components/game/combat-tracker';
 import type { Character, Message, CommMessage, SessionSummary, EpisodicMemory } from '@/lib/types';
-import { getNextStoryPart, resolveDiceRoll } from '@/app/actions';
+import { getNextStoryPart, resolveDiceRoll, discoverLocationAction } from '@/app/actions';
 import {
   getOrCreateGameState,
   loadRecentMessages,
@@ -16,6 +16,7 @@ import {
   embedAndSaveMemory,
   retrieveRelevantMemories,
   summarizeAndSaveSession,
+  getLocationDiscovery,
 } from '@/lib/game-memory';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -73,23 +74,21 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
   const [messages, setMessages] = useState<Message[]>([]);
   const firestore = useFirestore();
   
-  // Resolve the first image URL for a location by UUID.
-  // Firebase Storage URLs end in ?alt=media&token=... so we check the path segment before '?'
-  const getLocationImageUrl = useCallback((locationId?: string): string => {
-    if (!locationId || !campaign.locations) return '/fallback-location-unknown.png';
+  const getLocationMedia = useCallback((locationId?: string): { url: string, isVideo: boolean } => {
+    if (!locationId || !campaign.locations) return { url: '/fallback-location-unknown.png', isVideo: false };
     const loc = campaign.locations.find(l => l.uuid === locationId);
 
     // If the location is locked, show the exterior/access-restricted fallback
-    if (loc?.isLocked) return '/fallback-location-locked.png';
+    if (loc?.isLocked) return { url: '/fallback-location-locked.png', isVideo: false };
 
-    const firstMedia = loc?.mediaUrls?.find(m => {
-      if (!m.url || m.url.startsWith('data:video')) return false;
-      const pathPart = m.url.split('?')[0];
-      return pathPart.match(/\.(png|jpg|jpeg|webp|gif)$/i) || m.url.includes('firebasestorage.googleapis.com');
-    });
+    const firstMedia = loc?.mediaUrls?.find(m => m.url);
+    if (!firstMedia) return { url: '/fallback-location-unknown.png', isVideo: false };
 
-    // No uploaded image — show the generic atmospheric exterior until one is added
-    return firstMedia?.url ?? '/fallback-location-unknown.png';
+    const url = firstMedia.url;
+    const pathPart = url.split('?')[0];
+    const isVideo = url.startsWith('data:video') || url.includes('video%2F') || pathPart.match(/\.(mp4|webm|ogg)$/i) !== null;
+
+    return { url, isVideo };
   }, [campaign.locations]);
   
   const getInitialLocation = () => {
@@ -152,6 +151,8 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
   const [sessionCount, setSessionCount] = useState<number>(1);
   const [lastSessionSummary, setLastSessionSummary] = useState<SessionSummary | null>(null);
   const [relevantMemories, setRelevantMemories] = useState<EpisodicMemory[]>([]);
+  // Per-game location discovery map: locationUuid → isKnown
+  const [locationDiscovery, setLocationDiscovery] = useState<Record<string, boolean>>({});
 
   // ── Comm channel state ──────────────────────────────────────────────────
   type CommTarget = { playerId: string; characterName: string; playerLabel: string };
@@ -293,9 +294,14 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
 
         if (gameId) {
           // ── Layer 0: get / create the game state doc (new session) ────────
-          const state = await getOrCreateGameState(gameId);
+          const allLocationIds = campaign.locations?.map(l => l.uuid) ?? [];
+          const state = await getOrCreateGameState(gameId, allLocationIds, campaign.startingLocationId);
           setSessionId(state.sessionId);
           setSessionCount(state.sessionCount);
+
+          // ── Load persistent location discovery state ───────────────────────
+          const discovery = await getLocationDiscovery(gameId);
+          setLocationDiscovery(discovery);
 
           // ── Layer 1: load persisted messages ─────────────────────────────
           const persisted = await loadRecentMessages(gameId, 100);
@@ -439,6 +445,16 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
         setMediaOverride(pendingApiResponse.mediaUrl);
       }
 
+      // Persist Warden-triggered location discovery (fire-and-forget)
+      if (pendingApiResponse.newlyDiscoveredLocationId && gameId) {
+        const discoveredId = pendingApiResponse.newlyDiscoveredLocationId;
+        discoverLocationAction(gameId, discoveredId).then((result) => {
+          if (result.success && result.locationDiscovery) {
+            setLocationDiscovery(result.locationDiscovery);
+          }
+        });
+      }
+
       setPendingApiResponse(null);
     }
   };
@@ -513,6 +529,7 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
         crew: currentCrew as any,
         campaignPrompt: campaign.prompt,
         currentLocationIsLocked: activeLocationIsLocked,
+        locationDiscovery,
       });
 
       if (response.success && response.data) {
@@ -623,6 +640,7 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
         diceRollResult: rollValue,
         campaignPrompt: campaign.prompt,
         currentLocationIsLocked: activeLocationIsLocked,
+        locationDiscovery,
       });
 
       if (response.success && response.data) {
@@ -683,13 +701,14 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
       )
   }
 
-  const isVideo = mediaOverride?.startsWith('data:video') || (mediaOverride && mediaOverride.includes('video%2F'));
+  const overrideIsVideo = mediaOverride?.startsWith('data:video') || (mediaOverride && mediaOverride.includes('video%2F')) || (mediaOverride && mediaOverride.match(/\.(mp4|webm|ogg)/i) !== null);
   
   // Derive the persistent background from the player's current location
-  const locationImageUrl = getLocationImageUrl(character.currentLocationId);
+  const locationMedia = getLocationMedia(character.currentLocationId);
+  
   // AI events can push a mediaOverride; otherwise show the location's image
-  const activeImageUrl = !isVideo ? (mediaOverride || locationImageUrl) : undefined;
-  const activeVideoUrl = isVideo ? mediaOverride : undefined;
+  const activeImageUrl = (!mediaOverride && !locationMedia.isVideo) ? locationMedia.url : (!overrideIsVideo && mediaOverride ? mediaOverride : undefined);
+  const activeVideoUrl = (mediaOverride && overrideIsVideo) ? mediaOverride : (!mediaOverride && locationMedia.isVideo ? locationMedia.url : undefined);
 
   // Build a map of crew member locations for the roster
   const crewLocationNames = currentCrew.reduce<Record<string, string>>((acc, c) => {
@@ -850,6 +869,42 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
           <aside className="hidden w-80 flex-col border-l border-border bg-background p-4 lg:flex xl:w-96">
             <div className="flex flex-1 flex-col gap-6 overflow-y-auto">
               <CharacterPanel character={character} activeStat={rollDetails} playerNumber={playerNumber} />
+              {/* DEV ONLY: Location Discovery Debug Panel */}
+              {process.env.NODE_ENV === 'development' && (
+                <details className="rounded-lg border border-yellow-500/30 bg-yellow-950/20 p-3 text-xs" open>
+                  <summary className="cursor-pointer select-none font-bold tracking-widest text-yellow-400 uppercase mb-2">
+                    🗺️ Discovery Debug
+                  </summary>
+                  <div className="space-y-1 mt-2">
+                    {campaign.locations && campaign.locations.length > 0 ? (
+                      campaign.locations.map((loc) => {
+                        const isKnown = locationDiscovery[loc.uuid] ?? false;
+                        return (
+                          <div
+                            key={loc.uuid}
+                            className={cn(
+                              'flex items-center justify-between gap-2 rounded px-2 py-1',
+                              isKnown ? 'bg-green-950/40' : 'bg-red-950/30'
+                            )}
+                          >
+                            <span className={cn('truncate font-mono', isKnown ? 'text-green-300' : 'text-red-400/70')}>
+                              {loc.name}
+                            </span>
+                            <span className={cn('shrink-0 font-bold', isKnown ? 'text-green-400' : 'text-red-500')}>
+                              {isKnown ? '✓ KNOWN' : '✗ HIDDEN'}
+                            </span>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <p className="text-white/40 italic">No locations loaded.</p>
+                    )}
+                    <p className="mt-2 text-white/30 font-mono">
+                      gameId: {gameId ?? 'none'}
+                    </p>
+                  </div>
+                </details>
+              )}
             </div>
             <div className="mt-auto border-t pt-4">
                 <GameControls

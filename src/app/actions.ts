@@ -134,7 +134,6 @@ export async function setGameCrew(gameId: string, crew: Character[]): Promise<{ 
         
         crew.forEach((character) => {
             const characterRef = doc(firestore, 'games', gameId, 'characters', character.id);
-            // Ensure the character object is a plain JavaScript object for Firestore.
             const plainCharacter = JSON.parse(JSON.stringify(character));
             batch.set(characterRef, plainCharacter);
         });
@@ -144,7 +143,24 @@ export async function setGameCrew(gameId: string, crew: Character[]): Promise<{ 
         return { success: true };
     } catch (error: any) {
         console.error("Error setting game crew:", error);
-        // Provide the actual error message for better debugging.
         return { success: false, error: `Failed to save crew to the game. Reason: ${error.message}` };
     }
+}
+
+/**
+ * Mark a location as discovered for a game (called when the Warden signals
+ * `newlyDiscoveredLocationId` in its response). Persists to the game state doc.
+ */
+export async function discoverLocationAction(
+  gameId: string,
+  locationId: string
+): Promise<{ success: boolean; locationDiscovery?: Record<string, boolean>; error?: string }> {
+  try {
+    const { discoverLocation } = await import('@/lib/game-memory');
+    const updated = await discoverLocation(gameId, locationId);
+    return { success: true, locationDiscovery: updated };
+  } catch (error: any) {
+    console.error('Error discovering location:', error);
+    return { success: false, error: error.message };
+  }
 }

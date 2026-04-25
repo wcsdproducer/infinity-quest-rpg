@@ -16,6 +16,11 @@ import {
   type ContinueAdventureInput,
   type ContinueAdventureOutput,
 } from '@/ai/schemas';
+import { initializeServerFirebase } from '@/firebase/server-init';
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, searchCampaignLore } from '@/lib/dataconnect';
+import { buildLocalContext } from '@/lib/pathfinder';
+import { poundOfFleshCampaignData } from '@/lib/campaigns';
 
 export async function continueAdventure(input: ContinueAdventureInput): Promise<ContinueAdventureOutput> {
   return continueAdventureFlow(input);
@@ -38,7 +43,18 @@ Your principles are:
 
 Previous Events:
 {{{storyContext}}}
+
+{{#if campaignLore}}
+Relevant Campaign Lore:
+{{{campaignLore}}}
+{{/if}}
 </BACKGROUND_INFORMATION>
+
+{{#if localEnvironmentContext}}
+<LOCAL_ENVIRONMENT>
+{{{localEnvironmentContext}}}
+</LOCAL_ENVIRONMENT>
+{{/if}}
 
 {{#if crew}}
 The Crew:
@@ -53,6 +69,21 @@ The Crew:
 - A FAILED bypass attempt means the barrier is STILL SEALED — not ajar. The character is still outside.
 - Suggested actions must only involve gaining entry: retry the bypass, search for another entrance, force the door, retreat, call for backup, etc.
 - Do NOT suggest actions that imply the character is already inside (e.g. "Search the workshop", "Talk to Silas", "Negotiate with [NPC inside]").
+{{/if}}
+
+{{#if locationDiscovery}}
+🗺️ **LOCATION DISCOVERY STATE — CLASSIFIED WARDEN DATA**:
+The following is the current discovery state for all locations in this campaign. This data is FOR YOUR EYES ONLY — never read it aloud or reference it directly in your narrative.
+{{#each locationDiscovery}}
+- Location UUID {{@key}}: {{#if this}}KNOWN (players are aware of this location){{else}}UNKNOWN (players have NOT yet discovered this location){{/if}}
+{{/each}}
+
+**DISCOVERY ENFORCEMENT RULES — YOU MUST FOLLOW THESE WITHOUT EXCEPTION:**
+1. **NEVER proactively name, describe, or hint at the existence of an UNKNOWN location.** If a player asks "what locations are nearby?", "show me the map", or "scan the area", you must NOT list unknown locations. You may describe the general environment (dim corridors, distant sounds, sealed hatches) without naming the destination.
+2. **Players CANNOT learn about unknown locations through passive actions.** Scanning a map, asking the Warden directly, or looking around does NOT reveal unknown locations. The information simply isn't accessible to them yet.
+3. **Discovery must be EARNED through active roleplay:** talking to the right NPC who drops a hint, finding a data pad or logbook, succeeding on an Intellect check while investigating a specific clue, or physically exploring until they stumble upon it. Only then may you reveal the location name and set the 'newlyDiscoveredLocationId' field.
+4. **When a player genuinely earns discovery** of an unknown location through the above means, weave the revelation naturally into your narrative. Set the 'newlyDiscoveredLocationId' output field to that location's UUID so the system can persist the discovery.
+5. **Never set 'newlyDiscoveredLocationId'** if the location was already KNOWN, if the player simply asked about it, or if no active investigation occurred.
 {{/if}}
 
 The current player's character:
@@ -198,7 +229,28 @@ const continueAdventureFlow = ai.defineFlow(
         crew[index] = input.character;
     }
 
-    const flowInput = { ...input, crew };
+    // Fetch Campaign Lore using Vector Search
+    let campaignLore = '';
+    try {
+      const { firebaseApp } = initializeServerFirebase();
+      const dc = getDataConnect(firebaseApp, connectorConfig);
+      const searchRes = await searchCampaignLore(dc, { query: input.playerAction });
+      if (searchRes.data.campaignLores_embedding_similarity && searchRes.data.campaignLores_embedding_similarity.length > 0) {
+        const topLore = searchRes.data.campaignLores_embedding_similarity.slice(0, 3);
+        campaignLore = topLore.map((l: any) => l.content).join('\n\n');
+      }
+    } catch (error) {
+      console.error('Failed to search campaign lore:', error);
+    }
+
+    const currentLocationId = input.currentLocationId || input.character.location;
+    let localEnvironmentContext = input.localEnvironmentContext || '';
+
+    if (!localEnvironmentContext && currentLocationId && poundOfFleshCampaignData.stationGraph) {
+      localEnvironmentContext = buildLocalContext(currentLocationId, poundOfFleshCampaignData.stationGraph);
+    }
+
+    const flowInput = { ...input, crew, campaignLore, localEnvironmentContext };
 
     const { output } = await prompt(flowInput);
 

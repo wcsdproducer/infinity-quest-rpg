@@ -1,0 +1,1489 @@
+"""
+✨ `CampaignLore_KeyOutput` returns the primary key fields of table type `CampaignLore`.
+
+It has the same format as `CampaignLore_Key`, but is only used as mutation return value.
+"""
+scalar CampaignLore_KeyOutput
+"""
+✨ `Establishment_KeyOutput` returns the primary key fields of table type `Establishment`.
+
+It has the same format as `Establishment_Key`, but is only used as mutation return value.
+"""
+scalar Establishment_KeyOutput
+"""
+✨ `Location_KeyOutput` returns the primary key fields of table type `Location`.
+
+It has the same format as `Location_Key`, but is only used as mutation return value.
+"""
+scalar Location_KeyOutput
+"""
+✨ `Path_KeyOutput` returns the primary key fields of table type `Path`.
+
+It has the same format as `Path_Key`, but is only used as mutation return value.
+"""
+scalar Path_KeyOutput
+"""
+✨ `Sector_KeyOutput` returns the primary key fields of table type `Sector`.
+
+It has the same format as `Sector_Key`, but is only used as mutation return value.
+"""
+scalar Sector_KeyOutput
+"""
+✨ Generated data input type for table 'CampaignLore'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input CampaignLore_Data {
+  """
+  ✨ Generated from Field `CampaignLore`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CampaignLore`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `CampaignLore`.`content` of type `String!`
+  """
+  content: String
+  """
+  ✨ `_expr` server value variant of `content` (✨ Generated from Field `CampaignLore`.`content` of type `String!`)
+  """
+  content_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `CampaignLore`.`embedding` of type `Vector!`
+  """
+  embedding: Vector
+  """
+  ✨ `_embed` server value variant of `embedding` (✨ Generated from Field `CampaignLore`.`embedding` of type `Vector!`)
+  """
+  embedding_embed: Vector_Embed @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata` of type `Any`
+  """
+  metadata: Any
+  """
+  ✨ `_expr` server value variant of `metadata` (✨ Generated from Field `CampaignLore`.`metadata` of type `Any`)
+  """
+  metadata_expr: Any_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'CampaignLore'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CampaignLore_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [CampaignLore_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: CampaignLore_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [CampaignLore_Filter!]
+  """
+  ✨ Generated from Field `CampaignLore`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`content` of type `String!`
+  """
+  content: String_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`embedding` of type `Vector!`
+  """
+  embedding: Vector_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata` of type `Any`
+  """
+  metadata: Any_Filter
+}
+"""
+✨ Generated first-row input type for table 'CampaignLore'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input CampaignLore_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [CampaignLore_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: CampaignLore_Filter
+}
+"""
+✨ Generated having input type for table 'CampaignLore'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input CampaignLore_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [CampaignLore_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: CampaignLore_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [CampaignLore_Having!]
+  """
+  ✨ Generated from Field `CampaignLore`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`content_count` of type `Int!`
+  """
+  content_count: Int_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`embedding_count` of type `Int!`
+  """
+  embedding_count: Int_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_count` of type `Int!`
+  """
+  metadata_count: Int_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_min` of type `Any`
+  """
+  metadata_min: Any_Filter
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_max` of type `Any`
+  """
+  metadata_max: Any_Filter
+}
+"""
+✨ Generated key input type for table 'CampaignLore'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input CampaignLore_Key {
+  """
+  ✨ Generated from Field `CampaignLore`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `CampaignLore`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'CampaignLore'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input CampaignLore_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: CampaignLore_Filter
+}
+"""
+✨ Generated order input type for table 'CampaignLore'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input CampaignLore_Order {
+  """
+  ✨ Generated from Field `CampaignLore`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`content` of type `String!`
+  """
+  content: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`embedding` of type `Vector!`
+  """
+  embedding: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata` of type `Any`
+  """
+  metadata: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`content_count` of type `Int!`
+  """
+  content_count: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`embedding_count` of type `Int!`
+  """
+  embedding_count: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_count` of type `Int!`
+  """
+  metadata_count: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_min` of type `Any`
+  """
+  metadata_min: OrderDirection
+  """
+  ✨ Generated from Field `CampaignLore`.`metadata_max` of type `Any`
+  """
+  metadata_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Establishment'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Establishment_Data {
+  """
+  ✨ Generated from Field `Establishment`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Establishment`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`locationId` of type `String!`
+  """
+  locationId: String
+  """
+  ✨ `_expr` server value variant of `locationId` (✨ Generated from Field `Establishment`.`locationId` of type `String!`)
+  """
+  locationId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`location` of type `Location!`
+  """
+  location: Location_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Establishment`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`imageUrl` of type `String`
+  """
+  imageUrl: String
+  """
+  ✨ `_expr` server value variant of `imageUrl` (✨ Generated from Field `Establishment`.`imageUrl` of type `String`)
+  """
+  imageUrl_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`isLocked` of type `Boolean!`
+  """
+  isLocked: Boolean
+  """
+  ✨ `_expr` server value variant of `isLocked` (✨ Generated from Field `Establishment`.`isLocked` of type `Boolean!`)
+  """
+  isLocked_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`isProcedural` of type `Boolean!`
+  """
+  isProcedural: Boolean
+  """
+  ✨ `_expr` server value variant of `isProcedural` (✨ Generated from Field `Establishment`.`isProcedural` of type `Boolean!`)
+  """
+  isProcedural_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`lockRequirements` of type `String`
+  """
+  lockRequirements: String
+  """
+  ✨ `_expr` server value variant of `lockRequirements` (✨ Generated from Field `Establishment`.`lockRequirements` of type `String`)
+  """
+  lockRequirements_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Establishment`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`npcHooks` of type `String`
+  """
+  npcHooks: String
+  """
+  ✨ `_expr` server value variant of `npcHooks` (✨ Generated from Field `Establishment`.`npcHooks` of type `String`)
+  """
+  npcHooks_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`prices` of type `String`
+  """
+  prices: String
+  """
+  ✨ `_expr` server value variant of `prices` (✨ Generated from Field `Establishment`.`prices` of type `String`)
+  """
+  prices_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Establishment`.`type` of type `String!`
+  """
+  type: String
+  """
+  ✨ `_expr` server value variant of `type` (✨ Generated from Field `Establishment`.`type` of type `String!`)
+  """
+  type_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Establishment'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Establishment_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Establishment_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Establishment_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Establishment_Filter!]
+  """
+  ✨ Generated from Field `Establishment`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Establishment`.`locationId` of type `String!`
+  """
+  locationId: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`location` of type `Location!`
+  """
+  location: Location_Filter
+  """
+  ✨ Generated from Field `Establishment`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`imageUrl` of type `String`
+  """
+  imageUrl: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`isLocked` of type `Boolean!`
+  """
+  isLocked: Boolean_Filter
+  """
+  ✨ Generated from Field `Establishment`.`isProcedural` of type `Boolean!`
+  """
+  isProcedural: Boolean_Filter
+  """
+  ✨ Generated from Field `Establishment`.`lockRequirements` of type `String`
+  """
+  lockRequirements: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`npcHooks` of type `String`
+  """
+  npcHooks: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`prices` of type `String`
+  """
+  prices: String_Filter
+  """
+  ✨ Generated from Field `Establishment`.`type` of type `String!`
+  """
+  type: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'Establishment'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Establishment_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Establishment_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Establishment_Filter
+}
+"""
+✨ Generated having input type for table 'Establishment'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Establishment_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Establishment_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Establishment_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Establishment_Having!]
+  """
+  ✨ Generated from Field `Establishment`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`imageUrl_count` of type `Int!`
+  """
+  imageUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`isLocked_count` of type `Int!`
+  """
+  isLocked_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`isProcedural_count` of type `Int!`
+  """
+  isProcedural_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`locationId_count` of type `Int!`
+  """
+  locationId_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`lockRequirements_count` of type `Int!`
+  """
+  lockRequirements_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`npcHooks_count` of type `Int!`
+  """
+  npcHooks_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`prices_count` of type `Int!`
+  """
+  prices_count: Int_Filter
+  """
+  ✨ Generated from Field `Establishment`.`type_count` of type `Int!`
+  """
+  type_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Establishment'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Establishment_Key {
+  """
+  ✨ Generated from Field `Establishment`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Establishment`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Establishment'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Establishment_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Establishment_Filter
+}
+"""
+✨ Generated order input type for table 'Establishment'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Establishment_Order {
+  """
+  ✨ Generated from Field `Establishment`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`locationId` of type `String!`
+  """
+  locationId: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`location` of type `Location!`
+  """
+  location: Location_Order
+  """
+  ✨ Generated from Field `Establishment`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`imageUrl` of type `String`
+  """
+  imageUrl: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`isLocked` of type `Boolean!`
+  """
+  isLocked: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`isProcedural` of type `Boolean!`
+  """
+  isProcedural: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`lockRequirements` of type `String`
+  """
+  lockRequirements: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`npcHooks` of type `String`
+  """
+  npcHooks: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`prices` of type `String`
+  """
+  prices: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`type` of type `String!`
+  """
+  type: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`imageUrl_count` of type `Int!`
+  """
+  imageUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`isLocked_count` of type `Int!`
+  """
+  isLocked_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`isProcedural_count` of type `Int!`
+  """
+  isProcedural_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`locationId_count` of type `Int!`
+  """
+  locationId_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`lockRequirements_count` of type `Int!`
+  """
+  lockRequirements_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`npcHooks_count` of type `Int!`
+  """
+  npcHooks_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`prices_count` of type `Int!`
+  """
+  prices_count: OrderDirection
+  """
+  ✨ Generated from Field `Establishment`.`type_count` of type `Int!`
+  """
+  type_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Location'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Location_Data {
+  """
+  ✨ Generated from Field `Location`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Location`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`sectorId` of type `String!`
+  """
+  sectorId: String
+  """
+  ✨ `_expr` server value variant of `sectorId` (✨ Generated from Field `Location`.`sectorId` of type `String!`)
+  """
+  sectorId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`sector` of type `Sector!`
+  """
+  sector: Sector_Key @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Location`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`isLocked` of type `Boolean!`
+  """
+  isLocked: Boolean
+  """
+  ✨ `_expr` server value variant of `isLocked` (✨ Generated from Field `Location`.`isLocked` of type `Boolean!`)
+  """
+  isLocked_expr: Boolean_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`lockRequirements` of type `String`
+  """
+  lockRequirements: String
+  """
+  ✨ `_expr` server value variant of `lockRequirements` (✨ Generated from Field `Location`.`lockRequirements` of type `String`)
+  """
+  lockRequirements_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`mapCoordinates` of type `String`
+  """
+  mapCoordinates: String
+  """
+  ✨ `_expr` server value variant of `mapCoordinates` (✨ Generated from Field `Location`.`mapCoordinates` of type `String`)
+  """
+  mapCoordinates_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Location`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Location`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Location'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Location_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Location_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Location_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Location_Filter!]
+  """
+  ✨ Generated from Field `Location`.`id` of type `String!`
+  """
+  id: String_Filter
+  """
+  ✨ Generated from Field `Location`.`sectorId` of type `String!`
+  """
+  sectorId: String_Filter
+  """
+  ✨ Generated from Field `Location`.`sector` of type `Sector!`
+  """
+  sector: Sector_Filter
+  """
+  ✨ Generated from Field `Location`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Location`.`isLocked` of type `Boolean!`
+  """
+  isLocked: Boolean_Filter
+  """
+  ✨ Generated from Field `Location`.`lockRequirements` of type `String`
+  """
+  lockRequirements: String_Filter
+  """
+  ✨ Generated from Field `Location`.`mapCoordinates` of type `String`
+  """
+  mapCoordinates: String_Filter
+  """
+  ✨ Generated from Field `Location`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Location`.`establishments_on_location` of type `[Establishment!]!`
+  """
+  establishments_on_location: Establishment_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Location'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Location_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Location_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Location_Filter
+}
+"""
+✨ Generated having input type for table 'Location'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Location_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Location_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Location_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Location_Having!]
+  """
+  ✨ Generated from Field `Location`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`isLocked_count` of type `Int!`
+  """
+  isLocked_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`lockRequirements_count` of type `Int!`
+  """
+  lockRequirements_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`mapCoordinates_count` of type `Int!`
+  """
+  mapCoordinates_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Location`.`sectorId_count` of type `Int!`
+  """
+  sectorId_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Location'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Location_Key {
+  """
+  ✨ Generated from Field `Location`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Location`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Location'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Location_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Location_Filter
+}
+"""
+✨ Generated order input type for table 'Location'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Location_Order {
+  """
+  ✨ Generated from Field `Location`.`id` of type `String!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`sectorId` of type `String!`
+  """
+  sectorId: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`sector` of type `Sector!`
+  """
+  sector: Sector_Order
+  """
+  ✨ Generated from Field `Location`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`isLocked` of type `Boolean!`
+  """
+  isLocked: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`lockRequirements` of type `String`
+  """
+  lockRequirements: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`mapCoordinates` of type `String`
+  """
+  mapCoordinates: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`isLocked_count` of type `Int!`
+  """
+  isLocked_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`lockRequirements_count` of type `Int!`
+  """
+  lockRequirements_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`mapCoordinates_count` of type `Int!`
+  """
+  mapCoordinates_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Location`.`sectorId_count` of type `Int!`
+  """
+  sectorId_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Path'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Path_Data {
+  """
+  ✨ Generated from Field `Path`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Path`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`accessibility` of type `String`
+  """
+  accessibility: String
+  """
+  ✨ `_expr` server value variant of `accessibility` (✨ Generated from Field `Path`.`accessibility` of type `String`)
+  """
+  accessibility_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`dangerLevel` of type `Int`
+  """
+  dangerLevel: Int
+  """
+  ✨ `_expr` server value variant of `dangerLevel` (✨ Generated from Field `Path`.`dangerLevel` of type `Int`)
+  """
+  dangerLevel_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `dangerLevel` (✨ Generated from Field `Path`.`dangerLevel` of type `Int`)
+  """
+  dangerLevel_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`sourceNodeId` of type `String!`
+  """
+  sourceNodeId: String
+  """
+  ✨ `_expr` server value variant of `sourceNodeId` (✨ Generated from Field `Path`.`sourceNodeId` of type `String!`)
+  """
+  sourceNodeId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`sourceNodeType` of type `String!`
+  """
+  sourceNodeType: String
+  """
+  ✨ `_expr` server value variant of `sourceNodeType` (✨ Generated from Field `Path`.`sourceNodeType` of type `String!`)
+  """
+  sourceNodeType_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`targetNodeId` of type `String!`
+  """
+  targetNodeId: String
+  """
+  ✨ `_expr` server value variant of `targetNodeId` (✨ Generated from Field `Path`.`targetNodeId` of type `String!`)
+  """
+  targetNodeId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`targetNodeType` of type `String!`
+  """
+  targetNodeType: String
+  """
+  ✨ `_expr` server value variant of `targetNodeType` (✨ Generated from Field `Path`.`targetNodeType` of type `String!`)
+  """
+  targetNodeType_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes` of type `Int`
+  """
+  travelTimeMinutes: Int
+  """
+  ✨ `_expr` server value variant of `travelTimeMinutes` (✨ Generated from Field `Path`.`travelTimeMinutes` of type `Int`)
+  """
+  travelTimeMinutes_expr: Int_Expr @fdc_forbiddenInVariables
+  """
+  ✨ `_update` server value variant of `travelTimeMinutes` (✨ Generated from Field `Path`.`travelTimeMinutes` of type `Int`)
+  """
+  travelTimeMinutes_update: [Int_Update!] @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Path`.`type` of type `String!`
+  """
+  type: String
+  """
+  ✨ `_expr` server value variant of `type` (✨ Generated from Field `Path`.`type` of type `String!`)
+  """
+  type_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Path'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Path_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Path_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Path_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Path_Filter!]
+  """
+  ✨ Generated from Field `Path`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Path`.`accessibility` of type `String`
+  """
+  accessibility: String_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel` of type `Int`
+  """
+  dangerLevel: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`sourceNodeId` of type `String!`
+  """
+  sourceNodeId: String_Filter
+  """
+  ✨ Generated from Field `Path`.`sourceNodeType` of type `String!`
+  """
+  sourceNodeType: String_Filter
+  """
+  ✨ Generated from Field `Path`.`targetNodeId` of type `String!`
+  """
+  targetNodeId: String_Filter
+  """
+  ✨ Generated from Field `Path`.`targetNodeType` of type `String!`
+  """
+  targetNodeType: String_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes` of type `Int`
+  """
+  travelTimeMinutes: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`type` of type `String!`
+  """
+  type: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'Path'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Path_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Path_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Path_Filter
+}
+"""
+✨ Generated having input type for table 'Path'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Path_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Path_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Path_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Path_Having!]
+  """
+  ✨ Generated from Field `Path`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`accessibility_count` of type `Int!`
+  """
+  accessibility_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_count` of type `Int!`
+  """
+  dangerLevel_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`sourceNodeId_count` of type `Int!`
+  """
+  sourceNodeId_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`sourceNodeType_count` of type `Int!`
+  """
+  sourceNodeType_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`targetNodeId_count` of type `Int!`
+  """
+  targetNodeId_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`targetNodeType_count` of type `Int!`
+  """
+  targetNodeType_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_count` of type `Int!`
+  """
+  travelTimeMinutes_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`type_count` of type `Int!`
+  """
+  type_count: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_sum` of type `Int`
+  """
+  dangerLevel_sum: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_sum` of type `Int`
+  """
+  travelTimeMinutes_sum: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_avg` of type `Float`
+  """
+  dangerLevel_avg: Float_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_avg` of type `Float`
+  """
+  travelTimeMinutes_avg: Float_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_min` of type `Int`
+  """
+  dangerLevel_min: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_min` of type `Int`
+  """
+  travelTimeMinutes_min: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_max` of type `Int`
+  """
+  dangerLevel_max: Int_Filter
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_max` of type `Int`
+  """
+  travelTimeMinutes_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Path'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Path_Key {
+  """
+  ✨ Generated from Field `Path`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Path`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Path'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Path_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Path_Filter
+}
+"""
+✨ Generated order input type for table 'Path'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Path_Order {
+  """
+  ✨ Generated from Field `Path`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`accessibility` of type `String`
+  """
+  accessibility: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel` of type `Int`
+  """
+  dangerLevel: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`sourceNodeId` of type `String!`
+  """
+  sourceNodeId: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`sourceNodeType` of type `String!`
+  """
+  sourceNodeType: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`targetNodeId` of type `String!`
+  """
+  targetNodeId: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`targetNodeType` of type `String!`
+  """
+  targetNodeType: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes` of type `Int`
+  """
+  travelTimeMinutes: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`type` of type `String!`
+  """
+  type: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`accessibility_count` of type `Int!`
+  """
+  accessibility_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_count` of type `Int!`
+  """
+  dangerLevel_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`sourceNodeId_count` of type `Int!`
+  """
+  sourceNodeId_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`sourceNodeType_count` of type `Int!`
+  """
+  sourceNodeType_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`targetNodeId_count` of type `Int!`
+  """
+  targetNodeId_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`targetNodeType_count` of type `Int!`
+  """
+  targetNodeType_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_count` of type `Int!`
+  """
+  travelTimeMinutes_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`type_count` of type `Int!`
+  """
+  type_count: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_sum` of type `Int`
+  """
+  dangerLevel_sum: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_sum` of type `Int`
+  """
+  travelTimeMinutes_sum: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_avg` of type `Float`
+  """
+  dangerLevel_avg: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_avg` of type `Float`
+  """
+  travelTimeMinutes_avg: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_min` of type `Int`
+  """
+  dangerLevel_min: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_min` of type `Int`
+  """
+  travelTimeMinutes_min: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`dangerLevel_max` of type `Int`
+  """
+  dangerLevel_max: OrderDirection
+  """
+  ✨ Generated from Field `Path`.`travelTimeMinutes_max` of type `Int`
+  """
+  travelTimeMinutes_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Sector'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Sector_Data {
+  """
+  ✨ Generated from Field `Sector`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Sector`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Sector`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Sector`.`description` of type `String`)
+  """
+  description_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Sector`.`encounterTableId` of type `String`
+  """
+  encounterTableId: String
+  """
+  ✨ `_expr` server value variant of `encounterTableId` (✨ Generated from Field `Sector`.`encounterTableId` of type `String`)
+  """
+  encounterTableId_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Sector`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Sector`.`name` of type `String!`)
+  """
+  name_expr: String_Expr @fdc_forbiddenInVariables
+  """
+  ✨ Generated from Field `Sector`.`phaseAlterationRules` of type `String`
+  """
+  phaseAlterationRules: String
+  """
+  ✨ `_expr` server value variant of `phaseAlterationRules` (✨ Generated from Field `Sector`.`phaseAlterationRules` of type `String`)
+  """
+  phaseAlterationRules_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated filter input type for table 'Sector'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Sector_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Sector_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Sector_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Sector_Filter!]
+  """
+  ✨ Generated from Field `Sector`.`id` of type `String!`
+  """
+  id: String_Filter
+  """
+  ✨ Generated from Field `Sector`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Sector`.`encounterTableId` of type `String`
+  """
+  encounterTableId: String_Filter
+  """
+  ✨ Generated from Field `Sector`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Sector`.`phaseAlterationRules` of type `String`
+  """
+  phaseAlterationRules: String_Filter
+  """
+  ✨ Generated from Field `Sector`.`locations_on_sector` of type `[Location!]!`
+  """
+  locations_on_sector: Location_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Sector'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Sector_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Sector_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Sector_Filter
+}
+"""
+✨ Generated having input type for table 'Sector'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Sector_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Sector_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Sector_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Sector_Having!]
+  """
+  ✨ Generated from Field `Sector`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Sector`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Sector`.`encounterTableId_count` of type `Int!`
+  """
+  encounterTableId_count: Int_Filter
+  """
+  ✨ Generated from Field `Sector`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Sector`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Sector`.`phaseAlterationRules_count` of type `Int!`
+  """
+  phaseAlterationRules_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Sector'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Sector_Key {
+  """
+  ✨ Generated from Field `Sector`.`id` of type `String!`
+  """
+  id: String
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Sector`.`id` of type `String!`)
+  """
+  id_expr: String_Expr @fdc_forbiddenInVariables
+}
+"""
+✨ Generated list filter input type for table 'Sector'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Sector_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Sector_Filter
+}
+"""
+✨ Generated order input type for table 'Sector'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Sector_Order {
+  """
+  ✨ Generated from Field `Sector`.`id` of type `String!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`encounterTableId` of type `String`
+  """
+  encounterTableId: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`phaseAlterationRules` of type `String`
+  """
+  phaseAlterationRules: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`encounterTableId_count` of type `Int!`
+  """
+  encounterTableId_count: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `Sector`.`phaseAlterationRules_count` of type `Int!`
+  """
+  phaseAlterationRules_count: OrderDirection
+}

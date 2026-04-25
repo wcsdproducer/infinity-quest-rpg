@@ -1,0 +1,59 @@
+type Sector @table {
+  id: String! @col(name: "sector_id")
+  name: String!
+  description: String
+  phaseAlterationRules: String
+  encounterTableId: String
+}
+
+type Location @table {
+  id: String! @col(name: "location_id")
+  sector: Sector!
+  name: String!
+  description: String
+  mapCoordinates: String
+  isLocked: Boolean! @default(value: false)
+  lockRequirements: String
+}
+
+type Establishment @table {
+  id: UUID! @default(expr: "uuidV4()")
+  location: Location!
+  name: String!
+  type: String!
+  description: String
+  imageUrl: String
+  prices: String
+  npcHooks: String
+  isProcedural: Boolean! @default(value: true)
+  isLocked: Boolean! @default(value: false)
+  lockRequirements: String
+}
+
+# Edge node for travel paths
+type Path @table {
+  id: UUID! @default(expr: "uuidV4()")
+  
+  # Source and target can be the ID of a Sector, Location, or Establishment
+  sourceNodeId: String!
+  sourceNodeType: String! # 'Sector', 'Location', 'Establishment'
+  
+  targetNodeId: String!
+  targetNodeType: String! # 'Sector', 'Location', 'Establishment'
+  
+  type: String! # e.g. "Corridor", "Lift", "Shuttle Dock"
+  
+  # Tracks physical traversal mechanics or access restrictions
+  # e.g., "Requires Tempest Co. ID", "Zero-G", "Wheelchair Accessible"
+  accessibility: String 
+  
+  travelTimeMinutes: Int
+  dangerLevel: Int
+}
+
+type CampaignLore @table {
+  id: UUID! @default(expr: "uuidV4()")
+  content: String!
+  metadata: Any # Stores source, location tags, etc.
+  embedding: Vector! @col(size: 768) # 768 is default for text-embedding-004
+}

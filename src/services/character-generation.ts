@@ -2,13 +2,13 @@
 'use server';
 
 import { faker } from '@faker-js/faker';
-import { CharacterClass as CharacterClassEnum, type Skill } from '@/ai/schemas';
+import { CharacterClass as CharacterClassEnum } from '@/ai/schemas';
 import {
   type SkillName,
   type SkillLevel,
   skillCatalog,
 } from '@/lib/skills';
-import type { Character } from '@/lib/types';
+import type { Character, Skill } from '@/lib/types';
 import { randomBytes } from 'crypto';
 
 

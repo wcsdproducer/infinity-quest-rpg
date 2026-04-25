@@ -36,8 +36,8 @@ const multiSelectVariants = cva(
 );
 
 interface MultiSelectProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<multiSelectVariants> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'>,
+    VariantProps<typeof multiSelectVariants> {
   options: {
     label: string;
     value: string;
