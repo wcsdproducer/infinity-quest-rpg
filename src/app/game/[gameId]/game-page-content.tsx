@@ -35,9 +35,11 @@ export function GamePageContent({ gameId }: { gameId: string }) {
     const { data: crew, isLoading: isCrewLoading } = useCollection<Character>(charactersRef);
 
     // Determine the current player's character by matching the user's UID with the character's playerId
+    // Falls back to the first crew member if no assigned character (e.g., host in solo-via-lobby flow)
     const playerCharacter = useMemo(() => {
-        if (!user || !crew) return null;
-        return crew.find(c => c.playerId === user.uid) || null;
+        if (!crew || crew.length === 0) return null;
+        const assigned = user ? crew.find(c => c.playerId === user.uid) || null : null;
+        return assigned ?? crew[0]; // host fallback: take first character
     }, [user, crew]);
 
     // Determine the player number
@@ -46,6 +48,12 @@ export function GamePageContent({ gameId }: { gameId: string }) {
         const index = game.players.findIndex(p => p === user.uid);
         return index !== -1 ? index + 1 : undefined;
     }, [user, game?.players]);
+
+    // Map every player UID to their player number (P1, P2, …)
+    const playerNumbers = useMemo(() => {
+        if (!game?.players) return {} as Record<string, number>;
+        return game.players.reduce((acc, uid, idx) => ({ ...acc, [uid]: idx + 1 }), {} as Record<string, number>);
+    }, [game?.players]);
 
     const isLoading = isUserLoading || isGameLoading || isCampaignLoading || isCrewLoading;
 
@@ -70,5 +78,5 @@ export function GamePageContent({ gameId }: { gameId: string }) {
     }
 
     // Pass the current user's ID to the GameView
-    return <GameView campaign={campaign} initialCharacter={playerCharacter} crew={crew || []} gameId={gameId} currentUserId={user?.uid} playerNumber={playerNumber} />;
+    return <GameView campaign={campaign} initialCharacter={playerCharacter} crew={crew || []} gameId={gameId} currentUserId={user?.uid} playerNumber={playerNumber} playerNumbers={playerNumbers} />;
 }

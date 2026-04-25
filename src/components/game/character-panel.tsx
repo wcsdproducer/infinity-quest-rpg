@@ -8,6 +8,7 @@ import {
   Wrench,
   Boxes,
   Briefcase,
+  MapPin,
 } from 'lucide-react';
 import Image from 'next/image';
 import {
@@ -295,7 +296,7 @@ export function CharacterPanel({ character, activeStat, playerNumber, compact }:
   // ─── FULL LAYOUT (game view) ──────────────────────────────────────────────────
   return (
     <Card className="overflow-hidden flex-1 flex flex-col">
-      <div className="relative w-full aspect-[3/4]">
+      <div className="relative w-full aspect-[3/4]" style={{ maxHeight: '45%' }}>
         {avatarImage && (
           <Image
             src={avatarImage.imageUrl}
@@ -319,8 +320,14 @@ export function CharacterPanel({ character, activeStat, playerNumber, compact }:
             <h2 className="font-headline font-bold text-white leading-tight text-lg">{character.name}</h2>
             <p className="text-white/80 text-base">{character.class}</p>
         </div>
+        {character.location && (
+          <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 px-2 py-0.5">
+            <MapPin className="h-3 w-3 text-white/60" />
+            <span className="text-[11px] text-white/80 font-medium leading-none">{character.location}</span>
+          </div>
+        )}
       </div>
-      <CardContent className="flex-1 flex flex-col p-4">
+      <CardContent className="flex-1 flex flex-col p-4 overflow-y-auto">
         <div className="space-y-1">
           <TooltipProvider>
             <div className="grid grid-cols-4 text-center gap-4">

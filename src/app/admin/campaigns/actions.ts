@@ -28,6 +28,9 @@ const LocationItemSchema = z.object({
   actions: z.array(z.string()).optional(),
   narrative: z.string().optional(),
   mediaUrls: z.array(MediaURLSchema).optional(),
+  isHidden: z.boolean().optional(),
+  isLocked: z.boolean().optional(),
+  interiorLocationId: z.string().optional(), // UUID of the interior location counterpart
 });
 
 const EventTriggerSchema = z.object({

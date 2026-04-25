@@ -13,6 +13,8 @@ type PlayerActionProps = {
   onSubmit: (action: string) => Promise<void>;
   suggestedActions?: string[];
   onSuggestedActionClick?: (action: string) => void;
+  rightSlot?: React.ReactNode;
+  placeholder?: string;
 };
 
 function SubmitButton({ isLoading }: { isLoading: boolean }) {
@@ -32,43 +34,61 @@ function SubmitButton({ isLoading }: { isLoading: boolean }) {
   );
 }
 
-const SuggestedActions = ({ actions, onActionClick }: { actions?: string[], onActionClick?: (action: string) => void; }) => {
-    if (!actions || actions.length === 0) {
+const SuggestedActions = ({
+  actions,
+  onActionClick,
+  rightSlot,
+}: {
+  actions?: string[];
+  onActionClick?: (action: string) => void;
+  rightSlot?: React.ReactNode;
+}) => {
+    // Always render the row when there's a rightSlot, even with no actions
+    if ((!actions || actions.length === 0) && !rightSlot) {
       return null;
     }
   
     return (
-      <div className="mt-2 flex flex-wrap items-center gap-2 border-t pt-2">
-        <Sparkles className="h-4 w-4 text-muted-foreground" />
-        {actions.map((action, index) => (
-          <Button
-            key={index}
-            variant="outline"
-            size="sm"
-            className="h-auto px-3 py-1 text-xs"
-            onClick={() => onActionClick?.(action)}
-          >
-            {action}
-          </Button>
-        ))}
+      <div className="mt-2 flex items-center gap-2 border-t pt-2">
+        {/* Left: sparkle + action chips */}
+        <div className="flex flex-1 flex-wrap items-center gap-2">
+          {actions && actions.length > 0 && (
+            <Sparkles className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+          )}
+          {actions?.map((action, index) => (
+            <Button
+              key={index}
+              variant="outline"
+              size="sm"
+              className="h-auto px-3 py-1 text-xs"
+              onClick={() => onActionClick?.(action)}
+            >
+              {action}
+            </Button>
+          ))}
+        </div>
+        {/* Right: injected slot (e.g. comm buttons) */}
+        {rightSlot && <div className="flex items-center gap-1.5 flex-shrink-0">{rightSlot}</div>}
       </div>
     );
 };
 
 export const PlayerAction = forwardRef<HTMLTextAreaElement, PlayerActionProps>(
-  ({ isLoading, onSubmit, suggestedActions, onSuggestedActionClick }, ref) => {
+  ({ isLoading, onSubmit, suggestedActions, onSuggestedActionClick, rightSlot, placeholder = 'Type your action...' }, ref) => {
     const formRef = useRef<HTMLFormElement>(null);
     const internalInputRef = useRef<HTMLTextAreaElement>(null);
 
     // Expose the internal input ref to the parent component
     useImperativeHandle(ref, () => internalInputRef.current!);
 
-    async function handleAction(formData: FormData) {
-      const actionText = formData.get('action') as string;
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+      const actionText = (formData.get('action') as string)?.trim();
       if (!actionText || isLoading) return;
-
+      // Clear immediately so the user gets instant feedback
+      e.currentTarget.reset();
       await onSubmit(actionText);
-      formRef.current?.reset();
     }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -84,13 +104,13 @@ export const PlayerAction = forwardRef<HTMLTextAreaElement, PlayerActionProps>(
             <div className="w-full rounded-lg border bg-card p-2 shadow-sm">
                 <form
                 ref={formRef}
-                action={handleAction}
+                onSubmit={handleSubmit}
                 className="flex w-full items-start space-x-2"
                 >
                     <Textarea
                         ref={internalInputRef}
                         name="action"
-                        placeholder="Type your action..."
+                        placeholder={placeholder}
                         onKeyDown={handleKeyDown}
                         className="flex-1 resize-none border-0 bg-transparent px-2 py-1.5 focus-visible:ring-0 focus-visible:ring-offset-0"
                         rows={1}
@@ -98,7 +118,7 @@ export const PlayerAction = forwardRef<HTMLTextAreaElement, PlayerActionProps>(
                     />
                     <SubmitButton isLoading={isLoading} />
                 </form>
-                <SuggestedActions actions={suggestedActions} onActionClick={onSuggestedActionClick} />
+                <SuggestedActions actions={suggestedActions} onActionClick={onSuggestedActionClick} rightSlot={rightSlot} />
             </div>
           </CardContent>
         </Card>

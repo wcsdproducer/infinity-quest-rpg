@@ -166,10 +166,10 @@ function LobbyContent({ gameId }: { gameId: string }) {
     );
 }
 
-export default function LobbyClientPage({ params }: { params: { gameId: string } }) {
+export default function LobbyClientPage({ gameId }: { gameId: string }) {
   return (
     <FirebaseClientProvider>
-      <LobbyContent gameId={params.gameId} />
+      <LobbyContent gameId={gameId} />
     </FirebaseClientProvider>
   );
 }

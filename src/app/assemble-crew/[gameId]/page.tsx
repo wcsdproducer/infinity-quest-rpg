@@ -4,15 +4,17 @@ import { FirebaseClientProvider } from '@/firebase';
 import { CrewAssembly } from '@/components/crew/crew-assembly';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { use } from 'react';
 
-function AssembleCrewPage({ params: { gameId } }: { params: { gameId: string } }) {
+function AssembleCrewPage({ params }: { params: Promise<{ gameId: string }> }) {
+    const { gameId } = use(params);
     const backgroundImage = PlaceHolderImages.find(
         (img) => img.id === 'title-screen-background'
     );
 
     return (
         <FirebaseClientProvider>
-            <div className="relative h-screen w-full overflow-hidden bg-black flex flex-col">
+            <div className="relative h-screen w-full overflow-hidden bg-black">
                 {backgroundImage && (
                     <Image
                         src={backgroundImage.imageUrl}
@@ -23,7 +25,8 @@ function AssembleCrewPage({ params: { gameId } }: { params: { gameId: string } }
                     />
                 )}
                 <div className="absolute inset-0 bg-black/60" />
-                <div className="relative z-10 flex-1 flex flex-col min-h-0 p-4">
+                {/* Content layer — absolutely fills the full viewport */}
+                <div className="absolute inset-0 z-10 flex flex-col px-4 py-3">
                     <CrewAssembly gameId={gameId} />
                 </div>
             </div>

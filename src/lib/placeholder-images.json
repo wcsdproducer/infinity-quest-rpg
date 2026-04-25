@@ -9,31 +9,31 @@
     {
       "id": "character-avatar-android",
       "description": "A placeholder for an Android character's avatar.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-9711986680-85356.firebasestorage.app/o/u8583492546_cyberpunk_futuristic_robot_avatar_3D_hyperrealistic_2fe9e7a5-e410-4acc-bb31-5375caabc2c9.png?alt=media&token=8f23d3e9-78e1-42c3-b95f-a87b14f6d7d9",
+      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/character-classes/android-avatar.png",
       "imageHint": "sci-fi android"
     },
     {
       "id": "character-avatar-marine",
       "description": "A placeholder for a Marine character's avatar.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-9711986680-85356.firebasestorage.app/o/Marine.png?alt=media&token=a841b752-3f13-4b7f-bf67-b0a49ad8b060",
+      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/character-classes/marine.png",
       "imageHint": "sci-fi marine"
     },
     {
       "id": "character-avatar-teamster",
       "description": "A placeholder for a Teamster character's avatar.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-9711986680-85356.firebasestorage.app/o/Teamster.png?alt=media&token=2f3e78c1-ec14-4ad6-aeb5-760fba6557ba",
+      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/character-classes/teamster.png",
       "imageHint": "sci-fi worker"
     },
     {
       "id": "character-avatar-scientist",
       "description": "A placeholder for a Scientist character's avatar.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-9711986680-85356.firebasestorage.app/o/Scientist.png?alt=media&token=1b3632cd-7bb1-47f4-86b2-47ad27cfd31a",
+      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/character-classes/scientist.png",
       "imageHint": "sci-fi scientist"
     },
     {
       "id": "title-screen-background",
       "description": "A background image for the main title screen.",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-9711986680-85356.firebasestorage.app/o/atloo_A_mysterious_dark_alien_planet._In_the_foreground_an_astr_6517c1d0-31b5-4fc4-9fac-bb6b10b28efa.png?alt=media&token=a7d3b3a8-47ff-4ba3-91cf-0a1bab5d5cfe",
+      "imageUrl": "https://storage.googleapis.com/infinity-quest-rpg.firebasestorage.app/backgrounds/title-screen.png",
       "imageHint": "alien planet"
     }
   ]

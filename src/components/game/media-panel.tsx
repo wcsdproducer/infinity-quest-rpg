@@ -12,9 +12,9 @@ type MediaPanelProps = {
 export function MediaPanel({ imageUrl, videoUrl }: MediaPanelProps) {
     if (videoUrl) {
         return (
-            <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black">
+            <div className="absolute inset-0 rounded-lg bg-black overflow-hidden">
                 <video
-                    key={videoUrl} // Add key to force re-render on URL change
+                    key={videoUrl}
                     src={videoUrl}
                     autoPlay
                     loop
@@ -27,15 +27,18 @@ export function MediaPanel({ imageUrl, videoUrl }: MediaPanelProps) {
     }
     
   return (
-    <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black">
-      {imageUrl && <Image
-        key={imageUrl}
-        src={imageUrl}
-        alt="Campaign Image"
-        fill
-        priority
-        className="object-cover"
-      />}
+    <div className="absolute inset-0 rounded-lg bg-black overflow-hidden">
+      {imageUrl && (
+        <Image
+          key={imageUrl}
+          src={imageUrl}
+          alt="Location"
+          fill
+          priority
+          className="object-cover"
+          unoptimized
+        />
+      )}
       {!imageUrl && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center text-muted-foreground z-10">
             <div>

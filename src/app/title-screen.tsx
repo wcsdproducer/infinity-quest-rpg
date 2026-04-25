@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Header } from '@/components/layout/header';
-import { ArrowRight, LoaderCircle, PlusCircle, LogIn, User as UserIcon, BookOpen } from 'lucide-react';
+import { ArrowRight, LoaderCircle, PlusCircle, LogIn, BookOpen } from 'lucide-react';
 import { AuthForm } from '@/components/auth/auth-form';
 import { useUser, useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { JoinGameDialog } from '@/components/game/join-game-dialog';
 import { useRouter } from 'next/navigation';
-import { cancelGame, selectCampaignForGame } from './actions';
+import { cancelGame } from './actions';
+import { updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
 import type { AppSettings, Game, Campaign as CampaignType } from '@/lib/types';
 import { doc, setDoc } from 'firebase/firestore';
@@ -148,11 +149,13 @@ export function TitleScreen() {
   }
 
   const handleCampaignSelect = async (campaign: CampaignType) => {
-    if (!activeLobbyId) return;
-    const result = await selectCampaignForGame(activeLobbyId, campaign.id);
-    if (result.success) {
+    if (!activeLobbyId || !firestore) return;
+    try {
+      const gameRef = doc(firestore, 'games', activeLobbyId);
+      await updateDoc(gameRef, { campaignId: campaign.id });
       router.push(`/game/${activeLobbyId}`);
-    } else {
+    } catch (error) {
+      console.error('Error starting game:', error);
       toast({
         variant: 'destructive',
         title: 'Error',
@@ -221,29 +224,10 @@ export function TitleScreen() {
                         <div className="text-center mb-8">
                             <h1 className="text-4xl font-bold font-headline uppercase">WELCOME TO INFINITY QUEST RPG</h1>
                             <p className="text-lg text-white/80 max-w-xl mx-auto">
-                                Start your adventure. Play solo, host a game or join a game.
+                            Host a game or join a crew. AI crew members fill any empty slots.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <Card className="bg-[#1c3c1c]/50 border-green-500/50 text-left flex flex-col">
-                                <CardHeader>
-                                    <div className="flex items-center gap-3">
-                                        <UserIcon className="h-8 w-8 text-green-400" />
-                                        <CardTitle className="text-2xl font-bold">Play Solo</CardTitle>
-                                    </div>
-                                    <CardDescription className="text-white/70 pt-2">
-                                        Embark on a single-player adventure.
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex-grow flex flex-col">
-                                    <p className="text-sm text-white/60 flex-grow">
-                                        It's just you against the void. Perfect for a quick session or a long campaign.
-                                    </p>
-                                    <Button onClick={handlePlaySolo} className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white font-semibold h-11">
-                                        Start Playing
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
                             <Card className="bg-[#1c1c3c]/50 border-blue-500/50 text-left flex flex-col">
                                 <CardHeader>
                                     <div className="flex items-center gap-3">
@@ -251,12 +235,12 @@ export function TitleScreen() {
                                         <CardTitle className="text-2xl font-bold">Host a Game</CardTitle>
                                     </div>
                                     <CardDescription className="text-white/70 pt-2">
-                                        Host a new game and invite your friends.
+                                        Host a new game and invite your friends or play solo.
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-grow flex flex-col">
                                     <p className="text-sm text-white/60 flex-grow">
-                                        As the host, you'll generate a unique game code to share with other players.
+                                        Generate a unique game code. Play solo or with friends — AI NPCs fill any open crew slots.
                                     </p>
                                     <Button onClick={handleHostGame} className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold h-11">
                                         Host New Game

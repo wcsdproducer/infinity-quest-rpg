@@ -60,6 +60,9 @@ const LocationItemSchema = z.object({
   actions: z.array(z.string()).optional().default([]),
   narrative: z.string().optional().default(''),
   mediaUrls: z.array(MediaURLSchema).optional().default([]),
+  isHidden: z.boolean().optional().default(false),
+  isLocked: z.boolean().optional().default(false),
+  interiorLocationId: z.string().optional().default(''), // UUID of the linked interior location
 });
 
 const EventTriggerSchema = z.object({
@@ -380,6 +383,80 @@ const CampaignFieldArray = ({ form, name, title, description, placeholder, hasMe
                                 )}
                             </div>
                         </div>
+
+                        {name === 'locations' && (
+                            <div className="border rounded-md p-3 bg-muted/30 space-y-2">
+                                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Warden Controls</p>
+                                <div className="flex items-center gap-6">
+                                    <FormField
+                                        control={form.control}
+                                        name={`${name}.${index}.isHidden` as any}
+                                        render={({ field }) => (
+                                            <FormItem className="flex items-center gap-2 space-y-0">
+                                                <FormControl>
+                                                    <Switch checked={!!field.value} onCheckedChange={field.onChange} />
+                                                </FormControl>
+                                                <div>
+                                                    <FormLabel className="text-sm">Hidden</FormLabel>
+                                                    <p className="text-xs text-muted-foreground">Players are unaware this location exists until discovered.</p>
+                                                </div>
+                                            </FormItem>
+                                        )}
+                                    />
+                                    <FormField
+                                        control={form.control}
+                                        name={`${name}.${index}.isLocked` as any}
+                                        render={({ field }) => (
+                                            <FormItem className="flex items-center gap-2 space-y-0">
+                                                <FormControl>
+                                                    <Switch checked={!!field.value} onCheckedChange={field.onChange} />
+                                                </FormControl>
+                                                <div>
+                                                    <FormLabel className="text-sm">Locked (Exterior)</FormLabel>
+                                                    <p className="text-xs text-muted-foreground">This is the exterior/restricted view. Link an interior below.</p>
+                                                </div>
+                                            </FormItem>
+                                        )}
+                                    />
+                                </div>
+                                {/* Linked Interior Location selector — only shown when isLocked is true */}
+                                {form.watch(`${name}.${index}.isLocked`) && (
+                                    <FormField
+                                        control={form.control}
+                                        name={`${name}.${index}.interiorLocationId` as any}
+                                        render={({ field }) => {
+                                            const allLocations = form.getValues('locations') || [];
+                                            const thisUuid = (form.getValues(`${name}.${index}`) as any)?.uuid;
+                                            const otherLocations = allLocations.filter((l: any) => l.uuid !== thisUuid && !l.isLocked);
+                                            return (
+                                                <FormItem>
+                                                    <FormLabel className="text-sm">Linked Interior Location</FormLabel>
+                                                    <p className="text-xs text-muted-foreground mb-1">When a player successfully bypasses this area, they will be offered entry to this interior location.</p>
+                                                    <Select
+                                                        value={field.value || ''}
+                                                        onValueChange={(val) => field.onChange(val === '__none__' ? '' : val)}
+                                                    >
+                                                        <FormControl>
+                                                            <SelectTrigger className="w-full">
+                                                                <SelectValue placeholder="— No linked interior —" />
+                                                            </SelectTrigger>
+                                                        </FormControl>
+                                                        <SelectContent>
+                                                            <SelectItem value="__none__">— No linked interior —</SelectItem>
+                                                            {otherLocations.map((l: any) => (
+                                                                <SelectItem key={l.uuid} value={l.uuid}>
+                                                                    {l.name || 'Unnamed Location'}
+                                                                </SelectItem>
+                                                            ))}
+                                                        </SelectContent>
+                                                    </Select>
+                                                </FormItem>
+                                            );
+                                        }}
+                                    />
+                                )}
+                            </div>
+                        )}
 
                         {hasMedia && (
                             <div className="grid grid-cols-[repeat(auto-fill,minmax(6rem,1fr))] gap-2">
@@ -739,7 +816,7 @@ export function CampaignForm({ campaignId }: { campaignId: string | null; }) {
             initialMediaUrl: campaign.initialMediaUrl || '',
             initialMessage: campaign.initialMessage || '',
             acts: campaign.acts?.map(a => ({...ensureUuid(a), name: a.name || '', context: a.context || '', actions: a.actions || [], narrative: a.narrative || ''})) || [],
-            locations: campaign.locations?.map(l => ({...ensureUuid(l), name: l.name || '', context: l.context || '', actions: l.actions || [], narrative: l.narrative || '', mediaUrls: l.mediaUrls || []})) || [],
+            locations: campaign.locations?.map(l => ({...ensureUuid(l), name: l.name || '', context: l.context || '', actions: l.actions || [], narrative: l.narrative || '', mediaUrls: l.mediaUrls || [], isHidden: (l as any).isHidden ?? false, isLocked: (l as any).isLocked ?? false, interiorLocationId: (l as any).interiorLocationId || ''})) || [],
             events: campaign.events?.map(e => ({ ...ensureUuid(e), name: e.name || '', context: e.context || '', actions: e.actions || [], narrative: e.narrative || '', trigger: e.trigger || { type: 'player-action', value: '' }, mediaUrls: e.mediaUrls || [] })) || [],
             npcs: campaign.npcs?.map(n => ({...ensureUuid(n), name: n.name || '', context: n.context || '', actions: n.actions || [], narrative: n.narrative || '', mediaUrls: n.mediaUrls || []})) || [],
             ships: campaign.ships?.map(s => ({...ensureUuid(s), name: s.name || '', class: s.class || '', registry: s.registry || '', condition: s.condition || '', stats: s.stats, mediaUrls: s.mediaUrls || [] })) || [],
@@ -803,7 +880,37 @@ export function CampaignForm({ campaignId }: { campaignId: string | null; }) {
     
     const locations = values.locations?.filter(l => l.name || l.narrative);
     if (locations && locations.length > 0) {
-        backgroundInfo += "KEY LOCATIONS:\n" + locations.map(l => formatMediaItem(l, 'Location')).join('\n') + "\n\n";
+        backgroundInfo += 'LOCATIONS:\n';
+        backgroundInfo += 'The following locations exist in this campaign. Use the context and narrative to guide your descriptions.\n';
+        backgroundInfo += 'When a player moves to a new location, update the `location` field in your response to exactly match the location name below.\n\n';
+        locations.forEach(l => {
+            const isStart = l.uuid === values.startingLocationId;
+            const tags: string[] = [];
+            if (isStart) tags.push('STARTING LOCATION');
+            if ((l as any).isHidden) tags.push('HIDDEN — do not reveal this location to players until narratively appropriate');
+            if ((l as any).isLocked) {
+                // Find the linked interior name if configured
+                const interiorId = (l as any).interiorLocationId;
+                const interiorLoc = interiorId ? locations.find((il: any) => il.uuid === interiorId) : null;
+                const interiorName = interiorLoc?.name || null;
+                if (interiorName) {
+                    tags.push(`EXTERIOR/LOCKED — players are OUTSIDE. Interior is "${interiorName}". Upon successful bypass, suggest "Enter ${interiorName}" as an action.`);
+                } else {
+                    tags.push('EXTERIOR/LOCKED — players are OUTSIDE and cannot enter until conditions are met');
+                }
+            }
+            const tagStr = tags.length > 0 ? ` [${tags.join(' | ')}]` : '';
+            let text = `- ${l.name || 'Unnamed Location'}${tagStr}:\n`;
+            if (l.context) text += `  - CONTEXT (Warden-only): ${l.context}\n`;
+            if (l.narrative) text += `  - DESCRIPTION (for players): ${l.narrative}\n`;
+            if (l.actions && l.actions.length > 0) text += `  - SUGGESTED PLAYER ACTIONS: ${l.actions.join(', ')}\n`;
+            const cleanMedia = l.mediaUrls?.filter(m => m && m.url && !m.url.startsWith('data:')) || [];
+            if (cleanMedia.length > 0) {
+                text += `  - MEDIA: When a player arrives here, set the mediaUrl in your response to: ${cleanMedia[0].url}\n`;
+            }
+            backgroundInfo += text + '\n';
+        });
+        backgroundInfo += '\n';
     }
 
     const events = values.events?.filter(e => e.name || e.narrative || e.trigger?.value);

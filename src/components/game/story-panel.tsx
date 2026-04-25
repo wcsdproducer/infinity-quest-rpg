@@ -30,8 +30,7 @@ export function StoryPanel({
 }: StoryPanelProps) {
   const scrollViewportRef = useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = useState(true);
-
-  const lastMessage = messages[messages.length - 1];
+  const prevMessageCount = useRef(messages.length);
 
   const scrollToBottom = () => {
     if (scrollViewportRef.current) {
@@ -42,17 +41,39 @@ export function StoryPanel({
     }
   };
 
+  // Scroll to bottom when expanded or new messages arrive
   useEffect(() => {
     if (isExpanded) {
       setTimeout(scrollToBottom, 100);
     }
   }, [messages.length, isLoading, isExpanded]);
 
+  // Auto-open when a new message is added
+  useEffect(() => {
+    if (messages.length > prevMessageCount.current) {
+      setIsExpanded(true);
+    }
+    prevMessageCount.current = messages.length;
+  }, [messages.length]);
+
+  // Tab key toggles the log (skip when typing in an input/textarea)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      e.preventDefault();
+      setIsExpanded((prev) => !prev);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const onTypewriterUpdate = () => {
     if (isExpanded) {
       scrollToBottom();
     }
-  }
+  };
 
   return (
     <div>
@@ -137,5 +158,3 @@ export function StoryPanel({
     </div>
   );
 }
-
-    

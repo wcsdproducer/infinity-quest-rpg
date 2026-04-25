@@ -77,6 +77,7 @@ export const ContinueAdventureInputSchema = z.object({
   crew: z.array(CharacterSchema).optional().describe('The entire crew of characters in the game, including the acting character.'),
   diceRollResult: z.number().optional().describe('The result of a dice roll, if one was requested.'),
   campaignPrompt: z.string().describe('The prompt for the selected campaign.'),
+  currentLocationIsLocked: z.boolean().optional().describe('If true, the character is outside a LOCKED location and has NOT gained entry. The Warden must NOT describe the interior and must only suggest entry-gaining actions.'),
 });
 export type ContinueAdventureInput = z.infer<typeof ContinueAdventureInputSchema>;
 

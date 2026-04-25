@@ -162,25 +162,23 @@ export function CrewAssembly({ gameId, onComplete }: CrewAssemblyProps) {
                 </p>
             </div>
             
-            {/* Cards — scrollable, takes all remaining space */}
-            <div className="flex-1 min-h-0 overflow-x-auto overflow-y-hidden pb-2 -mx-4 px-4">
-                <div className="flex gap-3 h-full" style={{ minWidth: 'max-content' }}>
-                    {sortedCrew.map((character) => {
-                        const playerIndex = game?.players.findIndex(p => p === character.playerId);
-                        const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
-                        
-                        return (
-                            <div key={character.id} className="w-[175px] flex-shrink-0 h-full">
-                                <CharacterPanel character={character} playerNumber={playerNumber} compact />
-                            </div>
-                        );
-                    })}
-                </div>
+            {/* Cards — 80% width, centered, fills remaining height */}
+            <div className="h-[80vh] flex items-stretch justify-center gap-4 py-2 mb-4 w-4/5 mx-auto">
+                {sortedCrew.map((character) => {
+                    const playerIndex = game?.players.findIndex(p => p === character.playerId);
+                    const playerNumber = playerIndex !== -1 ? playerIndex + 1 : undefined;
+                    
+                    return (
+                        <div key={character.id} className="flex-1 min-w-0 h-full flex flex-col">
+                            <CharacterPanel character={character} playerNumber={playerNumber} />
+                        </div>
+                    );
+                })}
             </div>
 
             {/* Footer button — always visible */}
             {onComplete && (
-                <div className="text-center flex-shrink-0 pt-3">
+                <div className="text-center flex-shrink-0 pt-6">
                     <Button size="lg" onClick={onComplete} disabled={finalCrew.length === 0 || isLoading} className="bg-blue-600 hover:bg-blue-700 h-10 text-base">
                          {isLoading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
                         Continue to Campaign Selection
