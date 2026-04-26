@@ -10,7 +10,8 @@
     "apphosting:build": "apphosting-adapter-nextjs-build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "bot": "tsx bot/index.ts"
   },
   "dependencies": {
     "@apphosting/adapter-nextjs": "^14.0.21",
@@ -39,6 +40,9 @@
     "@radix-ui/react-tabs": "^1.1.3",
     "@radix-ui/react-toast": "^1.2.6",
     "@radix-ui/react-tooltip": "^1.1.8",
+    "axios": "^1.15.2",
+    "better-sqlite3": "^12.9.0",
+    "cheerio": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
@@ -47,6 +51,7 @@
     "embla-carousel-react": "^8.6.0",
     "firebase": "^12.12.1",
     "genkit": "^1.20.0",
+    "grammy": "^1.42.0",
     "lodash.isequal": "^4.5.0",
     "lucide-react": "^0.475.0",
     "next": "^15.3.6",
@@ -59,10 +64,12 @@
     "recharts": "^2.15.1",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.21.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@google/genai": "^1.50.1",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/lodash.isequal": "^4.5.8",
     "@types/node": "^20",
     "@types/react": "^18",

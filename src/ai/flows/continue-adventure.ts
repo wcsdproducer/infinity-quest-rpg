@@ -254,7 +254,7 @@ const continueAdventureFlow = ai.defineFlow(
       console.error('Failed to search campaign lore:', error);
     }
 
-    const currentLocationId = input.currentLocationId || input.character.currentLocationId || input.character.location;
+    const currentLocationId = input.currentLocationId || input.character.location;
     let localEnvironmentContext = input.localEnvironmentContext || '';
 
     // If we don't have context yet, try to build it from the station graph

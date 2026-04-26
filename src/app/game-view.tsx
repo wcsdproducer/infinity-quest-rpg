@@ -73,6 +73,9 @@ type RollResult = {
 
 export function GameView({ campaign, initialCharacter, crew = [], gameId, currentUserId, playerNumber, playerNumbers = {} }: GameViewProps) {
   const [messages, setMessages] = useState<Message[]>([]);
+  // Tracks which locked location UUIDs the player has earned access to this session.
+  // Resets on page reload — for true persistence add to character schema in a future pass.
+  const [sessionUnlockedLocationIds, setSessionUnlockedLocationIds] = useState<Set<string>>(new Set());
   const firestore = useFirestore();
   
   const getLocationMedia = useCallback((locationId?: string): { url: string, isVideo: boolean } => {
@@ -142,9 +145,6 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
   const [isAwaitingRoll, setIsAwaitingRoll] = useState(false);
   const [rollDetails, setRollDetails] = useState<string | undefined>(undefined);
   const [suggestedActions, setSuggestedActions] = useState<string[]>([]);
-  // Tracks which locked location UUIDs the player has earned access to this session.
-  // Resets on page reload — for true persistence add to character schema in a future pass.
-  const [sessionUnlockedLocationIds, setSessionUnlockedLocationIds] = useState<Set<string>>(new Set());
   const [lastRollResult, setLastRollResult] = useState<RollResult | null>(null);
   const [pendingApiResponse, setPendingApiResponse] = useState<ContinueAdventureOutput | null>(null);
   const [showRollResult, setShowRollResult] = useState(false);

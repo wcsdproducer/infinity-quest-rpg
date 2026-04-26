@@ -323,7 +323,7 @@ export function buildLocalContext(currentLocationId: string, graph: StationGraph
 
       hasPaths = true;
       const lockedStr = targetSector.isLocked ? ' [LOCKED SECTOR]' : '';
-      const blockedStr = sconn.isBlocked ? ' [BLOCKED]' : '';
+      const blockedStr = sconn.status === 'blocked' ? ' [BLOCKED]' : '';
 
       lines.push(`- **Sector: ${targetSector.name}**${lockedStr}${blockedStr} [SECTOR TRANSITION] via *${sconn.corridorName}*`);
       if (sconn.travelDescription) {

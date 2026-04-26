@@ -287,6 +287,7 @@ const SECTORS = [
 ];
 
 const CampaignFieldArray = ({ form, name, title, description, placeholder, hasMedia = false, sectors = SECTORS }: { form: any, name: FieldArrayNames, title: string, description: string, placeholder: string, hasMedia?: boolean, sectors?: {id: string, name: string}[] }) => {
+    const { toast } = useToast();
     const { fields, append, remove, update } = useFieldArray({
         control: form.control,
         name
