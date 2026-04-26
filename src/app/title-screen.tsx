@@ -272,7 +272,9 @@ export function TitleScreen() {
         }
     }
 
-    if (!user && !isUserLoading) {
+    // Show landing content while auth loads OR when unauthenticated.
+    // Returning null during isUserLoading causes a blank SSR/CDN-cached page.
+    if (!user) {
         return (
             <div className="space-y-6">
                 <h1 className="font-headline text-5xl font-bold uppercase tracking-wider text-shadow-lg sm:text-6xl md:text-7xl">
@@ -281,15 +283,17 @@ export function TitleScreen() {
                 <p className="mx-auto max-w-2xl text-lg text-white/80 md:text-xl">
                     An AI-powered Game Master for the Mothership Sci-Fi Horror RPG. Your next nightmare is just a click away.
                 </p>
-                <Button size="lg" className="h-12 text-lg" onClick={() => handleAuthClick('sign-up')}>
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                {isUserLoading ? (
+                    <LoaderCircle className="mx-auto h-8 w-8 animate-spin text-white/60" />
+                ) : (
+                    <Button size="lg" className="h-12 text-lg" onClick={() => handleAuthClick('sign-up')}>
+                        Get Started
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                )}
             </div>
         );
     }
-    
-    return null; // Show nothing while user is loading
   }
 
   const getContainerClass = () => {
