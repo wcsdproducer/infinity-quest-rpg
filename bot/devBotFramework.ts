@@ -9,6 +9,10 @@ import { getAdminFirestore, getAdminStorage } from "./firebaseAdmin.js";
 import { genkit, z } from "genkit";
 import { googleAI } from "@genkit-ai/google-genai";
 
+// pdf-parse is a CJS module — require() is safe here since the bot output is CommonJS
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pdfParse: (buf: Buffer) => Promise<{ text: string; numpages: number; info: any }> = require("pdf-parse");
+
 // ──────────────────────────────────────────────
 // Types
 // ──────────────────────────────────────────────
@@ -844,6 +848,30 @@ export async function createDevBot(config: DevBotConfig) {
         }
       );
 
+      // ── PDF Reader ───────────────────────────────
+      const toolReadPDF = ai.defineTool(
+        {
+          name: "read_pdf",
+          description: "Extract the full text content from any PDF file on the local machine. Returns the text, page count, and metadata. Use an absolute path or a path relative to the IQ RPG workspace root.",
+          inputSchema: z.object({
+            path: z.string().describe("Absolute or workspace-relative path to the PDF file."),
+            max_chars: z.number().optional().describe("Max characters to return. Default 12000. Increase for longer docs."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ path: p, max_chars }) => {
+          const full = p.startsWith("/") ? p : path.join(config.workspaceRoot, p);
+          try {
+            const buffer = fs.readFileSync(full);
+            const data = await pdfParse(buffer);
+            const limit = max_chars || 12000;
+            const text = data.text.trim().slice(0, limit);
+            const truncated = data.text.length > limit ? `\n\n[... truncated — ${data.text.length} total chars, showing first ${limit}]` : "";
+            return `📄 **PDF: ${path.basename(full)}**\n📑 Pages: ${data.numpages} | Words: ~${Math.round(data.text.split(/\s+/).length)}\n\n${text}${truncated}`;
+          } catch (e: any) { return `PDF read error: ${e.message}`; }
+        }
+      );
+
       // ── Firebase App Hosting tools ────────────────
       const FIREBASE_PROJECT = config.firebaseProjectId || "infinity-quest-rpg";
       const APP_HOSTING_BACKEND = "infinity-quest";
@@ -1155,6 +1183,7 @@ export async function createDevBot(config: DevBotConfig) {
         toolFirestoreQuery, toolFirestoreWrite, toolFirestoreDelete, toolStorageList,
         toolApphostingStatus, toolApphostingDeploy, toolApphostingLogs,
         toolCheckDns, toolNcListDomains, toolNcDomainInfo, toolNcDnsSetHost, toolNcWhitelistedIps,
+        toolReadPDF,
         toolGenerateContent,
       ];
 
