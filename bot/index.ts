@@ -8,6 +8,9 @@ import { createDevBot } from "./devBotFramework.js";
     workspaceRoot:
       process.env.WORKSPACE_ROOT ||
       "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG",
+    localRoot:
+      process.env.LOCAL_ROOT ||
+      "/Volumes/SAMSUNG 500gb/Antigravity",
     workspaceName: "Infinity Quest RPG",
     firebaseProjectId: "infinity-quest-rpg",
   });
@@ -29,7 +32,17 @@ import { createDevBot } from "./devBotFramework.js";
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       await bot.start({
-        onStart: () => console.log("✅ @InfinityQuestDevBot is running"),
+        onStart: async () => {
+          console.log("✅ @InfinityQuestDevBot is running");
+          try {
+            await bot.api.sendMessage(
+              parseInt(process.env.TELEGRAM_OWNER_ID!, 10),
+              "📡 *Infinity Quest RPG Bot* is now online and monitoring the workspace."
+            );
+          } catch (e) {
+            console.error("Failed to send startup message:", e);
+          }
+        },
         drop_pending_updates: true,
       });
       return;

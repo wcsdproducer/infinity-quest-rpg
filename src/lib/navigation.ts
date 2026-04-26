@@ -62,27 +62,37 @@ export function canTraverse(
     return { canPass: true };
 }
 
+
 /**
  * Calculates the transit cost between two sectors on the 10-module ring.
  * - Same Sector: 20 Cr
  * - Adjacent Sector: 50 Cr
  * - Distant Sector: 100 Cr
+ * - Special Connections: Overridden by the cost defined in the connection itself.
  */
-export function calculateTransitCost(currentSectorId?: string, targetSectorId?: string): number {
-    if (!currentSectorId || !targetSectorId) return 0;
-    if (currentSectorId === targetSectorId) return 20;
+export function calculateTransitCost(
+  currentSectorId?: string, 
+  targetSectorId?: string, 
+  explicitCost?: number
+): number {
+  // 1. Explicit connection cost takes precedence (e.g. specialized shuttle or lift)
+  if (explicitCost !== undefined) return explicitCost;
 
-    // Extract module numbers from IDs (e.g., "sector-01-dry-dock" -> 1)
-    const getNum = (id: string) => parseInt(id.match(/sector-(\d+)/)?.[1] || '0', 10);
-    const s1 = getNum(currentSectorId);
-    const s2 = getNum(targetSectorId);
+  if (!currentSectorId || !targetSectorId) return 0;
+  if (currentSectorId === targetSectorId) return 20;
 
-    if (s1 === 0 || s2 === 0) return 100; // Fallback for malformed IDs
+  // Extract module numbers from IDs (e.g., "sector-01-dry-dock" -> 1)
+  const getNum = (id: string) => parseInt(id.match(/sector-(\d+)/)?.[1] || '0', 10);
+  const s1 = getNum(currentSectorId);
+  const s2 = getNum(targetSectorId);
 
-    // Calculate distance on a ring of 10
-    const diff = Math.abs(s1 - s2);
-    const distance = Math.min(diff, 10 - diff);
+  if (s1 === 0 || s2 === 0) return 100; // Fallback for malformed IDs
 
-    if (distance === 1) return 50;
-    return 100;
+  // Calculate distance on a ring of 10
+  const diff = Math.abs(s1 - s2);
+  const distance = Math.min(diff, 10 - diff);
+
+  if (distance === 1) return 50;
+  return 100;
 }
+

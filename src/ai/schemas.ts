@@ -60,6 +60,9 @@ const CharacterSchema = z.object({
   skills: z.array(SkillSchema),
   inventory: z.array(z.string()),
   playerId: z.string().nullable().optional(),
+  currentLocationId: z.string().optional().describe("The UUID of the location the character is currently in."),
+  currentSectorId: z.string().optional().describe("The UUID of the sector the character is currently in."),
+  currentDestinationId: z.string().optional().describe("The UUID of the specific destination (room/POI) the character is currently inside."),
 });
 export type Character = z.infer<typeof CharacterSchema>;
 
@@ -83,6 +86,8 @@ export const ContinueAdventureInputSchema = z.object({
     'A map of locationUuid → isKnown for this game session. If a location UUID maps to false, that location is UNKNOWN to the players and must not be revealed, named, or described without the player first earning that knowledge through active investigation or NPC interaction.'
   ),
   currentLocationId: z.string().optional().describe('The UUID of the location the active character is currently in.'),
+  currentSectorId: z.string().optional().describe('The UUID of the sector the active character is currently in.'),
+  currentDestinationId: z.string().optional().describe('The UUID of the specific destination (room/shop/point of interest) the active character is currently inside.'),
   localEnvironmentContext: z.string().optional().describe('Pre-built localized context detailing the immediate sector, location details, and accessible adjacent paths. Prioritize this information for setting the scene and offering movement options.'),
 });
 export type ContinueAdventureInput = z.infer<typeof ContinueAdventureInputSchema>;

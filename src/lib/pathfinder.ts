@@ -4,7 +4,7 @@
  * Used by the Warden AI to narrate travel between locations.
  */
 
-import type { StationGraph, Location, Sector } from './types';
+import type { StationGraph, Location, Sector, Destination } from './types';
 
 // ─── Route Types ──────────────────────────────────────────────────────────────
 
@@ -40,6 +40,10 @@ function getLocation(graph: StationGraph, id: string): Location | undefined {
 
 function getSector(graph: StationGraph, id: string): Sector | undefined {
   return graph.sectors.find((s) => s.id === id);
+}
+
+function getDestination(graph: StationGraph, id: string): Destination | undefined {
+  return graph.destinations.find((d) => d.uuid === id);
 }
 
 /**
@@ -133,12 +137,15 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
 
   // Direct location-to-location connections
   for (const conn of loc.connections ?? []) {
+    const toId = conn.toLocationId || conn.toDestinationId;
+    if (!toId) continue;
+
     const isActuallyBlocked = conn.status === 'blocked' || conn.status === 'locked' || conn.status === 'hidden';
     if (isActuallyBlocked) continue;
 
     edges.push({
       fromId: locationId,
-      toId: conn.toLocationId,
+      toId: toId,
       passageName: conn.passageName,
       travelDescription: conn.travelDescription,
       travelMinutes: conn.travelMinutes,
@@ -171,7 +178,7 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
       edges.push({
         fromId: locationId,
         toId: entryLocId,
-        passageName: sconn.corridorName,
+        passageName: sconn.passageName,
         travelDescription: sconn.travelDescription,
         travelMinutes: sconn.travelMinutes,
         encounterChance: sconn.encounterChance,
@@ -271,63 +278,112 @@ export function formatRouteForWarden(route: Route): string {
  * Focuses strictly on the immediate environment and accessible paths,
  * labeling locked/blocked paths clearly.
  */
-export function buildLocalContext(currentLocationId: string, graph: StationGraph): string {
+export function buildLocalContext(
+  currentLocationId: string, 
+  graph: StationGraph,
+  currentSectorId?: string,
+  currentDestinationId?: string
+): string {
   const currentLoc = getLocation(graph, currentLocationId);
   if (!currentLoc) return 'Error: Current location not found.';
 
-  const sector = currentLoc.sectorId ? getSector(graph, currentLoc.sectorId) : undefined;
+  const sector = currentSectorId ? getSector(graph, currentSectorId) : (currentLoc.sectorId ? getSector(graph, currentLoc.sectorId) : undefined);
+  const destination = currentDestinationId ? getDestination(graph, currentDestinationId) : undefined;
 
   const lines: string[] = [];
   lines.push(`**CURRENT SECTOR**: ${sector ? sector.name : 'Unknown'}`);
   lines.push(`**CURRENT LOCATION**: ${currentLoc.name}`);
-  if (currentLoc.context) {
-    lines.push(`**DESCRIPTION**: ${currentLoc.context}`);
-  }
-  if (currentLoc.wardenNotes) {
-    lines.push(`**WARDEN NOTES**: ${currentLoc.wardenNotes}`);
+  
+  if (destination) {
+    lines.push(`**CURRENT DESTINATION**: ${destination.name}`);
+    if (destination.context) {
+      lines.push(`**DESTINATION DESCRIPTION**: ${destination.context}`);
+    }
+    if (destination.wardenNotes) {
+      lines.push(`**WARDEN NOTES (DESTINATION)**: ${destination.wardenNotes}`);
+    }
+  } else {
+    if (currentLoc.context) {
+      lines.push(`**LOCATION DESCRIPTION**: ${currentLoc.context}`);
+    }
+    if (currentLoc.wardenNotes) {
+      lines.push(`**WARDEN NOTES (LOCATION)**: ${currentLoc.wardenNotes}`);
+    }
   }
 
-  lines.push(`\n**ADJACENT PATHS**:`);
+  // ENTERABLE DESTINATIONS (if at location level)
+  if (!destination && currentLoc.destinationIds && currentLoc.destinationIds.length > 0) {
+    lines.push(`\n**ENTERABLE AREAS**:`);
+    for (const destId of currentLoc.destinationIds) {
+      const dest = getDestination(graph, destId);
+      if (!dest || dest.isHidden) continue;
+      
+      const lockStr = dest.isLocked ? ' [LOCKED]' : '';
+      lines.push(`- **${dest.name}**${lockStr}`);
+      if (dest.narrative) {
+          lines.push(`  *Observed*: ${dest.narrative}`);
+      }
+    }
+  }
+
+  lines.push(`\n**ADJACENT PATHS (EXITING/TRAVELING)**:`);
   let hasPaths = false;
 
-  // Direct location connections
-  for (const conn of currentLoc.connections ?? []) {
-    const targetLoc = getLocation(graph, conn.toLocationId);
-    if (!targetLoc || targetLoc.isHidden || conn.status === 'hidden') continue; // Don't expose hidden locations
-
+  // If in a destination, the primary "path" is to exit back to the location
+  if (destination) {
     hasPaths = true;
+    lines.push(`- **Exit ${destination.name}** -> Back to ${currentLoc.name}`);
     
-    // Status badges
-    let statusPrefix = '';
-    if (conn.status === 'locked' || targetLoc.isLocked) statusPrefix = ' [LOCKED]';
-    else if (conn.status === 'blocked') statusPrefix = ' [BLOCKED/IMPASSABLE]';
-    
-    const transitInfo = conn.transitLine ? ` (${conn.transitLine})` : '';
-    const costInfo = conn.cost ? ` [Cost: ${conn.cost} credits]` : '';
-    const reqItems = conn.requiredItems && conn.requiredItems.length > 0 ? ` (Requires: ${conn.requiredItems.join(', ')})` : '';
+    // Also include specific destination connections if they exist
+    for (const conn of destination.connections ?? []) {
+        const targetId = conn.toDestinationId || conn.toLocationId;
+        if (!targetId) continue;
 
-    lines.push(`- **${targetLoc.name}**${statusPrefix}${transitInfo}${costInfo} via *${conn.passageName || 'Passage'}*${reqItems}`);
-    if (conn.travelDescription) {
-      lines.push(`  *Travel*: ${conn.travelDescription} (~${conn.travelMinutes ?? 5} mins)`);
+        const targetDest = getDestination(graph, targetId);
+        if (!targetDest || targetDest.isHidden || conn.status === 'hidden') continue;
+        
+        let statusPrefix = '';
+        if (conn.status === 'locked' || targetDest.isLocked) statusPrefix = ' [LOCKED]';
+        lines.push(`- **${targetDest.name}**${statusPrefix} via *${conn.passageName || 'Passage'}*`);
     }
-    if (conn.status === 'blocked' && conn.blockedReason) {
-        lines.push(`  *Note*: ${conn.blockedReason}`);
-    }
-  }
-
-  // Sector-level connections leading out
-  if (sector) {
-    for (const sconn of sector.sectorConnections ?? []) {
-      const targetSector = getSector(graph, sconn.toSectorId);
-      if (!targetSector || targetSector.isHidden) continue;
+  } else {
+    // Direct location connections
+    for (const conn of currentLoc.connections ?? []) {
+      if (!conn.toLocationId) continue;
+      const targetLoc = getLocation(graph, conn.toLocationId);
+      if (!targetLoc || targetLoc.isHidden || conn.status === 'hidden') continue;
 
       hasPaths = true;
-      const lockedStr = targetSector.isLocked ? ' [LOCKED SECTOR]' : '';
-      const blockedStr = sconn.status === 'blocked' ? ' [BLOCKED]' : '';
+      
+      let statusPrefix = '';
+      if (conn.status === 'locked' || targetLoc.isLocked) statusPrefix = ' [LOCKED]';
+      else if (conn.status === 'blocked') statusPrefix = ' [BLOCKED/IMPASSABLE]';
+      
+      const transitInfo = conn.transitLine ? ` (${conn.transitLine})` : '';
+      const costInfo = conn.cost ? ` [Cost: ${conn.cost} credits]` : '';
+      const reqItems = conn.requiredItems && conn.requiredItems.length > 0 ? ` (Requires: ${conn.requiredItems.join(', ')})` : '';
 
-      lines.push(`- **Sector: ${targetSector.name}**${lockedStr}${blockedStr} [SECTOR TRANSITION] via *${sconn.corridorName}*`);
-      if (sconn.travelDescription) {
-        lines.push(`  *Travel*: ${sconn.travelDescription} (~${sconn.travelMinutes ?? 15} mins)`);
+      lines.push(`- **${targetLoc.name}**${statusPrefix}${transitInfo}${costInfo} via *${conn.passageName || 'Passage'}*${reqItems}`);
+      if (conn.travelDescription) {
+        lines.push(`  *Travel*: ${conn.travelDescription} (~${conn.travelMinutes ?? 5} mins)`);
+      }
+    }
+
+    // Sector-level connections leading out
+    if (sector) {
+      for (const sconn of sector.sectorConnections ?? []) {
+        const targetSector = getSector(graph, sconn.toSectorId);
+        if (!targetSector || targetSector.isHidden) continue;
+
+        hasPaths = true;
+        const lockedStr = targetSector.isLocked ? ' [LOCKED SECTOR]' : '';
+        const blockedStr = sconn.status === 'blocked' ? ' [BLOCKED]' : '';
+        const costStr = sconn.cost ? ` [Cost: ${sconn.cost} credits]` : '';
+
+        lines.push(`- **Sector: ${targetSector.name}**${lockedStr}${blockedStr}${costStr} [SECTOR TRANSITION] via *${sconn.passageName}*`);
+        if (sconn.travelDescription) {
+          lines.push(`  *Travel*: ${sconn.travelDescription} (~${sconn.travelMinutes ?? 15} mins)`);
+        }
       }
     }
   }

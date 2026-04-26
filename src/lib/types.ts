@@ -3,34 +3,53 @@ export type Skill = {
   name: string;
   level: 'Trained' | 'Expert' | 'Master';
 }
+import { SkillName } from './skills';
 
-/** A directional edge between two locations (corridor, hatch, passage, etc.) */
+/** A directional edge between two locations or destinations */
 export type LocationConnection = {
-  toLocationId: string;
-  /** Set if this connection crosses a sector boundary */
-  toSectorId?: string;
-  passageName: string;             // e.g. "Maintenance Hatch 3A"
-  type: 'walking' | 'lift' | 'transit' | 'shuttle';
-  travelDescription: string;       // What the player sees/experiences
+  toLocationId?: string;           // Leads to another area
+  toDestinationId?: string;        // Leads to a specific POI within the area
+  toSectorId?: string;             // Leads to another sector (gateways)
+  passageName: string;             // e.g. "Main Lift", "Service Shaft"
+  travelDescription: string;       // Narrated when traversing
   travelMinutes: number;
   encounterChance: number;         // 0–100 %
-  encounterTable?: string;         // Which roll table to use
-  
-  // Accessibility State
+  encounterTable?: string;
+  type: 'walking' | 'lift' | 'transit' | 'shuttle' | 'shaft' | 'internal' | 'manual';
+  transitLine?: string;           // e.g. "Monorail Line A"
+  cost?: number;                  // credit cost for transit
   status: 'hidden' | 'locked' | 'blocked' | 'open';
   blockedReason?: string;
-  requiredItems?: string[];        // Items needed to pass (e.g. keycards)
-  transitLine?: string;            // e.g. "Blue Line"
-  cost?: number;                   // Credit cost if applicable
-  
-  // Media resolution base path
-  navigationMediaBase?: string;    // e.g. "navigation/exit-north/"
+  requiredItems?: string[];
+  requiredSkill?: SkillName;      // Skill needed to traverse (e.g. Engineering for shafts)
+  navigationMediaBase?: string;   // Base path for status-aware media (e.g. "Locations/Sector01/Arrival/")
+};
+
+export type Destination = {
+  uuid: string;
+  /** Parent location this destination belongs to */
+  locationId: string;
+  name: string;
+  context?: string;
+  wardenNotes?: string;
+  actions?: string[];
+  narrative?: string;
+  mediaUrls?: MediaURL[];
+  isHidden?: boolean;
+  isLocked?: boolean;
+  npcs?: string[];
+  /** Graph edges to adjacent destinations or back to the parent location */
+  connections?: LocationConnection[];
+  /** Base path for status-aware media (e.g. "Locations/Sector01/Arrival/Destinations/Pier01/") */
+  navigationMediaBase?: string;
 };
 
 export type Location = {
   uuid: string;
   /** Parent sector this location belongs to */
   sectorId?: string;
+  /** Vertical level (e.g. "City Level", "The Choke", "Sublevel A") */
+  level?: string;
   name?: string;
   context?: string;
   /** Warden-only information not revealed to players */
@@ -44,15 +63,19 @@ export type Location = {
   isLocked?: boolean;
   /** NPC IDs present at this location */
   npcs?: string[];
-  /** Graph edges to adjacent locations */
+  /** Graph edges to adjacent locations or internal destinations */
   connections?: LocationConnection[];
+  /** IDs of destinations within this location */
+  destinationIds?: string[];
+  /** Base path for status-aware media (e.g. "Locations/Sector01/Arrival/") */
+  navigationMediaBase?: string;
 };
 
 /** A directional edge between two sectors (corridor, transit, etc.) */
 export type SectorConnection = {
   toSectorId: string;
-  corridorName: string;            // e.g. "Service Corridor B7"
-  type: 'transit' | 'shuttle' | 'corridor';
+  passageName: string;             // e.g. "Service Corridor B7"
+  type: 'transit' | 'shuttle' | 'walking';
   travelDescription: string;       // Narrated when traversing
   travelMinutes: number;
   encounterChance: number;         // 0–100 %
@@ -82,12 +105,15 @@ export type Sector = {
   sectorConnections: SectorConnection[];
   /** IDs of locations within this sector */
   locationIds: string[];
+  /** Base path for status-aware media (e.g. "Locations/Sector01/") */
+  navigationMediaBase?: string;
 };
 
 /** Denormalized graph stored on the campaign doc for the Warden to read in one pass */
 export type StationGraph = {
   sectors: Sector[];
   locations: Location[];
+  destinations: Destination[];
 };
 
 export type Character = {
@@ -101,6 +127,8 @@ export type Character = {
   backstory?: string;
   location?: string; // Current location name (string, for AI context)
   currentLocationId?: string; // Current location UUID (for image resolution & Firestore sync)
+  currentSectorId?: string;
+  currentDestinationId?: string;
   traumaResponse: string;
   stats: {
     strength: number;

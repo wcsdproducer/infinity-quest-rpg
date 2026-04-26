@@ -1,4 +1,4 @@
-import { StationGraph, Sector, Location, SectorConnection, LocationConnection } from './types';
+import { StationGraph, Sector, Location, SectorConnection, LocationConnection, Destination } from './types';
 import rawGraph from '../../extracted_graph.json';
 
 export function getStationGraph(): StationGraph {
@@ -8,7 +8,7 @@ export function getStationGraph(): StationGraph {
     isLocked: sector.isLocked ?? false,
     sectorConnections: (sector.sectorConnections || []).map((conn: any): SectorConnection => ({
       toSectorId: conn.toSectorId,
-      corridorName: conn.corridorName || `Passage to ${conn.toSectorId}`,
+      passageName: conn.passageName || conn.corridorName || `Passage to ${conn.toSectorId}`,
       travelDescription: conn.travelDescription || `You travel towards ${conn.toSectorId}.`,
       travelMinutes: conn.travelMinutes ?? 15,
       encounterChance: conn.encounterChance ?? 0,
@@ -38,5 +38,7 @@ export function getStationGraph(): StationGraph {
     })),
   }));
 
-  return { sectors, locations };
+  const destinations: Destination[] = (rawGraph as any).destinations || [];
+
+  return { sectors, locations, destinations };
 }

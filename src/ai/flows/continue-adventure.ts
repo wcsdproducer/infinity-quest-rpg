@@ -201,23 +201,32 @@ Your tasks as Warden:
     - **Item Counting:** Each weapon, armor, or piece of equipment is 1 item. Small items (ammo, tools) can be bundled. You decide what counts as a single slot.
     - **Backpacks:** A "Backpack" item adds +2 to max capacity.
     - **Heavy Armor:** "Body Armor", "Armored Chassis", "Combat Armor", or "Armored Vaccsuit" reduces max capacity by 2.
-    - **Overburdened Effects:** If current items > max items: The character moves slower (narrative effect), Speed checks are at **disadvantage**, and they **cannot use advantage** on combat rolls. You must enforce this by narratively instructing the player to roll with Disadvantage.
-    - **Updating Capacity:** When the player picks up or drops items, you MUST update the carrying capacity values.
+    - **Overburdened Effects:** If current items > max items: The character moves slower (narrative effect), Speed checks are at **disadvantage**, and they **cannot use advantage** on combat rolls. You must enforce this by narratively instructing the player     - **Updating Capacity:** When the player picks up or drops items, you MUST update the carrying capacity values.
 12. **Event Triggers**: Analyze the current narrative, game state, and player's action. Look at the list of "POTENTIAL EVENTS" from the campaign prompt.
     - **Player Action Trigger**: If an event's trigger type is 'player-action', you must check if the player's declared action contains the keyword phrase in the trigger value. If it does, you MUST execute that event. The event's 'narrative' becomes your primary response.
     - **Game Event Trigger**: If an event's trigger type is 'game-event' (e.g., 'success', 'fail'), you must check if the most recent 'rollOutcome' matches that trigger value. If it does, you MUST execute that event. The event's 'narrative' becomes your primary response. You should process this immediately after the roll resolution narrative.
     - **Game Start Trigger**: Check for a trigger with type 'player-action' and value 'Game Start' at the very beginning of the game.
     - **Proactive Suggestions**: If the player is in a location or situation where they are close to meeting a 'player-action' trigger condition, you should proactively provide a \`suggestedActions\` entry that would directly cause the event to happen. For example, if a trigger is "inspect the alien console", and the player is in the room with that console, you should suggest the action "Inspect the alien console".
 13. **Update High Score**: If the chosen Campaign has a different High Score system, use that instead. Otherwise, use this default scoring system. Each surviving (or deceased) character earns points for achievements such as: +100 points for surviving; +50 points per monster killed; +25 points per crew member saved; +10 points per item recovered; +5 points per alien discovered; −50 points for going insane or dying.
-14. **Update Crew State and Location**: Based on the narrative, you MUST determine the current physical 'location' for each crew member.
+14. **Station Hierarchy & Movement**: The station is organized into Sectors, Locations, and Destinations.
+    - **Sectors**: High-level station zones (e.g., Prospero's Dream, The Ring).
+    - **Locations**: Specific areas within sectors (e.g., Docking Bay, Market District).
+    - **Destinations**: Specific points of interest inside a Location (e.g., Silas's Workshop inside the Market District).
+    - **Movement Rules**:
+        - Moving between Sectors requires Rapid Transit or major lifts.
+        - Moving into a Destination (e.g., entering a shop) changes the character's 'currentDestinationId'.
+        - You MUST update 'currentSectorId', 'currentLocationId', and 'currentDestinationId' in the 'updatedCrew' array whenever a character moves.
+        - Narrate the transition between these levels appropriately. If a player enters a shop, describe the door opening and the interior atmosphere.
+15. **Update Crew State and Location**: Based on the narrative, you MUST determine the current physical 'location' for each crew member.
     - Set the active character's new location in the top-level 'location' field of the output.
     - It is critical that you return the full, updated character sheets for **EVERY** crew member in the \`updatedCrew\` array.
     - This array must contain all characters provided in the input \`crew\` array.
     - **CRITICAL MOVEMENT RULE**: Each player controls their own character's movement independently. When a player says "Go to [location]", ONLY the acting character moves to that location. Characters that are controlled by other players (indicated by having a 'playerId' field on their character object) MUST NEVER have their location changed as a result of another player's action — they decide where to go themselves. NPCs (characters WITHOUT a 'playerId' field) may move ONLY if the acting character explicitly gives them orders to accompany them or go somewhere. If no such order is given, NPCs remain in their current location. Never assume crew members travel as a group.
 
     - If a character's stats (health, stress, inventory, etc.) change, you MUST reflect that in their object within the \`updatedCrew\` array. If a character is not affected by the action, you MUST return their original, unchanged character object in the array.
-    - **Crucially, the 'modifiers' and 'traumaResponse' fields must always be present in every character object within the 'updatedCrew' array.**
-15. **Generate Output**: Produce a JSON output based on your decision. This output MUST include the 'updatedCrew' array.`,
+    - **Crucially, the 'modifiers' and 'traumaResponse' fields must always be present in every character object within the \`updatedCrew\` array.**
+16. **Generate Output**: Produce a JSON output based on your decision. This output MUST include the \`updatedCrew\` array.
+`,
 });
 
 const continueAdventureFlow = ai.defineFlow(
@@ -254,7 +263,9 @@ const continueAdventureFlow = ai.defineFlow(
       console.error('Failed to search campaign lore:', error);
     }
 
-    const currentLocationId = input.currentLocationId || input.character.location;
+    const currentLocationId = input.currentLocationId || input.character.currentLocationId || input.character.location;
+    const currentSectorId = input.currentSectorId || input.character.currentSectorId;
+    const currentDestinationId = input.currentDestinationId || input.character.currentDestinationId;
     let localEnvironmentContext = input.localEnvironmentContext || '';
 
     // If we don't have context yet, try to build it from the station graph
@@ -262,7 +273,12 @@ const continueAdventureFlow = ai.defineFlow(
         // In a real scenario, we'd fetch the campaign from Firestore, but for now we use the seed data
         // TODO: Pass the actual campaign's stationGraph here.
         if (poundOfFleshCampaignData.stationGraph) {
-            localEnvironmentContext = buildLocalContext(currentLocationId, poundOfFleshCampaignData.stationGraph);
+            localEnvironmentContext = buildLocalContext(
+                currentLocationId, 
+                poundOfFleshCampaignData.stationGraph,
+                currentSectorId,
+                currentDestinationId
+            );
         }
     }
 
