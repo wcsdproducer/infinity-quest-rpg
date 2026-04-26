@@ -47,8 +47,19 @@
 
 ## Recent Work
 - 2026-04-26: Bot upgraded to Genkit ai.generate() loop with maxTurns: 50
-- 2026-04-26: Bot given full local filesystem access (localRoot = /Volumes/SAMSUNG 500gb/Antigravity)
 - 2026-04-26: Embedding model updated to gemini-embedding-001
+- 2026-04-26: **Full local machine access granted to bot**
+  - `execute_command` now accepts optional `cwd` param; defaults to `/Volumes/SAMSUNG 500gb/Antigravity` (not just IQ RPG workspace)
+  - All file tools (`read_file`, `write_file`, `patch_file`, `list_directory`) support absolute paths anywhere on the machine
+  - Shell changed to `/bin/zsh` for full PATH/alias support
+  - `list_directory` defaults to Antigravity root when no path given
+  - `soul.md` updated to document multi-project access (GravityClaw, Second Act, PropFlipPro, etc.)
+  - Bot restarted via PM2 (ID: 9) — typecheck: clean
+- 2026-04-26: **PDF Reader MCP added to Antigravity**
+  - Package: `@sylphx/pdf-reader-mcp` (high-performance, parallel processing)
+  - Supports local file paths and remote URLs
+  - Added to `/Users/johnfreeman/.gemini/antigravity/mcp_config.json` — enabled by default
+  - Pre-cached via npx for fast startup
 
 ## Known Issues / Blockers
 - None currently logged

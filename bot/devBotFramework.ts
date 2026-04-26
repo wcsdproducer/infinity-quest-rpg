@@ -649,16 +649,31 @@ export async function createDevBot(config: DevBotConfig) {
         async ({ url }) => fetchPage(url)
       );
       const toolExecCmd = ai.defineTool(
-        { name: "execute_command", description: "Run a terminal command in the workspace. Use for npm, git, tsc, firebase, ls, cat, etc. ALWAYS use this to actually DO things.", inputSchema: z.object({ command: z.string(), timeout_ms: z.number().optional() }), outputSchema: z.string() },
-        async ({ command, timeout_ms }) => {
-          console.log(`💻 [${config.workspaceName}] Exec: ${command}`);
+        {
+          name: "execute_command",
+          description: "Run ANY terminal command anywhere on the local machine. Use for npm, git, tsc, firebase, gcloud, ls, cat, curl, etc. Supports an optional `cwd` to run in any directory — defaults to the Antigravity root. ALWAYS use this to actually DO things rather than describing them.",
+          inputSchema: z.object({
+            command: z.string().describe("The full shell command to execute."),
+            cwd: z.string().optional().describe("Working directory for the command. Defaults to the Antigravity root. Use an absolute path to target any project."),
+            timeout_ms: z.number().optional().describe("Timeout in milliseconds. Default 60000. Use 300000 for builds."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ command, cwd, timeout_ms }) => {
+          const workDir = cwd || config.localRoot || config.workspaceRoot;
+          console.log(`💻 [${config.workspaceName}] Exec (cwd=${workDir}): ${command}`);
           try {
-            return execSync(command, { cwd: config.workspaceRoot, timeout: timeout_ms || 60000, encoding: "utf-8", env: { ...process.env } }).slice(0, 6000) || "(no output)";
+            return execSync(command, { cwd: workDir, timeout: timeout_ms || 60000, encoding: "utf-8", env: { ...process.env }, shell: "/bin/zsh" }).slice(0, 6000) || "(no output)";
           } catch (e: any) { return `ERROR: ${e.stderr?.slice(0, 2000) || e.message}`; }
         }
       );
       const toolReadFile = ai.defineTool(
-        { name: "read_file", description: "Read contents of any workspace file.", inputSchema: z.object({ path: z.string() }), outputSchema: z.string() },
+        {
+          name: "read_file",
+          description: "Read the contents of any file on the local machine. Use an absolute path for files outside the IQ RPG workspace (e.g. other Antigravity projects). Relative paths resolve from the IQ RPG workspace root.",
+          inputSchema: z.object({ path: z.string().describe("Absolute or workspace-relative file path.") }),
+          outputSchema: z.string(),
+        },
         async ({ path: p }) => {
           const full = p.startsWith("/") ? p : path.join(config.workspaceRoot, p);
           try { return fs.readFileSync(full, "utf-8").slice(0, 8000); }
@@ -666,30 +681,54 @@ export async function createDevBot(config: DevBotConfig) {
         }
       );
       const toolWriteFile = ai.defineTool(
-        { name: "write_file", description: "Write or overwrite a file in the workspace.", inputSchema: z.object({ path: z.string(), content: z.string() }), outputSchema: z.string() },
+        {
+          name: "write_file",
+          description: "Write or overwrite any file on the local machine. Creates parent directories automatically. Use absolute paths for files outside the IQ RPG workspace. Relative paths resolve from the IQ RPG workspace root.",
+          inputSchema: z.object({
+            path: z.string().describe("Absolute or workspace-relative file path."),
+            content: z.string().describe("Full file content to write."),
+          }),
+          outputSchema: z.string(),
+        },
         async ({ path: p, content }) => {
           const full = p.startsWith("/") ? p : path.join(config.workspaceRoot, p);
-          try { fs.mkdirSync(path.dirname(full), { recursive: true }); fs.writeFileSync(full, content, "utf-8"); return `✅ Written: ${p} (${content.length} chars)`; }
+          try { fs.mkdirSync(path.dirname(full), { recursive: true }); fs.writeFileSync(full, content, "utf-8"); return `✅ Written: ${full} (${content.length} chars)`; }
           catch (e: any) { return `ERROR: ${e.message}`; }
         }
       );
       const toolListDir = ai.defineTool(
-        { name: "list_directory", description: "List files in workspace directory.", inputSchema: z.object({ path: z.string().optional() }), outputSchema: z.string() },
+        {
+          name: "list_directory",
+          description: "List files and directories at any path on the local machine. Defaults to the Antigravity root when no path is given. Use absolute paths to navigate outside the IQ RPG workspace.",
+          inputSchema: z.object({ path: z.string().optional().describe("Absolute or workspace-relative directory path. Defaults to Antigravity root.") }),
+          outputSchema: z.string(),
+        },
         async ({ path: p }) => {
-          const dir = p ? path.join(config.workspaceRoot, p) : config.workspaceRoot;
+          const dir = p
+            ? (p.startsWith("/") ? p : path.join(config.workspaceRoot, p))
+            : (config.localRoot || config.workspaceRoot);
           try { return fs.readdirSync(dir, { withFileTypes: true }).map(e => `${e.isDirectory() ? "📁" : "📄"} ${e.name}`).join("\n"); }
           catch (e: any) { return `ERROR: ${e.message}`; }
         }
       );
       const toolPatchFile = ai.defineTool(
-        { name: "patch_file", description: "Surgically replace an exact string in a file. Read the file first to confirm exact text.", inputSchema: z.object({ path: z.string(), search: z.string(), replace: z.string() }), outputSchema: z.string() },
+        {
+          name: "patch_file",
+          description: "Surgically replace an exact string in any file on the local machine. Read the file first to confirm exact text. Use absolute paths for files outside the IQ RPG workspace.",
+          inputSchema: z.object({
+            path: z.string().describe("Absolute or workspace-relative file path."),
+            search: z.string().describe("The exact string to find (must match exactly, including whitespace)."),
+            replace: z.string().describe("Replacement string."),
+          }),
+          outputSchema: z.string(),
+        },
         async ({ path: p, search, replace }) => {
           const full = p.startsWith("/") ? p : path.join(config.workspaceRoot, p);
           try {
             const orig = fs.readFileSync(full, "utf-8");
-            if (!orig.includes(search)) return `ERROR: Search string not found in ${p}. Read the file first.`;
+            if (!orig.includes(search)) return `ERROR: Search string not found in ${full}. Read the file first to confirm exact content.`;
             fs.writeFileSync(full, orig.replace(search, replace), "utf-8");
-            return `✅ Patched ${p}`;
+            return `✅ Patched ${full}`;
           } catch (e: any) { return `ERROR: ${e.message}`; }
         }
       );
@@ -874,19 +913,257 @@ export async function createDevBot(config: DevBotConfig) {
       );
 
 
+      // ── Namecheap API Suite ──────────────────────────────────────────────────
+      // Shared helper: call any Namecheap API command, returns parsed cheerio doc
+      async function namecheapCall(command: string, params: Record<string, string> = {}) {
+        const ncKey  = process.env.NAMECHEAP_API_KEY!;
+        const ncUser = process.env.NAMECHEAP_API_USER!;
+        let clientIp = "";
+        try { clientIp = execSync("curl -s https://api.ipify.org", { timeout: 5000, encoding: "utf-8" }).trim(); } catch { clientIp = "47.202.224.54"; }
+        const qs = new URLSearchParams({ ApiUser: ncUser, ApiKey: ncKey, UserName: ncUser, ClientIp: clientIp, Command: command, ...params });
+        const resp = await axios.get(`https://api.namecheap.com/xml.response?${qs}`, { timeout: 15000 });
+        const $ = cheerio.load(resp.data, { xmlMode: true });
+        const status = $("ApiResponse").attr("Status");
+        if (status === "ERROR") throw new Error($("Error").text() || "Unknown Namecheap API error");
+        return $;
+      }
+      function ncCredsOk() {
+        return !!(process.env.NAMECHEAP_API_KEY && process.env.NAMECHEAP_API_USER);
+      }
+
+      // ── check_dns: authoritative Namecheap records + live dig ──
+      const toolCheckDns = ai.defineTool(
+        {
+          name: "check_dns",
+          description: "Check DNS records for a domain. Uses the Namecheap API if NAMECHEAP_API_KEY + NAMECHEAP_API_USER are set (authoritative, shows all records in the Namecheap control panel). Falls back to public `dig` for live propagated values. Useful for verifying A, CNAME, MX, TXT, and NS records.",
+          inputSchema: z.object({
+            domain: z.string().describe("The domain to check, e.g. 'infinityquestrpg.com'"),
+            record_type: z.string().optional().describe("Specific record type to query: A, AAAA, CNAME, MX, TXT, NS. Omit for all."),
+            use_namecheap_api: z.boolean().optional().describe("If true (default when credentials exist), fetch authoritative records from Namecheap API. Set false to use public dig only."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ domain, record_type, use_namecheap_api }) => {
+          const results: string[] = [];
+          const ncKey  = process.env.NAMECHEAP_API_KEY;
+          const ncUser = process.env.NAMECHEAP_API_USER;
+          const useNC  = (use_namecheap_api !== false) && !!(ncKey && ncUser);
+
+          if (useNC) {
+            try {
+              // Namecheap API: hosts.getList
+              // Domain is split into SLD + TLD for the API
+              const parts = domain.replace(/\.$/, "").split(".");
+              const tld   = parts.slice(-1)[0];
+              const sld   = parts.slice(0, -1).join(".");
+
+              // Get the machine's public IP (required by Namecheap API)
+              let clientIp = "";
+              try { clientIp = execSync("curl -s https://api.ipify.org", { timeout: 5000, encoding: "utf-8" }).trim(); } catch { clientIp = "0.0.0.0"; }
+
+              const ncUrl = `https://api.namecheap.com/xml.response?ApiUser=${ncUser}&ApiKey=${ncKey}&UserName=${ncUser}&ClientIp=${clientIp}&Command=namecheap.domains.dns.getHosts&SLD=${sld}&TLD=${tld}`;
+              const ncResp = await axios.get(ncUrl, { timeout: 10000 });
+              const $ = cheerio.load(ncResp.data, { xmlMode: true });
+
+              const status = $("ApiResponse").attr("Status");
+              if (status === "ERROR") {
+                const errMsg = $("Error").text();
+                results.push(`⚠️ Namecheap API error: ${errMsg}`);
+              } else {
+                const hosts: string[] = [];
+                $("host").each((_: number, el: any) => {
+                  const type = $(el).attr("Type");
+                  const name = $(el).attr("Name");
+                  const addr = $(el).attr("Address");
+                  const ttl  = $(el).attr("TTL");
+                  if (!record_type || type?.toUpperCase() === record_type.toUpperCase()) {
+                    hosts.push(`  ${type?.padEnd(6)} ${name?.padEnd(20)} → ${addr}  (TTL: ${ttl})`);
+                  }
+                });
+                results.push(`📋 **Namecheap DNS Records for ${domain}** (authoritative):\n${hosts.length > 0 ? hosts.join("\n") : "No matching records."}`);
+              }
+            } catch (e: any) {
+              results.push(`⚠️ Namecheap API call failed: ${e.message}`);
+            }
+          } else if (!ncKey || !ncUser) {
+            results.push(`ℹ️ Namecheap credentials not set — using public DNS only. To add: set NAMECHEAP_API_KEY and NAMECHEAP_API_USER in .env`);
+          }
+
+          // Always also run public dig for live propagated values
+          const types = record_type ? [record_type.toUpperCase()] : ["A", "AAAA", "CNAME", "MX", "TXT", "NS"];
+          const digLines: string[] = [`\n🌐 **Public DNS (dig) for ${domain}**:`];
+          for (const t of types) {
+            try {
+              const out = execSync(`dig +short ${domain} ${t}`, { timeout: 8000, encoding: "utf-8" }).trim();
+              if (out) digLines.push(`  ${t.padEnd(6)} ${out.split("\n").join("\n         ")}`);
+            } catch { /* ignore per-type errors */ }
+          }
+          if (digLines.length === 1) digLines.push("  (no records found)");
+          results.push(digLines.join("\n"));
+
+          return results.join("\n\n");
+        }
+      );
+
+      // ── namecheap_list_domains: paginated list of all owned domains ──
+      const toolNcListDomains = ai.defineTool(
+        {
+          name: "namecheap_list_domains",
+          description: "List all domains in the Namecheap account with expiry dates, auto-renew status, and whether they are locked. Great for auditing domain portfolio.",
+          inputSchema: z.object({
+            page: z.number().optional().describe("Page number, default 1"),
+            page_size: z.number().optional().describe("Results per page, max 100, default 20"),
+            search: z.string().optional().describe("Filter by domain name substring"),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ page = 1, page_size = 20, search }) => {
+          if (!ncCredsOk()) return "❌ NAMECHEAP_API_KEY / NAMECHEAP_API_USER not set in .env";
+          try {
+            const params: Record<string, string> = { Page: String(page), PageSize: String(Math.min(page_size, 100)) };
+            if (search) params.SearchTerm = search;
+            const $ = await namecheapCall("namecheap.domains.getList", params);
+            const total = $("Paging").attr("TotalItems") || "?";
+            const lines: string[] = [`📦 Domains (page ${page}, total ${total}):\n`];
+            $("Domain").each((_: number, el: any) => {
+              const name    = $(el).attr("Name") || "";
+              const expires = $(el).attr("Expires") || "";
+              const locked  = $(el).attr("IsLocked") === "true" ? "🔒" : "";
+              const autoRen = $(el).attr("AutoRenew") === "true" ? "♻️" : "❌";
+              const premium = $(el).attr("IsPremium") === "true" ? "⭐" : "";
+              lines.push(`  ${locked}${premium} ${name.padEnd(35)} expires ${expires}  autoRenew:${autoRen}`);
+            });
+            return lines.join("\n") || "No domains found.";
+          } catch (e: any) { return `Namecheap error: ${e.message}`; }
+        }
+      );
+
+      // ── namecheap_domain_info: expiry, nameservers, whois ──
+      const toolNcDomainInfo = ai.defineTool(
+        {
+          name: "namecheap_domain_info",
+          description: "Get detailed info about a specific domain: expiry date, creation date, nameservers, registrar lock status, privacy protection, and more.",
+          inputSchema: z.object({ domain: z.string().describe("e.g. 'infinityquestrpg.com'") }),
+          outputSchema: z.string(),
+        },
+        async ({ domain }) => {
+          if (!ncCredsOk()) return "❌ NAMECHEAP_API_KEY / NAMECHEAP_API_USER not set in .env";
+          try {
+            const $ = await namecheapCall("namecheap.domains.getInfo", { DomainName: domain });
+            const di = $("DomainGetInfoResult");
+            const ns: string[] = [];
+            $("Nameserver").each((_: number, el: any) => { ns.push($(el).text()); });
+            const lines = [
+              `🌐 **${domain}**`,
+              `  Status:      ${di.attr("Status") || "?"}`,
+              `  Created:     ${$("CreatedDate").text() || "?"}`,
+              `  Expires:     ${$("ExpiredDate").text() || "?"}`,
+              `  Locked:      ${$("IsLocked").text() || "?"}`,
+              `  WhoisGuard:  ${$("WhoisguardEnabled").text() || "?"}`,
+              `  Premium DNS: ${$("IsPremiumDns").text() || "?"}`,
+              `  Nameservers: ${ns.join(", ") || "default Namecheap"}`,
+            ];
+            return lines.join("\n");
+          } catch (e: any) { return `Namecheap error: ${e.message}`; }
+        }
+      );
+
+      // ── namecheap_dns_set_host: add or update a DNS record ──
+      const toolNcDnsSetHost = ai.defineTool(
+        {
+          name: "namecheap_dns_set_host",
+          description: "Add or update DNS records on a Namecheap domain. NOTE: This REPLACES the full host list, so always call check_dns first to get all existing records, then include them all plus your new/updated record.",
+          inputSchema: z.object({
+            domain:  z.string().describe("e.g. 'infinityquestrpg.com'"),
+            records: z.array(z.object({
+              hostname: z.string().describe("Subdomain or '@' for root, 'www' for www"),
+              type:     z.string().describe("A | AAAA | CNAME | MX | TXT | URL | URL301 | NS"),
+              address:  z.string().describe("IP address, hostname, or TXT value"),
+              ttl:      z.number().optional().describe("TTL in seconds, default 1799"),
+              mx_pref:  z.number().optional().describe("MX priority, required for MX records"),
+            })).describe("Complete list of DNS records to set. Replaces all existing records."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ domain, records }) => {
+          if (!ncCredsOk()) return "❌ NAMECHEAP_API_KEY / NAMECHEAP_API_USER not set in .env";
+          try {
+            const parts = domain.replace(/\.$/, "").split(".");
+            const tld = parts.slice(-1)[0];
+            const sld = parts.slice(0, -1).join(".");
+            const params: Record<string, string> = { SLD: sld, TLD: tld };
+            records.forEach((r, i) => {
+              const n = i + 1;
+              params[`HostName${n}`]    = r.hostname;
+              params[`RecordType${n}`]  = r.type;
+              params[`Address${n}`]     = r.address;
+              params[`TTL${n}`]         = String(r.ttl || 1799);
+              if (r.mx_pref !== undefined) params[`MXPref${n}`] = String(r.mx_pref);
+            });
+            const $ = await namecheapCall("namecheap.domains.dns.setHosts", params);
+            const success = $("DomainDNSSetHostsResult").attr("IsSuccess");
+            return success === "true"
+              ? `✅ DNS records updated for ${domain} (${records.length} record${records.length === 1 ? "" : "s"} set).`
+              : `⚠️ Unexpected response — check DNS manually.`;
+          } catch (e: any) { return `Namecheap error: ${e.message}`; }
+        }
+      );
+
+      // ── namecheap_whitelisted_ips: view or add whitelisted IPs ──
+      const toolNcWhitelistedIps = ai.defineTool(
+        {
+          name: "namecheap_whitelisted_ips",
+          description: "View or manage the IP whitelist for Namecheap API access. The current machine's public IP must be whitelisted for API calls to work.",
+          inputSchema: z.object({
+            action: z.enum(["list", "add", "remove"]).describe("'list' to see current IPs, 'add' to add an IP, 'remove' to remove one"),
+            ip: z.string().optional().describe("IP address to add or remove (not required for 'list')"),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ action, ip }) => {
+          if (!ncCredsOk()) return "❌ NAMECHEAP_API_KEY / NAMECHEAP_API_USER not set in .env";
+          try {
+            if (action === "list") {
+              const $ = await namecheapCall("namecheap.users.getAddresses");
+              // Get current machine IP too
+              let myIp = "";
+              try { myIp = execSync("curl -s https://api.ipify.org", { timeout: 5000, encoding: "utf-8" }).trim(); } catch { /* ignore */ }
+              const wl: string[] = [];
+              $("IPAddress").each((_: number, el: any) => { wl.push($(el).text()); });
+              return `🔑 Namecheap API Whitelisted IPs:\n${wl.map(i => `  ${i}${i === myIp ? " ← (this machine)" : ""}`).join("\n") || "  (none)"}\n\nCurrent machine IP: ${myIp}`;
+            }
+            // For add/remove, use the profile page via fetch_page fallback message
+            return `ℹ️ To ${action} an IP, visit: https://ap.www.namecheap.com/settings/tools/apiaccess/whitelisted-ips\nThe Namecheap API does not expose a direct add/remove endpoint — it must be done via the dashboard.`;
+          } catch (e: any) { return `Namecheap error: ${e.message}`; }
+        }
+      );
+
+      const toolGenerateContent = ai.defineTool(
+        { name: "generate_content", description: "Use Gemini 2.5 Flash to generate any text content: game narratives, NPC dialogue, quest descriptions, code, JSON data structures, etc.", inputSchema: z.object({ prompt: z.string(), system: z.string().optional() }), outputSchema: z.string() },
+        async ({ prompt, system }) => {
+          try {
+            const r = await ai.generate({ model: "googleai/gemini-2.5-flash", system, prompt });
+            return r.text;
+          } catch (e: any) { return `Generation error: ${e.message}`; }
+        }
+      );
+
       const allGenkitTools = [
         toolWebSearch, toolFetchPage, toolExecCmd, toolReadFile, toolWriteFile,
         toolListDir, toolPatchFile, toolStoreMemory, toolRecallMemory,
         toolGitStatus, toolGitDiff, toolGitLog, toolGitCommit, toolGitPush, toolGitPull, toolGitBranch,
         toolFirestoreQuery, toolFirestoreWrite, toolFirestoreDelete, toolStorageList,
         toolApphostingStatus, toolApphostingDeploy, toolApphostingLogs,
+        toolCheckDns, toolNcListDomains, toolNcDomainInfo, toolNcDnsSetHost, toolNcWhitelistedIps,
+        toolGenerateContent,
       ];
 
-      // Build message history for Genkit (only user/model roles)
+      // Build message history for Genkit — filter out any empty-text entries
+      // which cause "Unsupported Part type {text:''}" errors in the Genkit SDK.
       const history = state.conversationHistory
-        .filter(m => m.role === "user" || m.role === "model")
+        .filter(m => (m.role === "user" || m.role === "model") && (m.content || "").trim() !== "")
         .slice(-20)
-        .map(m => ({ role: m.role as "user" | "model", content: [{ text: m.content || "" }] }));
+        .map(m => ({ role: m.role as "user" | "model", content: [{ text: m.content! }] }));
 
       const response = await ai.generate({
         model: "googleai/gemini-2.5-flash",
@@ -898,11 +1175,17 @@ export async function createDevBot(config: DevBotConfig) {
         maxTurns: 50,
       });
 
-      const finalText = response.text;
+      const finalText = response.text?.trim() || "";
 
-      // Persist to conversation history
+      // Persist to conversation history — only store non-empty text entries
+      // to prevent "Unsupported Part type {text:''}" on the next turn.
       state.conversationHistory.push({ role: "user", content: text, parts: [{ text }] });
-      state.conversationHistory.push({ role: "model", content: finalText, parts: [{ text: finalText }] });
+      if (finalText) {
+        state.conversationHistory.push({ role: "model", content: finalText, parts: [{ text: finalText }] });
+      } else {
+        // Model finished via tool calls with no final text — store a summary placeholder
+        state.conversationHistory.push({ role: "model", content: "[Task completed via tools]", parts: [{ text: "[Task completed via tools]" }] });
+      }
       if (state.conversationHistory.length > 30) state.conversationHistory = state.conversationHistory.slice(-30);
       memory.saveHistory("owner", state.conversationHistory);
 
