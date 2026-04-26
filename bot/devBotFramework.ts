@@ -351,7 +351,7 @@ const WHITELISTED_COMMANDS = [
   "git", "tsc",
   "cat", "ls", "find", "grep", "head", "tail", "wc",
   "echo", "pwd",
-  "firebase",
+  "firebase", "gcloud",
   "pm2",
 ];
 
@@ -805,11 +805,81 @@ export async function createDevBot(config: DevBotConfig) {
         }
       );
 
+      // ── Firebase App Hosting tools ────────────────
+      const FIREBASE_PROJECT = config.firebaseProjectId || "infinity-quest-rpg";
+      const APP_HOSTING_BACKEND = "infinity-quest";
+      const HOSTED_URL = "https://infinity-quest--infinity-quest-rpg.us-central1.hosted.app";
+
+      const toolApphostingStatus = ai.defineTool(
+        {
+          name: "apphosting_status",
+          description: `Check the current status of the Firebase App Hosting backend '${APP_HOSTING_BACKEND}'. Returns backend details, live URL, last deployment date, and linked GitHub repo.`,
+          inputSchema: z.object({}),
+          outputSchema: z.string(),
+        },
+        async () => {
+          try {
+            const out = execSync(
+              `firebase apphosting:backends:list --project ${FIREBASE_PROJECT}`,
+              { cwd: config.workspaceRoot }
+            ).toString();
+            return `App Hosting Backend: ${APP_HOSTING_BACKEND}\nLive URL: ${HOSTED_URL}\n\n${out}`;
+          } catch (e: any) { return `App Hosting status error: ${e.message}`; }
+        }
+      );
+
+      const toolApphostingDeploy = ai.defineTool(
+        {
+          name: "apphosting_deploy",
+          description: `Deploy the Infinity Quest RPG app to Firebase App Hosting by pushing the current branch to GitHub. Firebase App Hosting auto-deploys on push to main. Always run git_status first to confirm what will be deployed.`,
+          inputSchema: z.object({
+            commit_message: z.string().describe("Commit message for the deployment commit. Will stage all changes and push."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ commit_message }) => {
+          try {
+            execSync(`git add -A && git commit -m "${commit_message.replace(/"/g, "'")}"
+`, { cwd: config.workspaceRoot });
+          } catch (e: any) {
+            if (!e.message.includes("nothing to commit")) {
+              return `Git commit error: ${e.message}`;
+            }
+          }
+          try {
+            const pushOut = execSync(`git push origin main`, { cwd: config.workspaceRoot }).toString();
+            return `✅ Pushed to GitHub. Firebase App Hosting will deploy automatically.\nLive URL (after build): ${HOSTED_URL}\n\n${pushOut}`;
+          } catch (e: any) { return `Git push error: ${e.message}`; }
+        }
+      );
+
+      const toolApphostingLogs = ai.defineTool(
+        {
+          name: "apphosting_logs",
+          description: `Fetch recent Cloud Run logs for the Infinity Quest RPG App Hosting backend to check for runtime errors, crashes, or slow responses.`,
+          inputSchema: z.object({
+            lines: z.number().optional().describe("Number of log lines to fetch. Default 50."),
+          }),
+          outputSchema: z.string(),
+        },
+        async ({ lines = 50 }) => {
+          try {
+            const out = execSync(
+              `gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name~\"infinity-quest\"" --project=${FIREBASE_PROJECT} --limit=${lines} --format="value(timestamp,textPayload)"`,
+              { cwd: config.workspaceRoot }
+            ).toString();
+            return out || "No recent logs found.";
+          } catch (e: any) { return `Log fetch error: ${e.message}`; }
+        }
+      );
+
+
       const allGenkitTools = [
         toolWebSearch, toolFetchPage, toolExecCmd, toolReadFile, toolWriteFile,
         toolListDir, toolPatchFile, toolStoreMemory, toolRecallMemory,
         toolGitStatus, toolGitDiff, toolGitLog, toolGitCommit, toolGitPush, toolGitPull, toolGitBranch,
         toolFirestoreQuery, toolFirestoreWrite, toolFirestoreDelete, toolStorageList,
+        toolApphostingStatus, toolApphostingDeploy, toolApphostingLogs,
       ];
 
       // Build message history for Genkit (only user/model roles)

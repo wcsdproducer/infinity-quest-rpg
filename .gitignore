@@ -50,3 +50,7 @@ scripts/
 .firebase/
 
 /.apphosting/
+# Service account keys — never commit
+bot/*-sa.json
+*-sa.json
+*.serviceAccount.json
