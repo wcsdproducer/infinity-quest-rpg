@@ -61,6 +61,23 @@ lib/
 - **Jack Freeman** (wcsdproducer)
 - Revenue model: IAP for premium quests, cosmetics, boosts
 
+## Shared Devlog
+
+**Both Antigravity (AI pair programmer) and InfinityQuestDevBot share a single devlog:**
+
+```
+/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/devlog.md
+```
+
+### Rules for both agents:
+- **Read it at the start of every session** to get current project state.
+- **Append entries at the end of every session** summarizing what was done, in format:
+  `- YYYY-MM-DD: [brief description of work]`
+- **Never overwrite existing entries** — only append.
+- The devlog is the single source of truth for session history between agents.
+- The bot reads it automatically on every message via its `devlogContext` loader.
+- Antigravity reads it manually when starting a new IQ RPG task.
+
 ## Self-Correcting Rules Engine
 
 ### Learned Rules
@@ -70,3 +87,4 @@ lib/
 2. [CODE] Always use `npm` — project uses package-lock.json.
 3. [PROCESS] Run `npm run typecheck` then `npm run build` before considering changes complete.
 4. [FOCUS] Infinity Quest RPG is the ONLY active project in this workspace. All code must be scoped exclusively here.
+5. [DEVLOG] Always read `devlog.md` at session start. Always append a summary entry at session end. Both Antigravity and InfinityQuestDevBot share this file.
