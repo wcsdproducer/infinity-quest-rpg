@@ -44,6 +44,7 @@ import { CrewRoster } from '@/components/game/crew-roster';
 import { CommPanel } from '@/components/game/comm-panel';
 import { useFirestore } from '@/firebase';
 import { doc, updateDoc, collection, addDoc, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { resolveNavigationMedia, canTraverse, calculateTransitCost } from '@/lib/navigation';
 
 type GameViewProps = {
   campaign: Campaign;
@@ -75,11 +76,20 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
   const firestore = useFirestore();
   
   const getLocationMedia = useCallback((locationId?: string): { url: string, isVideo: boolean } => {
-    if (!locationId || !campaign.locations) return { url: '/fallback-location-unknown.png', isVideo: false };
-    const loc = campaign.locations.find(l => l.uuid === locationId);
+    if (!locationId) return { url: '/fallback-location-unknown.png', isVideo: false };
+    
+    const locations = campaign.stationGraph?.locations ?? campaign.locations ?? [];
+    const loc = locations.find(l => l.uuid === locationId);
+    if (!loc) return { url: '/fallback-location-unknown.png', isVideo: false };
 
-    // If the location is locked, show the exterior/access-restricted fallback
-    if (loc?.isLocked) return { url: '/fallback-location-locked.png', isVideo: false };
+    // If the location has a primary media base, use the state-aware resolver
+    // Note: We might need a dummy connection if we're just resolving the location itself,
+    // but typically resolveNavigationMedia is for the PATH.
+    // For the LOCATION itself, we check if it's locked.
+    
+    if (loc.isLocked && !sessionUnlockedLocationIds.has(locationId)) {
+        return { url: '/fallback-location-locked.png', isVideo: false };
+    }
 
     const firstMedia = loc?.mediaUrls?.find(m => m.url);
     if (!firstMedia) return { url: '/fallback-location-unknown.png', isVideo: false };
@@ -89,7 +99,7 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
     const isVideo = url.startsWith('data:video') || url.includes('video%2F') || pathPart.match(/\.(mp4|webm|ogg)$/i) !== null;
 
     return { url, isVideo };
-  }, [campaign.locations]);
+  }, [campaign.locations, campaign.stationGraph, sessionUnlockedLocationIds]);
   
   const getInitialLocation = () => {
     if (campaign.startingLocationId) {
@@ -198,13 +208,30 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
     'Retreat and regroup',
   ];
   const displayedSuggestedActions = useMemo(() => {
-    if (!activeLocationIsLocked) return suggestedActions;
-    // If the AI is surfacing an "Enter X" action, it means bypass was just granted — show it
-    const hasEnterAction = suggestedActions.some(a => a.toLowerCase().startsWith('enter '));
-    if (hasEnterAction) return suggestedActions;
-    return LOCKED_LOCATION_ACTIONS;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeLocationIsLocked, suggestedActions]);
+    const locations = campaign.stationGraph?.locations ?? campaign.locations ?? [];
+    const currentLocation = locations.find(l => l.uuid === character.currentLocationId);
+    
+    const actions = activeLocationIsLocked ? (() => {
+        const hasEnterAction = suggestedActions.some(a => a.toLowerCase().startsWith('enter '));
+        return hasEnterAction ? suggestedActions : LOCKED_LOCATION_ACTIONS;
+    })() : suggestedActions;
+
+    // Enrich "Enter [Location]" actions with credit costs
+    return actions.map(action => {
+        if (action.toLowerCase().startsWith('enter ')) {
+            const targetName = action.slice('enter '.length).trim();
+            const targetLoc = locations.find(l => l.name?.toLowerCase() === targetName.toLowerCase());
+            
+            if (targetLoc && currentLocation) {
+                const cost = calculateTransitCost(currentLocation.sectorId, targetLoc.sectorId);
+                if (cost > 0) {
+                    return `${action} (${cost} Cr)`;
+                }
+            }
+        }
+        return action;
+    });
+  }, [activeLocationIsLocked, suggestedActions, character.currentLocationId, campaign.stationGraph, campaign.locations]);
 
   // Real-time listener for comm messages
   useEffect(() => {
@@ -345,17 +372,22 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
   }, []); // Run only once on component mount
 
 
-  // Persist currentLocationId to Firestore so other players see the change in real-time
-  const persistLocationToFirestore = useCallback(async (characterId: string, locationId: string) => {
+  const persistCharacterUpdate = useCallback(async (characterId: string, updates: Partial<Character>) => {
     if (!firestore || !gameId) return;
     try {
       const charRef = doc(firestore, 'games', gameId, 'characters', characterId);
-      await updateDoc(charRef, { currentLocationId: locationId, location: campaign.locations?.find(l => l.uuid === locationId)?.name ?? undefined });
+      // Remove undefined fields and nested objects if needed, but here simple fields work
+      await updateDoc(charRef, updates);
     } catch (e) {
-      // Non-critical — local state is still correct
-      console.warn('Could not persist location to Firestore:', e);
+      console.warn('Could not persist character update to Firestore:', e);
     }
-  }, [firestore, gameId, campaign.locations]);
+  }, [firestore, gameId]);
+
+  // Persist currentLocationId to Firestore so other players see the change in real-time
+  const persistLocationToFirestore = useCallback(async (characterId: string, locationId: string) => {
+    const locName = campaign.locations?.find(l => l.uuid === locationId)?.name ?? undefined;
+    await persistCharacterUpdate(characterId, { currentLocationId: locationId, location: locName });
+  }, [campaign.locations, persistCharacterUpdate]);
 
   const handleTypewriterFinish = () => {
     setIsTyping(false);
@@ -574,11 +606,71 @@ export function GameView({ campaign, initialCharacter, crew = [], gameId, curren
     // Detect "Enter [Location Name]" actions — these are direct location transitions,
     // not prompts to send to the AI.
     if (action.toLowerCase().startsWith('enter ')) {
-      const targetName = action.slice('enter '.length).trim();
-      const targetLoc = campaign.locations?.find(
+      // Strip potential cost suffix, e.g., "Enter Docking Bay (20 Cr)" -> "Docking Bay"
+      const cleanAction = action.replace(/\s*\(\d+\s*Cr\)$/i, '');
+      const targetName = cleanAction.slice('enter '.length).trim();
+      
+      const locations = campaign.stationGraph?.locations ?? campaign.locations ?? [];
+      const currentLoc = locations.find(l => l.uuid === character.currentLocationId);
+      
+      // Find the specific connection to validate status (locked/blocked/cost)
+      const connection = currentLoc?.connections?.find(conn => {
+        const toLoc = locations.find(l => l.uuid === conn.toLocationId);
+        return toLoc?.name?.toLowerCase() === targetName.toLowerCase();
+      });
+
+      const targetLoc = locations.find(
         l => l.name?.toLowerCase() === targetName.toLowerCase()
       );
+
       if (targetLoc) {
+        // Calculate dynamic cost based on sector distance
+        const travelCost = calculateTransitCost(currentLoc?.sectorId, targetLoc.sectorId);
+
+        // If there's a connection, validate it
+        if (connection) {
+          // Use the dynamic travelCost if it's higher than the static connection cost
+          const finalCost = Math.max(connection.cost || 0, travelCost);
+          const traversal = canTraverse({ ...connection, cost: finalCost }, character.credits, character.inventory);
+          
+          if (!traversal.canPass) {
+            toast({
+              variant: 'destructive',
+              title: 'Access Denied',
+              description: traversal.reason,
+            });
+            return;
+          }
+
+          // Deduct credits if cost applies
+          if (finalCost > 0) {
+            const newCredits = (character.credits ?? 0) - finalCost;
+            setCharacter(prev => ({ ...prev, credits: newCredits }));
+            if (gameId && character.id) persistCharacterUpdate(character.id, { credits: newCredits });
+            toast({
+                title: 'Credits Deducted',
+                description: `Paid ${finalCost} credits for travel to ${targetLoc.name}.`,
+            });
+          }
+        } else if (travelCost > 0) {
+            // Direct entry without a specific connection (teleport/jump) still costs credits if sectors differ
+            if ((character.credits ?? 0) < travelCost) {
+                toast({
+                    variant: 'destructive',
+                    title: 'Access Denied',
+                    description: `Insufficient credits for sector travel. Cost: ${travelCost}`,
+                });
+                return;
+            }
+            const newCredits = (character.credits ?? 0) - travelCost;
+            setCharacter(prev => ({ ...prev, credits: newCredits }));
+            if (gameId && character.id) persistCharacterUpdate(character.id, { credits: newCredits });
+            toast({
+                title: 'Credits Deducted',
+                description: `Paid ${travelCost} credits for transit to ${targetLoc.name}.`,
+            });
+        }
+
         // Transition immediately: update character location to the interior
         setCharacter(prev => ({ ...prev, currentLocationId: targetLoc.uuid, location: targetLoc.name ?? prev.location }));
         setLocation(targetLoc.name);

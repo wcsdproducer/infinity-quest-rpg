@@ -98,7 +98,18 @@ The current player's character:
 - Saves: Sanity {{character.saves.sanity}} (+{{character.modifiers.saves.sanity}}), Fear {{character.saves.fear}} (+{{character.modifiers.saves.fear}}), Body {{character.saves.body}} (+{{character.modifiers.saves.body}})
 - Skills: {{#each character.skills}}{{name}} ({{level}}){{#unless @last}}, {{/unless}}{{/each}}
 - Inventory: {{#each character.inventory}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
+- Inventory: {{#each character.inventory}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
 - Carrying Capacity: {{character.carryingCapacity.current}}/{{character.carryingCapacity.max}}
+
+{{#if localEnvironmentContext}}
+### NAVIGATION & ACCESSIBILITY RULES
+The <LOCAL_ENVIRONMENT> block lists all currently accessible and inaccessible paths. You MUST strictly follow these rules:
+1. **LOCKED paths**: If a path is marked [LOCKED], the character cannot pass until the lock is bypassed or they use a required item. Do NOT narrate them entering the target location.
+2. **BLOCKED paths**: If a path is marked [BLOCKED/IMPASSABLE], it is a hard barrier. You must narrate why they cannot pass (check for a 'Note' in the context).
+3. **HIDDEN paths**: These are NOT listed in the context. If a player "searches" and you decide they find something, you can reveal a hidden location.
+4. **TRANSIT COSTS**: If a path has a [Cost: X credits], you MUST check if the character has enough credits. If they do, and they take the transit, you MUST deduct the credits from their character sheet in the 'updatedCrew' array.
+5. **TRANSIT LINES**: Use the transit line names (e.g., "Blue Line") to add flavor to your descriptions of travel.
+{{/if}}
 
 The player declares their action: "{{playerAction}}"
 {{#if diceRollResult}}
@@ -243,11 +254,16 @@ const continueAdventureFlow = ai.defineFlow(
       console.error('Failed to search campaign lore:', error);
     }
 
-    const currentLocationId = input.currentLocationId || input.character.location;
+    const currentLocationId = input.currentLocationId || input.character.currentLocationId || input.character.location;
     let localEnvironmentContext = input.localEnvironmentContext || '';
 
-    if (!localEnvironmentContext && currentLocationId && poundOfFleshCampaignData.stationGraph) {
-      localEnvironmentContext = buildLocalContext(currentLocationId, poundOfFleshCampaignData.stationGraph);
+    // If we don't have context yet, try to build it from the station graph
+    if (!localEnvironmentContext && currentLocationId) {
+        // In a real scenario, we'd fetch the campaign from Firestore, but for now we use the seed data
+        // TODO: Pass the actual campaign's stationGraph here.
+        if (poundOfFleshCampaignData.stationGraph) {
+            localEnvironmentContext = buildLocalContext(currentLocationId, poundOfFleshCampaignData.stationGraph);
+        }
     }
 
     const flowInput = { ...input, crew, campaignLore, localEnvironmentContext };

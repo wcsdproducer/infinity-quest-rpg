@@ -133,7 +133,9 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
 
   // Direct location-to-location connections
   for (const conn of loc.connections ?? []) {
-    if (conn.isBlocked) continue;
+    const isActuallyBlocked = conn.status === 'blocked' || conn.status === 'locked' || conn.status === 'hidden';
+    if (isActuallyBlocked) continue;
+
     edges.push({
       fromId: locationId,
       toId: conn.toLocationId,
@@ -142,7 +144,7 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
       travelMinutes: conn.travelMinutes,
       encounterChance: conn.encounterChance,
       encounterTable: conn.encounterTable,
-      isBlocked: conn.isBlocked,
+      isBlocked: isActuallyBlocked,
       crossesSectorBoundary: !!conn.toSectorId,
       fromSectorId: loc.sectorId,
       toSectorId: conn.toSectorId ?? loc.sectorId,
@@ -154,13 +156,15 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
   if (loc.sectorId) {
     const sector = getSector(graph, loc.sectorId);
     for (const sconn of sector?.sectorConnections ?? []) {
-      if (sconn.isBlocked) continue;
+      const isActuallyBlocked = sconn.status === 'blocked' || sconn.status === 'locked' || sconn.status === 'hidden';
+      if (isActuallyBlocked) continue;
+
       // Find the first accessible entry location in the target sector
       const targetSector = getSector(graph, sconn.toSectorId);
       if (!targetSector) continue;
       const entryLocId = targetSector.locationIds.find((lid) => {
         const l = getLocation(graph, lid);
-        return l && !l.isLocked;
+        return l && !l.isLocked && l.isHidden !== true;
       });
       if (!entryLocId) continue;
 
@@ -172,7 +176,7 @@ function buildNeighbors(locationId: string, graph: StationGraph): RawEdge[] {
         travelMinutes: sconn.travelMinutes,
         encounterChance: sconn.encounterChance,
         encounterTable: sconn.encounterTable,
-        isBlocked: sconn.isBlocked,
+        isBlocked: isActuallyBlocked,
         crossesSectorBoundary: true,
         fromSectorId: loc.sectorId,
         toSectorId: sconn.toSectorId,
@@ -289,16 +293,25 @@ export function buildLocalContext(currentLocationId: string, graph: StationGraph
   // Direct location connections
   for (const conn of currentLoc.connections ?? []) {
     const targetLoc = getLocation(graph, conn.toLocationId);
-    if (!targetLoc || targetLoc.isHidden) continue; // Don't expose hidden locations
+    if (!targetLoc || targetLoc.isHidden || conn.status === 'hidden') continue; // Don't expose hidden locations
 
     hasPaths = true;
-    const lockedStr = targetLoc.isLocked ? ' [LOCKED]' : '';
-    const blockedStr = conn.isBlocked ? ' [BLOCKED]' : '';
+    
+    // Status badges
+    let statusPrefix = '';
+    if (conn.status === 'locked' || targetLoc.isLocked) statusPrefix = ' [LOCKED]';
+    else if (conn.status === 'blocked') statusPrefix = ' [BLOCKED/IMPASSABLE]';
+    
+    const transitInfo = conn.transitLine ? ` (${conn.transitLine})` : '';
+    const costInfo = conn.cost ? ` [Cost: ${conn.cost} credits]` : '';
     const reqItems = conn.requiredItems && conn.requiredItems.length > 0 ? ` (Requires: ${conn.requiredItems.join(', ')})` : '';
 
-    lines.push(`- **${targetLoc.name}**${lockedStr}${blockedStr} via *${conn.passageName || 'Passage'}*${reqItems}`);
+    lines.push(`- **${targetLoc.name}**${statusPrefix}${transitInfo}${costInfo} via *${conn.passageName || 'Passage'}*${reqItems}`);
     if (conn.travelDescription) {
       lines.push(`  *Travel*: ${conn.travelDescription} (~${conn.travelMinutes ?? 5} mins)`);
+    }
+    if (conn.status === 'blocked' && conn.blockedReason) {
+        lines.push(`  *Note*: ${conn.blockedReason}`);
     }
   }
 
