@@ -1,0 +1,426 @@
+I0425 09:09:54.964540   21495 load.go:31] Reloading schema and connectors...
+I0425 09:09:54.990059   21495 control.go:100] [projects/emulator/locations/emulator/services/infinity-quest-rpg c1fc] UpdateResources(): done
+Main schema: sources: schema/schema.gql [1534B] 
+Connector "default": sources: connector/mutations.gql [11323B] connector/queries.gql [1504B] 
+I0425 09:09:55.005428   21495 codegen.go:101] [connector "default" javascriptSdk] Generating sources into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+I0425 09:09:55.023124   21495 collector.go:107] schema extensions wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [82799B] main/input.gql [45328B] main/relation.gql [20034B] main/query.gql [7788B] main/mutation.gql [17790B] main/implicit.gql [557B] 
+I0425 09:09:55.025043   21495 collector.go:107] connector "default" javascriptSdk wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+Generated sources: README.md [105342B] .guides/setup.md [589B] .guides/config.json [236B] esm/index.esm.js [14063B] index.cjs.js [16165B] package.json [620B] .guides/usage.md [1625B] index.d.ts [21494B] esm/package.json [17B] 
+I0425 09:09:55.025049   21495 installsdk.go:138] generate.javascriptSdk.packageJsonDir is not specified, skipping automatic installation of package
+I0425 09:09:55.025217   21495 load.go:109] Finished reloading
+I0425 09:09:55.027908   21495 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0425 09:09:55.027978   21495 dev.go:104] Listening on address (HTTP + gRPC): [::1]:9399
+I0425 09:09:57.223138   21495 migrate.go:24] Running migration SQL:
+Step 1: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+Step 2: CREATE EXTENSION IF NOT EXISTS "vector"
+Step 3: CREATE TABLE "public"."campaign_lore" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "content" text NOT NULL, "embedding" vector(768) NOT NULL, "metadata" jsonb NULL, PRIMARY KEY ("id"))
+Step 4: CREATE TABLE "public"."path" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "accessibility" text NULL, "danger_level" integer NULL, "source_node_id" text NOT NULL, "source_node_type" text NOT NULL, "target_node_id" text NOT NULL, "target_node_type" text NOT NULL, "travel_time_minutes" integer NULL, "type" text NOT NULL, PRIMARY KEY ("id"))
+Step 5: CREATE TABLE "public"."sector" ("sector_id" text NOT NULL, "description" text NULL, "encounter_table_id" text NULL, "name" text NOT NULL, "phase_alteration_rules" text NULL, PRIMARY KEY ("sector_id"))
+Step 6: CREATE TABLE "public"."location" ("location_id" text NOT NULL, "sector_id" text NOT NULL, "description" text NULL, "is_locked" boolean NOT NULL DEFAULT false, "lock_requirements" text NULL, "map_coordinates" text NULL, "name" text NOT NULL, PRIMARY KEY ("location_id"), CONSTRAINT "location_sector_id_fkey" FOREIGN KEY ("sector_id") REFERENCES "public"."sector" ("sector_id") ON DELETE CASCADE)
+Step 7: CREATE INDEX "location_sectorId_idx" ON "public"."location" ("sector_id")
+Step 8: CREATE TABLE "public"."establishment" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "location_id" text NOT NULL, "description" text NULL, "image_url" text NULL, "is_locked" boolean NOT NULL DEFAULT false, "is_procedural" boolean NOT NULL DEFAULT true, "lock_requirements" text NULL, "name" text NOT NULL, "npc_hooks" text NULL, "prices" text NULL, "type" text NOT NULL, PRIMARY KEY ("id"), CONSTRAINT "establishment_location_id_fkey" FOREIGN KEY ("location_id") REFERENCES "public"."location" ("location_id") ON DELETE CASCADE)
+Step 9: CREATE INDEX "establishment_locationId_idx" ON "public"."establishment" ("location_id")
+I0425 09:09:57.273988   21495 control.go:100] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] UpdateResources(): done
+Main schema: sources: schema/schema.gql [1534B] 
+Connector "default": sources: connector/mutations.gql [11323B] connector/queries.gql [1504B] 
+I0425 09:09:57.277908   21495 configure_emulator.go:21] ConfigureEmulator successed
+Request: service_id:  "infinity-quest-rpg"
+connection_string:  "postgres://127.0.0.1:5432/infinity?sslmode=disable"
+database:  "infinity"
+
+Response: 
+I0425 09:11:15.212870   21495 execute.go:57] Database ping is quick (likely cached), took 8.620917ms
+I0425 09:11:15.228200   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:15.481996   21495 execute.go:57] Database ping is quick (likely cached), took 334.25µs
+I0425 09:11:15.483779   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:15.691585   21495 execute.go:57] Database ping is quick (likely cached), took 382.334µs
+I0425 09:11:15.695494   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:15.906719   21495 execute.go:57] Database ping is quick (likely cached), took 1.339333ms
+I0425 09:11:15.914271   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:16.119414   21495 execute.go:57] Database ping is quick (likely cached), took 1.080292ms
+I0425 09:11:16.124413   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:16.334336   21495 execute.go:57] Database ping is quick (likely cached), took 3.560875ms
+I0425 09:11:16.340090   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:16.536435   21495 execute.go:57] Database ping is quick (likely cached), took 821.75µs
+I0425 09:11:16.541301   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:16.742611   21495 execute.go:57] Database ping is quick (likely cached), took 1.361042ms
+I0425 09:11:16.748074   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:16.907507   21495 execute.go:57] Database ping is quick (likely cached), took 1.251959ms
+I0425 09:11:16.912421   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:17.067864   21495 execute.go:57] Database ping is quick (likely cached), took 888.917µs
+I0425 09:11:17.071529   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:17.221211   21495 execute.go:57] Database ping is quick (likely cached), took 440.333µs
+I0425 09:11:17.223049   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:17.366450   21495 execute.go:57] Database ping is quick (likely cached), took 431.208µs
+I0425 09:11:17.368137   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:17.620869   21495 execute.go:57] Database ping is quick (likely cached), took 353.666µs
+I0425 09:11:17.622679   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:17.812224   21495 execute.go:57] Database ping is quick (likely cached), took 651.375µs
+I0425 09:11:17.815777   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.007194   21495 execute.go:57] Database ping is quick (likely cached), took 1.848042ms
+I0425 09:11:18.012325   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.228746   21495 execute.go:57] Database ping is quick (likely cached), took 1.034875ms
+I0425 09:11:18.235742   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.370470   21495 execute.go:57] Database ping is quick (likely cached), took 1.08525ms
+I0425 09:11:18.375365   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.528869   21495 execute.go:57] Database ping is quick (likely cached), took 986.042µs
+I0425 09:11:18.536252   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.680018   21495 execute.go:57] Database ping is quick (likely cached), took 1.485083ms
+I0425 09:11:18.689268   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.847978   21495 execute.go:57] Database ping is quick (likely cached), took 419µs
+I0425 09:11:18.849873   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:18.989945   21495 execute.go:57] Database ping is quick (likely cached), took 507.042µs
+I0425 09:11:18.991807   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.143707   21495 execute.go:57] Database ping is quick (likely cached), took 633.5µs
+I0425 09:11:19.146630   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.284514   21495 execute.go:57] Database ping is quick (likely cached), took 445.333µs
+I0425 09:11:19.286567   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.437881   21495 execute.go:57] Database ping is quick (likely cached), took 319.834µs
+I0425 09:11:19.439558   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.576269   21495 execute.go:57] Database ping is quick (likely cached), took 358.166µs
+I0425 09:11:19.579434   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.720671   21495 execute.go:57] Database ping is quick (likely cached), took 670.167µs
+I0425 09:11:19.722807   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:19.864424   21495 execute.go:57] Database ping is quick (likely cached), took 391.709µs
+I0425 09:11:19.870439   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.009105   21495 execute.go:57] Database ping is quick (likely cached), took 447µs
+I0425 09:11:20.010736   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.170492   21495 execute.go:57] Database ping is quick (likely cached), took 750.875µs
+I0425 09:11:20.174599   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.314245   21495 execute.go:57] Database ping is quick (likely cached), took 344.584µs
+I0425 09:11:20.317901   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.454967   21495 execute.go:57] Database ping is quick (likely cached), took 429.958µs
+I0425 09:11:20.456883   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.593168   21495 execute.go:57] Database ping is quick (likely cached), took 353.292µs
+I0425 09:11:20.595006   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.735057   21495 execute.go:57] Database ping is quick (likely cached), took 467.708µs
+I0425 09:11:20.736969   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:20.883741   21495 execute.go:57] Database ping is quick (likely cached), took 363.708µs
+I0425 09:11:20.886397   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.022552   21495 execute.go:57] Database ping is quick (likely cached), took 304.833µs
+I0425 09:11:21.024394   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.184431   21495 execute.go:57] Database ping is quick (likely cached), took 372.125µs
+I0425 09:11:21.186655   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.324141   21495 execute.go:57] Database ping is quick (likely cached), took 394.958µs
+I0425 09:11:21.325988   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.465442   21495 execute.go:57] Database ping is quick (likely cached), took 408.792µs
+I0425 09:11:21.467186   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.611745   21495 execute.go:57] Database ping is quick (likely cached), took 422.208µs
+I0425 09:11:21.613668   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.755856   21495 execute.go:57] Database ping is quick (likely cached), took 360.583µs
+I0425 09:11:21.757442   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:21.916810   21495 execute.go:57] Database ping is quick (likely cached), took 350.25µs
+I0425 09:11:21.919273   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.069753   21495 execute.go:57] Database ping is quick (likely cached), took 381.709µs
+I0425 09:11:22.071423   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.208351   21495 execute.go:57] Database ping is quick (likely cached), took 444µs
+I0425 09:11:22.210063   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.375740   21495 execute.go:57] Database ping is quick (likely cached), took 401.042µs
+I0425 09:11:22.377491   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.523471   21495 execute.go:57] Database ping is quick (likely cached), took 427.417µs
+I0425 09:11:22.525095   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.668606   21495 execute.go:57] Database ping is quick (likely cached), took 348.75µs
+I0425 09:11:22.670251   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.852782   21495 execute.go:57] Database ping is quick (likely cached), took 340.458µs
+I0425 09:11:22.854466   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:22.999008   21495 execute.go:57] Database ping is quick (likely cached), took 496.083µs
+I0425 09:11:23.000702   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:23.144093   21495 execute.go:57] Database ping is quick (likely cached), took 367.625µs
+I0425 09:11:23.145803   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:23.277102   21495 execute.go:57] Database ping is quick (likely cached), took 356.833µs
+I0425 09:11:23.278769   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:23.411425   21495 execute.go:57] Database ping is quick (likely cached), took 395.083µs
+I0425 09:11:23.413399   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:23.829719   21495 execute.go:57] Database ping is quick (likely cached), took 376.458µs
+I0425 09:11:23.831390   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:23.973061   21495 execute.go:57] Database ping is quick (likely cached), took 406.583µs
+I0425 09:11:23.974898   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.135711   21495 execute.go:57] Database ping is quick (likely cached), took 368.959µs
+I0425 09:11:24.137482   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.275615   21495 execute.go:57] Database ping is quick (likely cached), took 506.125µs
+I0425 09:11:24.277214   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.411443   21495 execute.go:57] Database ping is quick (likely cached), took 356.584µs
+I0425 09:11:24.413089   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.550941   21495 execute.go:57] Database ping is quick (likely cached), took 343.042µs
+I0425 09:11:24.552686   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.694391   21495 execute.go:57] Database ping is quick (likely cached), took 344.041µs
+I0425 09:11:24.696262   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.831938   21495 execute.go:57] Database ping is quick (likely cached), took 560.75µs
+I0425 09:11:24.833571   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:24.962789   21495 execute.go:57] Database ping is quick (likely cached), took 954.875µs
+I0425 09:11:24.966049   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.111072   21495 execute.go:57] Database ping is quick (likely cached), took 349µs
+I0425 09:11:25.113070   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.281294   21495 execute.go:57] Database ping is quick (likely cached), took 420.042µs
+I0425 09:11:25.283207   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.459878   21495 execute.go:57] Database ping is quick (likely cached), took 605.458µs
+I0425 09:11:25.461483   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.600246   21495 execute.go:57] Database ping is quick (likely cached), took 383.125µs
+I0425 09:11:25.602040   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.776537   21495 execute.go:57] Database ping is quick (likely cached), took 592.417µs
+I0425 09:11:25.778356   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:25.917514   21495 execute.go:57] Database ping is quick (likely cached), took 384.875µs
+I0425 09:11:25.919204   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.099401   21495 execute.go:57] Database ping is quick (likely cached), took 375.791µs
+I0425 09:11:26.101093   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.248573   21495 execute.go:57] Database ping is quick (likely cached), took 333.792µs
+I0425 09:11:26.250469   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.392164   21495 execute.go:57] Database ping is quick (likely cached), took 344µs
+I0425 09:11:26.393719   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.533443   21495 execute.go:57] Database ping is quick (likely cached), took 380.25µs
+I0425 09:11:26.534997   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.702978   21495 execute.go:57] Database ping is quick (likely cached), took 412.042µs
+I0425 09:11:26.704913   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.844348   21495 execute.go:57] Database ping is quick (likely cached), took 404.417µs
+I0425 09:11:26.846146   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:26.987991   21495 execute.go:57] Database ping is quick (likely cached), took 360.791µs
+I0425 09:11:26.989592   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.131403   21495 execute.go:57] Database ping is quick (likely cached), took 331.375µs
+I0425 09:11:27.133107   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.275624   21495 execute.go:57] Database ping is quick (likely cached), took 322.709µs
+I0425 09:11:27.277220   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.413733   21495 execute.go:57] Database ping is quick (likely cached), took 350.875µs
+I0425 09:11:27.415660   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.594001   21495 execute.go:57] Database ping is quick (likely cached), took 369µs
+I0425 09:11:27.595742   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.736686   21495 execute.go:57] Database ping is quick (likely cached), took 630.083µs
+I0425 09:11:27.739815   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:27.877373   21495 execute.go:57] Database ping is quick (likely cached), took 1.003542ms
+I0425 09:11:27.881634   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.021753   21495 execute.go:57] Database ping is quick (likely cached), took 962.75µs
+I0425 09:11:28.025642   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.172236   21495 execute.go:57] Database ping is quick (likely cached), took 431.75µs
+I0425 09:11:28.173957   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.317607   21495 execute.go:57] Database ping is quick (likely cached), took 374.042µs
+I0425 09:11:28.319776   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.461826   21495 execute.go:57] Database ping is quick (likely cached), took 914.083µs
+I0425 09:11:28.463604   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.601687   21495 execute.go:57] Database ping is quick (likely cached), took 378.917µs
+I0425 09:11:28.603285   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.756568   21495 execute.go:57] Database ping is quick (likely cached), took 395.875µs
+I0425 09:11:28.758361   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:28.897933   21495 execute.go:57] Database ping is quick (likely cached), took 349.583µs
+I0425 09:11:28.900152   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.047998   21495 execute.go:57] Database ping is quick (likely cached), took 407.291µs
+I0425 09:11:29.050364   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.196943   21495 execute.go:57] Database ping is quick (likely cached), took 900.209µs
+I0425 09:11:29.203082   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.351639   21495 execute.go:57] Database ping is quick (likely cached), took 826.666µs
+I0425 09:11:29.356137   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.533950   21495 execute.go:57] Database ping is quick (likely cached), took 1.863ms
+I0425 09:11:29.539230   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.680927   21495 execute.go:57] Database ping is quick (likely cached), took 615.541µs
+I0425 09:11:29.683490   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.852742   21495 execute.go:57] Database ping is quick (likely cached), took 325.917µs
+I0425 09:11:29.854299   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:29.998789   21495 execute.go:57] Database ping is quick (likely cached), took 376.791µs
+I0425 09:11:30.000559   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.167539   21495 execute.go:57] Database ping is quick (likely cached), took 367.083µs
+I0425 09:11:30.169059   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.316610   21495 execute.go:57] Database ping is quick (likely cached), took 376.583µs
+I0425 09:11:30.318323   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.457610   21495 execute.go:57] Database ping is quick (likely cached), took 339.917µs
+I0425 09:11:30.459261   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.592446   21495 execute.go:57] Database ping is quick (likely cached), took 585.542µs
+I0425 09:11:30.595587   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.737266   21495 execute.go:57] Database ping is quick (likely cached), took 1.6055ms
+I0425 09:11:30.743938   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:30.893431   21495 execute.go:57] Database ping is quick (likely cached), took 4.252167ms
+I0425 09:11:30.908624   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:31.319699   21495 execute.go:57] Database ping is quick (likely cached), took 1.101291ms
+I0425 09:11:31.323955   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:31.551748   21495 execute.go:57] Database ping is quick (likely cached), took 385.666µs
+I0425 09:11:31.553996   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:31.772064   21495 execute.go:57] Database ping is quick (likely cached), took 364.5µs
+I0425 09:11:31.773648   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:31.983985   21495 execute.go:57] Database ping is quick (likely cached), took 700.875µs
+I0425 09:11:31.988373   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:32.208004   21495 execute.go:57] Database ping is quick (likely cached), took 828.958µs
+I0425 09:11:32.210375   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:32.525177   21495 execute.go:57] Database ping is quick (likely cached), took 1.084292ms
+I0425 09:11:32.529492   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:32.812642   21495 execute.go:57] Database ping is quick (likely cached), took 964.166µs
+I0425 09:11:32.817873   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:33.021349   21495 execute.go:57] Database ping is quick (likely cached), took 1.065792ms
+I0425 09:11:33.026046   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:33.336151   21495 execute.go:57] Database ping is quick (likely cached), took 875.166µs
+I0425 09:11:33.340963   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:33.484545   21495 execute.go:57] Database ping is quick (likely cached), took 2.521541ms
+I0425 09:11:33.488687   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:33.664902   21495 execute.go:57] Database ping is quick (likely cached), took 1.150542ms
+I0425 09:11:33.671317   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:33.860690   21495 execute.go:57] Database ping is quick (likely cached), took 561.167µs
+I0425 09:11:33.862393   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:34.010491   21495 execute.go:57] Database ping is quick (likely cached), took 327.083µs
+I0425 09:11:34.012287   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:34.210901   21495 execute.go:57] Database ping is quick (likely cached), took 323.625µs
+I0425 09:11:34.212486   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:34.414912   21495 execute.go:57] Database ping is quick (likely cached), took 472.666µs
+I0425 09:11:34.417295   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:34.712615   21495 execute.go:57] Database ping is quick (likely cached), took 376µs
+I0425 09:11:34.714148   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:34.912489   21495 execute.go:57] Database ping is quick (likely cached), took 442.167µs
+I0425 09:11:34.914486   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.068103   21495 execute.go:57] Database ping is quick (likely cached), took 594µs
+I0425 09:11:35.069893   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.209441   21495 execute.go:57] Database ping is quick (likely cached), took 636.208µs
+I0425 09:11:35.213760   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.363590   21495 execute.go:57] Database ping is quick (likely cached), took 800.75µs
+I0425 09:11:35.367515   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.508785   21495 execute.go:57] Database ping is quick (likely cached), took 464.375µs
+I0425 09:11:35.511731   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.653535   21495 execute.go:57] Database ping is quick (likely cached), took 391.292µs
+I0425 09:11:35.655255   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.791184   21495 execute.go:57] Database ping is quick (likely cached), took 379.292µs
+I0425 09:11:35.792957   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:35.936803   21495 execute.go:57] Database ping is quick (likely cached), took 391.083µs
+I0425 09:11:35.938537   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.092727   21495 execute.go:57] Database ping is quick (likely cached), took 855.042µs
+I0425 09:11:36.094963   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.239139   21495 execute.go:57] Database ping is quick (likely cached), took 464.042µs
+I0425 09:11:36.241796   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.386158   21495 execute.go:57] Database ping is quick (likely cached), took 506.417µs
+I0425 09:11:36.387777   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.525352   21495 execute.go:57] Database ping is quick (likely cached), took 415.792µs
+I0425 09:11:36.527266   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.672316   21495 execute.go:57] Database ping is quick (likely cached), took 1.099167ms
+I0425 09:11:36.676363   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:36.851464   21495 execute.go:57] Database ping is quick (likely cached), took 455.625µs
+I0425 09:11:36.853355   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.009359   21495 execute.go:57] Database ping is quick (likely cached), took 345.25µs
+I0425 09:11:37.011219   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.210769   21495 execute.go:57] Database ping is quick (likely cached), took 1.021416ms
+I0425 09:11:37.212983   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.379260   21495 execute.go:57] Database ping is quick (likely cached), took 1.514667ms
+I0425 09:11:37.381719   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.547828   21495 execute.go:57] Database ping is quick (likely cached), took 366.333µs
+I0425 09:11:37.549889   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.699279   21495 execute.go:57] Database ping is quick (likely cached), took 610.292µs
+I0425 09:11:37.701184   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:37.837412   21495 execute.go:57] Database ping is quick (likely cached), took 357.375µs
+I0425 09:11:37.838968   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.014011   21495 execute.go:57] Database ping is quick (likely cached), took 358.458µs
+I0425 09:11:38.018421   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.160521   21495 execute.go:57] Database ping is quick (likely cached), took 1.1625ms
+I0425 09:11:38.165050   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.327978   21495 execute.go:57] Database ping is quick (likely cached), took 2.218709ms
+I0425 09:11:38.333063   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.476739   21495 execute.go:57] Database ping is quick (likely cached), took 1.242375ms
+I0425 09:11:38.481316   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.636043   21495 execute.go:57] Database ping is quick (likely cached), took 904.708µs
+I0425 09:11:38.640541   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.787574   21495 execute.go:57] Database ping is quick (likely cached), took 462.959µs
+I0425 09:11:38.789371   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:38.933598   21495 execute.go:57] Database ping is quick (likely cached), took 416.375µs
+I0425 09:11:38.935413   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.072132   21495 execute.go:57] Database ping is quick (likely cached), took 630.375µs
+I0425 09:11:39.073692   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.225095   21495 execute.go:57] Database ping is quick (likely cached), took 350.583µs
+I0425 09:11:39.226706   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.370597   21495 execute.go:57] Database ping is quick (likely cached), took 328.75µs
+I0425 09:11:39.372277   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.510366   21495 execute.go:57] Database ping is quick (likely cached), took 325.459µs
+I0425 09:11:39.512112   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.688259   21495 execute.go:57] Database ping is quick (likely cached), took 573.5µs
+I0425 09:11:39.691258   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.836418   21495 execute.go:57] Database ping is quick (likely cached), took 498.5µs
+I0425 09:11:39.838557   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:39.981431   21495 execute.go:57] Database ping is quick (likely cached), took 1.066958ms
+I0425 09:11:39.987078   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.177725   21495 execute.go:57] Database ping is quick (likely cached), took 1.124542ms
+I0425 09:11:40.182534   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.326303   21495 execute.go:57] Database ping is quick (likely cached), took 1.280083ms
+I0425 09:11:40.328567   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.471934   21495 execute.go:57] Database ping is quick (likely cached), took 261.417µs
+I0425 09:11:40.473479   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.622306   21495 execute.go:57] Database ping is quick (likely cached), took 309.125µs
+I0425 09:11:40.623918   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.766920   21495 execute.go:57] Database ping is quick (likely cached), took 575.333µs
+I0425 09:11:40.770058   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:40.914749   21495 execute.go:57] Database ping is quick (likely cached), took 412.083µs
+I0425 09:11:40.917270   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.058678   21495 execute.go:57] Database ping is quick (likely cached), took 378.583µs
+I0425 09:11:41.060414   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.201580   21495 execute.go:57] Database ping is quick (likely cached), took 1.144625ms
+I0425 09:11:41.203832   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.357792   21495 execute.go:57] Database ping is quick (likely cached), took 803.666µs
+I0425 09:11:41.361853   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.540905   21495 execute.go:57] Database ping is quick (likely cached), took 1.090916ms
+I0425 09:11:41.545174   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.688168   21495 execute.go:57] Database ping is quick (likely cached), took 971.667µs
+I0425 09:11:41.692362   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.835714   21495 execute.go:57] Database ping is quick (likely cached), took 391.208µs
+I0425 09:11:41.837734   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:41.972522   21495 execute.go:57] Database ping is quick (likely cached), took 369.333µs
+I0425 09:11:41.974162   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.132595   21495 execute.go:57] Database ping is quick (likely cached), took 492.792µs
+I0425 09:11:42.134510   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.273046   21495 execute.go:57] Database ping is quick (likely cached), took 409.834µs
+I0425 09:11:42.274669   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.440110   21495 execute.go:57] Database ping is quick (likely cached), took 354.542µs
+I0425 09:11:42.441697   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.588356   21495 execute.go:57] Database ping is quick (likely cached), took 386.584µs
+I0425 09:11:42.590607   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.727856   21495 execute.go:57] Database ping is quick (likely cached), took 330.75µs
+I0425 09:11:42.729469   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:42.912029   21495 execute.go:57] Database ping is quick (likely cached), took 609.125µs
+I0425 09:11:42.914716   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.053781   21495 execute.go:57] Database ping is quick (likely cached), took 368.084µs
+I0425 09:11:43.055534   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.195203   21495 execute.go:57] Database ping is quick (likely cached), took 934.542µs
+I0425 09:11:43.197394   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.337499   21495 execute.go:57] Database ping is quick (likely cached), took 602.625µs
+I0425 09:11:43.340898   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.483504   21495 execute.go:57] Database ping is quick (likely cached), took 479µs
+I0425 09:11:43.485463   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.676655   21495 execute.go:57] Database ping is quick (likely cached), took 475.25µs
+I0425 09:11:43.678351   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.819617   21495 execute.go:57] Database ping is quick (likely cached), took 390.75µs
+I0425 09:11:43.821283   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:43.978937   21495 execute.go:57] Database ping is quick (likely cached), took 422.209µs
+I0425 09:11:43.980903   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.121213   21495 execute.go:57] Database ping is quick (likely cached), took 826.875µs
+I0425 09:11:44.128257   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.302172   21495 execute.go:57] Database ping is quick (likely cached), took 890.625µs
+I0425 09:11:44.304410   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.443635   21495 execute.go:57] Database ping is quick (likely cached), took 300.541µs
+I0425 09:11:44.445179   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.588829   21495 execute.go:57] Database ping is quick (likely cached), took 335.083µs
+I0425 09:11:44.591140   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.746406   21495 execute.go:57] Database ping is quick (likely cached), took 401.084µs
+I0425 09:11:44.750683   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:44.927592   21495 execute.go:57] Database ping is quick (likely cached), took 360.834µs
+I0425 09:11:44.929351   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:45.073380   21495 execute.go:57] Database ping is quick (likely cached), took 340.958µs
+I0425 09:11:45.074913   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:45.228355   21495 execute.go:57] Database ping is quick (likely cached), took 1.286959ms
+I0425 09:11:45.257795   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:45.409863   21495 execute.go:57] Database ping is quick (likely cached), took 2.0835ms
+I0425 09:11:45.416636   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:45.596910   21495 execute.go:57] Database ping is quick (likely cached), took 432.75µs
+I0425 09:11:45.598635   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 09:11:45.729974   21495 execute.go:57] Database ping is quick (likely cached), took 391.875µs
+I0425 09:11:45.731901   21495 engine.go:209] [projects/emulator/locations/emulator/services/infinity-quest-rpg a06f] ExecuteMutation mutation insertCampaignLore: succeeded. Connector: default
+I0425 20:08:55.225906   21495 load.go:31] Reloading schema and connectors...
+I0425 20:08:55.765320   21495 control.go:100] [projects/emulator/locations/emulator/services/infinity-quest-rpg 8f61] UpdateResources(): done
+Main schema: sources: schema/schema.gql [1534B] 
+Connector "default": sources: connector/mutations.gql [11323B] connector/queries.gql [1749B] 
+I0425 20:08:55.800760   21495 codegen.go:101] [connector "default" javascriptSdk] Generating sources into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+I0425 20:08:55.837700   21495 collector.go:107] schema extensions wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [20034B] prelude.gql [82799B] main/query.gql [7788B] main/mutation.gql [17790B] main/implicit.gql [557B] main/input.gql [45328B] 
+I0425 20:08:55.843558   21495 collector.go:107] connector "default" javascriptSdk wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+Generated sources: index.d.ts [21494B] esm/index.esm.js [14063B] esm/package.json [17B] .guides/usage.md [1625B] .guides/setup.md [589B] .guides/config.json [236B] index.cjs.js [16165B] package.json [620B] README.md [105342B] 
+I0425 20:08:55.843584   21495 installsdk.go:138] generate.javascriptSdk.packageJsonDir is not specified, skipping automatic installation of package
+I0425 20:08:55.843815   21495 load.go:109] Finished reloading
+I0425 20:09:05.217061   21495 load.go:31] Reloading schema and connectors...
+I0425 20:09:05.326104   21495 control.go:100] [projects/emulator/locations/emulator/services/infinity-quest-rpg 3e87] UpdateResources(): done
+Main schema: sources: schema/schema.gql [1534B] 
+Connector "default": sources: connector/mutations.gql [12352B] connector/queries.gql [1749B] 
+I0425 20:09:05.340619   21495 codegen.go:101] [connector "default" javascriptSdk] Generating sources into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+I0425 20:09:05.346646   21495 collector.go:107] schema extensions wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [82799B] main/mutation.gql [17790B] main/implicit.gql [557B] main/input.gql [45328B] main/relation.gql [20034B] main/query.gql [7788B] 
+I0425 20:09:05.346940   21495 collector.go:107] connector "default" javascriptSdk wrote into "/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/src/lib/dataconnect"
+Generated sources: index.cjs.js [16165B] package.json [620B] README.md [105342B] .guides/usage.md [1625B] .guides/config.json [236B] index.d.ts [21494B] esm/index.esm.js [14063B] .guides/setup.md [589B] esm/package.json [17B] 
+I0425 20:09:05.346945   21495 installsdk.go:138] generate.javascriptSdk.packageJsonDir is not specified, skipping automatic installation of package
+I0425 20:09:05.346950   21495 load.go:109] Finished reloading

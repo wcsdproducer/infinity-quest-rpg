@@ -10,13 +10,21 @@ export type LocationConnection = {
   /** Set if this connection crosses a sector boundary */
   toSectorId?: string;
   passageName: string;             // e.g. "Maintenance Hatch 3A"
+  type: 'walking' | 'lift' | 'transit' | 'shuttle';
   travelDescription: string;       // What the player sees/experiences
   travelMinutes: number;
   encounterChance: number;         // 0–100 %
   encounterTable?: string;         // Which roll table to use
-  isBlocked: boolean;
+  
+  // Accessibility State
+  status: 'hidden' | 'locked' | 'blocked' | 'open';
   blockedReason?: string;
-  requiredItems?: string[];        // Items needed to pass
+  requiredItems?: string[];        // Items needed to pass (e.g. keycards)
+  transitLine?: string;            // e.g. "Blue Line"
+  cost?: number;                   // Credit cost if applicable
+  
+  // Media resolution base path
+  navigationMediaBase?: string;    // e.g. "navigation/exit-north/"
 };
 
 export type Location = {
@@ -44,12 +52,15 @@ export type Location = {
 export type SectorConnection = {
   toSectorId: string;
   corridorName: string;            // e.g. "Service Corridor B7"
+  type: 'transit' | 'shuttle' | 'corridor';
   travelDescription: string;       // Narrated when traversing
   travelMinutes: number;
   encounterChance: number;         // 0–100 %
   encounterTable?: string;
-  isBlocked: boolean;
+  status: 'hidden' | 'locked' | 'blocked' | 'open';
   blockedReason?: string;
+  transitLine?: string;
+  cost?: number;
 };
 
 /** A sector is a named zone of the station containing multiple locations */
@@ -60,10 +71,13 @@ export type Sector = {
   description: string;             // Player-facing description
   wardenNotes?: string;            // Warden-only GM info
   atmosphere: string;              // Tone/feel ("industrial, loud, dangerous")
+  color?: string;                  // UI color representation
+  icon?: string;                   // Lucide icon name string
   pageRef: number;                 // Module page reference
   faction?: string;                // Controlling faction if any
   isHidden?: boolean;
   isLocked?: boolean;
+  mediaUrls?: MediaURL[];          // Sector-wide visuals/ambience
   /** Adjacent sectors the players can travel to */
   sectorConnections: SectorConnection[];
   /** IDs of locations within this sector */

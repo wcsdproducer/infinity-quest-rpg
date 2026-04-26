@@ -1,0 +1,671 @@
+{
+  "sectors": [
+    {
+      "id": "sector-01-dry-dock",
+      "number": 1,
+      "name": "Dry Dock",
+      "description": "Docking and repairs. Docking fee: 1kcr + 100cr/day. O2 tax: 10cr/day/person.",
+      "atmosphere": "Sparks fly as the harsh screeching of metal grinding fills the air and reverberates off the walls. Dozens of shipbuilders scurry over on scaffolding dangling above massive ships.",
+      "pageRef": 10,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-10-the-choke",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-02-stellar-burn",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-clean-room",
+        "loc-loshes-office",
+        "loc-repair-bay",
+        "loc-hangar-bay",
+        "loc-arrival"
+      ]
+    },
+    {
+      "id": "sector-02-stellar-burn",
+      "number": 2,
+      "name": "Stellar Burn",
+      "description": "Rumors, drinks, and R&R. Ask for Sem.",
+      "atmosphere": "Dark, smoky, filled with strobing lights and flashing lasers.",
+      "pageRef": 12,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-01-dry-dock",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-03-chop-shop",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-sems-bar",
+        "loc-heaven",
+        "loc-the-ecstacy"
+      ]
+    },
+    {
+      "id": "sector-03-chop-shop",
+      "number": 3,
+      "name": "Chop Shop",
+      "description": "Cybermod installation and repair by Zhenya and The Babushka.",
+      "atmosphere": "Overflowing with trash and grime, barely kept up by its hoarder/cybersurgeon proprietor.",
+      "pageRef": 14,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-02-stellar-burn",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-04-the-ice-box",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-chop-shop-entrance",
+        "loc-recovery-room",
+        "loc-sycorax-stash",
+        "loc-operating-theaters",
+        "loc-babushkas-room",
+        "loc-cybermod-storage"
+      ]
+    },
+    {
+      "id": "sector-04-the-ice-box",
+      "number": 4,
+      "name": "The Ice Box",
+      "description": "Slickware installation and re-sleeving facility.",
+      "atmosphere": null,
+      "pageRef": 20,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-03-chop-shop",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-05-the-farm",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-slickbays"
+      ]
+    },
+    {
+      "id": "sector-05-the-farm",
+      "number": 5,
+      "name": "The Farm",
+      "description": "The Dream’s food supply. Run by the Solarian Church. Easy place to buy drugs.",
+      "atmosphere": null,
+      "pageRef": 22,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-04-the-ice-box",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-06-canyonheavy-market",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-farm-processing",
+        "loc-the-aarnivalkea",
+        "loc-farm-two"
+      ]
+    },
+    {
+      "id": "sector-06-canyonheavy-market",
+      "number": 6,
+      "name": "CANYONHEAVY.market",
+      "description": "Information market run by an elite hacking crew.",
+      "atmosphere": null,
+      "pageRef": 24,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-05-the-farm",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-07-the-court",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-the-battlestations",
+        "loc-angus-office"
+      ]
+    },
+    {
+      "id": "sector-07-the-court",
+      "number": 7,
+      "name": "The Court",
+      "description": "Disputes resolved and justice served through brutal arena combat. Easiest place to find The Dream’s top power brokers.",
+      "atmosphere": null,
+      "pageRef": 26,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-06-canyonheavy-market",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-08-tempest-co-hq",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-the-pit",
+        "loc-the-bench",
+        "loc-the-holding-cells",
+        "loc-brunhildhs-quarters"
+      ]
+    },
+    {
+      "id": "sector-08-tempest-co-hq",
+      "number": 8,
+      "name": "Tempest Co. HQ",
+      "description": "Powerful mercenary company. Security onboard The Dream.",
+      "atmosphere": null,
+      "pageRef": 28,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-07-the-court",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-09-doptown",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-armament-level",
+        "loc-operations-level",
+        "loc-cutters-mansion",
+        "loc-sublevel-c"
+      ]
+    },
+    {
+      "id": "sector-09-doptown",
+      "number": 9,
+      "name": "Doptown",
+      "description": "De-oxygenated people’s town. Heavily guarded debtor’s prison for those who can’t pay the O2 tax.",
+      "atmosphere": "De-oxygenated. Heavily guarded.",
+      "pageRef": 30,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-08-tempest-co-hq",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-10-the-choke",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-doptown-main"
+      ]
+    },
+    {
+      "id": "sector-10-the-choke",
+      "number": 10,
+      "name": "The Choke",
+      "description": "Abandoned, quarantined wasteland. Houses Doptown.",
+      "atmosphere": "Abandoned, quarantined wasteland. Oxygen is scarce and life is short.",
+      "pageRef": 32,
+      "sectorConnections": [
+        {
+          "toSectorId": "sector-09-doptown",
+          "travelMinutes": 15
+        },
+        {
+          "toSectorId": "sector-01-dry-dock",
+          "travelMinutes": 15
+        }
+      ],
+      "locationIds": [
+        "loc-the-choke-main"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "uuid": "loc-arrival",
+      "sectorId": "sector-01-dry-dock",
+      "name": "Arrival",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-clean-room"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-clean-room",
+      "sectorId": "sector-01-dry-dock",
+      "name": "Clean Room",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-arrival"
+        },
+        {
+          "toLocationId": "loc-loshes-office"
+        },
+        {
+          "toLocationId": "loc-repair-bay"
+        },
+        {
+          "toLocationId": "loc-hangar-bay"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-loshes-office",
+      "sectorId": "sector-01-dry-dock",
+      "name": "Loshe's Office",
+      "isLocked": true,
+      "connections": [
+        {
+          "toLocationId": "loc-clean-room"
+        },
+        {
+          "toLocationId": "loc-repair-bay"
+        },
+        {
+          "toLocationId": "loc-hangar-bay"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-repair-bay",
+      "sectorId": "sector-01-dry-dock",
+      "name": "Repair Bay",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-clean-room"
+        },
+        {
+          "toLocationId": "loc-loshes-office"
+        },
+        {
+          "toLocationId": "loc-hangar-bay"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-hangar-bay",
+      "sectorId": "sector-01-dry-dock",
+      "name": "Hangar Bay",
+      "isLocked": false,
+      "mediaUrls": [
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/infinity-quest-rpg.firebasestorage.app/o/campaigns%2Fa-pound-of-flesh%2FLocations%2Fdocking-bay%2FDocking%20Bay.png?alt=media&token=5cbc116e-10ae-4709-bf60-696474049888"
+        }
+      ],
+      "connections": [
+        {
+          "toLocationId": "loc-clean-room"
+        },
+        {
+          "toLocationId": "loc-loshes-office"
+        },
+        {
+          "toLocationId": "loc-repair-bay"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-sems-bar",
+      "sectorId": "sector-02-stellar-burn",
+      "name": "Sem's Bar (Club Level)",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-heaven",
+          "passageName": "Stairs"
+        },
+        {
+          "toLocationId": "loc-the-ecstacy",
+          "passageName": "Lift"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-heaven",
+      "sectorId": "sector-02-stellar-burn",
+      "name": "Heaven (Upper Level)",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-sems-bar",
+          "passageName": "Stairs"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-ecstacy",
+      "sectorId": "sector-02-stellar-burn",
+      "name": "The Ecstacy (Lower Level)",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-sems-bar",
+          "passageName": "Lift"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-chop-shop-entrance",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Cramped Entrance",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-recovery-room"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-recovery-room",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Recovery Room",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-chop-shop-entrance"
+        },
+        {
+          "toLocationId": "loc-sycorax-stash"
+        },
+        {
+          "toLocationId": "loc-operating-theaters"
+        },
+        {
+          "toLocationId": "loc-babushkas-room"
+        },
+        {
+          "toLocationId": "loc-cybermod-storage"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-sycorax-stash",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Sycorax Stash",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-recovery-room"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-operating-theaters",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Operating Theaters",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-recovery-room"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-babushkas-room",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Babushka's Room",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-recovery-room"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-cybermod-storage",
+      "sectorId": "sector-03-chop-shop",
+      "name": "Cybermod Storage & Reaper Barn",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-recovery-room"
+        },
+        {
+          "toLocationId": "loc-the-choke-main",
+          "passageName": "Private Tunnel"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-slickbays",
+      "sectorId": "sector-04-the-ice-box",
+      "name": "Slickbays",
+      "isLocked": false,
+      "connections": []
+    },
+    {
+      "uuid": "loc-farm-processing",
+      "sectorId": "sector-05-the-farm",
+      "name": "Farm Processing",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-the-aarnivalkea"
+        },
+        {
+          "toLocationId": "loc-farm-two"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-aarnivalkea",
+      "sectorId": "sector-05-the-farm",
+      "name": "The Aarnivalkea",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-farm-processing"
+        },
+        {
+          "toLocationId": "loc-farm-two"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-farm-two",
+      "sectorId": "sector-05-the-farm",
+      "name": "Farm Two",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-farm-processing"
+        },
+        {
+          "toLocationId": "loc-the-aarnivalkea"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-battlestations",
+      "sectorId": "sector-06-canyonheavy-market",
+      "name": "The Battlestations",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-angus-office"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-angus-office",
+      "sectorId": "sector-06-canyonheavy-market",
+      "name": "Angus's Office",
+      "isLocked": true,
+      "connections": [
+        {
+          "toLocationId": "loc-the-battlestations"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-pit",
+      "sectorId": "sector-07-the-court",
+      "name": "The Pit",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-the-bench"
+        },
+        {
+          "toLocationId": "loc-the-holding-cells"
+        },
+        {
+          "toLocationId": "loc-brunhildhs-quarters"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-bench",
+      "sectorId": "sector-07-the-court",
+      "name": "The Bench",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-the-pit"
+        },
+        {
+          "toLocationId": "loc-the-holding-cells"
+        },
+        {
+          "toLocationId": "loc-brunhildhs-quarters"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-the-holding-cells",
+      "sectorId": "sector-07-the-court",
+      "name": "The Holding Cells",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-the-pit"
+        },
+        {
+          "toLocationId": "loc-the-bench"
+        },
+        {
+          "toLocationId": "loc-brunhildhs-quarters"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-brunhildhs-quarters",
+      "sectorId": "sector-07-the-court",
+      "name": "Brunhildh's Quarters",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-the-pit"
+        },
+        {
+          "toLocationId": "loc-the-bench"
+        },
+        {
+          "toLocationId": "loc-the-holding-cells"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-armament-level",
+      "sectorId": "sector-08-tempest-co-hq",
+      "name": "Armament Level",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-operations-level"
+        },
+        {
+          "toLocationId": "loc-cutters-mansion"
+        },
+        {
+          "toLocationId": "loc-sublevel-c"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-operations-level",
+      "sectorId": "sector-08-tempest-co-hq",
+      "name": "Operations Level",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-armament-level"
+        },
+        {
+          "toLocationId": "loc-cutters-mansion"
+        },
+        {
+          "toLocationId": "loc-sublevel-c"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-cutters-mansion",
+      "sectorId": "sector-08-tempest-co-hq",
+      "name": "Cutter's Mansion",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-armament-level"
+        },
+        {
+          "toLocationId": "loc-operations-level"
+        },
+        {
+          "toLocationId": "loc-sublevel-c"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-sublevel-c",
+      "sectorId": "sector-08-tempest-co-hq",
+      "name": "Sublevel C",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-armament-level"
+        },
+        {
+          "toLocationId": "loc-operations-level"
+        },
+        {
+          "toLocationId": "loc-cutters-mansion"
+        }
+      ]
+    },
+    {
+      "uuid": "loc-doptown-main",
+      "sectorId": "sector-09-doptown",
+      "name": "Doptown",
+      "isLocked": false,
+      "connections": []
+    },
+    {
+      "uuid": "loc-the-choke-main",
+      "sectorId": "sector-10-the-choke",
+      "name": "The Choke",
+      "isLocked": false,
+      "connections": [
+        {
+          "toLocationId": "loc-cybermod-storage",
+          "passageName": "Private Tunnel"
+        }
+      ]
+    }
+  ]
+}

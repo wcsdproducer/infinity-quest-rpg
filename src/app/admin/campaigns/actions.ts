@@ -25,6 +25,7 @@ const LocationItemSchema = z.object({
   uuid: z.string().default(() => faker.string.uuid()),
   name: z.string().optional(),
   context: z.string().optional(),
+  sectorId: z.string().optional(),
   actions: z.array(z.string()).optional(),
   narrative: z.string().optional(),
   mediaUrls: z.array(MediaURLSchema).optional(),
@@ -183,7 +184,13 @@ export async function saveCampaign(
                                 if (media.url && media.url.startsWith('data:')) {
                                     const { extension } = getMimeTypeAndExtension(media.url);
                                     const fieldFolder = field === 'locations' ? 'Locations' : field;
-                                    const filePath = `campaigns/${storageFolderName}/${fieldFolder}/${item.uuid}/${index}${extension}`;
+                                    let filePath = '';
+          if (fieldFolder === 'Locations') {
+            const sectorId = (item as any).sectorId || 'unassigned';
+            filePath = `campaigns/${storageFolderName}/Locations/${sectorId}/${item.uuid}/${index}${extension}`;
+          } else {
+            filePath = `campaigns/${storageFolderName}/${fieldFolder}/${item.uuid}/${index}${extension}`;
+          }
                                     const storageRef = ref(storage, filePath);
                                     const snapshot = await uploadString(storageRef, media.url, 'data_url');
                                     const downloadURL = await getDownloadURL(snapshot.ref);

@@ -1,0 +1,4099 @@
+John Freeman (Order #36140899)
+01 Dry Dock
+pg. 10. 
+Docking and repairs.
+Docking fee: 1kcr 
+                 + 100cr/day.
+O2 tax: 10cr/day/person.
+08 Tempest Co. HQ
+pg. 28. 
+Powerful mercenary company.
+Security onboard The Dream.
+09 Doptown
+pg. 30. 
+De-oxygenated people’s town. Heavily
+guarded debtor’s prison for those who 
+can’t pay the O2 tax.
+10 The Choke
+pg. 32.
+Abandoned, quarantined wasteland. 
+Houses Doptown.
+02 Stellar Burn
+pg. 12. 
+Rumors, drinks, and R&R.
+Ask for Sem.
+03 Chop Shop
+pg. 14. 
+Cybermod installation 
+and repair by Zhenya
+and The Babushka.
+04 The Ice Box
+pg. 20. 
+Slickware installation and
+re-sleeving facility.
+06 CANYONHEAVY.market
+pg. 24. 
+Information market run by an elite hacking crew.
+07 The Court
+pg. 26. 
+Disputes resolved  and justice served through brutal arena combat.
+Easiest place to find The Dream’s top power brokers.
+05 The Farm
+pg. 22. 
+The Dream’s food supply.
+Run by the Solarian Church.
+Easy place to buy drugs. 
+9
+3
+6
+1
+10
+2
+5
+8
+7
+4
+Population (City Level): 5.6m
+Population (Choke): 3.1m
+Ships Currently Docked: 1d100[+]
+Diameter: 12.98km
+Circumference: 40.77km
+Decks (Outer Ring): 23
+Decks (Ring Structures Avg.): 78
+Decks (Center Spire): 430
+WARDEN’S NOTES:
+2
+1
+7
+5
+8
+6
+4
+3
+9
+10
+Roll for a Station Encounter (pg. 41) whenever players travel through a slice on the map.
+One square is a ~15min walk. It takes ~7.5hrs to traverse the outer rim.
+John Freeman (Order #36140899)
+01 Dry Dock
+pg. 10. 
+Docking and repairs.
+Docking fee: 1kcr 
+                 + 100cr/day.
+O2 tax: 10cr/day/person.
+08 Tempest Co. HQ
+pg. 28. 
+Powerful mercenary company.
+Security onboard The Dream.
+09 Doptown
+pg. 30. 
+De-oxygenated people’s town. Heavily
+guarded debtor’s prison for those who 
+can’t pay the O2 tax.
+10 The Choke
+pg. 32.
+Abandoned, quarantined wasteland. 
+Houses Doptown.
+02 Stellar Burn
+pg. 12. 
+Rumors, drinks, and R&R.
+Ask for Sem.
+03 Chop Shop
+pg. 14. 
+Cybermod installation 
+and repair by Zhenya
+and The Babushka.
+04 The Ice Box
+pg. 20. 
+Slickware installation and
+re-sleeving facility.
+06 CANYONHEAVY.market
+pg. 24. 
+Information market run by an elite hacking crew.
+07 The Court
+pg. 26. 
+Disputes resolved  and justice served through brutal arena combat.
+Easiest place to find The Dream’s top power brokers.
+05 The Farm
+pg. 22. 
+The Dream’s food supply.
+Run by the Solarian Church.
+Easy place to buy drugs. 
+9
+3
+6
+1
+10
+2
+5
+8
+7
+4
+Population (City Level): 5.6m
+Population (Choke): 3.1m
+Ships Currently Docked: 1d100[+]
+Diameter: 12.98km
+Circumference: 40.77km
+Decks (Outer Ring): 23
+Decks (Ring Structures Avg.): 78
+Decks (Center Spire): 430
+WARDEN’S NOTES:
+2
+1
+7
+5
+8
+6
+4
+3
+9
+10
+Roll for a Station Encounter (pg. 41) whenever players travel through a slice on the map.
+One square is a ~15min walk. It takes ~7.5hrs to traverse the outer rim.
+Written by SEAN McCOY, DONN STROUD,  
+LUKE GEARING 
+Illustrated by JAN BURAGAY & SEAN McCOY  
+Edited by JARRETT CRADER 
+A POUND OF FLESH
+Special thanks to LINDSAY & LANGSTON,  
+REECE CARTER & EVLYN MOREAU  
+Copyright 2019 © Tuesday Knight Games 
+First Printing. @playtkg 
+Warden’s resources at mothershiprpg.com
+John Freeman (Order #36140899)
+Item Cost
+Docking Fee 1,000cr + 100cr/day. Impounded vehicles fine: Hull x 100cr (+200cr/day impounded).
+Oxygen Tax 10cr/day/person. 50cr/day/person during major events (like at The Court (pg. 26)).
+Seller’s License 2,000cr. Allows you to sell goods aboard The Dream. Without this you can only make purchases.
+Weapon Locker 1cr/day/weapon. All hull-breachable weapons must be placed in a locker.
+Bribe 2d10cr for minor manifest issues, 5d10cr for major manifest issues.
+Re-fueling 2d10x1,000cr/fuel unit. Reroll monthly as prices fluctuate.
+4 Please write all over this book. It’s yours and it’s cheap for a reason. //
+THE BASICS
+Prospero’s Dream is a massive space station 
+with a population of over 8 million. It’s haphazard, 
+disorganized, overcrowded and teeming with 
+hustlers and criminals of all stripes.
+The Dream is operated by the Golyonova II Bratva 
+(AKA the Novos, or “Yandee’s People”), a powerful 
+criminal syndicate headed by a meticulous (secret) 
+android named Yandee (pg. 8), backed by the elite 
+Tempest Mercenary Company (pg. 28). Together 
+they sell the lucrative drug Sycorax (pg. 23), which 
+is supplied by The Solarian Church (pg. 22) and 
+distributed by Teamsters Local 32819L.
+How do you board the station?
+Ships of Hull 70 or lower can enter through the dry 
+dock. Once inside, the ship will be attached and 
+locked into the station via crane and stored in the 
+stacks until the ship is ready for departure, or else 
+transported to The Dry Dock (pg. 10) for repairs. 
+Ships of Hull 71 or greater must be moored to the 
+station’s piers. After the ship is moored a shuttle will 
+be sent to retrieve anyone coming aboard.
+Every ship is required to have an up-to-date 
+manifest which includes the captain, crew and 
+cargo. IDs are checked upon entry and discrepancies 
+in the manifest can lead to invasive searches from 
+greedy customs agents, an impounded vehicle or, 
+worst case, arrest. 
+Those who can’t afford the fees or who find 
+themselves arrested are sent to The Court (pg. 26) 
+to await trial by combat. Losing your trial means 
+death or to be sent to the dreaded Choke (pg. 32), a 
+gigantic O2 debtors prison housed in the bowels of 
+The Dream. 
+If you only want to refuel you don’t have to pay the 
+docking fee, though you can’t disembark your ship.
+What happens when you board?
+Upon disembarking you’ll be directed by a station 
+android to a Clean Room (pg. 11), where a squad of 
+hazmat clad brutes (a Q-Team) will strip search you 
+and spray you with disinfectant (4 Stress, Fear Save 
+for half).
+After you’ve been decontaminated you’ll be 
+issued an O2 credstick which acts as your wallet, 
+passport, and locator aboard the station. It must be 
+pre-loaded with credits and any debts or purchases 
+are automatically deducted from it (taxes and  
+fees are automatically withdrawn daily).
+What are the laws aboard The Dream?
+ The rules of The Dream are as follows:
+ » Have your O2 credstick on you at all times. Your 
+movements are tracked. 
+ » Contraband: Laser Cutters, Explosives, Signal 
+Jammers, Contagious Bioweapons, EMP tech. 
+ » You can keep non-hull piercing weapons but 
+other weapons must be stowed in a rented 
+locker (1cr/day/weapon). They key is tagged to 
+the renter’s fingerprint, so don’t lose it.
+ » Don’t enter unauthorized areas, particularly  
+The Choke (pg. 32).
+Everything else is left to the parties involved. Street 
+justice is pervasive. Anything more substantial, 
+including breaches of The Dream’s “Laws,” are 
+handled by Tempest Company (pg. 28) and The 
+Court (pg. 26).
+Q-TEAM
+COMBAT: 25 (Disinfectant Foam Gun: Body Save or be 
+knocked down. Or Pulse Rifles 5d10dmg).
+SPEED: 35 INSTINCT: 25
+HITS: 2 (20)
+John Freeman (Order #36140899)
+5// In a campaign, make them fall in love with The Dream. In a one-shot, make them hate it.
+This isn’t like a typical module. You don’t “beat” 
+it (though you may have to survive it). In fact, if 
+your players want, they don’t have to interact 
+with anything on this station. They can stop in 
+for some quick R&R or make The Dream their 
+homebase for a campaign. That’s great! That’s 
+the module working. If they want to investigate 
+more, they can. There’s details here to discover 
+and plots to unravel. As for why visit The Dream? 
+Here’s a few ideas to get you started:
+ » Join the Tempest Mercenary Company  
+(pg. 28) and go on missions for them. It’s a 
+great way to earn a lot credits and you gain 
+cool benefits from ranking up.
+ » Become a Droog for the Golyanovo II Bratva, 
+a ruthless criminal organization led by the 
+cold-blooded Yandee (pg. 8).
+ » Install off-the-market cybermods from  
+The Babushka in The Chop Shop (pg. 14).
+ » Protect your future with a backup sleeve or 
+expand your mind in one of the lifelike VR 
+Slickbays at The Ice Box (pg. 20).
+ » Take the edge off with some potent drinks, 
+drugs and company at The Stellar Burn  
+(pg. 12). Ask for Sem.
+ » Visit The Aarnivalkea (pg. 22), the oldest 
+living tree aboard a space station.
+ » Fight for someone’s freedom (or your own) 
+in The Court (pg. 26) and earn some credits 
+while you’re at it. 
+What if I’m running a One-Shot?
+Prospero’s Dream works best as a base of 
+operations in an ongoing campaign, but it’s also 
+good for pick-up-and-play style groups. Here’s a 
+few recommendations for running content from 
+A Pound of Flesh as a one-shot:
+ » Look up one of the Major NPCs on pg. 8-9 
+and pick one of the jobs they’re offering. Run 
+just that job as a one-shot.
+ » Build a session around an event from the 
+Timeline on pg. 7.
+ » Both Life Support 01 (pg. 36) and  
+The Burrows (pg. 37) can be ripped straight 
+from this module and run as standalone 
+one-shots. The Burrows can even be quickly 
+converted to your own custom bug hunt with 
+a little elbow grease.
+ » The Tempest Co. Mission Table (pg. 29) is 
+ripe for plundering for one-shot inspiration.
+ » After your crew docks and gets some rest, 
+all hell breaks loose. Start your players off 
+in Phase 3 (pg. 7) of any of the three major 
+storylines and have them fight their way 
+back to their ship in an attempt to  
+ESCAPE FROM PROSPERO’S DREAM.
+HOW TO  USE THIS MODULE
+John Freeman (Order #36140899)
+Phase Alterations
+You’ll notice these “Phase Alterations” boxes spread 
+throughout the module in most of the locations. They 
+outline how the location can be modified based on what 
+Phase or Storyline you’re in.
+For example:
+ » Strike 1: This means you’re in Phase 1 of the 
+“Impending Teamster Strike” storyline.
+ » Unrest/Outbreak 2: This means you’re in Phase 2 
+of either the “Unrest in The Choke” or “Caliban’s 
+Awakening” storylines.
+ » Phase 3: This means you’re in Phase 3 of any of the 
+three storylines.
+Not every Phase or Storyline will be listed. These are meant 
+to be cool little flourishes to add to the reactiveness of 
+the module. They’re not meant to be prescriptive and if you 
+miss one it’s not gamebreaking, so don’t sweat it.ot
+6 Don’t be intimidated by the Phases. You don’t have to “get them right” to have fun. //
+WHAT EXACTLY IS 
+GOING ON HERE?
+Everything in this book is for you to take and run 
+with. There is no canonical Prospero’s Dream, only 
+what happens at your table. That being said, we’ve 
+written three evolving STORYLINES or crises that 
+your players can engage with or ignore:
+1. THE IMPENDING TEAMSTER STRIKE: Ex-pilot 
+Reidmar (pg. 8) runs Teamsters Local 32819L which 
+makes money largely by distributing the lucrative 
+drug Sycorax (pg. 23) for Yandee (pg. 8), Vor of the 
+powerful criminal empire, the Golyanovo II Bratva. 
+However, tensions between the two groups are at 
+an all time high after a small fleet of Reidmar’s 
+freighters are held ransom by the rival Stratemeyer 
+Syndicate. Yandee won’t pay ransom and Local 
+32819L can’t afford to hire Tempest Co. to rescue the 
+hostages. If a solution isn’t found the Teamsters will 
+organize a general strike and steal what remains 
+of the Sycorax for themselves. Ultimately, the 
+Syndicate’s goal is to corner the Sycorax market and 
+will pay a high price to anyone who can determine 
+how it is made or where it comes from. 
+2. UNREST IN THE CHOKE: Those who can’t afford 
+to pay the daily O2 tax are sent deep below the 
+bowels of The Dream into The Choke (pg. 32) where 
+oxygen is scarce and life is short. This brutal prison 
+houses millions living in destitute squalor. However, 
+revolution is coming: Imogene Kane (pg. 31) and her 
+insurgent resistance, the Hunglungs, are planning 
+to overthrow their Tempest Co. guards and retake 
+The Dream in a bloody revolution. Terrorist attacks 
+on The Dream are becoming more frequent and 
+Tempest Co. and the Novos are responding in kind.  
+It’s only a matter of time before war breaks out. 
+3. ACMD OUTBREAK: Two decades ago, Dr. 
+Emil Bancali (pg. 34) brought his terminally ill 
+daughter, Ariel, to The Dream in the hopes of 
+curing her rare disease through bleeding-edge 
+cybermod treatments. The treatments didn’t work, 
+unfortunately, and Dr. Bancali resorted to inhumane 
+experiments in the hopes of keeping his daughter 
+alive. Instead, he gave birth to an outbreak of a 
+new disease: ACMD, Acute Cybernetic Mutagenetic 
+Disorder which infects individuals with cybermods, 
+slowly transforming them into fully cybernetic 
+beings that then merge to become one with a being 
+called “Caliban” (pg. 39). Bancali was the first to 
+succumb to ACMD, and has merged with the station 
+itself, and is in fact Caliban. As more people become 
+infected Caliban gains more power over the station 
+until eventually he and The Dream will become one 
+singular grotesque organism.
+The Three Phases
+We’ve divdided each of these STORYLINES into three 
+PHASES with a couple of EVENTS happening in each 
+phase. These events are loosely defined so that you 
+can use them in a few different ways depending on 
+your playstyle:
+ » Current Events: news, rumors or background 
+flavor each time your players visit The Dream.
+ » Potential seeds for play: your players can 
+investigate and try to solve the crises, 
+preventing them from spiralling to their 
+conclusion.
+ » Session fodder: for you to build missions around 
+one of the powerful NPCs (pg. 8-9) who have a 
+hand in The Dream’s affairs.
+ » Ignored entirely: you don’t need this book.
+We recommend spacing the events out at a pace 
+that works for your table. In a campaign one event 
+per session spent on The Dream is enough. For an 
+intense one-shot you could  follow one storyline all 
+the way to its conclusion. When all of the events in 
+a phase have happened, move on to the next. If the 
+players manage to solve a storyline then further 
+events in that storyline won’t happen. 
+Finally, this module is a tinderbox, not a roadmap. 
+Not everything is spelled out. For example, who 
+is the Stratemeyer Syndicate and where are they 
+holding Reidmar’s fleet? Who is Imogene Kane and 
+what does she ultimately want? These are questions 
+you’ll need to answer yourself (though if The 
+Syndicate’s hideout is a space station the tables on 
+pg. 46-51 should prove useful.)
+John Freeman (Order #36140899)
+7// Sycorax: AKA Psycho, Sigh, Rax, RX, Slickstim, Seed.
+Timeline of Events that Will Happen if the PCs Do Nothing
+Impending  
+Teamster Strike
+Unrest in  
+The Choke
+ACMD  
+Outbreak
+PHASE 
+ 1
+Reidmar’s freighter fleet 
+has been captured by the 
+Stratemeyer Syndicate. He 
+demands Yandee send in 
+Tempest Co. to rescue them.
+Footage of Hunglungs 
+demanding all O2 debt in  
+The Choke (pg. 32) be paid 
+off in 24hrs or bombings will 
+commence.
+Body Saves against infection 
+are at [+]. Reports of 
+mysterious figure roaming the 
+slickworlds. 2d10 die in strange 
+Slickbay (pg. 20) accident. 
+The Stratemeyer Syndicate 
+sends footage of Teamster 
+executions. Reidmar threatens 
+a general strike if the ransom 
+isn’t paid.
+Bombings occur in a random 
+(roll 1d10 on Inside Front Cover) 
+module. 2d100 dead. Tempest 
+Co. begins to “Search & Seize” 
+citizens at random.
+First Chokespawn (pg. 35) 
+caught on the station. Rumors 
+that the ACMD plague comes 
+through the air filters from  
+The Choke (pg. 32).
+PHASE 
+ 2
+Strike! Teamsters walk off 
+the job. No ships may leave 
+or enter port. Tempest Co. is 
+overworked. Crime is high.  
+Fuel/repairs cost 5x normal.
+Ukko/Ukka (pg. 9) unmasked 
+as Doptown rebel sympathizer/
+patron. Standoff at The Farm 
+(pg. 22) between Tempest Co. 
+and The Solarian Church.
+Packs of Chokespawn roam the 
+corridors. Body Saves against 
+Infection normal. Q-teams 
+exort newcomers. Sycorax (pg. 
+23) scarce.
+Tempest Co. strikebreakers 
+called in to arrest Union 
+leaders. Scabs allow some 
+amount of ships to leave for 
+30kcr. Fuel/repairs: cost 2x.
+The Choke is quarantined. No 
+one allowed out for any reason. 
+O2 debts doubled on all citizens 
+of Doptown until leaders turn 
+themselves in.
+Every 24 hours a random (roll 
+1d10 on Inside Front Cover) 
+module is taken over by 
+Caliban. Husks (pg. 21) and 
+Chokespawn run rampant.
+PHASE 
+ 3
+Brutal violence breaks out. 
+Teamsters fight back against 
+roving gangs of Novo Droogs 
+and Tempest Co. Operators. 
+Massive looting and rioting.
+Citizens from Doptown overrun 
+the guards at the Airlock 
+(pg. 30). War errupts in the 
+corridors. Tempest Co. Armored 
+Troopers butcher civilians.
+Every inch of The Dream begins 
+to morph. Metallic eyes and 
+faces appear. Corridors become 
+giant throats.  
+Caliban takes over.
+Infection Checks
+Unless the ACMD outbreak is 
+cured, players may have to make 
+an Infection Check when coming 
+into contact with other infected, 
+puncturing a hazard suit in The 
+Choke (pg. 32), etc. To make an 
+Infection Check, first make a 
+Body Save. If you fail you become 
+Infected and your INFECTION 
+LEVEL increases by 1 (see Infection 
+Table). Once per day you may make 
+a Body Save instead of Resting to 
+reduce your Infection by 1 (1d5 on a 
+Critical Success). On a failure the 
+Infection increases by 1 (1d5 on a 
+Critical Failure). 
+Infection Table
+01 Weak Immune System. All Body Saves are at [-].
+02 Once/day make a Body Save or go into a coughing fit for 1d5 rounds. Anyone 
+within 10m must make an Infection Check.
+03 Fever & Chills. Take 1d10dmg per day.
+04 Random Mutation (Back Cover).
+05 Frailty. All Strength & Speed Checks are at [-]. Mutation (Back Cover).
+06 2d10dmg per day. Random Malfunction (pg. 17). 
+07 Panic Check. [+] on Reaping Checks until cured. Mutation (Back Cover).
+08 Install 1 cybermod per week or gain 2d10 Stress. Mutation (Back Cover).
+09 Once/day make a Body Save or spew an infectious Nanoswarm. All in a 20m 
+radius make Infection Check at [-]. Mutation (Back Cover).
+10 Lose control of your PC and transform into Chokespawn (pg. 35).
+John Freeman (Order #36140899)
+8 THE GOLYANOVO II BRATVA
+ANGUS REIDMAR YANDEE
+sysadmin  of  canyonhea vy .market union  rep  of  teamster  local  32819L vor  of  the  golyanovo  ii bratv a
+Runs the sector’s most powerful data 
+brokerage firm and the intelligence 
+arm of the Golyanovo II Bratva. Loyal to 
+Yandee.  Always has a lead on work for a 
+2d10cr finder’s fee. Chatty, manic voice.
+Union loyalist, fluid expression of their 
+gruff exterior and notoriously impatient. 
+Legendary pilot. Distributes Yandee’s 
+Sycorax to fund Local 32819L ’s corporate 
+lobbying. Rough voice.
+(Secretly) an android built from scraps 
+on a prison world, Yandee rose through 
+the ranks of the powerful Golyanovo 
+II Bratva empire by discovering the 
+lucrative Sycorax trade. Methodical.
+What Can You Do For Them?
+ » Always looking for good information. 
+Tips pay 3d10*10kcr/ea. 
+ » [Strike 1] Location of Stratemeyer 
+Syndicate (pg. 6). 200kcr.
+ » [Unrest 1] Find who is broadcasting 
+the Hunglung Footage (pg. 7). 250kcr.
+ » [Outbreak 1] Investigate rumors of 
+girl named Ariel (pg. 6) haunting the 
+Slickbays (pg. 20). 200kcr.
+ » [Strike 2] Negotiate with Reidmar. 
+See if he’ll end the strike before Yandee 
+sheds blood. 2mcr.
+ » Hack The Babushka’s OGRE. 5mcr.
+ » See Canyonheavy Missions pg. 25.
+ » [Strike 1] Locate the Stratemeyer 
+Syndicate hideout where the lost fleet 
+(pg. 6) is being held hostage. 50kcr.
+ » [Strike 1] Provide protection for the 
+Teamsters during negotiations with 
+Yandee. 100kcr.
+ » [Strike 2] Sabotage scab freighters 
+attempting to leave port. 75kcr per ship 
+disable/destroyed.
+ » [Unrest 2] Smuggle weapons into The 
+Choke (pg. 32). 500kcr/smuggling run.
+ » [Outbreak 2] Help evacuate The 
+Dream. 1mcr/Evacuation run.
+ » Make a Jump-6 delivery. 5mcr.
+ » The Babushka (pg. 14) is late on 
+protection money. Go collect. 50kcr.
+ » [Strike 1] Assassinate head of The 
+Syndicate. 20mcr.
+ » [Strike 2] Destroy the Conquer All (pg. 
+11). Make it look like an accident. 1mcr.
+ » [Strike 2] Escort Teamster scabs to 
+work 50kcr/day.
+ » [Unrest 2] Find the Sycorax formula in 
+Farm Two (pg. 22) 20mcr and a ship.
+ » [Outbreak 3] Kill Caliban. 50mcr.
+ » Harvest Sycorax. 10kcr/3 fruit.
+ » Do 3 jobs for Yandee and become a 
+Novo Droog. 10kcr/week.
+Where Are They And What Are They Doing? (1d10)
+00: Getting his slicksocket tuned up at 
+The Chop Shop (pg. 14).  
+01-04: Locked in his office (pg. 24) on a 
+marathon hacking sprint.   
+05-08: Coding in the Battlestations 
+(pg. 24) with the rest of his crew. 
+09: On a slickraid with his legendary Clan, 
+DEKALOG, in The Slickbays (pg. 20).
+00: Fixing up the Conquer All (pg. 11) with 
+his daughter, Trieu. 
+01-04: Overseeing Sycorax shipment in a 
+Hangar Bay (pg. 11). 
+05-08: Swapping piloting stories with the 
+Oldtimers at Sem’s Bar (pg. 12).  
+09: Union meeting in Loshe’s Office (pg. 
+11). Leadership challenge. High tensions.
+00: The Farm: Processing (pg. 22). Random 
+audit of Sycorax production. 
+01-04: Giving orders to the Novo Droogs 
+in Heaven (pg. 12).  
+05-08: In their penthouse above 
+The Stellar Burn (pg. 12), going over 
+intelligence reports from Angus. 
+09: Gambling at The Court (pg. 26). 
+Watch out here comes
+HITS: 2 (20)
+C: 25 Revolver 
+3d10dmg I: 75
+HITS: 3 (20)
+C: 35 Spanner
+2d10dmg I: 55
+HITS: 4 (55)
+C: 65 Laser Pistol 
+1d10dmg I: 80
+John Freeman (Order #36140899)
+9AKA “The Novos” or “Yandee’s People”MOST WANTED LIST
+BRUNHILDH CUTTER UKKO/UKKA
+chief  adjudicator  of  the  court commander  of  tempest  company high  gardener  of  invictus  sol
+Retired bounty hunter overseeing The 
+Court (pg. 26). Yandee’s fanatic right 
+hand. Feared interrogator. Settled here 
+for quality Big Switch and combat. Uses a 
+modded antique blunderbuss (2mcr).
+Established his command as a privateer 
+during the Corp Wars. Widely feared as 
+a salt-the-earth tactician. Security arm 
+of the Golyanovo II Bratva. Doesn’t trust 
+Yandee. Unrelenting voice.
+Born in Doptown (pg. 30), Ukko/Ukka 
+harvested Syocrax to pay off their birth 
+debt. Joined the Solarians as a chemist, 
+rose quickly to High Gardener. Donates 
+massive O2 to The Choke. Coughs.
+What Can You Do For Them?
+ » Find out if Cutter is loyal to Yandee. 
+1mcr for hard evidence. 
+ » Playtest new Slicksquid (pg. 27) 
+design. Survive and become an honorary 
+Executioner.
+ » [Unrest 2] Locate and apprehend 
+Imogene Kane (pg. 31). Alive. 2mcr.
+ » [Outbreak 2] The Court needs 
+Chokespawn (pg. 35) for the Pit.  
+100kcr/ea. Alive only.
+ » [Strike 3] Protect Yandee from 
+Teamsters and get them off The Dream. 
+2mcr. Become a Novo Captain.
+ » Act as Public Defender. 5kcr/win.
+ » [Unrest 1] Find the Hunglungs who 
+bombed the station. 250kcr.
+ » [Unrest 2] Arrest Ukko/Ukka. Gain a 
+Rank in Tempest Co. 400kcr.  
+ » [Outbreak 2] Hunt Chokespawn. Given 
+an Exosuit and 30kcr/kill.  
+ » [Strike 3] Kill Reidmar. Gain a Rank 
+in Tempest Co. and your own 5 member 
+Operator Squad.
+ » [Unrest 3] Defeat the Hunglung 
+Insurgency. Kill Imogene Kane. Promoted 
+to Platoon Commander.  
+ » See Tempest Mission Table (pg. 29).
+ » (Secret) Kill Novo Droogs. 10kcr/kill.
+ » Always looking for Public Defenders 
+(pg. 26) for the oxy-poor. Can pay in drug 
+supply (pg. 23).
+ » [Strike 1] Negotiate a deal between 
+The Novos and Local 32819L. 20mcr.
+ » [Outbreak 1] Investigate rumors of a 
+“Dr. Bancali” in The Choke. 40kcr.
+ » [Unrest 2] Smuggle Ukko/Ukka off 
+The Dream before Tempest Co. can kill 
+them. The Solarian Church will owe you.
+ » [Outbreak 3] Destroy the infected 
+Aarnivalkea (pg. 23). You will be given a 
+Solarian shuttle.
+ » Donate O2 to Doptown (pg. 30).
+Where Are They And What Are They Doing? (1d10)
+00: Detailed weapon maintenance in her 
+Quarters (pg. 27). 
+01-04:  Sitting on The Bench (pg. 27). 
+05-08: Sublevel C (pg. 28). With Yandee, 
+interrogating captured Hunglungs. 
+09: The Dry Dock (pg. 10). Sending out a 
+team of bounty hunters.
+00: R&R at The Ecstacy (pg. 12). 
+01-04: Armament Level (pg. 28) running 
+new recruits through slicktraining.  
+05-08: Operations Level (pg. 28) 
+commanding in-progress missions. 
+09: In his mansion (pg. 28) plotting 
+Yandee’s overthrow with an inner circle 
+of Platoon Commanders.
+00: In The Holding Cells (pg. 27) giving 
+counsel to the Accused. 
+01-04: Walking the corridors giving 
+money and seeds to the poor. 
+05-08: Silently tending to the Aarnivalkea 
+(pg. 22). Will listen to anyone. 
+09: Secretely meeting with Imogene Kane 
+in Doptown (pg. 30). 
+HITS: 3 (45)
+C: 70 Antique 
+6d10dmg I: 65
+HITS: 3 (50)
+C: 75 Pulse Rifle 
+5d10dmg I: 55
+HITS: 2 (20)
+C: 20 Unarmed 
+1d5dmg I: 60
+John Freeman (Order #36140899)
+Phase Alterations
+ » Strike 2: Fuel/repairs cost 5x their normal price. Rampant 
+thievery from any cargo freighters.
+ » Strike 3: No ships can enter or leave. Mandatory search.  
+All valuable cargo confiscated by Teamsters. 
+ » Outbreak 3: The Shipbuilders who hung from the ceiling 
+for repairs are now fused in their suspension rigs with 
+living hoses puncturing and feeding their bodies. Loshe is 
+still conscious but his exoskeleton is walking around of 
+its own accord while he watches blankly, trapped inside. 
+The Repair Bays (3) are infected and retrofit ships to 
+become one with Caliban and spread his seed throughout 
+the sector.
+Shipbuilders: C:45 Grotesque Tools 4d10dmg I:30 S:70 Hits: 2 (20) 
+10
+01. DRY DOCK
+Sparks fly as the harsh screeching of metal grinding 
+fills the air and reverberates off the walls. Dozens 
+of shipbuilders scurry over on scaffolding dangling 
+above massive ships. 
+The Dry Dock is actually hundreds of small ports 
+like the one mapped on pg. 11. This particular dock is 
+only notable for being attached to Loshe’s Office (2). 
+Otherwise they all look roughly the same.
+How much do repairs cost?
+Prospero’s Dream is a legendary X-Class Port, far 
+from the prying eyes of the law. It’s mechanics work 
+fast and hard, but not always cheaply or reliably.
+ » REPAIRS cost 75kcr/Hull.
+ » UPGRADES cost 12mcr/Hull.
+ » 50% DOWNPAYMENT required.
+ » TURNAROUND time is 1d10 days for repairs and 
+1d10 weeks for upgrades.
+ » 10% chance some cargo will be STOLEN.
+LOSHE dockmaster
+HITS: 3 (40)
+COMBAT: 55 (Exoskeleton bash 4d10dmg)
+INSTINCT: 60
+ » Exoskeleton: 4 arms, each capable of attacking or 
+firing a weapon in one round. Reapable. Worth 40kcr.
+Loshe personally oversees every ship that comes in.  
+Because of this he’s also a hub of information about who’s 
+who on The Dream.
+Speaks in a calm voice. Always smoking cigars. Drinks Cadre 
+Cola (pg. 13). In recovery.
+WHAT DOES HE WANT?
+ » To keep the dock running smoothly and without injury.
+ » To get his 1 year sobriety chip.
+ » To protect the Union. Despises corruption.
+WHAT IS HE UP TO RIGHT NOW?
+1-4: Random inspection of a ship’s cargo and manifest.
+5-7: Gossiping with the mechanics (Free rumor).
+8-9: Overseeing a Q-Team disinfecting a new crew.
+10: Meeting with Reidmar (pg. 8) in the back office.
+d10 Rumor (1kcr per roll)
+01 There’s creatures growing in The Choke (pg. 32).
+02 Yandee (pg. 8) is secretly an android.
+03 Cutter (pg. 9) is looking to overthrow Yandee.
+04 Ukko/Ukka (pg. 9) is a Hunglung sympathizer.
+05 Imogene Kane (pg. 31) is planning an uprising.
+06 Sycorax (pg. 23) makes installing cybermods easy.
+07 Angus (pg. 8) knows everything about everyone.
+08 Brunhildh (pg. 9) keeps a pet monster in the cells.
+09 Something called “Caliban” is infecting the terminals.
+10 The Aarnivalkea (pg. 22) can heal any disease.
+John Freeman (Order #36140899)
+11 // Use Loshe as an easy way to give your crew news on the Station and seeds for adventure.
+4
+HANGAR
+BAY
+3
+REPAIR
+BAY
+1
+CLEAN
+ROOM
+2
+LOSHE’S
+OFFICE
+DRY DOCK
+PROSPERO’S
+DREAM
+KEY
+CORRIDOR
+CRANE PATH
+LOCKED DOOR
+1. CLEAN ROOM. Spartan, concrete room with rusty 
+drains lining the floor. 1d5+1 Q-Team members 
+wearing green hazard suits strip search and spray 
+anyone who has disembarked from their ship with 
+disinfectant foam guns.
+2. LOSHE’S OFFICE. Cramped, greasy office 
+littered with tools. Loshe is usually here reviewing 
+blueprints or negotiating a complex repair. A safe in 
+the back contains plans for an experimental Jump-8 
+drive that requires only 4 Fuel to jump.
+3. REPAIR BAY. Giant robotic limbs move 
+independently, dismantling and upgrading ships. A 
+few mechanics monitoring the repairs.
+4. HANGAR BAY. This is where you’ll ship will be 
+docked during the duration of your stay aboard The 
+Dream. Guards can be hired from Tempest Co. (pg. 
+28). Otherwise there’s a 10% chance that some 
+cargo will be stolen.
+d10 Ships Currently Docked
+01 Conquer All Looking for gunmen. Leaves 
+tomorrow. 200cr/day. 6 month tour.
+02 Bartzabel Strikebreakers heading to Tybalt 
+Blue research station. 100cr/day.
+03 Decade of 
+Therion
+Blockade runner heading to DMZ. 
+Room for 5. Tickets 1000cr/ea.
+04 Horns of 
+Baphomet
+Rescue mission. Looking for a ship 
+called The Defiance.
+05
+In the 
+Absence ov 
+Light
+Needs 2 scientists, heading to 
+remote research station for 3 weeks. 
+Pays 50kcr.
+06 Ov Fire and 
+Void
+Smuggler looking for work. 1.5kcr 
+advance and 10% of profits.
+07 Daimonos Needs 100 doses of Sycorax.
+08
+Alas, Lord is 
+Upon Me
+Mining crew taking apprentices.  
+1% share of profits. 3 month tour.
+09
+Inner 
+Sanctum
+Solarians on a pilgrimmage to 
+Päivätär 1019. Will take anyone.
+10
+From the 
+Pagan 
+Vastlands
+Sensitive cargo heading to the 
+Thelema Sector. Guards needed. 
+500cr/day. 1 month tour.
+Q-TEAM
+COMBAT: 25 (Disinfectant Foam Gun: Body Save or be 
+knocked down. Or Pulse Rifles 5d10dmg)
+SPEED: 35 INSTINCT: 25
+HITS: 2 (20)
+John Freeman (Order #36140899)
+Phase Alterations
+ » Strike 2/Unrest 2: Business is slow. Sem has overheard where to find Imogene Kane (pg. 31) but wants 5kcr for the info. 
+ » Outbreak 3: The ceiling sags from the weight of fatty tissues rife with oozing metal veins. Black sludge covers the floor. 1d10 Husk 
+Swarms stand lifeless on the dancefloor, motionless under the pounding droning bass static. The doors to the lifts down to The 
+Ecstasy have been sealed over with metallic meat and skin. The speakers around the club scream when any of the fleshy walls 
+are cut. Husks (Swarm) [C: X*10 Mindless Clawing Xd10dmg I:20 S:20 H:1d10(5). Swarm: This creature’s Hits represent the number of 
+creatures in the Swarm. Combat and damage are based on its current Hits.]
+Dark, smoky, filled with strobing lights and flashing 
+lasers, The Stellar Burn is the place to unwind and 
+do much of the station’s “business.” Security is 
+handled by Gundrones and Tempest. Co Probies.
+1. SEM’S BAR (CLUB LEVEL). Jury “Sem” Semenov 
+runs the club level and is often found behind the 
+bar. Check What’s on the Menu? pg. 13 for drinks 
+and services offered. Additionally, Sem will dispense 
+a rumor from pg. 10 if you’ve bought a drink. Any 
+patrons going upstairs for a private booth will need 
+their retinas scanned (via a cybermod in Sem’s 
+palm) or the Gundrones will be alerted.
+2. HEAVEN (UPPER LEVEL). Overlooks the bar and 
+dance floor and contains private booths with sonic 
+muting.
+3. THE ECSTACY (LOWER LEVEL). Indyl’s exclusive 
+domain where companionship can be bought (see 
+What’s on the Menu? pg. 13). It costs 100cr to get in.
+GUNDRONE
+COMBAT: 60 (SMG 4d10dmg) 
+SPEED: 75 INSTINCT: 25
+HITS: 1 (15)
+ » Special: Flying
+TEMPEST - PROBIE
+COMBAT: 25 (SMG 4d10dmg) 
+SPEED: 35 INSTINCT: 25
+HITS: 2 (35)
+ » Tactics: Take cover, call for reinforcements. 
+SERAPHS OF VIRTUE
+COMBAT: 70 (Electrified Lash 5d10dmg or Smart Rifle 
+1d10dmg) 
+SPEED: 75 INSTINCT: 65
+HITS: 3 (20)
+ » Tactics: Ambush, retreat, repeat.
+ » Electrified Lash: Make a Body Save when hit 
+or fall unconscious.
+INDYL procurer
+COMBAT: 35 (Retractable Nanoblade 4d10dmg or Laser 
+pistol 1d10dmg)
+SPEED: 65 INSTINCT: 85
+HITS: 5 (15)
+ » Pheromone Transmitter: Body Save or [-] to 
+acting against Indyl.
+ » Poison Tongue: After a succesful hit Indyl can 
+use their tongue like a poisonous stinger. Body 
+Save at [-] or be paralysed for 1d10 hours.
+Runs The Ecstasy. Tall and graceful. Staunchly 
+protective of their workers. Covered in esoteric 
+motion-tattoos. Indyl’s personal bodyguards, the 
+Seraphs of Virtue, are highly skilled assassins with an 
+85% clearance rate and can be hired for 2mcr/target.
+MODS: Retractable Nanoblade (10kcr), Poison Tongue 
+(400kcr), Pheromone Transmitter (2.5mcr).
+02. THE STELLAR BURN
+12 Easily stock The Stellar Burn with NPCs from the Denizens of The Dream Tables (pg. 44) // 
+John Freeman (Order #36140899)
+Sem’s Bar
+01. CHATTER. Adzuki beans. Chat grubs. Corn. 15cr.
+02. MOLOKO+. Milk. Synthemesc. Hallucinogen (Body Save or 
+hallucinate (all rolls at [-] for 1d10 hours)). 25cr.
+03. AMBROSIA. Midori. Blue curacao. Lime juice. 20cr.
+04. VICTORY GIN. Sickly. Oily smell. Acidic. 12cr.
+05. VESPER. Three measures gin to one measure vodka, half 
+measure Lillet. Shaken. Lemon peel. 30cr.
+06. CADRE COLA. Caffeinated cola beverage. 1cr.
+07. SMOKEY. Mescal margarita. Dry. 15cr.
+08. WELL DRINK. Blood Mary, Gin & Tonic, Long Island Iced 
+Tea, Margarita, Rum & Coke, etc. 10cr.
+09. CALL DRINK. Mixed drink with particular brand of liquor 
+requested.  20-75cr.
+10. BEER. Can or bottle. 5cr.
+BODY SAVES FOR DRUNKENESS: Made at [+] after a few 
+drinks, normally for a casual outing or [-] for a long night of 
+heavy drinking. [-] to all rolls while drunk. Lasts 1d10 hours. 
+Heaven
+SYCORAX. Neon pink pill. Strong sense of euphoria for 
+cyermod users (see pg. 23 for details). 750cr/pill.
+PRIVATE VIP BOOTH. Complete sonic muting and dynamic 
+privacy tinting. 250cr.
+BALCONY ACCESS. Semi-private booths with a balcony view 
+of the dance floor. 50cr.
+The Ecstacy
+COVER CHARGE. Required payment to gain access. 100cr.
+PRIVATE DANCE. A dance in a private soundproof booth. 
+Reduce 1d5 Stress [-]. 20cr.
+HOURLY RATE. An hour alone in a private room. Reduce 1d5 
+Stress [+]. 100cr.
+OVERNIGHT. Companionship for an evening out or in. Reduce 
+1d10 Stress. 1,500cr. 
+XP SLICK. Recording of time with companion. 40cr/hr for 
+your own. 5kcr/hr for someone else’s.
+What’s on the Menu?
+VIP
+Booths
+1.Club Level
+2.Heaven
+3.The Ecstacy
+Indyl’s
+Domain
+Sem’s
+BarDance
+Floor
+LIFT
+STAIRS
+PRIVATE
+ROOMS
+Security
+Checkpoint
+13// “Let your indulgence set me free.”
+John Freeman (Order #36140899)
+8
+7
+1
+4
+3
+2
+9
+5
+6
+ENTRANCE
+BACK EXIT
+1. CRAMPED ENTRANCE. Loud squawks upon entry. 
+The entrance is cluttered to the ceiling and on every 
+conceivable perch rests a holopet (birds mostly). 
+Zhenya will make himself known to any who 
+approach and help schedule an appointment. 
+Reapers must enter through the back and 
+will not be admitted. Hidden amongst 
+the mess, three child-sized 
+Augmented Toys [C:55 SMG+ 
+4d10[+]dmg + Frag Grenades S:10 
+I:20 H:2(10)] have been outfitted 
+as killing machines should 
+the need arise. 
+2. RECOVERY ROOM. 
+Six dingy bunks where 
+those who have just 
+undergone augmentation can 
+recover. The beds are empty 
+except for one filled with a melted 
+lump of horrific organic cybermods. 
+Investigation reveals it to be a terribly mutated 
+former human (Fear Save or gain 1d10 Stress). 
+Zhenya will tell you that this is becoming increasingly 
+common. Something is infecting cybermods on The Dream. 
+Use of the Recovery Room costs 100cr/day.
+The Chop Shop is overflowing with trash and grime, barely kept up by it’s hoarder/cybersurgeon 
+proprietor, The Babushka and her holographic AI assistant in the form of a small child, Zhenya. 
+Appointments are made through Zhenya after a background check proves that the patient is on 
+good terms with Yandee (pg. 8) and her people (being on the outs with Tempest Co. or 
+Local 32819L is okay). 
+3. SYCORAX STASH. 
+Sycorax (pg. 23) is the 
+main anaesthetic The Babushka 
+uses and there is always 1d10 
+barrels of the stuff laying around, 
+guarded by an Augmented Toy.
+4-7. OPERATING THEATERS. These 
+rooms are nearly always occupied. The 
+Babushka spends near 20 hours a day in 
+surgery. Zhenya handles all the bedside manner 
+and the Surgical Beds [C:65 Surgical Tools 3d10dmg + 
+Sycorax Gas S:0 I:40 H:2(20)] have been built from the 
+ground up as highly effective (yet often terrifying) surgical 
+assistants complete with “chipper” personality (Fear Save or 
+gain 1 Stress). ROOM 7 is kept quarantined by The Babushka to 
+treat ACMD Infected (pg. 6) patients and the Surgical Bed in 
+that room is slowly getting infected. It has already begun to 
+merge with Caliban (pg. 39).
+8. BABUSHKA’S ROOM. Cramped, single cot hovel. Little black book on upturned 
+cardboard box shows a debt to Yandee, infinitely huge. Under the cot mattress 
+is a small photograph of Zhenya as a real boy on a cold beach somewhere. 
+A pretty young mother is holding him up above the whitecaps. On the 
+back it says: “Vera — Sorry for the long hauls. One more trip and 
+Y will let me home. Let’s take everything to Kupala 
+and you can skip stones with Zhenya every day. 
+Love you always. — Stellan.” 
+9. CYBERMOD STORAGE & REAPER 
+BARN. The back exit leads to a private 
+tunnel that extends down into The 
+Choke (pg. 32). Reapers who have 
+made contact with The 
+Babushka use this 
+entrance to sell their 
+reaped wares. 
+Otherwise 
+there are 
+2d10 of each 
+cybermod 
+listed on 
+pg. 18 as 
+well as anything 
+else the Warden 
+requires. This area is 
+on a direct camera feed to 
+The Babushka’s OGRE (pg. 18) 
+and is always guarded by
+ 4 Augmented Toys. 
+THE BABUSHKA cybersurgeon
+COMBAT: 25 (Sawed Off Shotgun 2d10dmg or 
+MegaTranq rifle (Body [-] Save or fall unconscious)
+SPEED: 15 INSTINCT: 90
+HITS: 2 (45)
+ » Cyber Savant: Whenever the Babushka hits 
+in combat (with any weapon), she may shut 
+down any one cybermod of the target’s for the 
+duration of the encounter.
+Legendary cybersurgeon. Intensely private. Clinically 
+removed from her patients but generally has a 
+good heart. Doesn’t speak much, letting Zhenya, her 
+holographic AI child, do most of the talking.
+MODS: Unknown. Assume everything.
+POSSESSIONS: Bag of useless junk.
+1d10 Jobs for The Babushka Pay
+1-4 1d5 infected corpses. Bring them here 
+for study. Don’t get sick.
+2kcr/ea.
+5-6 Sycorax pickup from The Farm (pg. 22). 
+Talk to Ukko/Ukka, no one else.
+3kcr
+7-8 House call. Mutated patient has 
+mysteriously died in their home. Visit 
+the scene and collect evidence.  
+Don’t get sick.
+15kcr
+9 Rumors of a Dr. Bancali modding 
+patients in The Choke (pg. 32). Visit 
+Doptown (pg. 30) and track him down. 
+See if he knows what’s going on with 
+the ACMD outbreak.
+Free 
+cybermod
+10 Yandee (pg. 8) has called The Babushka 
+in for a meeting. Provide protection.
+40kcr
+14
+John Freeman (Order #36140899)
+8
+7
+1
+4
+3
+2
+9
+5
+6
+ENTRANCE
+BACK EXIT
+1. CRAMPED ENTRANCE. Loud squawks upon entry. 
+The entrance is cluttered to the ceiling and on every 
+conceivable perch rests a holopet (birds mostly). 
+Zhenya will make himself known to any who 
+approach and help schedule an appointment. 
+Reapers must enter through the back and 
+will not be admitted. Hidden amongst 
+the mess, three child-sized 
+Augmented Toys [C:55 SMG+ 
+4d10[+]dmg + Frag Grenades S:10 
+I:20 H:2(10)] have been outfitted 
+as killing machines should 
+the need arise. 
+2. RECOVERY ROOM. 
+Six dingy bunks where 
+those who have just 
+undergone augmentation can 
+recover. The beds are empty 
+except for one filled with a melted 
+lump of horrific organic cybermods. 
+Investigation reveals it to be a terribly mutated 
+former human (Fear Save or gain 1d10 Stress). 
+Zhenya will tell you that this is becoming increasingly 
+common. Something is infecting cybermods on The Dream. 
+Use of the Recovery Room costs 100cr/day.
+The Chop Shop is overflowing with trash and grime, barely kept up by it’s hoarder/cybersurgeon 
+proprietor, The Babushka and her holographic AI assistant in the form of a small child, Zhenya. 
+Appointments are made through Zhenya after a background check proves that the patient is on 
+good terms with Yandee (pg. 8) and her people (being on the outs with Tempest Co. or 
+Local 32819L is okay). 
+3. SYCORAX STASH. 
+Sycorax (pg. 23) is the 
+main anaesthetic The Babushka 
+uses and there is always 1d10 
+barrels of the stuff laying around, 
+guarded by an Augmented Toy.
+4-7. OPERATING THEATERS. These 
+rooms are nearly always occupied. The 
+Babushka spends near 20 hours a day in 
+surgery. Zhenya handles all the bedside manner 
+and the Surgical Beds [C:65 Surgical Tools 3d10dmg + 
+Sycorax Gas S:0 I:40 H:2(20)] have been built from the 
+ground up as highly effective (yet often terrifying) surgical 
+assistants complete with “chipper” personality (Fear Save or 
+gain 1 Stress). ROOM 7 is kept quarantined by The Babushka to 
+treat ACMD Infected (pg. 6) patients and the Surgical Bed in 
+that room is slowly getting infected. It has already begun to 
+merge with Caliban (pg. 39).
+8. BABUSHKA’S ROOM. Cramped, single cot hovel. Little black book on upturned 
+cardboard box shows a debt to Yandee, infinitely huge. Under the cot mattress 
+is a small photograph of Zhenya as a real boy on a cold beach somewhere. 
+A pretty young mother is holding him up above the whitecaps. On the 
+back it says: “Vera — Sorry for the long hauls. One more trip and 
+Y will let me home. Let’s take everything to Kupala 
+and you can skip stones with Zhenya every day. 
+Love you always. — Stellan.” 
+9. CYBERMOD STORAGE & REAPER 
+BARN. The back exit leads to a private 
+tunnel that extends down into The 
+Choke (pg. 32). Reapers who have 
+made contact with The 
+Babushka use this 
+entrance to sell their 
+reaped wares. 
+Otherwise 
+there are 
+2d10 of each 
+cybermod 
+listed on 
+pg. 18 as 
+well as anything 
+else the Warden 
+requires. This area is 
+on a direct camera feed to 
+The Babushka’s OGRE (pg. 18) 
+and is always guarded by
+ 4 Augmented Toys. 
+15// Some good roleplay opportunities here with Zhenya and The Babushka.
+Phase Alterations
+ » Strike 1: Reidmar (pg. 8) is here meeting with The Babushka 
+in secret. Nosey/stealthy players can make out whispers 
+that Yandee is actually an android. Reidmar is looking for a 
+way to gain an upper hand on them. The Babushka is trying 
+to warn him off of acting rashly.
+ » Outbreak 2: The entire clinic is packed wall to wall with 
+citizens, all dealing with ACMD infections. Just walking 
+in triggers an Infection Check (pg. 6). Wait time to see 
+The Babushka is 1d5 hours. Players who stick around will 
+witness an infected patient transform into a Chokespawn 
+(pg. 39) and attack everyone in the clinic, screaming 
+“Caliban is coming! He’s inside my mind!”
+ » Unrest 2: The Babushka won’t see anyone and is hard at 
+work on a series of marathon surgeries in Rooms 4 and 
+5. The Recovery Room (2) is filled with Hunglungs who 
+have just had Dr. Bancali’s (pg. 34) “gills” removed after 
+suffering severe mutations. 
+ » Outbreak 3: Room 7 has mutated into a hideous orifice that 
+lashes out with pronged metallic tongues.  
+Room 7 [C:65 Surgical Tools 4d10dmg I:20 H:1(50)]
+ » Phase 3: The Babushka dons a colossal, custom-built 
+exosuit with twin railgun cannons mounted to her 
+shoulders. She is a powerful force to be reckoned with and 
+will go down shooting no matter what. No. Matter. What.
+John Freeman (Order #36140899)
+16 Who chooseth me must give and hazard all he hath. // 
+There are two kinds of CYBERMODS (MODS): 
+CYBERWARE and SLICKWARE. Cyberware is 
+cybernetic hardware that is physically installed 
+and augments your body. Slickware is software 
+you install in your brain via a Slicksocket. Every 
+player has a certain number of SLOTS they can 
+use to install mods. For every 10 points of Strength 
+(rounded down) a player may install 1 piece of 
+Cyberware. For every 10 points of Intellect (rounded 
+down) they may install 1 slot of Slickware provided 
+they have a Slicksocket (pg. 19). Players who wish to 
+install more mods than they have slots should see 
+the rules for Overlocking (pg. 19).
+Installing Cyberware
+Getting cyberware installed at a professional 
+cybersurgeon’s installation facility like The Chop 
+Shop (pg. 14) requires a Body Save at [+]. Failure 
+means the mod is installed but you take Xd10 
+damage where X is the number of slots being 
+installed and you gain a Malfunction (pg. 17). Critical 
+Failure means your body rejects the implant in its 
+current form and you must roll for a Mutation (Back 
+Cover) as well as the usual Panic Check. Critical 
+Successes reduce Stress by 1d10 in addition to a 
+successful installation.
+控制论
+INSTALLING CYBERMODS
+Cyberware & Slickware
+John Freeman (Order #36140899)
+17 // Mutations and Malfunctions can spiral out of control. Make sure it’s fun and not just a hassle.
+d100 Cybermod Malfunctions
+00-14
+Loud. Squeaks, rings or hums near-constantly, 
+making stealth difficult and peace of mind 
+impossible. +1 minimum Stress.
+15-29 Ghastly. People are unnerved to have you around 
+and stare at you. +2 minimum Stress.
+30-44 Irritating. Itches, twitches and sends chills down 
+your spine. Stress reduction is halved.
+45-59 Painful. Constant source of chronic pain. All 
+Healing (through rest or otherwise) is halved.
+60-74 Sickly. Your body doesn't play well with the 
+intrusive mod. Body Save reduced by 1d10.
+75-89
+Fragile. Prone to breakage. Whenever you critically 
+fail an Armor Save the mod breaks down. Requires 
+10% base cost to repair.
+90
+Knockoff. Cheaply made version of whatever you 
+thought you were getting. Whatever effect the mod 
+had is now halved.
+91
+Complicated. Install needs additional work. Come 
+back for another session and pay 25% of base price 
+to get it up and running.
+92 Finnicky. Requires monthly repairs. 1d100cr.
+93 Poor Fit. The mod takes up one more slot than it's 
+supposed to.
+94 Traumatizing. The mod overwhelms your mental 
+capacity. Forget a random Skill.
+95 Interference. Causes static and problems with 
+functioning electronic equipment within 10m.
+96 Underpowered. Requires a permanent 1 slot battery 
+pack to work properly (costs 2kcr.).
+97 Poorly Designed. Pay your engineers better! 
+Permanently breaks down in 2d10 days.
+98 Mutation. Mod messes with your system. Roll a 
+Random Mutation (Back Cover).
+99 Lemon. Roll twice and combine.
+Installing Slickware
+Installing Slickware at a professional Slickbay like 
+The Ice Box (pg. 20) requires a Sanity Save at [+]. 
+Failure means the mod is installed but your Intellect 
+is reduced by X where X is equal to the number of 
+slots being installed. Critical Failure means your 
+brain won’t mesh with the new software and you 
+reduce your Sanity by X, roll for a Malfunction 
+and make a Panic Check. Critical Successes 
+reduce Stress by 1d10 in addition to a successful 
+installation.
+Amateur Installation
+Mods installed by amateurs are at [-], however, if the 
+installer has a relevant Skill the patient can add the 
+installer’s Skill to their Save. 
+Recovery
+Recovery takes 1/day/slot installed (doubled for 
+amateur installations). All actions are at [-] during 
+recovery. 
+Custom Cybermods
+Beyond the listed mods (pg. 18-19), players can 
+install any weapon, armor, or piece of equipment 
+at 10x the base cost of the item. Armor takes 
+up one slot for every 5 points of Save (rounded 
+up). Handguns take up 1 slot and rifles take up 2. 
+Anything larger than a rifle takes up 3 or more.
+Cybermods, Panic, Mutations
+If it becomes relevant the Warden can call for you 
+to make Panic Checks on the Cybermod Panic Table 
+below instead of the usual Panic Table from the 
+Player’s Survival Guide (pg. 26) or roll for a Random 
+Mutation (Back Cover). Healing mutations is difficult 
+and requires cybersurgery similar to installation.
+Roll Cybermod Panic Table
+2-3 Endorphin Flood. Reduce 1d5 Stress.
+4-5 Biofeedback. Regain 3d10 Health.
+6-7 Uplift. Gain a random Skill for 1d10 days.
+8-9 Glitch. Pass a Sanity Save or gain 1d5 Stress.
+10-11 Out of Batteries. All mods stop working unless you 
+are hooked into a power source.
+12-13 Power Surge. Take Xd10dmg where X equals the 
+number of slots installed.
+14-15 Shutdown. A random mod stops working completely 
+until it is repaired.
+16-18 Reboot. Forget the last 1d10 days. 
+19-21 Immune Response. Reduce the number of slots you 
+can spend on mods by 1.
+22-24 Overload. Random mod explodes, dealing Xd10dmg 
+where X equals the mod’s slots.
+25-27 Mindwipe. Forget a random Skill.
+28-29 Loss of Humanity. Fear Saves made in your 
+presence are now at [-].
+30 I, Robot. In 1d10 rounds the mod takes over and you 
+become a machine controlled by the Warden.
+John Freeman (Order #36140899)
+18
+Cyberware Cost Slots Description Requires
+Big Switch 18kcr 1 Allows the user to change their primary sexual characterisitics.
+Takes 1 week and a mental trigger. 
+Black Box 10kcr 3 Eidetic memory backup. Memories can be watched with an OGRE 
+or projected with a Holoprojector. Only saves complete memories 
+from the time of installation onward. Also stores any uploaded data 
+or Slickware.
+Slicksocket
+Cloakskin 200kcr 2 Near-invisibility for 5 minutes once per day. If Critically Hit during 
+use there’s a 30% chance condition is permanent.
+Deadswitch 1,000cr 1 Feigns death for 2 weeks. Everytime the switch is used there’s a 
+cumulative 5% chance the condition is permanent. 
+Black Box
+Fangs 30kcr 1 Hollow cybernetic fangs. 2d10dmg. Can store up to 3 doses of 
+poison, medicine or any other drug.
+Handcannon 55kcr+ 
+Weapon
+Varies* Conceals a weapon inside a prosethetic limb. Slots and cost are 
+based on the weapon used.
+Prosethetic
+Holoprojector 750 1 Holographically project stored data (collected via OGRE, Installed 
+Body Cam, Black Box, Slicksocket, etc.).
+OGRE
+Hotswap 1,000cr 0 Allows a 1 turn changing of cyberware.
+Huntershot 4,500cr 1 Holds 1 dart which can be fired on command, upon death or 
+unconsciousness. 1d10dmg. 
+OGRE
+Little Switch 8kcr 1 Allows the user to smooth or roughen their appearance.  
+Takes 1 day and a mental trigger. 
+Loudmouth 5,500cr 1 Allows for recording and playback of audio. Maximum volume 
+equivalent to that of a flashbang.
+Lumatat 200cr+ 0 Cosmetic, color changing, animated or luminscent tattoos.
+OGRE 32kcr 2 Occular Graphic Rendering Engine. A Heads-Up Display implanted in 
+your optical nerve which projects directly into your field of vision.
+Panic Button 10kcr 1 When triggered (on purpose or upon death) violently detonates 
+hidden explosives dealing 1d10dmg to everyone who fails a Body 
+Save within 20m. If knocked unconscious there is a 5% chance this 
+will trigger automatically.
+Panzerfist 15mcr 4 A ship’s autocannon hidden inside a prosthetic. 2d10 mdmg. Holds 
+2 shots. Range: Short 50m, Med 100m, Long 400m. Without a Spinal 
+Rig user must make a Body Save at [-] or be flung 2d10m backwards 
+after each shot. Takes two rounds to fire.
+Prosthetic
+Prosthetic 1,000cr 1 Artificial hand, foot, arm or leg. Prosethetic organs can also 
+replace any damaged organs though at 10x the cost.
+Remote Uplink 550kcr 2 Once per day sends a PDGP encrypted broadcast of user’s  
+Black Box data to a secure backup site for future retrieval (or 
+re-sleeving). Many services require an authorized next-of-kin.
+Black Box
+Retractable 
+Nanoblade
+105kcr 1 Retractable 9” blade which can cut through almost anything. 
+4d10dmg.
+Prosthetic
+Revenant 
+Protocol
+280kcr 2 If triggered within 2 rounds of death allows the user to continue 
+fighting for 2d10 rounds after death. If there are no remaining 
+enemies user must roll randomly for targets.
+Black Box
+Scapegoat 
+System
+130kcr 3 Stores kinetic energy (bullets, CQC damage, etc.), up to 30dmg, 
+which must be redirected and let out within 2d10 turns via touch or 
+the damage is tripled on the user. 1 week to recharge between uses.
+John Freeman (Order #36140899)
+19// It’s quickest to print this spread out and let your players highlight what they’ve bought .
+Hardware Cost Slots Description Requires
+Slicksocket 1,000cr 1 Cranial input jack which allows Slickware to be installed (pg. 21).
+Sockpuppet 1mcr+ 
+Weapon
+Varies* Allows the user to install a weapon which can fire on its own once 
+per turn at half the Combat score of the user.
+Spinal Rig, OGRE
+Spider Mount 250kcr 1 Allows up to 2 extra Prosthetics or Hardware to be attached.  
+Can only be installed once.
+Spinal Rig
+Spinal Rig 150kcr 1 Mechanical rig built for assisted heavy-lifting. User gains  
+10 Strength (but no extra Health). May only be installed once.
+Subdermal 
+Bandolier
+500cr 1 Internal ammo cavity. Can feed directly to installed weapons and 
+has a capacity of 10 “full” magazines of whatever weapon it’s built 
+for. 1 Subdermal Bandolier required per ammo type (bullets, shells, 
+batteries, etc.). Upon taking a Critical Hit there is a 5% chance the 
+Bandolier is hit which deals 2d10dmg to the user and all within 20m 
+who fail a Body Save.
+Tattletale 2,000cr 1 Detachable audio surveillance bug which can be traced up to 100km 
+to within a 100m area.
+Slicksocket, 
+OGRE
+Terminal Jack 750cr 1 Port allowing interface with terminals, smartlink weapons and 
+vehicles. Can download data from linked systems or upload 
+information from a Black Box.
+Whiplash 
+Injector
+10mcr 2 Automatically heals for 1d10 after user hits 0 Health. Takes 1 week 
+to recharge. Body Save is permanently reduced by 1d10 after use.
+*Slots for Weapons: Handguns: 1. Rifles: 2. Larger than Rifle: 3+ (Laser Cutter, Flame Thrower, Grenade Launcher, etc.). 
+ Cost for Weapons: 10x more than their regular cost.
+Overclocking
+If a player wants to install more mods than they 
+have slots, or if by a reduction in their stats they 
+lose slots that are allocated to existing mods, they 
+become Overclocked. For every mod a player has 
+installed beyond their slot limit they increase their 
+Overclock Level by 1 and experience the cumulative 
+effects from the table below.
+Additionally, any Overclocked mod costs twice as 
+much due to the risk of installation and Body Saves 
+made during installation are always at [-]. If the mod 
+is removed the player’s Overclock Level is reduced 
+accordingly and the player loses the accompanying 
+effect.
+Reaping
+Mods can be bought, sold and stolen. Removing 
+(or “reaping”) a mod from a living and willing host 
+requires an Intellect (Surgery, Jury Rigging, or 
+Cybernetics) Check from the reaper and a Body 
+Save from the host. Failure of one roll deals Xd10 
+damage to the patient where X is equal to the mod’s 
+slots, but the mod is removed. Failure of both rolls 
+deals Xd10 damage and the mod remains attached. 
+Critical Failure on either roll will lead to a Cybermod 
+Panic Check (see pg. 17). 
+Unless extreme care is taken when the damage is 
+done there is only a 15% chance that anyone killed 
+in combat has reapable mods. 
+Overclock Level Effect
+1 Minimum Stress increased by +2. 
+2 Unnerving. Gain the Android’s Panic ability: you now cause others in your vicinity to gain [-] on Fear Saves. 
+Androids now give everyone around them 1 Stress whenever they make a Fear Save.
+3 Minimum Stress increased by +6. 
+4 Removed. You no longer make Fear Saves. You no longer make Panic Checks for seeing others die, for your ship 
+taking a Critical Hit, for seeing others Panic or for feeling hopeless.
+5 Less than human. The machine is in control. The Warden takes over your character.
+John Freeman (Order #36140899)
+PROSPERO’S
+DREAM
+1
+THE
+SLICKBAYS
+4
+THE
+CRYOVATS
+3
+THE
+NEMO
+MACHINE
+5
+THE
+STACKS
+TO
+CANYONHEAVY
+(PG. 24)
+SECRET
+TUNNELCORRIDOR LOCKED DOOR
+04 THE ICE BOX
+2
+THE
+RUNWAY TO CALIBAN’S
+HEART (PG. 38)
+20 Graves at my command have awakened their sleepers. // 
+THE ICE BOX is The Dream’s slang term for its highly 
+illegal Synthetic Sleeving Facility and Slickbay 
+venue. Sleeves are vat-grown synthetic humans into 
+which a user’s memories can be installed, allowing 
+them to experience life or live again in a new body. 
+1. THE SLICKBAYS. Hundreds of human sized 
+pods (“Slickbays”) where users can enter a virtual 
+“Slickworld” for education, escape and pleasure. 
+While logged into a Slickbay you can install 
+Slickware as per the rules on pg. 17. 
+After 1 month in a Slickbay any damage you take 
+in the Slickworld is applied to your Sanity Save and 
+when your Sanity runs out you die in the Slickworld, 
+awaken in the real world and immediately make a 
+Panic Check at [-]. Some “hard mode” Slickworlds 
+have this safety feature off by default so upon 
+arrival any damage you take in the Slickworld is 
+immediately applied to your Sanity. People often die 
+inside their self-made worlds. 
+Powerful minds have been able to unlock deep 
+mysteries and construct awe-inspiring private 
+worlds in the Slickbays. It’s Addictive (see Player’s 
+Survival Guide pg. 18). Oftentimes experienced 
+“Minders” are hired by concerned friends and 
+family to enter an addict’s Slickworld and attempt 
+convince them to return to reality. 
+This can be a very dangerous proposition, akin to 
+asking a god to become mortal.
+2. THE RUNWAY. Minimalistic, surgically-lit fashion 
+runway where sleeves are paraded and inspected 
+before purchase. Because sleeving is illegal access 
+to The Runway is restricted to appointment only. Ask 
+Angus (pg. 8) or The Babushka (pg. 14) for an invite.
+3. THE NEMO MACHINE. The legendarily outlawed 
+Neural Monitoring Machine downloads a user’s 
+memories for future upload into a Sleeve. Takes 
+24 hours to run and requires a Sanity Save or you 
+forget the last 1d10 days. Critical Failure results in a 
+Panic Check and total amnesia. After a successful 
+upload the user’s memories are placed into a 
+pre-purchased Sleeve. Most Sleeves take 24 hours 
+to wake up and have [-] on all rolls for 1 week. 
+The Sleeve gains +1 minimum Stress as well as 
+additional bonuses/penalties based on the model 
+purchased (Ice Box Services pg. 21).
+4. THE CRYOVATS. Enormous facility where Sleeves 
+are vat-grown from scratch. Giant cryovats with 
+sleeves strung up by their spines as they grow, 
+dangling like fruit. Sanity Save or gain 1d5 Stress 
+upon first viewing.
+5. THE STACKS. Data storage of remote uplinked 
+Sleeve backups as well as thousands of Sleeves in 
+cryostorage. Freezing cold. Body Save every round 
+without protection or take 1d5dmg.
+John Freeman (Order #36140899)
+Phase Alterations
+ » Outbreak 1: Strange accidents are causing Slickbay 
+users to go catatonic. The few who awaken describe 
+a crying girl named Ariel (pg. 6). She says she’s sick 
+and her dad won’t let her die. Please help her.
+ » Outbreak 2: All the Slickworlds merge into a bleak 
+wasteland ruled by a demon named Caliban. No one 
+can logoff their Slickworld unless Caliban is found 
+and destroyed (digitally or otherwise).
+ » Outbreak 3: The Cryovats begin to pump out 
+grotesque clones of Caliban. These Husks wander 
+the corridors begging “Who am I?” and attacking 
+everyone in their path.
+HUSKS (SWARM)
+COMBAT: X*10 (Mindless clawing Xd10dmg)
+SPEED: 20 INSTINCT: 20
+HITS: 1d10 (5)
+ » Swarm: This creature’s Hits represent the number 
+of creatures in the Swarm. Combat and damage 
+are based on current Hits.
+21// Slickworld adventures are a great way to port adventures from other RPG systems into Mothership.
+Slickware Cost Slots Description Requires
+God Mode 85kcr 2 Gives [+] on Hacking Checks when jacked into a terminal.  
+Gain 1d5 Stress per use.
+Slicksocket, 
+Terminal Jack
+Espernetic 
+Feedback Loop
+3mcr 5 Psionic attack that overloads targeted electronics (including Androids, 
+cybernetics, etc.). Make a Sanity Save with [+]. If successful deal 
+damage equal to the amount rolled. If failed take damage equal to half 
+the amount rolled and gain 1d5 Stress.
+Slicksocket
+Holopet 75kcr 2 Projects a medium sized holographic AI pet which can run around 
+within a 30m radius. You automatically heal 1 Stress whenever you 
+rest. Panic Check at [-] if the Holopet slickware is ever destroyed.
+Slicksocket, 
+Holoprojector
+Looky-loo 550cr 1 Picks up transmissions on all non-encrypted bands and allows for 
+the recording of audio if you have a Black Box.
+Slicksocket, 
+Loudmouth
+Machine Code 350kcr 4 Can converse with powerful AI at a level the AI finds comfortable. 
+Requires Sanity Save: if successful gain 1 Stress per hour spent 
+conversing. If failed gain 1 per minute.
+Slicksocket, 
+Black Box, 
+Terminal Jack
+Sentinel 
+System
+8,500cr 3 Doubles effectiveness of Stimpaks, rest and healing. Body Saves 
+for Addiction now made at [-].
+Slicksocket
+Skillslick
+The user gains the purchased Skill for as long as the Skillslick 
+remains installed. A selection and supply of Skillslicks is very 
+limited and closely guarded.
+Slicksocket, 
+OGRE(Trained) 50kcr 1
+(Expert) 550kcr 2
+(Master) 4mcr 3
+Twitch Booster 125kcr 3 On activation the user gains [+] on Speed Checks for 3 rounds.  
+Deals 2d10dmg to the user as nerve endings burn.
+Slicksocket
+Vox Box 25kcr 1 Can perfectly mimic any voice after 10min. of speaking to the 
+target. Stores up to 3 voices.
+Loudmouth
+Ice Box Services Cost
+Reclamation Sleeve. Sleeves built by memory wiping 
+prisoners. Reroll stats. 10% chance you learn a random 
+skill. 10% chance of gaining someone else’s memories.
+100kcr
+Model-A Series Sleeve. Bulk issue. Ten different 
+physical models (A1-A10). Reduce all Stats and Saves 
+by 5. Heavily discriminated against.
+500kcr
+Atlas X Premium Sleeve. Custom designed Sleeve. +5 
+Strength, Speed and Body. Recovery only takes 48hrs. 2.2mcr
+Narcissus-1 Sleeve. Luxury designer Sleeve. All new 
+Stats. Spend 240 points between Strength, Intellect, 
+Combat and Speed. Recovery only takes 12hrs.
+50mcr
+Sleeve Backup. Download your memories in the NeMo 
+Machine. Takes 24 hours. Sanity Save or you forget the 
+last 1d10 days. Critical Failure results in a Panic Check 
+and total amnesia.
+10kcr
+Sleeve Storage. Monthly storage fees. 500cr
+Slickbay (1hr). Enough time to install a Slick. 50cr
+Slickworld (1mo). DIY or join a Clan Server. 100cr
+John Freeman (Order #36140899)
+5. THE DRUG LAB. Guarded by 2d10 Tempest Co. 
+Operators [H:2 C:35 Pulse Rifle 5d10dmg I:25]. 1d10 
+Solarian Scientists [H:1 C:15 I:35] working. Drugs 
+manufactured for Yandee (pg. 9) and distributed by 
+Local 32819L. Thousands of doses of any drug on the 
+Drug Table (pg. 23). 
+Sycorax is packaged here but secretely 
+manufactured at Farm Two (10).
+6. THE SEED VAULT. Cryogenic vault of thousands of 
+seeds needed for farming with multiple redundant 
+backups. Guarded by Tempest Co. Armored Troopers 
+[H:3 C:65 Smart Rifle 1d10dmg I:45 Armor:65].
+7. THE SOLARIUM. Massive artificial sun room. 
+Access restricted to Solarians (or those who make a 
+100cr donation). Dozens of Supplicants, kneeling in 
+shallow waters, praying and basking in the glorious 
+light. Reduce Stress by 1.
+8. FARM ONE. Immense zero-g hydroponic farm 
+operated by 2d10 Swarms of Cybernetic Drone Bees 
+[C:X*10 Stinger Xd10dmg I:20 S:20 H:Xd10(1) Flyer. 
+Swarm: This creature’s Hits represent the number 
+of creatures in the Swarm. Combat and damage are 
+based on its current Hits.]. Artificial day/night cycle. 
+1d5 Solarian Gardener Monks trimming branches.
+9. THE TREE. The Aarnivalkea, the first tree grown on 
+The Dream. Gargantuan. Lives on a small artificial 
+island in the center of a giant man-made lake. Roots 
+go down four stories. Restricted access to Solarian 
+Gardener Monks (1d10 swimming in the lake right 
+now) or any who donate 5kcr. 
+The legendary tree is secretely maintained through 
+advanced propietary Solarian cybermods. This 
+allows it to bear a sterile fruit which when combined 
+with the fruits from The Burrows (pg. 37) allows for 
+the creation of Sycorax (pg. 23). Yandee has a Spy 
+inside the Solarian Church and is aware that the 
+Tree is the secret to Sycorax production. If given the 
+opportunity (or confronted with the need) Yandee 
+will take the Aarnivalkea by force.
+10. FARM TWO. Only rumored to exist. Restricted and 
+hidden underwater entrance reached from  
+The Tree (9). Guarded by 2d10 Solarian Gardener 
+Monks. Sycorax is manufactured here and its 
+formula is a highly guarded secret. 3d10 Solarian 
+Scientists working feverishly. 
+22 All eyes are on your beauty until you set. All labor ceases when you rest in the west. //
+05 THE FARM
+Run by the EVANGELICAL SOLARIAN CHURCH (ESC), 
+The Farm is both the principle grower of food on 
+The Dream as well as an important holy site for the 
+Solarians with thousands of pilgrims making the 
+journey each year to see The Aarnivalkea (9) tree.
+Additionally, The Farm is a major producer of drugs 
+for the GOLYANOVO II BRATVA and the church’s High 
+Gardener, Ukko/Ukka (pg. 9) has a close relationship 
+with Yandee (pg. 8) as their single source for the 
+cash-crop drug Sycorax (pg. 23).
+What do the Solarians Believe?
+The ESC (also known as Invictus Sol or The 
+Dawn of the Unconquered Sun) is a polytheistic 
+star-worshipping religion centered around the core 
+belief that all energy in the universe comes from 
+stars and that sun god worship is the oldest human 
+religion and therefore the ideology that most ties 
+humanity to its roots. They practice solar astrology, 
+sunbathing meditation, extensive training in 
+agriculture and hydroponics and the giving of  
+seeds to the poor. 
+Anyone can become a member of Invictus Sol by 
+accepting a bindi, burned into their skull, called 
+a “Sun Spot,” and then growing and maintaining 
+a small garden in their home (on board a ship or 
+otherwise).
+1. THE SANCTUARY. Grand sunlit chapel. From the 
+Altar of Dawn Ukko/Ukka (pg. 9) leads all who seek 
+in guided mediations at “dawn” (0600hrs), “high sun” 
+(1200hrs) and “sundown” (1800hrs). Solarians pass 
+out tract literature/seed packets. 
+2. THE SUN MARKET. Bustling farmer’s market. 
+Vendor stalls for fruits, vegetables, drugs, arts & 
+crafts, etc. Hundreds of shoppers on weekends. 
+3. THE GARDENS. Silent meditation gardens. Walking 
+paths, reflecting pools, artificial nature sounds. 
+Statue of Tonatiuh, the “Fifth Sun.” 1d5 Solarian 
+Gardener Monks [H:1 C:15 Stick 1d10dmg I:20] in 
+thoughtful meditation.
+4. THE MONASTERY. Access restricted to the 
+Solarian Gardener Monks of the ESC (about 40 
+currently there). Simply designed stone and wood 
+architecture (rare in space). Dormitories, library, 
+refectory, infirmary and bathing pool. 
+“Let light shine on the afflicted / cast mercy upon 
+the deep / feed the hungry / ransom our prisoners / 
+raise up the sick / banish the dark places.”  
+— SOLARIAN MORNING PRAYER
+John Freeman (Order #36140899)
+23// I see your light. // And I yours.
+1d10 Drug, Effect & Comedown Price
+1 Method. Complete and total eidetic memory 
+for 2d10min. Lower Intellect by 5. Addictive. 800cr
+2 Liquid Sword. [+] on Combat Checks for 1d5 
+turns. Take 3d10 damage after. Addictive. 1,500cr
+3
+Daytona. Go first in initiative and gain an extra 
+action for 1d10 turns. Permanently reduce 
+Speed by 1d10 after.
+1kcr
+4 Triumph. Grants [+] on the next 1d10 rolls. 1d5 
+Stress. Reduce Max Health 2d10. Addictive. 2.5kcr
+5
+Soma. Don’t gain Stress for 1d10 hours. [-] on 
+Speed Checks for the next 1d10 days. Minimum 
+Stress increases by 1. Addictive.
+750cr
+6 Ruckus. Permanently increase Strength by 
+1d10. Reduce Sanity by 1d10. 600cr
+7
+Seed. Gain a new Skill for 1d10 days. Lower a 
+random Skill’s bonus by 5 [1d10: (1-5) Trained. 
+(6-9) Expert (10) Master]. A Skill reduced below 
+0 is forgotten completely.
+2kcr
+8
+Stimspice. Grants the ability to read target’s 
+mind for 1d10 minutes. Gain 2 Stress. Sanity 
+Save or make a Panic Check. Addictive.
+30kcr
+9
+Slug. Mentally visit a virtual world shared by 
+everyone taking Slug at that exact moment. 
+Last 1d10 hours. Sanity Save or lower Sanity by 
+2 after each use. Addictive.
+1kcr
+10 Sycorax. See sidebar. 750cr
+Phase Alterations
+ » Unrest 1: The Solarians are funneling credits from their 
+donations to the Hunglungs and helping to sneak them 
+off The Dream.
+ » Unrest 2: Massive siege of The Farm by Tempest Co. 
+Operators. Tense standoff. Solarians have taken up 
+arms and imbibed powerful drug cocktails, making 
+them fanatical combatants willing to fight to the 
+death. Ukko/Ukka will destroy the Aarnivalkea rather 
+than let it be taken by Yandee.
+ » Outbreak 3: The Aarnivalkea comes to life and sprouts 
+dozens of Husks per hour. Husks (Swarm) [C:X*10 
+Mindless Clawing Xd10dmg I:20 S:20 H:1d10(5). Swarm: 
+This creature’s Hits represent the number of creatures 
+in the Swarm. Combat and damage are based on 
+current Hits.]
+SYCORAX
+A powerful drug created only from fruits that only grow in 
+The Burrows (pg. 37). Three fruits yield a batch of 500 pure 
+doses (375kcr in revenue). Solarians will pay 10kcr for every 
+3 fruits (in a sealed container). 
+ » Grants +20 to Body Saves made when installing 
+cybermods.
+ » Heals Xd10dmg where X is equal to the number of 
+slots of cybermods and Slickware installed.
+ » Every time you take Sycorax make a mark on your 
+character sheet and roll a d10. If you roll equal to or 
+lower than the number of Sycorax you have taken 
+gain a random Mutation (Back Cover), then reset back 
+to zero.
+ » Addictive.
+John Freeman (Order #36140899)
+24 This section is good for players interested in stealth and investigation style gameplay. // 
+CANYONHEAVY.market is an intergalactic haven 
+for hackers run by prodigy hacker Angus (pg. 8) 
+(a.k.a. Ang-Hause, @NG, angryhoss, AnGoose). 
+CANYONHEAVY is effectively the intelligence 
+apparatus of the Golyanovo II Bratva but is a 
+renowned and feared information brokerage and 
+hacking collective in its own right. Access is 
+restricted to vetted clients, first met in a Private 
+Booth at The Stellar Burn (pg. 12).
+1. THE BATTLESTATIONS. Zero-G. Rough sphere 
+workspace coated in multi-terminal workstations. 
+Dozens of hollering Console-Cowboys [H:1 C:25 I:65] 
+under-lit in neon-green kick-off and drift between 
+the terminals, commentating the current Clan Game 
+in slang incomprehensible to outsiders. A huge 
+scoreboard floats in the center of the room. The air 
+is filled with Daytona smoke (pg. 23) and crushed 
+Cadre Cola cans.
+2. THE CANYONHEAVY DATACACHE. Zero-G. A 
+humming nest of servers and terminals with the 
+atmosphere of a church. These terminals are a 
+datacache of all CANYONHEAVY assets: strange new 
+malware strains, leverage over various corporations 
+and a nuclear arsenal of hacking tools. Encrypted 
+and guarded by 1d10 Mercenaries loyal only to 
+CANYONHEAVY [H:2 C:35 Pulse Rifle 5d10dmg I:35]. 
+If the datacache could be recovered and decrypted 
+it would net you 1d5bcr and CANYONHEAVY as a 
+powerful, lifelong enemy.
+3. SYSOPS. Zero-G. Planning room for major 
+operations. Hidden behind an old-school whiteboard 
+is a secret tunnel to The Stacks (pg. 20) used to 
+arrange meetings with high-value clients. Regular 
+clients use this area as a meeting space.
+There’s a 20% chance each time you travel through 
+the Secret Tunnel that you’ll encounter a random 
+Chokespawn (pg. 35).
+4. ANGUS’S OFFICE. Zero-G. A cramped and dingy 
+office crammed with blinking terminals, mechanical 
+keyboards and discarded takeout boxes from 
+Hanzo’s floating through the air.
+The Databroker, Angus (pg. 8), is the uncle and 
+shepherd to this mongrel band and acts as their 
+talent agent. The purchasing of equipment and 
+talent is all done through him. If any of his flock 
+are abused or killed his significant contacts ensure  
+swift revenge.
+Angus always pays for good information, rumors 
+and any data that can’t be got through purely digital 
+means. Check CANYONHEAVY Missions (pg. 25) or 
+Angus: What Can You Do For Them? (pg. 8) for work.
+CANYONHEAVY
+.MARKET
+THE STACKS
+ (PG. 20)
+2
+THE 
+CANYONHEAVY
+DATACACHE
+1
+THE
+BATTLESTATIONS
+PROSPERO’S
+DREAM
+4
+ANGUS’S
+OFFICE
+=LOCKED
+SHUTTLE
+ACCESS
+SECRET TUNNEL
+3
+SYSOPS
+John Freeman (Order #36140899)
+Phase Alterations
+ » Unrest 1: Angus is looking for any information on 
+Imogene Kane (pg. 31) and her Hunglung rebels. He pays 
+5kcr for substantial rumors. 
+ » Outbreak 2: Strange images of a laughing man flash on 
+the terminals. The hackers are desperately trying to 
+isolate the problem. Any services are 2x normal cost. 
+ » Outbreak 3: Bulkhead will be sealed, no-one in or out. If 
+Angus has had postive dealings with the crewmembers 
+he’ll offer them a job: 2mcr to escort his flock to the 
+shuttle at Tempest Co. HQ. Once his flock takes off 
+Angus will strap himself in for one last run, paying the 
+party (in future service or favor) to guard his physical 
+location as he attempts to drive Caliban off the 
+network. This hack takes 3d10 turns, with 2d10 Husks 
+[C: X*10 Mindless Clawing Xd10dmg I:20 S:20 H:1d10(5). 
+Swarm: This creature’s Hits represent the number of 
+creatures in the Swarm. Combat and damage are based 
+on its current Hits.] arriving every turn, crawling through 
+every vent and possible opening. If Angus is successful 
+all of Caliban and his minions halve their Hits and Armor 
+Saves permanently. If the situation looks hopeless 
+and the module is still full of his flock Angus will gas 
+CANYONHEAVY, killing everyone.  
+Better that than assimilation. 25
+1d10 Thing What Do Cost
+1 TrashKid Portable device preconfigured to generate believable iconography and attack patterns for a 
+fictitious cyber-gang, leading investigators astray. 5kcr
+2 Splintermask Transparent, flexible balaclava whose outer surface transmits harsh jagged noise-patterns, 
+defeating conventional and IR cameras. Stressful to Androids/AI systems. 3kcr
+3 Racketball
+Bundle of transmitters, speakers, LEDs and suspicious cabling which aggressively output 
+noise on all spectrums, destroying any delicate sensors within 30m and stunning standard 
+sensors for 1d10min.
+4.5kcr
+4 Office 
+Assistant
+A large suitcase or backpack containing blank Android personality storage and several  
+I/O cables. A willing Android can download a copy of their personality into the device which 
+if then connected to an unwilling Android (Sanity Save to resist) can control this new body, 
+locking the original personality out.
+55kcr
+5 Moebius Strip If connected to a camera will endlessly replay 30 seconds of selected footage while 
+increasing the timestamp accordingly. 3.5kcr
+6 Doorstop Small siphon-circuit which traps any open/close signal output by a door, meaning no 
+notification of door operation is reported to the network. 500cr
+7 Remote 
+Autohacker
+A radio operated, pre-programmable output device allows for remote input (allowing the 
+player to make a remote Hacking Check). 100m range. 250kcr
+8 Slaveshot Dartgun with 20m range which on hit injects malicious code into a Cybermod, allowing the 
+hacker remote access within 200m (Body Save to resist). 15kcr
+9 Socketsnake An inert, lifeless bundle of cables with a set of adaptors. Once connected to a device any 
+further input causes the snake to thrash wildly, dealing 3d10dmg to the user. 750cr
+10 Mommybird
+A heavy black cylinder filled with a huge bank of capacitors. When connected the device 
+siphons power into the capacitors before outputting all of this charge back into the device. 
+This takes 60 seconds.
+75kcr
+CANYONHEAVY
+.MARKET
+THE STACKS
+ (PG. 20)
+2
+THE 
+CANYONHEAVY
+DATACACHE
+1
+THE
+BATTLESTATIONS
+PROSPERO’S
+DREAM
+4
+ANGUS’S
+OFFICE
+=LOCKED
+SHUTTLE
+ACCESS
+SECRET TUNNEL
+3
+SYSOPS
+1d10 Canyonheavy Missions
+1. Infiltrate Local 32819L. Gain membership. Find dirt on 
+Reidmar (pg. 8). Foment insurrection. 150kcr.
+2. Infiltrate the Golyonovo II Bratva. Become an Droog for 
+Yandee (pg. 8). Report secretly to Angus. 250kcr.
+3. Locate and break into “Farm Two.” Find the formula for 
+Sycorax production at The Farm (pg. 22). 2mcr.
+4. Contact Imogene Kane. Rumored Doptown (pg. 30). 50kcr.
+5. Locate Dr. Bancali. Ask around in Doptown (pg. 30). 100kcr.
+6. Make contact with Hideo Kieslowski. Reclusive genius 
+rumored to be hiding in a private Slickworld in The Ice Box (pg. 
+20) for a over decade. Convince him to return to reality to help 
+with the ACMD outbreak. 350kcr.
+7. Extract Anouk Falconetti. Currently held on Sublevel C  
+(pg. 28). Escort her to Loshe (pg. 10). 750kcr.
+8. Relay slickware message to Goblin X. Currently held in a 
+high security cell at The Court (pg. 32). 150kcr.
+9. Retrieve Brunhildh’s terminal passcode. Small disc.  
+Hidden inside her library near The Court (pg. 33). 375kcr.
+10. Deliver Dead Drop. Visit specified private booth in  
+Heaven (pg. 12) and hide package. Do not open. 100kcr.
+John Freeman (Order #36140899)
+07 THE COURT
+RESTRICTED
+ACCESS
+SECURITY
+CHECKPOINT
+HOLDING CELLS4CELL 4A4A
+THE PIT5
+6
+EXECUTIONERS’
+QUARTERS
+6
+CHIEF
+ADJUDICATOR’S
+QUARTERS
+2
+THE CAGE
+3
+THE BENCH
+THE COURT1
+TO THE DREAM
+1d10 The Docket Odds
+1 1d10 Doptownians vs. 
+C:20 Unarmed 1d5dmg S:20 I:20 H:1 
+1 Executioner Probate 
+C:30 Vibechete 2d10dmg S:35 I:35 H:21
+1:1
+2-3 Accused vs. Accuser 
+C:25 Vibechete 2d10dmg S:45 I:35 H:1 1:1
+4-5 Accused vs. 
+C:25 Spear 3d10dmg S:45 I:35 H:1 
+Executioner 
+C:55 Electrolash 4d10dmg S:50 I:35 H:3
+1:5
+6-7 Advocate vs. 
+C:55 Rigging Gun 2d10dmg S:50 I:45 H:2 
+Executioner 
+C:55 Electrolash 4d10dmg S:50 I:35 H:3
+1:2
+8 Accused vs. 
+C:25 Spear 3d10dmg S:45 I:35 H:1 
+Random Pit Creature 
+(pg. 27)
+1:10
+9 1d10 Traitors vs. 
+C:45 Spear 3d10dmg S:40 I:35 H:1 
+Chief Adjudicator Brunhildh 
+C:75 Antique 5d10dmg S:65 I:75 H:4
+1:3
+10 2d10 Accused & 1d10 Advocates vs. 
+(see above) + Melee Weapon of Choice 
+1d10 Chokespawn & 5 Executioners 
+(pg. 35) & (see above)
+1:2
+26
+Presided over by Chief Adjudicator Brunhild (pg. 
+9) and her retinue of Executioners, The Court of 
+Prospero is the only law on a lawless station. 
+Anyone found breaking one of the few written laws 
+(pg. 4) or many unwritten laws on The Dream are 
+thrown into The Holding Cells (6) to await trial by 
+combat in The Cage (2). Anyone accused of a crime 
+has the right to a representation via an “Advocate” if 
+they can afford it (prices start at 50kcr). The winner 
+goes free and the loser, if still alive, is sent to The 
+Choke (pg. 32). Trials are held several times a day 
+and provide entertainment as a bonus. Gambling on 
+the outcome of each trial is common (the odds are 
+provided on The Docket).
+ » TO BECOME AN ADVOCATE: Submit a thumbscan 
+contract with the Accused to The Court. A loss 
+by submission or death in combat means the 
+Advocate doesn’t get paid and the Accused 
+is sent to The Choke (If an Advocate dies in 
+combat, however, their estate is still paid). 
+Advocates can also act as “Public Defenders” 
+who work for anyone who can’t afford an 
+Advocate (pays 5kcr/win). 
+ » TO BECOME AN EXECUTIONER: Donate 150kcr 
+to the Golyonovo II Bratva and win 10 Advocate 
+bouts (unless otherwise arranged by a sponsor). 
+Accusers always have the option to fight as 
+Executioner against the person they accuse.
+John Freeman (Order #36140899)
+1. THE COURT. Throngs of spectators, thick stench of 
+body odor and smoke. Rampant side-betting. Fights. 
+ » STADIUM SEATING: 10cr/ticket.
+ » FLOOR SEATING: 2kcr/ticket.
+ » BOXED SEATS: 10kcr/box (holds 20).
+Bets are taken via O2 credstick. Tempest Co. Probies 
+[H:2 C:25 SMG 4d10dmg I:25] on standby in case of 
+riots. Many gamblers go bankrupt after a trial and 
+are immediately taken to The Holding Cells (6).
+2. THE CAGE. An elevated, revolving stage fenced in 
+with electricified cage (Body Save or take 1d10dmg 
+and lose an action) which dominates the center of 
+The Court. In the middle of The Cage is a platform 
+which raises up the Accused from the security 
+checkpoint in The Holding Cells (6).
+3. THE BENCH. Balcony boxed seating reserved for 
+Chief Adjudicator Brunhildh, her retinue, and the 
+major power brokers on The Dream, namely Angus 
+the Databroker, Teamster Union Rep. Reidmar, 
+Tempest Co.’s Cmdr. Cutter, Solarian High Gardener 
+Ukko/Ukka (who never attends) and the Vor of the 
+Golyanovo II Bratva, Yandee (details on all of them 
+can be found on pg. 8-9). 
+ 
+4. HOLDING CELLS. Guarded by 1d10 Tempest Co. 
+Probies. Most of these cells are occupied with 
+02 debtors. In one particular cell (Cell 4A) is the 
+grotesquely musclebound Rage of Caliban beating 
+against the cell bars. Its features are a puffy mess of 
+flesh and bone. 
+5. THE PIT. Musty animal odor. Its cages contain 
+horrific beasts and other freaks (see Pit Creatures 
+Table). Heavily guarded by 1d10 Tempest Co. 
+Armored Troopers H:3 C:65 Smart Rifle 1d10dmg I:45 
+Armor:65.
+6. EXECUTIONERS’ QUARTERS. A dozen spartan 
+rooms, each containing a small bunk and footlocker 
+(electrolash, badge of office, official robes, 15% 
+chance of a jailbroken O2 credstick: 1d10*2kcr).
+7. ADJUDICATOR’S QUARTERS. Brunhildh’s (pg. 9) 
+lavish suite decorated in old leather and hunting 
+trophies. An antique rifle rests above the door. A bed 
+which looks unused. Hidden behind a bookcase is a 
+secret alcove containing an Android charging unit 
+and private terminal. Her password is written under 
+a whale figurine.
+07 THE COURT
+RESTRICTED
+ACCESS
+SECURITY
+CHECKPOINT
+HOLDING CELLS4CELL 4A4A
+THE PIT5
+6
+EXECUTIONERS’
+QUARTERS
+6
+CHIEF
+ADJUDICATOR’S
+QUARTERS
+2
+THE CAGE
+3
+THE BENCH
+THE COURT1
+TO THE DREAM
+Phase Alterations
+ » Outbreak 1: Mass execution of 400 Infected Prisoners 
+overseen by Yandee and Brundhildh. The Q-teams 
+that rounded up the infected are also disposed of by 
+Armored Troopers.
+ » Strike 2: Huge influx of Teamster prisoners. Riots in 
+The Holding Cells (4).
+ » Unrest 2: Hunglung insurgents stage an elaborate 
+breakout of The Holding Cells (4).  Imogene Kane  
+(pg. 31) is among them, leading the charge.
+ » Outbreak 3: The Pit (5) is overrun and all its creatures 
+escape. Specimen 869 mind controls a squad of 
+Tempest Co. Armored Troopers. The Holding Cells (4) 
+are open as well and its prisoners have all become 
+infected. Tempest Probies are besieged, have locked 
+themselves inside a cell.
+27// Let the Accused use weird weapons.
+1d10 Pit Creatures
+1 Infected Cyberfreak 
+C:20 Unarmed 1d5dmg + Infect S:20 I:20 H:3.
+2-4 1d10 Diamond Dogs 
+C:65 Bite/Bite/Claw 1d10dmg S:85 I:35 H:1.
+4-5
+Sleevewraith  
+C:70 Rusty Blade 2d10dmg S:45 I:35 H:2. 
+Reclamation Sleeve with combat slickware.
+6-7
+Slicksquid  
+C:65 Tentacle/Tentacle 3d10dmg S:50 I:85 H:3. 
+Combat via Slickbay, projected into The Court.
+8
+The Brute  
+C:65 Swipe 5d10dmg S:25 I:75 H:5. 
+Giant slow mech. Swipe hits multiple targets.
+10
+Specimen 869 
+C:85 Psi-Blast Sanity Save or Xd10dmg + 1d10 Stress. 
+S:35 I:95 H:2. X=rounds concentrating.
+1d10 Accused & What They Can Pay
+1 Golyonovo Traitor. 1d10*100cr for Advocate. However, 
+you’ll have to fight the Chief Adjudicator.
+2-5 O2 Debtor. No money at all. Talk to Ukko/Ukka (pg. 9)
+6-7 Contraband Smuggler. 50kcr and free ride. 
+8
+Teamster who stole from Yandee. 1d100*1kcr and a 
+free ride (maximum 3 Jumps).
+9
+Hunglung Insurgent. Can’t afford Advocate but 
+Imogene Kane (pg. 31) will owe you a favor.
+10
+Political Prisoner. Enemy of the Teamster Union, 
+Tempest Co., The Golyonnovo II Bratva or The Solarian 
+Church. Can get 300kcr+ if you can win the almost 
+certainly rigged trial and survive long enough to 
+escort them off The Dream.
+RAGE OF CALIBAN
+COMBAT: 80 (Bash 3d10dmg or x2 Mutated Arm Cannons 
+1d100dmg)
+SPEED: 25 INSTINCT: 65
+HITS: 4 (30)
+John Freeman (Order #36140899)
+28 Exosuit // Armor Save +20, [+] on Strength Checks, Combat +10, x2 O2 tanks. 40kcr.
+08. TEMPEST COMPANY HQ
+PRI VAT E
+SHUTTLE BA Y
+COMMANDER’S
+MANSION
+OPERATIONS LEVEL
+HABITAT LEVEL
+ARMAMENT SUBLEVEL
+RESEARCH & DEVELOPMENT SUBLEVEL
+CONTAINMENT SUBLEVEL
+PROSPERO’S
+DREAM
+Client consultation officers, barracks, clinic, mess, officer’s quarters, 
+recreation, quartermaster, trophy room, “The Blue Rabbit” bar.
+Armory, gunsmith, exosuit repair bays, metal foundry, 
+ammunition stores, riot gear, shooting range, slickbay training suite.    
+Experimental exosuit development, Caliban virus research,
+Sycorax vault, cybermod testing clean room.
+Enhanced interrogation cells,
+deep cryostorage, quarantine.
+Mission control center, monitoring stations, analyst offices, 
+archives/records, planning/meeting rooms. 
+3
+2
+1
+A
+B
+C
+CANYONHEAVY
+(PG. 24)
+CALIBAN’S HEART
+(PG. 38)
+7 (3 Squad) Platoons: 42 Fireteams. Officers: 36. Armored Troopers: 54. Operators: 350. Probies: 906. Admin: 85.
+Tempest Mercenary Company is a detachment of 
+the Czernobog Private Military Corporation. Their 
+core mission is to act as muscle for the Golyanovo II 
+Bratva. Led by Cmdr. Race Cutter (pg. 9), Tempest is 
+primarily engaged in defending Reidmar’s fleet  
+(pg. 8) during Sycorax distribution, quelling 
+insurrection in The Choke (pg. 32) and eliminating 
+Yandee’s (pg. 8) enemies throughout the sector.
+Level 1 - Habitat. Heavily fortified entry control point. 
+Badged visitors can access the client consultation 
+offices and The Blue Rabbit, everywhere else is 
+restricted to Rank 1 (R1) and above (as noted below). 
+Level 2 - Operations. Security checkpoints at 
+the elevators. The nerve center of all operations. 
+Extensive monitoring of citizens of The Dream.  
+Level 3 - Commander’s Mansion. Cutter’s lavish 
+penthouse. Guarded by The Zirnitra,  an elite 
+Armored Trooper unit. Personal terminal reveals 
+evidence of disloyalty to Yandee in encrypted 
+communications with a secret cabal of officers. 
+Sublevel A - Armament. Security clearance R2+.
+Sublevels reached via freight elevator. Massive 
+stores of weaponry. Probies in Slickbay training.  
+Sublevel B - Research & Development. R5+. ACMD 
+(pg. 6) research is heavily quarantined.  
+Sublevel C - Containment. R7+. 30min. elevator. 
+Freezing cold. Access to The Veins (pg. 35) via hidden 
+ducts. Supersoldier Sleeve (pg. 20) storage.
+How can I join Tempest Co.?
+To become a member of Tempest Co. roll 1d10 [-] 
+on the Tempest Co. Mission Table, complete the 
+mission and donate all the credits earned back to 
+the Company. Once that’s done you’ll become a 
+Rank 1 (R1) Probie with full standing. 
+To continue to rank up you must successfully 
+complete a number of missions equal to the next 
+rank (for example: to move from R5 to R6 you’ll need 
+to successfully complete 6 missions). Conversely, 
+you will be demoted by failing a number of missions 
+equal to your current rank or by losing a number of 
+soldiers equal to 3x your rank (for example: an R6 
+will be demoted to R5 after failing 6 missions or 
+losing 18 Operators/Recruits/Probies/etc.). 
+Finally, you must kick back 10% of all credits earned 
+to the Company in dues. 
+To be assigned a mission roll on the Tempest Co. 
+Job Table and add your current rank. Wardens are 
+encouraged to assign missions from the table and 
+add their own unique missions as they see fit (even 
+missions that would typically be beyond the players’ 
+ranks).
+John Freeman (Order #36140899)
+TEMPEST COMPANY RANKS
+Rank Description Benefits (Cumulative)
+R0 Recruit: Do 1 job and donate all the pay to Tempest Co.  
+H:1 C:20 Stun Baton 1d10dmg I:20 L:20 Advance: 50cr Sal: 100cr
+None.
+R1 Probie: Assigned to a fireteam with an R6+ CO.  
+H:2 C:25 SMG 4d10dmg I:25 L:35 Advance: 150cr Sal: 600cr
+Access to Mission Table at [-].
+R2-R5 Operator. Full fledged member of Tempest Co. 
+H:2 C:35 Pulse Rifle 5d10dmg I:25 L:35 Advance: 300cr
+Rank x 1kcr monthly salary.  
+Access to Mission Table.
+R6-R7 Squad Leader: Leader of 1 squad (2 fireteams of 5 Troopers each). 
+H:2 C:45 Combat Shotgun 2d10dmg I:35 L:35 Advance: 750cr
+1 Skill Points.  
+All Mercs hired gain +10 Loyalty.
+R8-R9 Armored Trooper: Elite drop soldiers and deep recon scouts. 
+H:3 C:65 Smart Rifle 1d10dmg I:45 Armor:65 L:40 Advance: 2kcr
+Exosuit (pg. 28). +5 Combat. 2 Skill Points.  
+Doubled salary. Always in high demand.
+R10 Platoon Commander: Leader of 3 squads and a Troopship. 
+H:2 C:65 Revolver 3d10dmg I:65 L:65 Advance: 5kcr
+Command Skill. Hire Mercs at 75% off. 
+Assign missions to R2 squads for profit.
+Phase Alterations
+ » Strike 1: 200kcr bounty put out for the return of the teamsters held hostage by the Stratemeyer Syndicate.
+ » Strike 2: Scabs needed to make Sycorax deliveries in lieue of the striking Teamsters. Pays 100kcr per successful run. 
+ » Strike/Unrest 3: HQ on total lockdown. Guards at the entrance shoot on site those who don’t have the password. 
+ » Outbreak 3: Chokespawn (pg. 35) overrun the HQ. Cutter bunkered in Operations. Catastrophic firefight between a squad of 
+Armored Troopers and the Wire Man (pg. 34) taking place on the freight elevator down to Sublevel C. 
+TEMPEST CO. MISSION TABLE (Roll 1d10 and add current Rank or assign. Cross off and add when completed).
+1 Outer Hull Patrol. Babysit repair crews as they fix cracks, bullet holes, check for illegally docked craft. 500cr.
+2-3 Night cycle corridor guard duty. Make 2 rounds of The Dream and deal with any issues. 1kcr.
+4 Teamster riots in (roll 1d10 on Inside Front Cover). Squash the rebellion. 20kcr per leader brought to Sublevel C.
+5 Insurgents organizing in Doptown (pg. 30). Capture their leader Imogen Kane and bring her to Sublevel C. 1mcr.  
+6 Transfer accused prisoner from (roll 1d10 on Inside Front Cover) to The Court (pg. 26). 15kcr.
+7 Retrieve subject from The Choke (roll 1d10 on pg. 32, on a roll of 10 means the location in The Choke is unknown). 45kcr.
+8 Visit The Sink (pg. 34) and hunt Chokespawn. See Col. Antonio (pg. 30) for details. 30kcr/kill.
+9 Accompany Dažbog Squad to The Burrows (pg. 37), retrieve 3d10 fruits, deliver to The Farm (pg. 22). 50kcr/fruit.
+10 R&D needs 10 infected corpses for vaccination research. Deliver to The Babushka (pg. 14). 15kcr/corpse.
+11 Black box retrieval from KIA operator on Calipse Citymoon (Jump 3). Requires operative with Surgery Skill. 85kcr
+12 Data breach detected and traced to Ov Fire and Void. Capture the spy and escort them to Sublevel C. 200kcr.
+13 Seraphs of Virtue (pg. 12) haven’t been paying up to Yandee. They owe 2.3mcr. Get them to pay or kill them. 250kcr. 
+14 Hyperspace raiders have captured the Chant for Ezkaton (Jump 2). Extract hostages. 55kcr/hostage.
+15 Retrieve artifact from The Alexis derelict in Sector (unknown). See Angus (pg. 24) for details. 750kcr.
+16 Assassinate Yandee (pg. 8). Failed operations will be disavowed and their Operators purged. 10mcr.
+17 Covertly inject experimental biotoxin to the life support unit on The Messe Noire. Observe field test. 3mcr.
+18 Deliver cybernetic weapons cargo to Orobas Moonbase (Jump 6) where Tempest is fighting off insurrection. 7mcr.
+19 Transport cryopod containing Project Svetovid VII to research facility on Camelot-XIII (Jump 7). 1mcr.
+20 Transfer to Gabriel’s Sword space station (Jump 10). Report to Cmdr. Mokosh. Prepare for war. 40mcr.
+PRI VAT E
+SHUTTLE BA Y
+COMMANDER’S
+MANSION
+OPERATIONS LEVEL
+HABITAT LEVEL
+ARMAMENT SUBLEVEL
+RESEARCH & DEVELOPMENT SUBLEVEL
+CONTAINMENT SUBLEVEL
+PROSPERO’S
+DREAM
+Client consultation officers, barracks, clinic, mess, officer’s quarters, 
+recreation, quartermaster, trophy room, “The Blue Rabbit” bar.
+Armory, gunsmith, exosuit repair bays, metal foundry, 
+ammunition stores, riot gear, shooting range, slickbay training suite.    
+Experimental exosuit development, Caliban virus research,
+Sycorax vault, cybermod testing clean room.
+Enhanced interrogation cells,
+deep cryostorage, quarantine.
+Mission control center, monitoring stations, analyst offices, 
+archives/records, planning/meeting rooms. 
+3
+2
+1
+A
+B
+C
+CANYONHEAVY
+(PG. 24)
+CALIBAN’S HEART
+(PG. 38)
+29 // CAMPAIGN FRAME: Start the players off as Probies and have them work their way up.
+John Freeman (Order #36140899)
+30 Who is Imogene Kane? What are her motivations? // 
+09. DOPTOWN
+1
+THE
+AIRLOCK
+THE
+AUCTION
+4
+THE
+LOTTERY
+2 3
+THE
+SLUMS
+PROSPERO’S
+DREAM
+TO THE
+FALLS (PG 34)
+LOCKED AND HEAVILY GUARDED
+20 STORY CLIMB
+DOWN SLUDGE 
+WATERFALL
+ROLL ENCOUNTER DURING TRAVEL
+Slang for “de-oxygenated people’s town,” Doptown 
+is a hellish slum filled to the brim with suffocating 
+people imprisoned for oxygen debt and kept low by 
+a system that oppresses and exploits them. Upon 
+entering make a Fear Save or gain 1d10 Stress. 
+It is a waking nightmare of overcrowded streets and 
+quiet death as the doomed inhabitants, derogatively 
+called Chokers and Rebreathers, live out the 
+remainder of their lives in relative silence, afraid 
+of wasting any breath. Many children are born here 
+despite this. Ukko/Ukka (pg. 9) was one such child.
+It would take 50.4bcr to pay off the O2 debt of 
+everyone currently living in The Choke.
+1. THE “AIRLOCK.” A heavily armed gate flanked by 
+two cement turret bunkers (which can withstand 
+200dmg) and 1d0 Armored Troopers [C:65 Smart 
+Rifle 1d10dmg + Frag Grenades I:45 Armor:65  
+H:3(50)]. Hastily scrawled graffiti hugs the cement: 
+“TAKE MY BREATH AWAY.”  
+ 
+The commanding officer of this shit detail is Colonel 
+Antonio, a banal drone who is neither malicious 
+nor sympathetic to the plight of the Doptownians, 
+carrying out his orders with cold indifference. He 
+doesn’t even have the strength of character to reign 
+in his men, who often turn to savage butchery under 
+the guise of “giving the Chokers a quick death.”
+You cannot get back into The Dream without a pass 
+and Doptownians who are aware that the PCs have 
+one would be willing to kill to get it. 
+To enter Doptown PCs who leave the Airlock must 
+descend a massive freight elevator downwards for 
+30 minutes into cold suffocating darkness.
+2. THE AUCTION. A silent market where 
+Doptownians offer their services at cutthroat rates 
+in order to afford to pay down their massively 
+accumulating O2 debt. Any service can be 
+purchased here and wealthy citizens from The 
+Dream often descend (with bodyguards) in order to 
+pay for their dirty work to be done. Assassins and 
+hitmen offer up their services alongside cleaning 
+crews and personal assistants. Everyone wants a 
+chance to breathe real air again.
+3. THE SLUMS. Sprawling and cramped, filled with 
+the stench of death. O2 beggars line the streets. 
+Robbery is rampant. Roll encounters every half 
+hour. In exchange for an O2 tank per rumor the PCs 
+can learn the following:
+ » Imogene Kane is leading a resistance and 
+plans to overtake the Airlock and invade  
+The Dream.
+ » A “Doctor Bancali” has been implanting 
+Doptownians with artificial “gills” to help them 
+live longer. His lab is hidden behind the sludge 
+waterfall.
+ » The cash crop Sycorax is harvested in The 
+Burrows (pg. 37). This is mostly done by 
+underpaid Doptownians who will show the way 
+there for 100cr.
+ » Something is growing deep below and it talks 
+to the Doptownians in their sleep.
+ » There is a broken Life Support Tower (pg. 36) 
+that can be mended to help give everyone here 
+a better life. A repair team has recently been 
+lost en route.
+ » You can descend into The Sink (pg. 34) via the 
+sludge waterfall at the edge of town.
+ » A giant wailing creature Doptownians call “The 
+Wire Man” (pg. 34) stalks The Sink.
+John Freeman (Order #36140899)
+Phase Alterations
+ » Unrest 2: The entire Choke along with Doptown is 
+quarantined by Tempest Co. No one is allowed in or 
+out. Rallies in the Slums. Massive recruitment for  
+the Hunglungs.
+ » Outbreak 2: Doptownians who have visited Dr. Bancali 
+begin to transform into Chokespawn (pg. 35). Many 
+try to escape but are stopped at the Airlock (1) by Col. 
+Antonio’s men. Everyone takes shelter and the streets 
+are empty as the Chokespawn hunt for victims.
+ » Unrest 3: Hunglungs surge and attack the Airlock (1) 
+en masse. Massive casualties. Armored Troopers mow 
+down Doptownians indiscriminately.
+ » Outbreak 3: Everyone has died from asphyxiation. 
+The Avatar of Caliban (pg. 39) walks The Slums (3), 
+infecting the corpses and transforming them into 
+Husks (pg. 21).
+09. DOPTOWN
+1
+THE
+AIRLOCK
+THE
+AUCTION
+4
+THE
+LOTTERY
+2 3
+THE
+SLUMS
+PROSPERO’S
+DREAM
+TO THE
+FALLS (PG 34)
+LOCKED AND HEAVILY GUARDED
+20 STORY CLIMB
+DOWN SLUDGE 
+WATERFALL
+ROLL ENCOUNTER DURING TRAVEL
+31// “I can’t breath.”
+1d10 NPCs & Encounters (roll once per change of location)
+1 Chokespawn (pg. 35): Running rampant and attacking Doptownians. Always stops to consume bodies.
+2 Deceased 02 Beggar.
+3 02 Beggar: Cardboard sign of a clock showing how many hours the beggar has left to live.  
+PCs who don’t donate O2 must make a Sanity Save or gain 1 Stress.
+4 02 Beggars, Family of Three: Child has a sign that says “Paying for my father’s sins.”  
+PCs who don’t donate must make a Sanity Save or gain 1d5 Stress.
+5 2d10 Beggars: Group of desperate beggars mob you for O2, credits, weapons, anything. Just anything.
+6 1d10 Scavengers: Going from home to home collecting O2 tanks from the dead. 
+7 1d5 Tempest Armored Troopers: Patrolling. Harrassing and murdering those who approach too closely or annoy them. 
+8 Standoff between 1d5 Tempest Armored Troopers [H:3 C:65 Smart Rifle 1d10dmg I:45 Armor:65] and 2 Hunglung Snipers 
+[C:75 Smart Rifle 1d10dmg S:25 I:55 H:2]: Tempest mercs pinned down, calling for reinforcements.
+9 1d5 Hunglung Insurgency Recruiters: Want to take you to speak with Imogene Kane. They have snipers on you. 
+10
+Imogene Kane: Leader of a growing insurgency called the Hunglungs. Has “gills” from Dr. Bancali (pg. 34). Does not know 
+this is making her sick and paranoid. Seeking volunteers to infiltrate The Ice Box (pg. 20) through Caliban’s Heart (pg. 38) 
+and upload all Doptown citizens into new Sleeves. Regularly uses suicide bombers to attack The Airlock (1).
+4. THE LOTTERY. Doptownians gather up the 
+discarded O2 tanks that have been scavenged by 
+teams out in The Sink and distribute them based 
+on lottery. One entry per person. If PCs are entered 
+there is a 5% chance per person that they will 
+receive an O2 tank with 1d10 hours worth of O2 in it 
+(1d10 days if they do nothing but rest).
+Imogene Kane (see entry 10 below) is here, passing 
+out O2 tanks stolen from The Dream. She is a 
+legendary hero amongst the Doptownians, any of 
+whom would gladly die to protect her.
+John Freeman (Order #36140899)
+1. THE AIRLOCK (PG. 30). Gigantic locked gate guarded by 1d10 Tempest Armored 
+Troopers [C:65 Smart Rifle 1d10dmg + Frag Grenades I:45 Armor:65  H:3(50)] in cement 
+turrent bunkers (which can withstand 200dmg). You’re assigned a locator tag to get 
+into Doptown, which you must have to be able to leave, no exceptions. The Choke is 
+BYO-O2 (Bring Your Own Oxygen). Without it, you’re at disadvantage to all rolls and 
+must make a Body Save once per day to stay conscious (see pg. 10 of the Player’s 
+Survival Guide for more details).
+2. DOPTOWN (PG. 30): Stands for Deoxygenated People’s 
+Town. A massive slum slowly suffocating to death. 
+Oxygen is incredibly valuable and you will 
+be attacked if you look vulnerable.
+3. LIFE SUPPORT 01 (PG. 36): 
+The sole remaining semi-functional 
+Life Support System in The Choke. 
+Doptownians regularly send patrols 
+here with supplies to keep it in 
+working order.
+6. THE VEINS (PG. 35): 
+A series of drainage pipes, 
+ventillation shafts, and 
+maintenance tunnels which 
+lead all over The Dream. 
+5. THE SINK (PG. 34): 
+Formerly a major functioning portion 
+of The Dream, The Sink is now a sunken 
+city wasteland, filled with sewage and 
+strange creatures. Massive high-rise 
+superstructures. The whole place is dark 
+and dimly lit and requires light to 
+traverse.
+7. MASS GRAVE (PG. 35): Sign 
+outside says “Even if you cannot 
+breath, you don’t deserve to die 
+here. Come back home.” One story 
+high pile of corpses. Fear Save or 
+gain 1d5 Stress.
+4. THE DOCTOR 
+(PG. 34): Hidden behind 
+the sludge waterfall.you look 
+vulnerable.
+8. THE BURROWS (PG XX): 
+A cluster of cybernetic veins 
+the size of corridors. Its slick, 
+fleshy walls  spawn swarms of 
+Husks [C: X*10 Mindless Clawing 
+Xd10dmg I:20 S:20 H:1d10(5). Swarm: This 
+creature’s Hits represent the number 
+of creatures in the Swarm. Combat and 
+damage are based on its current Hits.]. 
+It is the only place to harvest 
+the fruits which can be turned 
+into Sycorax (pg. 23).
+9. CALIBAN’S HEART (PG. 38):
+The awful, pulsating center of the Choke. 
+Caliban’s twisted form lies here, fully merged 
+and integreted with The Dream.
+1
+2
+4
+5
+3
+6
+8
+9
+7
+30min. massive 
+freight elevator.
+30 stories.
+4hr walk. 
+Roll twice 
+for encounters.
+20 story climb down
+sludge-ridden 
+waterfall.
+2hr walk through
+cramped drain pipes.
+Roll three times
+for encounters.
+It takes 6 hours to walk from one end of The Sink to the 
+other and roughly a couple hours to get to any other 
+connected location. Roll for encounters once/hr.
+To the Dream
+= Secret Passage
+32 All of The Choke is dark. You’ll need light to travel. //
+John Freeman (Order #36140899)
+1. THE AIRLOCK (PG. 30). Gigantic locked gate guarded by 1d10 Tempest Armored 
+Troopers [C:65 Smart Rifle 1d10dmg + Frag Grenades I:45 Armor:65  H:3(50)] in cement 
+turrent bunkers (which can withstand 200dmg). You’re assigned a locator tag to get 
+into Doptown, which you must have to be able to leave, no exceptions. The Choke is 
+BYO-O2 (Bring Your Own Oxygen). Without it, you’re at disadvantage to all rolls and 
+must make a Body Save once per day to stay conscious (see pg. 10 of the Player’s 
+Survival Guide for more details).
+2. DOPTOWN (PG. 30): Stands for Deoxygenated People’s 
+Town. A massive slum slowly suffocating to death. 
+Oxygen is incredibly valuable and you will 
+be attacked if you look vulnerable.
+3. LIFE SUPPORT 01 (PG. 36): 
+The sole remaining semi-functional 
+Life Support System in The Choke. 
+Doptownians regularly send patrols 
+here with supplies to keep it in 
+working order.
+6. THE VEINS (PG. 35): 
+A series of drainage pipes, 
+ventillation shafts, and 
+maintenance tunnels which 
+lead all over The Dream. 
+5. THE SINK (PG. 34): 
+Formerly a major functioning portion 
+of The Dream, The Sink is now a sunken 
+city wasteland, filled with sewage and 
+strange creatures. Massive high-rise 
+superstructures. The whole place is dark 
+and dimly lit and requires light to 
+traverse.
+7. MASS GRAVE (PG. 35): Sign 
+outside says “Even if you cannot 
+breath, you don’t deserve to die 
+here. Come back home.” One story 
+high pile of corpses. Fear Save or 
+gain 1d5 Stress.
+4. THE DOCTOR 
+(PG. 34): Hidden behind 
+the sludge waterfall.you look 
+vulnerable.
+8. THE BURROWS (PG XX): 
+A cluster of cybernetic veins 
+the size of corridors. Its slick, 
+fleshy walls  spawn swarms of 
+Husks [C: X*10 Mindless Clawing 
+Xd10dmg I:20 S:20 H:1d10(5). Swarm: This 
+creature’s Hits represent the number 
+of creatures in the Swarm. Combat and 
+damage are based on its current Hits.]. 
+It is the only place to harvest 
+the fruits which can be turned 
+into Sycorax (pg. 23).
+9. CALIBAN’S HEART (PG. 38):
+The awful, pulsating center of the Choke. 
+Caliban’s twisted form lies here, fully merged 
+and integreted with The Dream.
+1
+2
+4
+5
+3
+6
+8
+9
+7
+30min. massive 
+freight elevator.
+30 stories.
+4hr walk. 
+Roll twice 
+for encounters.
+20 story climb down
+sludge-ridden 
+waterfall.
+2hr walk through
+cramped drain pipes.
+Roll three times
+for encounters.
+It takes 6 hours to walk from one end of The Sink to the 
+other and roughly a couple hours to get to any other 
+connected location. Roll for encounters once/hr.
+To the Dream
+= Secret Passage
+33// This section is a great place to emphasize the survival horror aspects of Mothership.
+1d10 Encounter
+1 Discarded O2 tank. 1d10hrs remaining.
+2 Septic Wave. Fear Save or be split up.
+3 Sink hole. Body Save or fall to lower level. 
+Take 1d10dmg.
+4 Doptownian looking for a place to die.
+5 2d10 Hunglungs [C:25 Spears 2d10dmg S:10 
+I:25 H:1] waiting in ambush. 
+6
+1d10 Hunglung Engineers heading to Life 
+Support One (pg. 36) dragging a huge 
+replacement filter. Without help, they won’t 
+survive the trip there.
+7 1d5 Tempest Operators [C:35 Pulse Rifle 
+5d10dmg S:30 I:25 H:2] lost and paranoid. 
+8 Chokespawn (pg. 35).
+9 1d10 Chokespawn (pg. 25).
+10
+The Wire Man: 10 story tall, faceless 
+behemoth built entirely of wires. Stomps 
+reverberate across the Sink. Easy to hide 
+from, but he peers into cracks and broken 
+windows. Massive swipe 1d10dmg. Body Save 
+for half. Hits 5(200). Retreats after losing 
+a Hit.
+John Freeman (Order #36140899)
+DR. BANCALI
+COMBAT: 65 (Scalpel 1d10 + Infection Save)
+SPEED: 75 INSTINCT: 65
+HITS: 2 (20)
+Bancali is singly devoted to curing someone named Ariel 
+(pg. 6) of a rare and terminal disease which he only calls 
+“her sickness.” He is the last remaining scrap of Caliban’s 
+sanity, compartmentalized in an advanced home-grown 
+sleeve. He is unaware of the damage Caliban is causing or 
+the ACMD outbreak.
+34 I saw what seemed a cluster of great towers, whereat I cried: “Master, what is this city?” //
+THE SINK is what remains of the once bustling 
+downtown center of The Dream. It now lays in 
+ruins, covered in twisting ropes of cybernetic wires, 
+creeping around every fallen building. The Sink is 
+dark, foetid and quiet. Behind every shadow lurks 
+some hideous abomination. Make an Infection 
+Check once per hour unless wearing a Hazard/Vacc/
+Exosuit.
+1. THE FALLS. Twenty story toxic sludge waterfall. 
+Strength Check to climb down unassisted by gear. 
+An old Hunglung named Otto sells scavenged 
+climbing gear for a full O2 tank per set or 2kcr. For 
+500cr Otto will sketch a map of directions to The 
+Doctor. 5% chance the gear is faulty.
+2. THE DOCTOR. Hidden beneath the toxic sludge 
+falls runs a pulsating tunnel with walls ridged 
+like a metal gullet. At the far end is a disquieting 
+makeshift operating theater built entirely from 
+reaped limbs. Dr. Bancali, a young and driven 
+surgeon, works feverishly on a Hunglung. 
+1d10 Encounter
+1 Discarded O2 tank. 1d10hrs remaining.
+2 Septic Wave. Fear Save or be split up.
+3 Sink hole. Body Save or fall to lower level. Take 
+1d10dmg.
+4 Doptownian looking for a place to die.
+5 2d10 Hunglungs [C:25 Spears 2d10dmg S:10 I:25 H:1] 
+waiting in ambush. 
+6
+1d10 Hunglung Engineers heading to Life Support 01 
+(pg. 36), dragging a huge replacement filter. Without 
+help they won’t survive the trip there.
+7 1d5 Tempest Operators [C:35 Pulse Rifle 5d10dmg 
+S:30 I:25 H:2] lost and paranoid. 
+8 Chokespawn (pg. 35).
+9 1d10 Chokespawn (pg. 35).
+10
+The Wire Man: 10 story tall faceless behemoth built 
+entirely of wires. Stomps reverberate across The 
+Sink. Easy to hide from but he peers into cracks and 
+broken windows. Massive swipe 1d10dmg. Body Save 
+for half. Hits 5(200). Retreats after losing a Hit.
+A gross orifice in the wall opens onto a tunnel to  
+The Atrium (pg. 39). Bancali cautions the PCs “not to 
+go poking around in his heart.”
+Bancali will install cybernetic “gills” that remove 
+your need to breathe oxygen if asked. If Bancali is 
+killed then Caliban (pg. 39) loses control (move to 
+Outbreak: Phase 3 (pg. 7). 
+John Freeman (Order #36140899)
+35// The Wire Man is best as an environmental hazard, not an enemy. It shapes the landscape.
+1d10 Chokespawn Base Form Unique Feature Special Attack
+01 Disfigured Human Child  
+C:20 1d5dmg S:50 I:20 H:1
+Hideous: Gain 1 Stress. Fear Save or 
+cower for 1d5 [+] rounds. 
+Begs You To Kill It: Sanity Save or 1 
+Stress per round it begs.
+02 1d10 Skittering Rats 
+C:30 1d10dmg I:25 S:55 H:1
+Survivor: +10 to Combat, +1d10dmg,  
++1 Hits, +5 Health.
+Crawls All Over You: Fear Save or make 
+a Panic Check.
+03 1d10 Feral Dogs  
+C:45 2d10dmg I:55 S:65 H:1(15) 
+Machine-mesh: Overflowing with 
+cybermods. Takes 1/2dmg. 
+Howl: 50% chance 1d5 identical 
+Chokespawn arrive in 1d10 rounds.
+04 Infected Hybrid Human  
+C:50 2d10dmg I:45 S:45 H:2(10) 
+Conjoined: Roll 2nd Base Form, take 
+highest stats, +1 Special Attack.
+Acid Vomit: If you fail your Armor Save 
+it is reduced by 5% and gain 1 Stress.
+05 2d10 Throbbing Eggs  
+C:0 S:0 I:0 H:2(20) 
+Cocoon: Inert. Hatches after 1d10 
+rounds with +10 Combat and +10dmg.
+Noxious Spray: Body Save or raise your 
+Infection Level by 1.
+06 Centipede of Discarded Limbs  
+C:65 3d10dmg S:55 I:70 H:3(40)
+Mass of Limbs: Can act 1d5 times/
+round. +1 Special Attack.
+Swallow: Body Save or be ingested whole. 
+1d10dmg/round until 1 Hit dealt.
+07 Mechanical Spider  
+C:70 3d10dmg S:55 I:75 H:4(12) 
+Egg sack: After taking 20dmg the sack 
+splits and spews 1d10 Chokespawn.
+Infect: Make an Infection Check (pg. 6) 
+whenever you are hit.
+08 Tangled Wires & Cables  
+C:75 4d10dmg S:65 I:50 H:3(30) 
+Morph: After 1d5 rounds changes Base 
+Form. Add new form’s Hits and damage.
+Snatch: Body Save or be grabbed and 
+knocked prone. Next attack auto hits.
+09 Pulsating Flesh Sack  
+C:0 S:10 I:10 H:1(100)
+Mitosis: Every 1d10 rounds divides into a 
+copy of the first creature.
+Pseudopod: New limb sprouts.  
+Chokespawn gains +1 action/round.
+10 Grotesque (2 Unique Features) 
+C:65 1d10dmg S:25 I:45 H: 3(50) 
+Engorged: 3x as large as normal.  
++20 Health. Double damage.
+Body Snatcher: Body [+] Save or have 
+your next turn taken by the Warden.
+3. THE OLD CITY. Massive, sunken and abandoned 
+city. Collapsing buildings (1d5x10 stories). Raw 
+sewage. Chokespawn stalk the darkness. Dimly 
+lit through cracks in the ceiling a hundred stories 
+above. There are a few notable landmarks, each 
+about an hour apart:
+ » JUNO TOWER. Former corporate HQ on The 
+Dream. 34 floors above the waste and 4 sunken 
+below. Sadistic Tempest Co. Sniper [C:75 Smart 
+Rifle 1d10dmg S:25 I:55 H:2] perched near the top, 
+picking off travelers for sport.
+ » THE METRO. Dark descent down three creaking 
+stairwells into abandoned Metro tunnels. Power 
+can be temporarily restored with a successful 
+Jury Rigging or Engineering Check. This opens up 
+fast travel to The Veins (5) or the Mass Grave (4). 
+ » THE OUTPOST. Tempest Co. Forward Operating 
+Base in a crumbling apartment building. 1d5 
+Paranoid Operators [C:25 SMG 4d10dmg I:25 H:2]
+ » THE SEWERS. Reached by spelunking down a 
+100’ drop in the cracked pavement. Leads to the 
+Mass Grave (4) and The Burrows (pg. 37). Roll for 
+encounters twice per hour. 
+ » (HARD TO FIND) THE ARCHIVES. Decayed 
+corporate research facility. Requires a guide or 
+significant time spent to find. Investigation of 
+patient records reveals that a cybersurgeon, 
+Dr. Bancali, and his daughter Ariel came to The 
+Dream 23 years ago to cure her terminal cancer.
+4. MASS GRAVE. There is a lonely sign that reads 
+“Even if you cannot breath you don’t deserve 
+to die here. Come back home.” This is your only 
+warning before you see the one story high pile of 
+corpses, reaped limbs and discarded Husks (pg. 
+21). This is what remains of more than a decade 
+of Caliban’s monstrous experiments. Fear Save or 
+gain 1d5 Stress upon locating the Grave. There is a 
+25% chance that if an hour is spent searching one 
+random cybermod is found discarded here. Installing 
+the cybermod incurs two rolls on the Mutation Table 
+(Back Cover) and gives you permanent [-] on Saves 
+to resist Caliban if he awakens.
+5. THE VEINS. A series of drainage pipes, ventilation 
+shafts and maintenance tunnels that lead all over 
+The Dream. Any module can be accessed if you 
+know the way. The tunnels are marked by symbols 
+that Imogene Kane (pg. 31) and the Hunglungs can 
+easily deciper, allowing them the ability to strike any 
+part of The Dream and retreat back to the relative 
+safety of The Choke. They are unaware that Caliban 
+is the originator of these symbols. It takes 2d10 
+hours to follow any of these veins back to a module 
+(roll randomly on the Inside Front Cover to see 
+where you appear). Once a route is established it 
+can be traversed again if detailed notes are kept.
+John Freeman (Order #36140899)
+GUILE OF CALIBAN
+COMBAT: 40 Slash x2 2d10dmg or Tranq Lash or 
+Bloodsucker Bite.
+INSTINCT: 65 ARMOR: 80 (Camouflage)
+HITS: 3 (35)
+ » Tranq Lash: Body Save or knocked unconscious 
+for 1d5 rounds.
+ » Bloodsucker Bite: 1d10dmg, doubled if target is 
+unconscious. Heals the Guile for 1 Hit.
+Fast crawling beast with six arms. Silent movement. 
+Can crawl on walls and ceilings as fast as the floor. 
+Ambushes and then retreats. Always runs away 
+after losing a Hit.
+36 See if you can make the Guile of Caliban a recurring villain; something that stalks the PCs. //
+LIFE SUPPORT 01 is 
+the only remaining 
+semi-functional 
+life support unit 
+in The Choke. The 
+Guile of Caliban will stalk and ambush whenever the 
+opportunity presents itself. 
+MOOD: No light. Loud thrumming machinery. Floors 
+groan like the building might collapse any second.
+1. MASSIVE CRACKED DOOR. Encrusted with 
+cables and wires, spreading vein-like across the 
+steel doors. Too heavy to open without heavy-duty 
+construction equipment or an Exosuit, etc. 
+1A. HIDDEN ENTRANCE. If the players spend time 
+searching they’ll find a small cracked entrance at 
+1A where a fallen tower marked EST-03 (Scientist or 
+Heavy Machinery: “Environmental Scrubbing Tower”) 
+has gouged a hole in the main building. The hole is 
+small and anyone wearing bulky armor (like Hazard/
+Vacc/Exosuit) must spend a round carefully entering 
+or else risk damaging their suit.
+2. CONTROL ROOMS. Several decayed terminal 
+banks. A close search will reveal one terminal 
+which can be salvaged with some work, containing 
+a complex map of The Veins (pg. 35). A rusty and 
+crumbling metal staircase (if more than one person 
+climbs at once, it collapses) leads to the Processing 
+Plant (3).
+3. PROCESSING 
+PLANT. Incredibly 
+quiet save for the 
+low hum of the O2 
+scrubbers.  Staircase 
+to The Filter (5) is boobytrapped with a noisemaker 
+(which can be heard from the Outpost (4).) A cart of 
+dirty uniforms hides the entrance to The Outpost (4).
+4. OUTPOST. Dingy safehouse. A bloodless corpse 
+lays discarded in the corner. Stash of pulse rifle 
+ammunition and x3 O2 tanks (1d10 hours each).
+5. THE FILTER. If a filter has been brought it can 
+be replaced here in 1 hour. Otherwise it takes 3d10 
+hours to scrub the old filter clean (lasts 4d10 days).
+THE SINK
+(PG. 34)
+CALIBAN’S 
+HEART (PG. 38)
+1
+2
+3
+Empty chamber. No encounter.
+Tunnel in floor
+Tunnel in floor
+Hole in ceiling
+Hole in ceiling
+Flooded
+100m drop
+40m climb
+Trap orifice
+in floor
+50m climb
+Random encounter (1d10).
+2 Random encounters 
++ Supplies (1d10).
+Random encounter (1d10+2).
+Random encounter (1d10-2).
+Orifice. 2d10dmg to open.
+Using firearms will alert 
+creatures in the next room.
+Fleshy, throbbing corridor.
+Flooded to the knees corridor. 
+Hazard/vaccsuit or gain +1 Infection. Hole in ceiling
+John Freeman (Order #36140899)
+37// This map makes a great template for a “bug hunt” adventure. Swap out the tables and try it!
+THE SINK
+(PG. 34)
+CALIBAN’S 
+HEART (PG. 38)
+1
+2
+3
+Empty chamber. No encounter.
+Tunnel in floor
+Tunnel in floor
+Hole in ceiling
+Hole in ceiling
+Flooded
+100m drop
+40m climb
+Trap orifice
+in floor
+50m climb
+Random encounter (1d10).
+2 Random encounters 
++ Supplies (1d10).
+Random encounter (1d10+2).
+Random encounter (1d10-2).
+Orifice. 2d10dmg to open.
+Using firearms will alert 
+creatures in the next room.
+Fleshy, throbbing corridor.
+Flooded to the knees corridor. 
+Hazard/vaccsuit or gain +1 Infection. Hole in ceiling
+HUSKS (SWARM)
+COMBAT: X*10 (Mindless clawing Xd10dmg)
+SPEED: 20 INSTINCT: 20
+HITS: 1d10 (5)
+ » Swarm: This creature’s Hits represent the number 
+of creatures in the Swarm. Combat and damage 
+are based on current Hits.
+Half-formed clones. Sanded down features. No exposed 
+orifices or eyes. Everything a blank, featureless slate. 
+They grow out of the walls, sliding off and slapping the 
+ground when finished.
+1d10 Supplies
+1-2 O2 Tank. 1d10 hours remaining.
+3 Decayed Hazmat Suit. No Armor Save bonus.
+4 Hidden Cache: 1d5 Stimpack. 1d10*10 credits. 
+5-7
+1d5 Fruit Sacs. The Solarian Church (pg. 22) pays 
+highly for these (in batches of 3) which are 
+processed into Sycorax. Must be kept in a sealed 
+container or The Sink will ruin them.
+8-9 1d10 Pulse Rifle Ammunition. Scattered magazines 
+amongst decayed corpses.
+10 Corpse wielding Flamethrower. Still has 1d10 
+charges remaining. Wearing an Exosuit.
+THE BURROWS is a cluster of flesh interfaces the 
+size of corridors. These burrows are the only place 
+to harvest the fruit which becomes Sycorax (pg. 23). 
+There are hundreds of burrows like this in The Choke. 
+Eventually they all lead to Caliban’s Heart (pg. 38). 
+1. THE BIG WALL. At the edge of The Sink (pg. 34) 
+is a giant patch of hive-like burrows pocking the 
+massive bulkhead. One of them glows with a dim 
+light. This one will, if climbed up and entered, reveal 
+a wet, closed orifice which opens when it takes 
+2d10dmg, leading inside to the burrow chambers. 
+2. DEAD HUNGLUNG. The flesh has already started to 
+reclaim him. Scalpel in one hand, “He’s coming for 
+you” carved into the other. 
+3. GENE POOL. 2d10 Doptownians (or an important 
+NPC) stuck to the flesh. They will merge with 
+Caliban in 1d10 rounds if not removed (Strength 
+Check). Large sphincter in the floor if stepped on 
+reveals sliding tunnel to Caliban’s Heart (pg. 38).
+1d10 Encounter
+0-2 Nothing. The walls pulsate and throb.
+3 1 Confused Husk. Hits 1(5).
+4 Mouth forms and spews bile. Armor Save or Armor 
+no longer protects from Infection.
+5
+Chamber becomes engorged. Room squeezes shut 
+until it takes 30dmg. Body Save to escape or  
+1d10dmg per round. 
+6 Eye stalk sprouts. If not killed within one round of 
+appearing next encounter roll is at +3.
+7 Grasping veins. Random PC must make Body Save or 
+be sucked into the walls and sent to Room 3.
+8 1d10 Husks.
+9 2d10 Husks.
+10+ 1d10 Husks, 1 Chokespawn (pg. 35).
+John Freeman (Order #36140899)
+CALIBAN’S
+HEART
+THE DOCTOR
+(PG. 34)
+THE ICE BOX
+(PG. 20)
+SUBLEVEL C
+(PG. 28)
+THE BURROWS
+(PG. 37)
+THE VEINS
+(PG. 35)
+5
+INNER
+CHAMBER
+2
+COLLAPSED
+VENTRICLE1
+FLOODED
+ATRIUM
+3
+S
+S
+ROTTING
+CHAMBER4
+ATRIUM
+ORIFICE DOES NOT OPEN FROM WHITE SIDE
+ORIFICE OPENS FROM EITHER SIDE
+HIDDEN PASSAGE
+DIRECTION OF BLOOD FLOW
+John Freeman (Order #36140899)
+39The heart is deceitful above all things, and desperately wicked: who can know it? // Jer 17:9
+CALIBAN’S HEART is a slick wet pit of cybernetic 
+and organic fusion. Every inch of these twisting 
+chambers crawls with flesh seeking wire tendrils 
+looking to merge with any living tissue and subsume 
+it into the whole. Every turn roll 1d10: on 1-5 the 
+location rolled is flooded with the tendrils, knocking 
+everyone to the floor and forcing an Infection Check 
+(pg. 6). On a Critical Fail you begin to merge with 
+Caliban. 1d5 rounds, requires a Strength Check to be 
+pulled free.
+1. FLOODED ATRIUM. The Jealousy of Caliban 
+dominates the room, slumped over in a corner, half 
+sunken in a pool of dark blood. It will attack anyone 
+who isn’t Infected but will otherwise ignore the PCs.
+2. COLLAPSED VENTRICLE. Hundreds of terminal 
+monitors merged grotesquely with the organic 
+bulkhead. Each of them displays a hideous 
+unblinking eye (Sanity Save or gain 1d5 Stress). 
+On the wall bordering the Inner Chamber (5) is a 
+password protected (ARIEL) Control Console which 
+allows the user to spy on anyone in The Dream using 
+the nearest terminal as a camera. There is a giant 
+dark terminal monitor in the far corner which if 
+broken into reveals access to the Inner Chamber (5).
+3. ROTTING CHAMBER. A jungle of gnarled veins and 
+cables sprouting from every inch of the walls to the 
+center of the chamber where the Avatar of Caliban 
+sits on a twisted, oily throne built of disfigured 
+cybernetic organisms. The awful crown on his head 
+throbs with each pulse from the tangled veins. 
+Killing the Avatar and donning the crown grants the 
+user total control over all of The Dream’s systems. 
+Sanity Save at [-] to take the crown off, otherwise 
+it is impossible to remove without killing the user. 
+The crown can open a hidden hatch to the Inner 
+Chamber (5). 
+4. ATRIUM. An obscene torture chamber. 3d10 
+denizens of The Dream hang on rusty meathooks 
+while fist-sized Cyberleeches (C: 45 Infection Check 
+H:1) slowly digest the bodies. An orifice in the floor 
+reveals a tunnel to The Doctor (pg. 34).
+5. INNER CHAMBER. A dark and towering hollow. 
+Black granite floors. Quiet except for faint wheezing. 
+Fused into the wall is Caliban, pathetic and 
+mutilated. His human form is unrecognizable and 
+he cannot speak, only rasp out machine-assisted 
+breaths. A black child-sized box lays in front of him. 
+Inside of it lies Ariel, Dr. Bancali’s daughter. She 
+should have died long ago from terminal cancer 
+but Caliban/Bancali’s tireless efforts have kept her 
+alive, though unaging, for 23 years. She will die if 
+removed from the box. Caliban only exists to keep 
+her living.
+CALIBAN formerly   dr . bancali
+COMBAT: 50 (see below)
+SPEED: 50 INSTINCT: 85
+HITS: 2 (200) (see below)
+ » Reinforcements: Caliban himself cannot fight 
+though he can call Chokespawn, Husks or 
+attempt to compel Infected Level 6+ to do his 
+bidding (Sanity Save to resist). Reinforcements 
+arrive within 1d10 rounds.
+ » Hard to Kill: Caliban is more of a loose hive 
+mind at this point rather than a person and 
+would make a great campaign-length villain. 
+If the entire Dream is destroyed there is a 
+10% chance Caliban escaped on some other 
+Infected person or machine. If his original form 
+in the Inner Chamber (5) is killed Prospero’s 
+Dream starts to fall apart. It will self destruct 
+in 1d10 hours. Congratulations. You won.
+JEALOUSY OF CALIBAN
+COMBAT: 80 (Bash 5d10, Fleshcannon 3d10dmg)
+SPEED: 10 INSTINCT: 20
+HITS: 5 (45)
+ » Fleshcannon: Shoots disgorged limbs, viscera 
+and blood at target. Infection Check at [-].
+GARBLED SCREAMS: 
+ » “Stay away from her!”
+ » “Only I can find the cure!”
+ » “Why won’t you leave us alone?”
+A grossly enlarged former human, swollen with fat, 
+metal plates and tubes fused into its flesh. Barrels 
+of projectile weapons extrude from chest, mouths, 
+eyes and arms. Hands terminate in brick-like metal 
+boxes, skin wrapped around it like a disguise. 
+AVATAR OF CALIBAN
+COMBAT: 80 (Tendril/Tendril 2d10 + Infection)
+SPEED: 45 INSTINCT: 65
+HITS: 5 (50)
+ » Awful Crown: Can command any machine to 
+do wearer’s bidding. Players with cybermods/
+slickware and Androids get a Sanity Save to 
+resist. Note: this can be an insta-kill. Telegraph 
+this ability early by having Caliban command a 
+minor weapon or inert object to explode.
+Seven feet tall. Naked but covered in wires. Caliban’s 
+primary form when interacting physically with 
+denizens of The Dream. His crown drags several 
+meters of wire behind it like a train.
+John Freeman (Order #36140899)
+40 Don’t feel tied down by encounter tables: they’re here to free you, not restrict you. // 
+1d10 Deadly Encounters (Phase I: 1d10. Phase 2: 1d10+5. Phase 3: 1d10+10).
+1 Escaped Pit Creature (pg. 27). 1d10 Executioners [C:55 Electrolash 4d10dmg H:3] attempting to subdue it.
+2 1d10 Reapers [C:45 S:35 I:35 H:2] looking for parts. They will attempt to capture androids and cybermodded crewmembers.
+3 Fight between 2d10 Teamsters [C:35 Unarmed H:1] and 1d5 Novo Droogs [C:55 Knifes 1d10dmg H:1].
+4 Body Save or get pickpocketed for 2d100cr. 1d10 Urchins [C:35 H:1] waiting in ambush if things go wrong.
+5 Ticking in the bulkhead. 2d10 seconds later a pipe bomb explodes. Body Save or 1d10dmg. Armor Save for half.
+6 Aug [C:40 5d10dmg S:30 I:20 H:3] screaming “Help! It’s not me, it’s Caliban!” Can’t stop attacking. 
+7 Sycrorax Dealer and 1d10 Novo Droogs [C:55 Shotgun 2d10dmg S:25 I:25 H:2].
+8 The floor warps and swallows you whole. Body Save or fall into The Sink (pg. 34). Floor morphs back to normal afterwards. 
+If you’re around to see it: Sanity Save or 1d5 Stress.
+9 Q-Team [C:25 5d10dmg H:2] escorting 2d10 Infected to The Court (pg. 26). Infection Check.
+10 A single confused Husk (pg. 21). The creature doesn’t attack unless interfered with.
+11  2d10+10 Teamsters [C:35 Improvised Weapons 1d10 H:1] rioting. Burning down a Novo Front Establishment (pg. 42).
+12 Mandatory Q-Team [C:25 5d10dmg H:2] inspection. Forcibly take your blood and test for Infection (pg. 6).
+13 A fleshy mouth opens in the bulkhead revealing 2 Cybernetic Tongues [Body [-] Save or 5d10dmg/round. H:1(30)].  
+Sanity Save or d5 Stress.
+14 Firefight between 2d10 Tempest Operators [C:35 SMG 4d10dmg H:2] and 3d10 Hunglungs [C:35 SMG[-]4d10dmg[-] H:1].
+15 5d10+10 Teamsters [C:35 Improvised Weapons 1d10 H:1] burning and looting. Trying to gather enough forces to take a stand 
+against Tempest Co. In 1d10 rounds Armored Troopers [C:65 Smart Rifle 1d10dmg + Frag Grenades I:45 Armor:65  H:3(50)] 
+will arrive and tear gas (Body Save or fall prone coughing) everyone. 
+16 A giant eyeball opens in the wall and follows your movements. Sanity Save or be trapped in the gaze. Gain 1 Stress/round 
+until a Sanity Save is successful. The eye will close after taking 50dmg.
+17 A gnashing mouth opens in the bulkhead and 2d10 Husks (pg. 21) stream out.
+18 Massive battle between 1d5 Tempest Co. Squads (Operators [C:35 SMG 4d10dmg H:2] and Armored Troopers [C:65 Smart 
+Rifle 1d10dmg + Frag Grenades I:45 Armor:65  H:3(50)]) and 2d10 Hunglung Insurgent squads [C:35 SMG[-]4d10dmg[-] H:1]. 
+Massive civilian casulaties. The entire area is impassable without running through the battlefield.
+19 1d5 Tempest Co. Squads fighting 4d10 Chokespawn (pg. 35). The Chokespawn are winning.
+20 The Avatar of Caliban (pg. 39) marches through the corridors flanked by a legion of Husks. All with cybermods or 
+slickware must make a Sanity Save or bow as they pass. They will fight only if fired upon. Behind them all the corridors 
+have turned dark and all screens have turned to static. Fear Save or gain 1d10 Stress.
+1d10 Phase 1 Phase 2 Phase 3
+1 No encounter. No encounter. No encounter.
+2 No encounter. No encounter. No encounter.
+3 No encounter. No encounter. Station Encounter.
+4 No encounter. Station Encounter. Station Encounter.
+5 Station Encounter. Station Encounter. Deadly Encounter.
+6 Station Encounter. Station Encounter. Deadly Encounter.
+7 Station Encounter. Deadly Encounter. Deadly Encounter.
+8 Station Encounter. Deadly Encounter. Deadly Encounter.
+9 Deadly Encounter. Deadly Encounter. Deadly Encounter.
+10 Deadly Encounter. Deadly Encounter. Deadly Encounter.
+Encounters on The Dream
+Whenever you pass through a slice of the 
+map (Inside Front Cover) roll 1d10 and 
+reference the table to the right to see 
+if there is a Station Encounter, Deadly 
+Encounter or no encounter. If violence 
+breaks out there is a 10% chance Tempest 
+Co. Operators [H:2 C:35 Pulse Rifle 5d10dmg 
+I:25] will arrive in 1d10 rounds. Otherwise no 
+help is on the way.
+If the Deadly Encounter doesn’t fit with the 
+Phase Events you’ve completed move down 
+the list until you find one that matches. 
+John Freeman (Order #36140899)
+d100 Station Encounters
+Crit Any time you roll doubles for your encounter roll again and combine the two.
+00 Roll Deadly Encounter (pg. 40) and combine it with another encounter here.
+01-09 Cryer for random nearby establishment (pg. 42-43). 10% off if you go right now.
+10-19 O2 beggar from The Choke (pg. 32). They need d100 credits or they’ll be sent back today. Reduce Stress by 1 if you give.
+20-24 Hawker pawning a random [1d10: (1-5) piece of equipment. (6-9) drug. (10) cybermod] for 50% off.
+25-29 1d5 Solarian Missionaries proselytizing. Any unbaptized who follow them get an hour in The Solarium (pg. 22).
+30-34 Infected denizen [1d10: (1-5) coughing. (6-9) vomiting. (10) violently being overtaken by their cybermods].
+35-39 Sex worker from The Ecstacy (pg. 12) offering overnights at 75% off.
+40-44 Recently let go Tempest Co. Merc (roll 1d10 for Rank, see pg. 29) looking for work at 50% off.
+45-49 1d10 Tempest Recruits [1d10: (1-5) on patrol. (6-9) on leave. (10) arresting someone. Roll on pg. 44-45 for whom].
+55-57 Gamblers playing a game of Sej. d100*1kcr is at stake. A crowd is drawing near.
+58-60 Q-Team crew quarantining the area. You’ll have to go around which adds 1d100 [-] minutes to your trip.
+61-63 First mate of a ship [roll on pg. 11] looking for a crew. Ship leaves in 1d10 hours.
+64-66 Backpacker tagging the bulkhead. [1d10: (1-5) CALIBAN LIVES (6-9) TAKE MY BREATH AWAY (10) YAN DEEZ NUTS].
+67-69 Gang of bored 2d10 Novo Droogs squatting at an abandoned establishment (roll on pg. 42-43).
+70-71 Chief Adjudicator Brunhildh (pg. 9) and Executioners. All must stop and let them pass or get electrolashed. 
+72-73 Novo Droogs [C: 55 Knives 1d10dmg H:1] beating up 1d10 O2 beggars. 
+74-75 An android with damaged legs lies in a pool of viscous fluids and reaches out for help.
+76-77 Dancers from The Stellar Burn (pg. 12) gracefully slide by with large holosnakes draped over their shoulders.
+78-79 1d10 Socialites returning from a Big Switch installation and heading to a cybermod showing party. 
+80-81 Sycoyrax dealer offering tester vials. 200cr per hit. Body Save or take double damage. 
+82-83 2d10 Queer Folx sitting on milkcrates and smoking outside a local haunt (pg. 42-43). Suspicious of strangers and tourists.
+84-85 A group of 1d10 dirty urchins tugging on legs and begging for food scraps.
+85 1d5+1 Novo Droogs, drunk and getting kicked out of a nearby establishment (pg. 42-43).
+86 Suspicious looking group: 1d10 Hunglungs setting a pipe bomb at a nearby establishment (pg. 42-43).
+87 Solarian Gardener offering 1 hour in The Solarium (pg. 22) in exchange for a 1d100cr donation to The Choke.
+88 Victim of a recent reaping attempt bleeding out. Get them to The Chop Shop (pg. 14) in 30 minutes or they’ll die.
+89 Flirts in flashing holosuits with wings handing out fliers for the Psychoromp in The Stellar Burn (pg. 12) tonight.
+90 A Sleeve with a featureless face passing out invitiations to The Runway (pg. 20).
+91 Accused being escorted to The Court (pg. 26). They can pay 1d10kcr. Fight is in 1d10 hours.
+92 Slickbay star and entourage mobbed by fans. The entire corridor is packed. 10% chance of being pickpocketed.
+93 1d10+2 fugitive Hunglungs looking for somewhere to hide.
+94 Tempest Co. raid on nearby establishment (pg. 42-43). Move along.
+95 2d10 Teamsters looking to ambush a gang of Novo Droogs at a nearby Novo Bar.
+96 An empty, discarded Sleeve. It will rot in 1d10 [-] hours. Still in salvageable condition.
+97 All of the lights flicker and turn off. Sound of a heartbeat. Heavy, belabored breathing.
+98 All nearby screens turn to static. The volume increases until you can’t hear anything else. Then it’s gone.
+99 Hologram of Ariel (pg. 6), wandering alone. “Please, help me. I don’t want to die.” Disappears in 1d10min.
+41
+John Freeman (Order #36140899)
+42 Directions from strangers to any establishment cost 10cr (a day of oxygen). // 
+ d100 Establishment Prices & Notes Example(s)
+00-02
+Restaurants & Bars
+Biovend 1cr/dose. Body Save or take 1dmg. “Fuel for life!”
+03-04 Ramen House 2cr/bowl. Open 24hrs. Hakata Ramen, Hanzo’s
+05-06 Chai Room 5cr/cup. +50cr for hallucinogenic tea (Body Save [-]). Madame Frida’s, Litany
+07 Teamster Bar 1cr draft beer. Must present Union Card. Rey’s, Jump Humpers, G-Astro
+08 Burger Joint 20cr combo meal. Only real meat on the station. Keller’s, Dairyette, Swensons
+09 Gay Bar 30cr cover. Body [-] Save or hangover in the morning. Striker Bar, Icarus, Warpaint
+10-12
+Entertainment
+Cabaret 200cr cover + drinks. Shows are 1-2 hours. Fête Fatale, BRLSQ, Palais  
+13-14 Mahjong Club 500cr buy-in. No androids allowed. Mama’s Game, Red Table.
+15-16 Holocade 10cr/hour. Win tickets to exchange for prizes. Godmode, The Konami Code
+17 Solarian Garden 10cr suggested donation. Reduce 1 Stress/day visited. The Garden of Forking Paths
+18 Drag Show 35cr cover. 2d100cr in tips. The Abbey, Trannyshack, Rage
+19 Slickbooth 10cr/minute. 50cr/hour. Install Slicks, visit Slickworlds. CRVR, DimeWorlds, PeakBox
+20-22
+Medicine & Cosmetics
+Street Surgeon Grants [+] on Healing checks but failure causes 2d10dmg. Dr. Guts, Nurse Ratshit
+23-24 Mod Repair Minor repair = 10% of list price. Major repair = 25%. The Mod Squad, ChromeFix
+25-26 Plastic Surgeon Most surgeries cost 5kcr. Body Save or 1d5 Stress. New You Center, Pretty Knife
+27 Acupuncturist 100cr first visit. 50cr recurring. Reduces 1 Stress/visit. Holistic Health, Total Control
+28 Reaper Fence Buys reaped mods for 25% of list price (pg. 18-19). The Pawn Shop, Crazy 8’s
+29 Sleeve Storage 500cr/month. 5% chance of Infection Check sleeved. Golem, Cryo-first, Infinikeep
+30-32
+Shopping & Retail
+Ration Line 1 ration/day for free. Line takes 1d5 hours. Line 12, Line 85, Line 252
+33-34 Pawn Shop Buys items at 1d10-10% of list price. Wreckem Rackem, Dave’s
+35-36 Outfitter Sells clothing and standard equipment. The Spacer Supply Co.
+37 Armory 30% chance of having a given weapon in stock. GUN$, Heavy, Walking Arsenal
+38 Mining Supplies Laser Cutters, Survey Kits, etc. 20% Union discount. Armco Mining Supplies
+39 Android Rental 500cr/wk. [H:1 C:20 I: 25 Loyalty: 20 One trained Skill]. Runt Rentals, Locker Bots
+40-42
+Accomodations
+Hostel 1cr/night. Roll Station Encounter (pg. 41). The Beat, Lady Victoria’s
+43-44 Capsule Hotel 100cr/night. Rolls for rest are at [-]. Stop ‘n’ Pop, Sleepland
+45-46 Arco-op 500cr/month + 20hrs of co-op work/week. Elysium Dreams, Pyramid
+47-48 Apartment 2d10*100cr/month. 1d100kcr to buy. The Upper District, House 42
+49 Penthouse 10kcr/month. 1d10mcr to buy. Rolls to rest at [+]. The Golden Triangle, TopRing
+Establishments
+The Dream is a giant metropolis and is filled with 
+hundreds of different establishments. Use these 
+as a highlight for what the crew may run into while 
+travelling and then mark it down on your map for 
+future reference. 
+Basic Living Expenses
+ » Squalor: 1cr/day. Tempest Co. will throw you in 
+The Choke (pg. 32) if they find you.
+ » Borderline: 20cr/day. Can eat, breath, sleep. 
+ » Citizen: 50cr/day. Move about comfortably.
+ » Decadent: 200cr/day. Go wherever you want, do 
+whatever you want.
+John Freeman (Order #36140899)
+43// I wouldn’t give you breath for a day.
+ d100 Establishment Prices & Notes Example(s)
+50-52
+Culture & Religion
+I-Ching Oracle 90cr. Sanity Save: Success grants 2x XP this session. Three Coin Method
+53-54 Lumatat Shop 500cr/hr. Spot: 1d10hrs. Full Sleeve: 50hrs. Back: 90hrs. Horiyoshi III, Bersekov
+55-56 Palm Reader 25cr. Sanity Save: Success grants 1 reroll this session. Myrna’s, Mystic Palm
+57-58 Bathhouse 100cr/month membership. Reduce 1d5 Stress. Deep Blue, King Spa 
+59 Solarian Shrine 1cr offering. 1%: [+] on one roll in the next 24hrs. Sol Invictus, Golden Chariot
+60-62
+Red Light
+Novo Bar Golyanovo II Bratva hangout. Droogs only, fools. Samizdat, Avtoritet, MACTEP
+63-64 Strip Club 50cr cover, 20cr lapdance. Reduce Stress by 1. Cottontail, Bunny Slope, XT
+65-66 Opium Den 1kcr/hit. Reduce 2d10 Stress. Highly addictive. The Red Room, Clocktower
+67 Fight Club 10cr cover. 200cr/month. You must fight on your first night. Body Save or 2d10 dmg.
+68 BDSM Dungeon 75cr cover. Dress code enforced. Vanilla Play, Abyssal, Colette
+69 Freak Show 100cr cover. Rare and strange cybernetic mutations. Peephouse, The Big Show
+70-72
+Training
+Shooting Range 200cr/month. Combat Check: Success grants [+] on 1d5 future Combat Checks.
+73-74 Piloting Slicksim 200cr/hour. 120 hours: Piloting. 500 hours: Vehicle Specialization. 2k hours: Command.
+75-76 Boxing Gym 50cr/month Strength Check: Success grants [+] on 1d5 future Strength Checks.
+77 Teamster Cert. 100cr/hour 40hours: Union card. 100hours: Asteroid Mining. “No gods, no masters.”
+78 Meditation Ctr. 10cr suggested donation. 1d10 Stress relieved on first visit, 1 Stress after that.
+79 Shinken-Ri Dojo “God Fist” style of martial arts. 50cr/hour. 100hours: Weapon Specialization (Unarmed).
+80-82
+Adminstration
+Tempest Outpost 1d10 Tempest R0 Recruits being trained by a Squad Leader and a Probie (pg. 29).
+83-83 Shuttle Dock Shuttle for quick travel across the station. 50cr for a ride.
+84-85 Engineering One of many facilities which keep The Dream running. Run by Local 32819L.
+86 Holding Cells Awaiting transfer to The Court (pg. 26).
+87 Fuel Depot Massive fuel reserves. Pipeline to The Dry Dock (pg. 10). 20% discount for Teamsters.
+88 Power Plant One of 50 major power plants. Destroying it destroys the module you’re currently in.
+89 Waste Disposal Disgusting smell. Body Save or vomit. Leads to The Veins (pg. 35).
+90
+Unique (Only one of these. Replace when rolled.)
+Warp Core Vault Warp core storage and sale. Warp cores cost 50kcr and each can fuel a single Jump.
+91 Slaughterfactory Biological tissue cloning and meat processing. Provides meat for 85% of The Dream.
+92 Hunglung Base Secret insurgent cell hideout. Roll again to see what the “front” operation is.
+93 Black Site Tempest Co.-run off-the-books interrogation center.
+94 Hidden Corridor Decreases travel time to Random Module (roll 1d10 on Inside Front Cover) by half.
+95 Quarantine Area Giant block being secretely quarantined by Tempest Co. No one allowed in or out.
+96 Husk Brood Pit Dark corridor leads to a giant pit filled with Husks (pg. 21). They stand silently, waiting.
+97 Syndicate Hideout    Front operation (roll d100 for establishment) for Syndicate spies (pg. 6).
+98 Nest of Caliban Infested tangle of machinorganic mush. The room spews Chokespawn (pg. 35).
+99 Yandee’s Penthouse  One of many of Yandee’s fortified villas. Guarded by 3d10 Armored Troopers.
+John Freeman (Order #36140899)
+44 The ubiquity of surgery onboard The Dream has led to a large tight-knit community of trans folx. //
+ d100 Name Who Are They? What do they want?
+00-02 Caprico Solarian Missionary “Invictus Sol, brother. Come and take the dawn with me. Change your life.”
+03-04 Legato Union Organizer “The teamsters are overworked. Reidmar is organizing a strike.”
+05-06 Denter Spaceflight Controller “You fly close enough and you’ll see a ship fused to bottom of The Dream.”
+07 Ungar Tempest Operator “Brunhild and her Executioners are androids and can’t be bribed.”
+08 Yoshitaka Overmodded Freak “They threw him into The Choke! For nothing! You have to get him back!”
+09 Tresch Spice Smuggler “The Choke spawns monstrosities that run through the halls of The Dream.”
+10-12 Ramanan Corporate Strikebreaker  “Looking for undercover infiltrators into Reidmar’s Union. Pays 300kcr.”
+13-14 Gatsby Chokespawn Keeper “Some people’s cybermods are failing, turning against their host body.”
+15-16 Advik Novo Droog “Don’t let them know I told you this, but Yandee’s a synthetic.”
+17 Hansh Rim War Refugee “In The Choke a massive ancient machine awakens every 130 days.”
+18 Krish Lifesupport Engineer Secret Saboteur. Wants to overthrow The Court.
+19 Rohan Cybermod Reaper “Have you dreamed of the metal laughing face yet?”
+20-22 Eiko Ultimó Player “Sometimes people get sick here. Like, vomiting blood and liquid metal sick.”
+23-24 Skeeve Pinkerton Unit “Have you seen this individual?” Roll d100 again for description of fugitive.
+25-26 Wince Android in Hiding “Looking for a way off the station. Any ship. Anywhere.”
+27 Govender Sycorax Addict “They’re serving Hunglungs from The Choke at long-pork dinner parties.”
+28 Engström Off-duty Sex Worker “I don’t do no mods. They go blank sometimes and get rough.”
+29 Renton Sycorax Dealer “Weird fruits grow deep in The Choke. The Solarians will pay for them.”
+30-32 Roskam Clan Hologamer “This girl named Ariel shows up in all my games. She says she’s dying.”
+33-34 Akane Rim Space Astrogator “Have you seen the glory of raw space?” 
+35-36 Fedorov Snake Dancer “Tempest is breeding hybrids in The Choke.”
+37 Sokolov Holopet Designer “Sometimes the AI code seems to write itself.”
+38 Aradhya O2 Beggar “I can’t go back to The Choke... I CAN’T!”
+39 Nowak Court Advocate “If you ever get in trouble at The Court and need a hand, ask for me.”
+40-42 Cheng Q-Team Cleaner “Tempest is on a secret mission from Rosalind Bio & Weaponization.”
+43-44 Enzo Court High Patron “If those Chokers don’t like it down there they should get a job.”
+45-46 Otomo Court Executioner “It’s too bad she won’t live. But then again, who does?”
+47-48 Kowalski Holoslick Producer “Love your look! Do you wanna be famous?”
+49 Yannik Cybermod Hacker “You gotta overclock. You only get one body right? Well, one first body.”
+Denizens of The Dream
+Feel free to use these random NPCs as proprietors, 
+victims, patrons or anything else that is not provided 
+in this module. They can be used as is, mixed up or 
+as a jumping off point for your own NPCs. They all 
+want something and are flawed humans. Breathe 
+life into them.
+Remember that the Golyanova II Bratva and 
+Tempest Co. are constant threats as are being 
+thrown into The Choke (pg. 32) or getting Infected. 
+Everyone knows about Caliban (pg. 39); he’s been a 
+persistent urban legend for years. 
+John Freeman (Order #36140899)
+45// The Dream will come alive based on how much you care about your NPCs.
+ d100 Name Who Are They? What do they want?
+50-52 Bennett Nomadic Cleromancer “There are games of skill and games of chance. Life is both.”
+53-54 Kask Corporate Bodyguard “My boss is looking for a crew with some Tempest training. You in?”
+55-56 Tamm Vault Cracker “I can crack it. How many creds we talkin’? Half. I want half.”
+57-58 Moreau Bounty Hunter “Two thousand credits and a name.”
+59 Westbay Android Serial Killer “Someone hacked my holopet! It just ran down that dark corridor!”
+60-62 Ivanov Yakuza Lumatat Artist “I need creds bad. Half off, today only.” See. pg. 43 for Lumatat prices.
+63-64 Trantis Ragrunner “I can do any job on a ship. Just looking to get off this shithole station.”
+65-66 Yuvenko Sleevejacker “You haven’t lived until you’ve lived twice.”
+67 Kruger Street Doctor “A stitch in time saves nine. I can get anywhere in The Dream in 30 minutes.”
+68 Brunekta Licensed Privateer “I’m looking to score off a ship in the docks tonight, you want a piece?”
+69 Vasiliev Holoslick Star “Please, my girl is stuck in The Choke. I’ve got the credits...”
+70-72 Ellywhen Knockoff Mod Dealer “Watch my back tonight. Yandee’s crew is gunning for me.”
+73-74 Stein Colony Recruiter “Need a team to scout terrain and install terraformers. 100k sound good?”
+75-76 Kotze Tea Brewer “I need this new tea leaf. Only 2 Jumps away. 25kcr if you’re interested.”
+77 Octrev Desperate Hacker “Boyfriend is a Slug addict. I’ll do anything if you drop Slug and find him.”
+78 Leikfenn Runway Model “There’s an android stalking me, trying to kill me. It looks exactly like me.”
+79 Sang Hyperspace Raider “You think I’m psycho, don’t you, Mama? You’d better let ‘em lock me up!”
+80-82 Kramm Hunglung Sympathizer “The Choke is a death camp for poor people. Stop lying to yourself.”
+83 Astrid Hunglung Terrorist “The breath you steal from us will be your last.”
+84-85 Eleanor Seed Geneticist Looking for unhatched Chokespawn egg. Pays 30kcr.
+86 Linus Block Captain “Tempest has gone too far. We have to band together to keep safe.”
+87 Altmann Conscript Dodger “You never saw me, okay? Keep my name out of any Tempest Co. reports.”
+88 Roux Prison Marshall “Guard duty don’t pay so well, but there are side benefits. 2kcr starting.”
+89 Sloane Armored Ship Robber “Got these hand welders that cut twice as fast and far. 300cr?”
+90 Petrov Customs Inspector “I could use a little muscle later for an inspection. Interested?”
+91 Ozu Infected Citizen “I ain’t feel so good... [pukes blood and nanites on your feet].”
+92 Motoko Solarian Caretaker “I see your light. Come with me to The Garden. You will feel lighter.”
+93 Loeb Hydroponic Farmer “It’s all about nutrients, maaaaan.”
+94 Grendel Undercover Thinkpol “Tell me a little bit about yourself.”
+95 Amano Political Prisoner “I know people that can pay big. Be my Advocate and I’ll change your life.”
+96 Kleyman Novo Informant “Lookin’ for scabs. If Reidmar orders a strike we’ll need loyal people.”
+97 Orlov Core World Fugitive “You can’t go anywhere in the Core without signing their Terms of Service.”
+98 McCabe Warp Core Mechanic “Jumping is a form of prayer. You gotta be devout and you gotta be crazy.”
+99 Stintz Syndicate Spy “Show me where Yandee rests their head. I can get you out safely. 500kcr.”
+John Freeman (Order #36140899)
+Corespace Station Generator
+[STATION NAME]
+ is a(n) 
+[CORE STATION]
+ orbiting a(n) 
+[CELESTIAL BODY]
+. It’s run by a(n) 
+[CORE LEADER]
+ backed by 
+[GROUP]
+. Docking costs 
+1D10*100
+cr, and a cheap room is 
+2D100
+cr/night. There’s a 5% chance the station is 
+currently undergoing a(n) 
+[CRISIS]
+, otherwise everything is fine and you can buy supplies and fuel as per 
+normal, though at a hefty markup of 
+2D100
+ %. They also buy 
+[GOODS]
+ at 
+1D100-10
+% off and local free-traders 
+have a line on where to find 
+[RESOURCE]
+.
+46 Create your own fill-in-the-blank generator and share it with us. //
+SPACE STATION 
+TOOLKIT
+Use the tables on the following pages to quickly 
+generate a space station for your crew to board and 
+investigate. You can start by filling in the blanks on 
+the prompts below or roll 1d10 for each blank on the 
+included tables.Each station has a % chance that 
+it’s currently undergoing a Crisis. 
+The tables on the following pages can help bulk up 
+the space station with its Structure (pg. 48), Layout 
+(pg. 49) and Noteworth Establishments (pg. 50). 
+Some of these you can use at the table, others are 
+better for pre-game inspiration. 
+1d10 Station Name Core Station Celestial Body Core Leader Group
+01 Azrael’s Price Overcrowded 
+Habitat Colony
+Still Terraforming 
+Planet
+First-Colony 
+Descendent
+Radical Colonial 
+Separatists
+02 Dumah’s Sorrow Palatial Estate Overpopulated 
+Slumworld
+Asteroid Mining 
+Oligarch
+The Valecore Mining 
+Consortium
+03 Marut’s Redemption Secret Corporate 
+Research Facility
+Resource Rich 
+Planet
+Reclusive 
+Intellectual
+The Exo-Credit 
+Federated Union
+04 Gorgon’s Revenge Marine Battle 
+School
+Desolate Planetoid Scheming Marine 
+General
+The 91st Colonial 
+Dragoons
+05 Soter’s Ring Bustling Trading 
+Port
+White Dwarf Star Teamster Union Rep Teamster’s Local 
+101977L
+06 Pontian’s Crown Sprawling 
+Megatropolis
+Moon of an 
+Inhabited Planet
+Sadistic Decadent The Yamguchi-gumi 
+Clan
+07 Vitalian’s Sword High Security 
+Corporate Vault
+Unpopulated 
+Paradise World
+Decorated Regional 
+Governor
+The Crashlander 
+Titan 2nd Fleet
+08 Iblis’s Shield Semi-Autonomous 
+Shipyard
+Giant Asteroid 
+Cluster
+Rimwar Veteran 
+Commander
+The Principality of 
+Christian XII
+09 Al-‘Uzzá’s Cross Solitary Monastary Red Supergiant Reformed Criminal 
+Outcast
+The Decanon 
+Caliphate
+10 Vanth’s Herald Ancient Jump Gate Black Hole (past 
+Event Horizon)
+Dynastic Child-Heir The House of 
+Tarkhan
+1d10 Goods Resource
+01 Equipment Android Laborers
+02 Asteroid Ore Asteroid Mining Machinery
+03 Weapons Hardened Mercenaries
+04 Scrap Metal Black Market Cybermods
+05 Prisoners Life-saving Medicine
+06 Warp Cores Doctors who don’t ask Questions
+07 Galley Stock Rations
+08 Ship Parts Out of work Scientists
+09 Used Ships Oxygen Reserves
+10 Fuel Recreational Drugs
+John Freeman (Order #36140899)
+47// Roll up a few of these and place them on a map. Let your players know what’s out there.
+Rimspace Station Generator
+Out on the rim, near a(n) 
+[RIM LANDMARK]
+, a(n) 
+[STATION NAME]
+ station (call-sign 
+[CALL-SIGN]
+) spins. It’s 
+outwardly controlled by 
+[CONTROL FACTION]
+, though is subtly undermined by 
+[RIVAL FACTION]
+, led by a(n) 
+[RIVAL 
+LEADER]
+. There’s a 20% chance the station is dealing with a(n) 
+[CRISIS]
+, otherwise everything is fine and 
+you can buy fuel as per normal, but they are currently only offering 
+[GOODS]
+ for sale and there’s a rumor 
+going around that the station is in dire need of 
+[RESOURCE]
+.
+1d10 Rim Landmark Rim Station Call-Sign Control Faction Rival Faction Rival Leader
+01 Heavily Guarded 
+Corporate DMZ
+Independent 
+Colony
+Remote Site-
+[d100]-[Letter]
+The Anders-Klimt 
+Mining Corporation
+The Synthetic 
+Liberation Front
+Renegade Android
+02 Battered 
+Asteroid Field
+Run Down 
+Factory
+[d100]-[d10] The Gaff Android 
+Labor Syndicate
+Altruistic 
+Scientists
+Powerful  
+Rogue AI
+03 Uninhabitable 
+Desert Planet
+Military Base Forward Base-
+[d10]-[Letter]
+The 601st Colonial 
+Marine Regiment
+Neo-Haram 
+Anarchists
+Ruthless Criminal 
+Despot
+04 Strip-Mined Ice 
+World
+Lighthouse Rimward-Post 
+[d10]-[d10]
+Salo-Mercury 
+Biomotors Inc.
+Violent 
+Return-Earthers
+Charismatic 
+Revivalist
+05 First Generation 
+Pioneer Colony
+Asteroid 
+Mining
+[Letter]-[d100] The Apostles  
+Gate Church
+Carter Tactical 
+Concerns Ltd.
+Perverse Corp. 
+Warden
+06 Resource Rich 
+Asteroid Cluster
+Maximum 
+Sec. Prison
+Supervisor-
+[Letter]-[d10]
+Confederated 
+Systems Inc.
+Armadyne 
+Weapons, Inc.
+Highly Intelligent 
+Merc. Captain
+07 The Disputed 
+Territory Border
+Scrap 
+Processing
+Control-[d100] The “Opera” Fleet of 
+Mercenary Raiders
+House 
+Sivaranjan
+Cunning Corporate 
+Spy
+08 Massive Jump-5 
+Derelict Hulk
+Rest & 
+Refuel
+Command-[d10]-
+[d10]
+The Sindec Alloyed 
+Metals Corporation
+Secret Union 
+Instigators
+Merciless  
+Slaver
+09 Burgeoning 
+Off-World Colony
+Black Market Outpost [d100]-
+[Letter]-[d10]
+SEBACO  
+Mining Ltd.
+Black Dawn 
+Mercenaries
+Stalwart Union 
+Organizer 
+10 Ship Graveyard Abandoned 
+Derelict
+Bridle-[d10] The Limited Colonial 
+Government
+The Family of 
+Eleven
+Relentless 
+Warrant Officer
+1d10 Crisis
+01 Hostage Situation. Command of the station has been taken by a rival faction who demand 1d10kcr ransom.
+02 Refugee Crisis. The station is overrun with refugees. Everything is 1d10+1x more expensive than usual.
+03 Food Shortage. The station will pay 1d10+1kcr for food and another random resource. Theft is rampant.
+04 Quarantine. After boarding the station you learn that it has been quarantined. No one is allowed to leave.
+05 Bout of Civil Unrest. Rioting and looting. Mercenary death squads roam the corridors executing collaborators.
+06 Disaster. Crash landing, mass explosion or sabotage. Station is on full alert and going down without repairs.
+07 General Strike. Unions have organized. Protests, picket lines and intense riots. Commerce is shut down.
+08 Uncanny Abandonment. The station hosts the aftermath of some bloody, haunted or mysterious happening.
+09 Martial Law Edict. All ships are boarded and inspected, station visas are issued and a curfew is in effect.
+10 Blockade. The station is under siege by the rival faction and access has been cut off. Your ship will be boarded.
+John Freeman (Order #36140899)
+1
+2
+1
+2 3
+1
+2
+3
+4
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+7
+1
+2
+4
+5
+7
+8
+3
+6
+2
+3
+4
+5
+6
+7
+8
+9
+1
+1
+2
+4
+7
+9
+3
+5
+6
+8
+10
+1
+2
+4
+5
+3
+ASTEROID SURFACE1
+ASTEROID INTERIOR2
+SPHERE5
+MODULAR8
+SPINDLE3
+TORUS/RING6
+PLATFORM9
+CYLINDER4
+TOWER7
+AMALGAMATION
+ROLL TWICE AND COMBINE
+10
+48 Send us @playtkg the space stations you create. We’d love to share them. // 
+Space Station Structure
+Roll 1d10 to determine the 
+structure of the space station. The 
+size of the structure can range 
+wildly from single-team stations 
+to massive artificial worlds.
+1. Asteroid Surface. This station has 
+been built on the outside surface of the 
+asteroid, much the same way a building 
+rests on the surface of a planet. 
+2. Asteroid Interior. While there may be 
+structures on the outside of the asteroid 
+the majority of the station exists 
+“underground” as a series of tunnels, 
+caves or similar structures. 
+3. Spindle. A common design, shaped like 
+a spinning top with towers rising from 
+the top and/or bottom. 
+4 Cylinder. The cylinder’s rotation could 
+provide a rationale for artificial gravity 
+and the station could be quite large, like 
+an O’Neill Cylinder. 
+5. Sphere. Can be as big as a Dyson or 
+Bernal Sphere or as small as a single 
+pod-station. 
+6. Torus/Ring. The most common design. 
+Like the Stanford Torus or Bishop Ring, 
+the outer ring could provide enough 
+centrifugal force to provide artifical 
+gravity.  
+7. Tower.  A station with an angular or 
+blocky design, like a skyscraper flung 
+into space. 
+8. Modular. Built from discrete modules 
+or “beads” that can be removed or added 
+on to. 
+9. Platform. Design based on a large ship. 
+Clearly defined levels/decks. 
+10. Amalgamation. A combination of any of 
+the other designs.
+John Freeman (Order #36140899)
+1
+2
+1
+2 3
+1
+2
+3
+4
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+7
+1
+2
+4
+5
+7
+8
+3
+6
+2
+3
+4
+5
+6
+7
+8
+9
+1
+1
+2
+4
+7
+9
+3
+5
+6
+8
+10
+1
+2
+4
+5
+3
+ASTEROID SURFACE1
+ASTEROID INTERIOR2
+SPHERE5
+MODULAR8
+SPINDLE3
+TORUS/RING6
+PLATFORM9
+CYLINDER4
+TOWER7
+AMALGAMATION
+ROLL TWICE AND COMBINE
+10
+49// Movement usually doesn’t need to be tracked on a space station unless danger is involved.
+Space Station Layout
+Roll 1d10 to determine how many 
+Noteworthy Establishments (pg. 
+50) the station has and roughly 
+how they are connected. There may 
+be many more establishments: 
+these are just the most important.
+1d10 Common Space Station Issues
+01 No Artificial Gravity. Zero-G Skill Check for complex maneuvers.
+02 Resource Scarcity. Food, water, oxygen, shelter is hard to find.
+03 Trade Good Scarcity. Lack of fuel, warp cores, ammunition.
+04 Oxygen Poor. Strenuous activities at [-]. O2 taxation.
+05 Non-standard Day/Night Cycle. Resting at [-].
+06 Poor Water Treatment Facilities. Healing at [-].
+07 Low Security. High risk of theft, threat of violence, piracy, etc.
+08 High Security. High risk of authoritarian police, taxation, prison, etc.
+09 Xenophobic Population. Suspicious/hostile to strangers/outsiders.
+10 Poor Maintenance. Minimum Stress +1. Resting and Healing at [-]. High risk 
+of damage to the station during combat.
+John Freeman (Order #36140899)
+50 Don’t feel too tied down to this. If you’re missing something important, include it. //
+d100 1-3. Refuel/Repair 4. Port/Market 5. Colony/Habitat 6. Military
+00-04 Dry Dock Food Stand Farming Unit Admin Offices
+05-09 Vehicle Repair Dry Dock Food Court Drop Station
+10-14 Chop Shop Fence for Stolen Goods Slickscreen Training Rooms
+15-19 Bars Black Market Bar/Club Shooting Range
+20-24 Showers Re-Sleeving Facility Slaughterhouse Command Center
+25-29 Capsule Motel Cybermod Shop Seed/Gene Storage Defensive Weaponry
+30-34 Navigation Library Imports Warehouse Sleeping Units Vehicle Repair Center
+35-39 Warp Core Storage Designer Drugs Meeting Square Brig
+40-44 Teamster Union Hall Gene Therapy Aquaponics Tanks Troopship Carrier
+45-49 Military Lounge Holotat Shop Markets Barracks
+50-54 Commercial Travel Glass Blower School/Training Facilities Interrogation Rooms
+55-59 Private Hangar Technobladesmith Library/Research Lab Medbay
+60-64 Showers Slaughter Yard Upscale Housing R&D Department
+65-69 Metal Foundry Fabric Loom Security Outpost Drop-tank Hangar
+70-74 Ore Trade / Refinery Sweatshop Clinic Mess Hall
+75-79 Food Court Gambling House Factory Officer’s Lounge
+80-84 Fuel Bays / Warp Cores Dance Club Greenhouse “Off-base” Housing
+85-89 Slickscreens Teamster Bar Turret Emplacement Master Computer
+90 Red Light District Cassette Library Red Light District Diplomatic Embassy
+91 Black Market Specimens & Oddities Brig Officer’s Quarters
+92 Tiny Chapel Red Light District Power Station Weapon Testing
+93 Weapons Fabrication Military Black Site Pharmalab Fighter Squadron
+94 Advanced R&D Navigator Guildhouse Governor’s Mansion Ammunition Storage
+95 Experimental FTL Lab Decorative Rugs Armory Re-Sleeving Facility
+96 Astronavigator Terminals Tea Shop Temple Cryochambers
+97 Station Overseer Old Earth Antique Shop Courthouse/Records Intelligence Facility
+98 Holding Cells Custom Androids Landing Strip Exomech Hangar
+99 Power Station Ship Designer Communication Array Massive Weapon
+Space Station Noteworthy Locations
+To find out what modules and establishments are 
+on your space station roll 1d100 for each location 
+(for example: ff you used the Space Station Layout 
+Chart and rolled a 4 you’d roll 1d100 four times) and 
+mark it down on your map. This creates pretty small 
+space stations (with a maximum of ten modules), 
+but another way to interpret this is that the modules 
+you roll up are the major noteworthy locations on 
+your space station. You may have any other number 
+of small establishments but these are the ones the 
+station is known for. 
+Tying it all Together
+Using all of the Space Station Generation tools 
+during a game probably isn’t a great idea as it would 
+slow gameplay down too much. Instead, these 
+are great for Wardens who need some inspiration 
+when populating their sector or to answer a quick 
+question when play veers in a different direction 
+than you were expecting (“Does this asteroid mining 
+station have a place we can repair our Android?” 
+“Well, let me see...”). As always, play is the most 
+important thing and if any of these results don’t 
+work for you: throw them out.
+John Freeman (Order #36140899)
+
+51// Mix-and-match and combine these tables. Have a religious prison or military mining facility.  
+d100 7. Mining/Factory 8. Corporate/Research 9. Prison 10. Religious
+00-04 Material Processing Offices Ruined Cellblock Prayer Gardens
+05-09 Shipping Warehouse Open Floor Plan Office Administration Offices Observatory
+10-14 Storage Warehouse Cubicles Morgue Cellarium
+15-19 Dry Dock Testing Lab Riot Armory Chapter House
+20-24 Assembly Line AI Computer Banks Guard Quarters Dorter
+25-29 Metal Refinery Labratory High Security Area Refectory
+30-34 Air Scrubber Quarantine Room Isolation Chambers Infirmiry
+35-39 Water Reclamation Data Analysis Office Cryostorage Kitchens
+40-44 Sleeping Pods Android Storage VR Exercise Yard Lavatorium
+45-49 Cafeteria Warehouse Prison Cells Misericord
+50-54 Showers/Soakers Shipping & Receiving Group Dormitory Scriptorium
+55-59 Corp. Conference Room Mail Rooms Quarantine Unit Calefactory
+60-64 Garage/Hangar Meeting Rooms Solitary Confinement Musalla
+65-69 Geology Lab Clean Room Canteen Minaret
+70-74 Records/Maps/Blueprints Employee Housing Gruel Kitchen Prayer Hall
+75-79 Slickscreen Hazardous Materials Labor Camp Ablution Fountains
+80-84 Fighting Ring Cryostorage Execution Chambers Chinjusha
+85-89 Android Maintenance Containment Lab Scrap Metal Workshop Three Gate
+90 Conjugal Trailers Private Offices Slickscreen Classrooms Bell Tower
+91 Xenobio Lab Luxurious Boardroom Illegal Human Testing Shrine
+92 Extraction Point High Security Vault Mind Wipe Lab Lecture Hall
+93 Infraction Cells Illegal DNA Splicing Lab Mass Grave Grand Reliquary
+94 Cloning Facility Embryonic Storage Reprograming Facility Massive Statue
+95 Communications Morgue Military Black Site Secret Chambers
+96 Exosuit Hangar/Repair Animal Testing Pens AI Prison Server Palatial Gardens
+97 Life Support Killteam Barracks Android Scrapyard Scourging Room
+98 Laser Drilling Array Experiment #237 Comissary Bishop’s Manor
+99 Company Store Mega-AI Brain Crematorium Unmarked Prison Cell
+Example: Control 55
+Out on the rim, near a ship graveyard, an asteroid 
+mining station (call-sign Control 55) spins. It’s 
+outwardly controlled by SEBACO Mining, Ltd. though 
+is subtly undermined by Neo-Haram Anarchists 
+led by a ruthless criminal despot. There’s a 20% 
+chance the station is dealing with a martial law 
+edict, otherwise everything is fine and you can 
+buy fuel as per normal, but they are currently only 
+offering prisoners for sale and there’s a rumor going 
+around that the station is in dire need of life saving 
+medicine. Xenophobic population.
+John Freeman (Order #36140899)
+d100 Cybernetic Mutations Random Search
+00 Teeth enlarged and coated in metal alloy. Credstick without ID. 1d100*100cr.
+01-04 Fingers lengthen. Fingernails turn into circuit boards. Credstick ID’d to vic. 1d100*10cr.
+05-09 Eyes turn black. Wires spread from irises across face. VIP Invite to gamble in Heaven.
+10-14 Voice loses its human quality. Now choral and robotic. Fake, rubber revolver. Looks pretty realistic.
+15-19 All hair falls out, tubing protrudes from back of skull. Functioning synthpet.
+20-24 Vestigial synthetic appendage grows from ribcage. Metallic folding fan. 
+25-29 Tangle of wires weave through your abdomen. Leather jacket. “Суки Любят Острый Нож” on back.
+30-34 Metallic spinal column extrudes and pierces skin. Bundle of x5 Stimpacks and x4 Automeds.
+35-39 Limb consumed by mods. Misshapen metal mass. Empty O2 tank.
+40-44 Metallic fingers sprout from limb. Dried Meatapede.
+45-49 Hand permanently fuses with equipped weapon. Bracelet with flashing colored lights.
+50-54 Semi-organic vents form in underarms and neck. Flask of station hooch.
+55-59 Insectile eyes cluster across your face. Artisanal chocolate (relieves 2 Stress).
+60-64 Tongue grows 6 times normal length. Constant drool. Patch: “SUKA”.
+65-69 Neck grows an extra foot and is sheathed in metal. Crossbow with 2d10 bolts.
+70-73 Heavy organic sac swells across your hunchback. Intact Panzerfist cybermod.
+74-75 Neck vents grow and emit periodic exhaust fumes. Map to a credit stash in The Sink (pg. 34).
+76-77 Half of face melts away revealing metal skull. SMG + 2 clips (non-frangible ammo).
+78-79 Spiked prongs extrude from your shoulders. Adjudicator Guard’s modified Stun Baton. 3d10dmg.
+80 Patch of 2d10 synthetic eyes grow out of your back. Cryopack. Three human fingers. Fingerprints intact.
+81 Arms grow until your hands touch the floor and drag. The Lottery Man by Benno von Archimboldi.
+82 Metallic, wiry antlers grow from your skull. One shot mini flame thrower.
+83 Second face grows out of your chest. CalixQ’s autograph on holopic. Worth 3d10*100cr.
+84 Mouths form in the palms of your hands. Dose of Sycorax.
+85 Hair turns to thick black wires, always seeking ports. Well thumbed copy of The Grasshopper Lies Heavy.
+86 Fingers fuse together and turn into metal claws “Nemo” journal, recounting 4 days prior to a Sleeving.
+87 Mouth splits into impossibly wide smile. Metal throat. Pipebomb 5d10 damage, 4m radius.
+88 Spines grow out of your arm bones. Subversive anti-corporate Samizdat literature.
+89 Your skin becomes a liquid metal surface. A small bottle of Tendre Poison eau de toilette.
+90 Hoses grow from your torso and drag along the floor. Dog-eared copy of the Orange Catholic Bible.
+91 The features of your face constantly drip and shift. O2 tank with 1d10 hours remaining.
+92 Sensititve antennae grow from your skull. Inactive robotic spider named Icarus. Needs repair.
+93 Your skin grows a tiny swarm of metal tentacles. Sheathed zipgun with 6 bullets.
+94 Prefensile tail of wire and bone. La Boussole des précieux, by Pierre Menard.
+95 Entire body becomes shifting swarm of nanobots. A holomap of Caliban’s Heart (pg. 38).
+96 Keyboard keys sprout from your arms. Writhing cyberworm. Worth 1d10*1kcr.
+97 A small person grows out of your torso. Tattooed piece of preserved skin.
+98 All your skin sloughs off to reveal a metal skeleton. Raggedy broken doll. Still talks.
+99 Roll twice and combine. Tempest Co. Exosuit. Tagged: “MAMA TRIED.”
+John Freeman (Order #36140899)

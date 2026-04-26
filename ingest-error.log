@@ -1,0 +1,22 @@
+Starting Pound of Flesh graph ingestion...
+(node:14840) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Error ingesting graph: Error: Unable to detect a Project Id in the current environment. 
+To learn more about authentication and Google APIs, visit: 
+https://cloud.google.com/docs/authentication/getting-started
+    at GoogleAuth.findAndCacheProjectId (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/google-auth-library/build/src/auth/googleauth.js:170:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Firestore.initializeIfNeeded (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/index.js:1201:35)
+    at async WriteBatch._commit (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/write-batch.js:469:9)
+    at async run (file:///Volumes/SAMSUNG%20500gb/Antigravity/Infinity%20Quest%20RPG/scripts/ingest-pound-of-flesh.mjs:142:5)
+Caused by: Error
+    at _firestore._traceUtil.startActiveSpan (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/write-batch.js:438:27)
+    at /Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30
+    at NoopContextManager.with (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js:25:19)
+    at ContextAPI.with (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)
+    at NoopTracer.startActiveSpan (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js:65:31)
+    at ProxyTracer.startActiveSpan (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js:36:24)
+    at EnabledTraceUtil.startActiveSpan (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:102:28)
+    at WriteBatch.commit (/Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/write-batch.js:436:43)
+    at /Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/reference/document-reference.js:350:31
+    at /Volumes/SAMSUNG 500gb/Antigravity/Infinity Quest RPG/node_modules/@google-cloud/firestore/build/src/telemetry/enabled-trace-util.js:110:30

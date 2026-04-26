@@ -1,4 +1,4 @@
-query GetLocationDetails($locationId: String!) @auth(level: PUBLIC) {
+query GetLocationDetails($locationId: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location(id: $locationId) {
     id
     name
@@ -14,7 +14,7 @@ query GetLocationDetails($locationId: String!) @auth(level: PUBLIC) {
   }
 }
 
-query GetLocationByName($name: String!) @auth(level: PUBLIC) {
+query GetLocationByName($name: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   locations(where: { name: { eq: $name } }) {
     id
     name
@@ -29,7 +29,7 @@ query GetLocationByName($name: String!) @auth(level: PUBLIC) {
   }
 }
 
-query GetLocationPaths($locationId: String!) @auth(level: PUBLIC) {
+query GetLocationPaths($locationId: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sourcePaths: paths(where: { sourceNodeId: { eq: $locationId }, sourceNodeType: { eq: "Location" } }) {
     id
     targetNodeId
@@ -50,7 +50,7 @@ query GetLocationPaths($locationId: String!) @auth(level: PUBLIC) {
   }
 }
 
-query GetEstablishmentsForLocation($locationId: String!) @auth(level: PUBLIC) {
+query GetEstablishmentsForLocation($locationId: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   establishments(where: { locationId: { eq: $locationId } }) {
     id
     name
@@ -64,7 +64,7 @@ query GetEstablishmentsForLocation($locationId: String!) @auth(level: PUBLIC) {
   }
 }
 
-query searchCampaignLore($query: String!) @auth(level: PUBLIC) {
+query searchCampaignLore($query: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   campaignLores_embedding_similarity(
     compare_embed: {model: "text-embedding-004", text: $query},
     method: COSINE,

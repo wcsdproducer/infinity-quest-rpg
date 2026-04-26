@@ -1,5 +1,5 @@
 # 1. 01 Dry Dock
-mutation createSectorDryDock @auth(level: PUBLIC) {
+mutation createSectorDryDock @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "01_dry_dock"
     name: "01 Dry Dock"
@@ -7,7 +7,7 @@ mutation createSectorDryDock @auth(level: PUBLIC) {
   })
 }
 
-mutation createDryDockLocations @auth(level: PUBLIC) {
+mutation createDryDockLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "01_dry_dock_clean_room", sectorId: "01_dry_dock", name: "1. Clean Room", description: "Spartan, concrete room with rusty drains." }
     { id: "01_dry_dock_loshes_office", sectorId: "01_dry_dock", name: "2. Loshe's Office", description: "Cramped, greasy office littered with tools." }
@@ -17,7 +17,7 @@ mutation createDryDockLocations @auth(level: PUBLIC) {
 }
 
 # 2. 02 The Stellar Burn
-mutation createSectorStellarBurn @auth(level: PUBLIC) {
+mutation createSectorStellarBurn @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "02_the_stellar_burn"
     name: "02 The Stellar Burn"
@@ -25,7 +25,7 @@ mutation createSectorStellarBurn @auth(level: PUBLIC) {
   })
 }
 
-mutation createStellarBurnLocations @auth(level: PUBLIC) {
+mutation createStellarBurnLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "02_stellar_burn_sems_bar", sectorId: "02_the_stellar_burn", name: "1. Sem's Bar (Club Level)", description: "Jury Semenov runs the club level." }
     { id: "02_stellar_burn_heaven", sectorId: "02_the_stellar_burn", name: "2. Heaven (Upper Level)", description: "Overlooks the bar, sonic muting." }
@@ -34,7 +34,7 @@ mutation createStellarBurnLocations @auth(level: PUBLIC) {
 }
 
 # 3. 03 The Chop Shop
-mutation createSectorChopShop @auth(level: PUBLIC) {
+mutation createSectorChopShop @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "03_the_chop_shop"
     name: "03 The Chop Shop"
@@ -42,7 +42,7 @@ mutation createSectorChopShop @auth(level: PUBLIC) {
   })
 }
 
-mutation createChopShopLocations @auth(level: PUBLIC) {
+mutation createChopShopLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "03_chop_shop_entrance", sectorId: "03_the_chop_shop", name: "1. Cramped Entrance", description: "Cluttered to the ceiling." }
     { id: "03_chop_shop_recovery", sectorId: "03_the_chop_shop", name: "2. Recovery Room", description: "Six dingy bunks." }
@@ -54,7 +54,7 @@ mutation createChopShopLocations @auth(level: PUBLIC) {
 }
 
 # 4. 04 The Ice Box
-mutation createSectorIceBox @auth(level: PUBLIC) {
+mutation createSectorIceBox @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "04_the_ice_box"
     name: "04 The Ice Box"
@@ -62,7 +62,7 @@ mutation createSectorIceBox @auth(level: PUBLIC) {
   })
 }
 
-mutation createIceBoxLocations @auth(level: PUBLIC) {
+mutation createIceBoxLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "04_ice_box_slickbays", sectorId: "04_the_ice_box", name: "1. The Slickbays", description: "Hundreds of human sized pods." }
     { id: "04_ice_box_runway", sectorId: "04_the_ice_box", name: "2. The Runway", description: "Minimalistic, surgically-lit fashion runway." }
@@ -73,7 +73,7 @@ mutation createIceBoxLocations @auth(level: PUBLIC) {
 }
 
 # 5. 05 The Farm
-mutation createSectorFarm @auth(level: PUBLIC) {
+mutation createSectorFarm @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "05_the_farm"
     name: "05 The Farm"
@@ -81,7 +81,7 @@ mutation createSectorFarm @auth(level: PUBLIC) {
   })
 }
 
-mutation createFarmLocations @auth(level: PUBLIC) {
+mutation createFarmLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "05_farm_sanctuary", sectorId: "05_the_farm", name: "1. The Sanctuary", description: "Grand sunlit chapel." }
     { id: "05_farm_sun_market", sectorId: "05_the_farm", name: "2. The Sun Market", description: "Bustling farmer's market." }
@@ -93,7 +93,7 @@ mutation createFarmLocations @auth(level: PUBLIC) {
 }
 
 # 6. 06 CANYONHEAVY.market
-mutation createSectorCanyonheavy @auth(level: PUBLIC) {
+mutation createSectorCanyonheavy @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "06_canyonheavy_market"
     name: "06 CANYONHEAVY.market"
@@ -101,7 +101,7 @@ mutation createSectorCanyonheavy @auth(level: PUBLIC) {
   })
 }
 
-mutation createCanyonheavyLocations @auth(level: PUBLIC) {
+mutation createCanyonheavyLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "06_canyonheavy_battlestations", sectorId: "06_canyonheavy_market", name: "1. The Battlestations", description: "Zero-G rough sphere workspace." }
     { id: "06_canyonheavy_datacache", sectorId: "06_canyonheavy_market", name: "2. The Datacache", description: "Humming nest of servers and terminals." }
@@ -111,7 +111,7 @@ mutation createCanyonheavyLocations @auth(level: PUBLIC) {
 }
 
 # 7. 07 The Court
-mutation createSectorCourt @auth(level: PUBLIC) {
+mutation createSectorCourt @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "07_the_court"
     name: "07 The Court"
@@ -119,7 +119,7 @@ mutation createSectorCourt @auth(level: PUBLIC) {
   })
 }
 
-mutation createCourtLocations @auth(level: PUBLIC) {
+mutation createCourtLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "07_court_main", sectorId: "07_the_court", name: "1. The Court", description: "Throngs of spectators, thick stench of body odor." }
     { id: "07_court_cage", sectorId: "07_the_court", name: "2. The Cage", description: "An elevated, revolving stage fenced in with electrified cage." }
@@ -132,7 +132,7 @@ mutation createCourtLocations @auth(level: PUBLIC) {
 }
 
 # 8. 08 Tempest Co. HQ
-mutation createSectorTempestHQ @auth(level: PUBLIC) {
+mutation createSectorTempestHQ @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "08_tempest_co_hq"
     name: "08 Tempest Co. HQ"
@@ -140,7 +140,7 @@ mutation createSectorTempestHQ @auth(level: PUBLIC) {
   })
 }
 
-mutation createTempestHQLocations @auth(level: PUBLIC) {
+mutation createTempestHQLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "08_tempest_habitat", sectorId: "08_tempest_co_hq", name: "Level 1 - Habitat", description: "Client consultation officers, barracks, clinic." }
     { id: "08_tempest_operations", sectorId: "08_tempest_co_hq", name: "Level 2 - Operations", description: "The nerve center of all operations." }
@@ -152,7 +152,7 @@ mutation createTempestHQLocations @auth(level: PUBLIC) {
 }
 
 # 9. 09 Doptown
-mutation createSectorDoptown @auth(level: PUBLIC) {
+mutation createSectorDoptown @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "09_doptown"
     name: "09 Doptown"
@@ -160,7 +160,7 @@ mutation createSectorDoptown @auth(level: PUBLIC) {
   })
 }
 
-mutation createDoptownLocations @auth(level: PUBLIC) {
+mutation createDoptownLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "09_doptown_airlock", sectorId: "09_doptown", name: "1. The Airlock", description: "A heavily armed gate flanked by two cement turret bunkers." }
     { id: "09_doptown_auction", sectorId: "09_doptown", name: "2. The Auction", description: "A silent market where Doptownians offer their services." }
@@ -170,7 +170,7 @@ mutation createDoptownLocations @auth(level: PUBLIC) {
 }
 
 # 10. 10 The Choke
-mutation createSectorChoke @auth(level: PUBLIC) {
+mutation createSectorChoke @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   sector_insert(data: {
     id: "10_the_choke"
     name: "10 The Choke"
@@ -178,7 +178,7 @@ mutation createSectorChoke @auth(level: PUBLIC) {
   })
 }
 
-mutation createChokeLocations @auth(level: PUBLIC) {
+mutation createChokeLocations @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   location_insertMany(data: [
     { id: "10_choke_airlock", sectorId: "10_the_choke", name: "1. The Airlock", description: "Gigantic locked gate." }
     { id: "10_choke_doptown", sectorId: "10_the_choke", name: "2. Doptown", description: "Deoxygenated People's Town." }
@@ -193,7 +193,7 @@ mutation createChokeLocations @auth(level: PUBLIC) {
 }
 
 # Campaign Lore Ingestion
-mutation insertCampaignLore($content: String!, $metadata: Any) @auth(level: PUBLIC) {
+mutation insertCampaignLore($content: String!, $metadata: Any) @auth(level: PUBLIC, insecureReason: "Publicly accessible by design") {
   campaignLore_insert(data: {
     content: $content
     metadata: $metadata

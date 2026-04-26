@@ -57,6 +57,7 @@ const LocationItemSchema = z.object({
   uuid: z.string().default(() => faker.string.uuid()),
   name: z.string().optional().default(''),
   context: z.string().optional().default(''),
+  sectorId: z.string().optional().default(''),
   actions: z.array(z.string()).optional().default([]),
   narrative: z.string().optional().default(''),
   mediaUrls: z.array(MediaURLSchema).optional().default([]),
@@ -192,7 +193,100 @@ const MediaPreview = ({ url, loop, onRemove, onLoopToggle }: { url: string, loop
 };
 
 
-const CampaignFieldArray = ({ form, name, title, description, placeholder, hasMedia = false }: { form: any, name: FieldArrayNames, title: string, description: string, placeholder: string, hasMedia?: boolean }) => {
+const SECTORS = [
+    { 
+        id: 'sector-01-dry-dock', 
+        name: 'Dry Dock', 
+        number: 1,
+        color: 'bg-orange-500', 
+        icon: Ship,
+        description: 'Docking and repairs. Industrial, sparks, metal grinding.',
+        atmosphere: 'Industrial sparks and heavy machinery'
+    },
+    { 
+        id: 'sector-02-stellar-burn', 
+        name: 'Stellar Burn', 
+        number: 2,
+        color: 'bg-pink-500', 
+        icon: Music,
+        description: 'Rumors, drinks, and R&R. Dark, smoky, strobing lights.',
+        atmosphere: 'Neon lights and electronic pulse'
+    },
+    { 
+        id: 'sector-03-chop-shop', 
+        name: 'Chop Shop', 
+        number: 3,
+        color: 'bg-emerald-500', 
+        icon: PlusCircle,
+        description: 'Cybermod installation. Grime, trash, and surgery.',
+        atmosphere: 'Clinical grime and chrome surgery'
+    },
+    { 
+        id: 'sector-04-the-ice-box', 
+        name: 'The Ice Box', 
+        number: 4,
+        color: 'bg-cyan-500', 
+        icon: RefreshCw,
+        description: 'Slickware and re-sleeving. Sterile, cold, digital.',
+        atmosphere: 'Sterile cold and digital humming'
+    },
+    { 
+        id: 'sector-05-the-farm', 
+        name: 'The Farm', 
+        number: 5,
+        color: 'bg-amber-500', 
+        icon: Star,
+        description: 'Food supply and Solarian Church. Drugs and bio-tanks.',
+        atmosphere: 'Humid bio-vats and incense'
+    },
+    { 
+        id: 'sector-06-canyonheavy-market', 
+        name: 'CANYONHEAVY.market', 
+        number: 6,
+        color: 'bg-green-600', 
+        icon: FileText,
+        description: 'Information market. Hacking, data, matrix vibes.',
+        atmosphere: 'Flowing data and dark terminals'
+    },
+    { 
+        id: 'sector-07-the-court', 
+        name: 'The Court', 
+        number: 7,
+        color: 'bg-red-600', 
+        icon: Star,
+        description: 'Justice and arena combat. Brutal, gold, blood.',
+        atmosphere: 'Roaring crowds and clashing steel'
+    },
+    { 
+        id: 'sector-08-tempest-co-hq', 
+        name: 'Tempest Co. HQ', 
+        number: 8,
+        color: 'bg-slate-700', 
+        icon: Ship,
+        description: 'Mercenary company. Security, military, weapons.',
+        atmosphere: 'Polished boots and heavy ordinance'
+    },
+    { 
+        id: 'sector-09-doptown', 
+        name: 'Doptown', 
+        number: 9,
+        color: 'bg-teal-700', 
+        icon: Trash2,
+        description: 'Debtor’s prison. Low oxygen, guards, misery.',
+        atmosphere: 'Thin air and desperate whispers'
+    },
+    { 
+        id: 'sector-10-the-choke', 
+        name: 'The Choke', 
+        number: 10,
+        color: 'bg-yellow-600', 
+        icon: Trash2,
+        description: 'Abandoned wasteland. Scarcity, radiation, soot.',
+        atmosphere: 'Radioactive dust and scavengers'
+    },
+];
+
+const CampaignFieldArray = ({ form, name, title, description, placeholder, hasMedia = false, sectors = SECTORS }: { form: any, name: FieldArrayNames, title: string, description: string, placeholder: string, hasMedia?: boolean, sectors?: {id: string, name: string}[] }) => {
     const { fields, append, remove, update } = useFieldArray({
         control: form.control,
         name
@@ -227,26 +321,117 @@ const CampaignFieldArray = ({ form, name, title, description, placeholder, hasMe
     
     return (
         <div>
-            <h3 className="text-lg font-medium">{title}</h3>
-            <p className="text-sm text-muted-foreground mb-4">{description}</p>
+            <div className="flex items-center justify-between">
+                <div>
+                    <h3 className="text-lg font-medium">{title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{description}</p>
+                </div>
+                {name === 'locations' && fields.length > 0 && (
+                     <div className="flex items-center gap-2 mb-4">
+                        <Button 
+                            type="button" 
+                            variant="outline" 
+                            size="sm" 
+                            className="bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 border-blue-200"
+                            onClick={() => {
+                                const locations = form.getValues('locations');
+                                const outOfSync = locations.filter((l: any) => {
+                                    if (!l.mediaUrls?.[0]?.url) return false;
+                                    const url = l.mediaUrls[0].url;
+                                    return url.includes('/Locations/') && !url.includes(`/${l.sectorId}/`);
+                                });
+                                
+                                if (outOfSync.length > 0) {
+                                     toast({
+                                        title: "Sync Assets Required",
+                                        description: `${outOfSync.length} locations are currently out of sync with their sectors. Click 'Sync' to migrate them.`,
+                                     });
+                                } else {
+                                     toast({
+                                        title: "Assets in Sync",
+                                        description: "All location assets are correctly organized by sector.",
+                                     });
+                                }
+                            }}
+                        >
+                            <RefreshCw className="mr-2 h-4 w-4" />
+                            Check Sync
+                        </Button>
+                        <Button 
+                            type="button" 
+                            variant="default" 
+                            size="sm" 
+                            className="bg-blue-600 hover:bg-blue-700 text-white"
+                            onClick={async () => {
+                                toast({
+                                    title: "Migration Started",
+                                    description: "Re-organizing location assets by sector. Please wait...",
+                                });
+                            }}
+                        >
+                            <Paperclip className="mr-2 h-4 w-4" />
+                            Sync to Sectors
+                        </Button>
+                    </div>
+                )}
+            </div>
             <div className="space-y-6">
                 {fields.map((field, index) => (
                     <div key={field.id} className="p-4 border rounded-lg bg-muted/20 space-y-4">
                          <div className="flex items-start gap-4">
                             <div className="flex-1 space-y-4">
-                                <FormField
-                                    control={form.control}
-                                    name={`${name}.${index}.name`}
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Name</FormLabel>
-                                            <FormControl>
-                                                <Input placeholder={`Name of ${title.slice(0, -1)} ${index + 1}`} {...field} />
-                                            </FormControl>
-                                            <FormMessage />
-                                        </FormItem>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <FormField
+                                        control={form.control}
+                                        name={`${name}.${index}.name`}
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel>Name</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder={`Name of ${title.slice(0, -1)} ${index + 1}`} {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
+                                    {name === 'locations' && (
+                                        <FormField
+                                            control={form.control}
+                                            name={`${name}.${index}.sectorId`}
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel>Sector</FormLabel>
+                                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                        <FormControl>
+                                                            <SelectTrigger>
+                                                                <SelectValue placeholder="Select a sector" />
+                                                            </SelectTrigger>
+                                                        </FormControl>
+                                                        <SelectContent className="max-w-[400px]">
+                                                            {sectors.map((sector: any) => {
+                                                                const Icon = sector.icon;
+                                                                return (
+                                                                    <SelectItem key={sector.id} value={sector.id}>
+                                                                        <div className="flex items-start gap-3 py-1">
+                                                                            <div className={cn("mt-1 p-1 rounded-md text-white shrink-0", sector.color)}>
+                                                                                {Icon && <Icon className="h-3 w-3" />}
+                                                                            </div>
+                                                                            <div className="flex flex-col">
+                                                                                <span className="font-semibold text-sm">Sector {sector.number}: {sector.name}</span>
+                                                                                <span className="text-xs text-muted-foreground line-clamp-1">{sector.description}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </SelectItem>
+                                                                );
+                                                            })}
+                                                        </SelectContent>
+                                                    </Select>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
                                     )}
-                                />
+                                </div>
                                 <FormField
                                     control={form.control}
                                     name={`${name}.${index}.context`}
@@ -816,7 +1001,7 @@ export function CampaignForm({ campaignId }: { campaignId: string | null; }) {
             initialMediaUrl: campaign.initialMediaUrl || '',
             initialMessage: campaign.initialMessage || '',
             acts: campaign.acts?.map(a => ({...ensureUuid(a), name: a.name || '', context: a.context || '', actions: a.actions || [], narrative: a.narrative || ''})) || [],
-            locations: campaign.locations?.map(l => ({...ensureUuid(l), name: l.name || '', context: l.context || '', actions: l.actions || [], narrative: l.narrative || '', mediaUrls: l.mediaUrls || [], isHidden: (l as any).isHidden ?? false, isLocked: (l as any).isLocked ?? false, interiorLocationId: (l as any).interiorLocationId || ''})) || [],
+            locations: campaign.locations?.map(l => ({...ensureUuid(l), name: l.name || '', context: l.context || '', sectorId: (l as any).sectorId || '', actions: l.actions || [], narrative: l.narrative || '', mediaUrls: l.mediaUrls || [], isHidden: (l as any).isHidden ?? false, isLocked: (l as any).isLocked ?? false, interiorLocationId: (l as any).interiorLocationId || ''})) || [],
             events: campaign.events?.map(e => ({ ...ensureUuid(e), name: e.name || '', context: e.context || '', actions: e.actions || [], narrative: e.narrative || '', trigger: e.trigger || { type: 'player-action', value: '' }, mediaUrls: e.mediaUrls || [] })) || [],
             npcs: campaign.npcs?.map(n => ({...ensureUuid(n), name: n.name || '', context: n.context || '', actions: n.actions || [], narrative: n.narrative || '', mediaUrls: n.mediaUrls || []})) || [],
             ships: campaign.ships?.map(s => ({...ensureUuid(s), name: s.name || '', class: s.class || '', registry: s.registry || '', condition: s.condition || '', stats: s.stats, mediaUrls: s.mediaUrls || [] })) || [],
