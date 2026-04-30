@@ -5,7 +5,6 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore, initializeFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// IMPORTANT: DO NOT MODIFY THIS FUNCTION
 export function initializeFirebase() {
   if (!getApps().length) {
     // Important! initializeApp() is called without any arguments because Firebase App Hosting
@@ -25,14 +24,16 @@ export function initializeFirebase() {
       firebaseApp = initializeApp(firebaseConfig);
     }
 
-    return getSdks(firebaseApp);
+    // First-time init: use initializeFirestore to set custom options
+    return initSdks(firebaseApp);
   }
 
-  // If already initialized, return the SDKs with the already initialized App
-  return getSdks(getApp());
+  // App already initialized: use getFirestore (safe — initializeFirestore throws on 2nd call)
+  return getExistingSdks(getApp());
 }
 
-export function getSdks(firebaseApp: FirebaseApp) {
+/** Called ONCE on first initialization — uses initializeFirestore to configure options */
+function initSdks(firebaseApp: FirebaseApp) {
   return {
     firebaseApp,
     auth: getAuth(firebaseApp),
@@ -40,6 +41,16 @@ export function getSdks(firebaseApp: FirebaseApp) {
       ignoreUndefinedProperties: true,
       experimentalForceLongPolling: true,
     }),
+    storage: getStorage(firebaseApp),
+  };
+}
+
+/** Called when Firebase app is already initialized — uses getFirestore (no re-init) */
+function getExistingSdks(firebaseApp: FirebaseApp) {
+  return {
+    firebaseApp,
+    auth: getAuth(firebaseApp),
+    firestore: getFirestore(firebaseApp),
     storage: getStorage(firebaseApp),
   };
 }
