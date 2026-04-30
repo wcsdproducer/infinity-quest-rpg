@@ -2,6 +2,20 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        // Root page is auth-gated and force-dynamic — must not be CDN-cached
+        source: '/',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
