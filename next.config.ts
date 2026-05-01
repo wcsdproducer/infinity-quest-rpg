@@ -5,12 +5,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Root page is auth-gated and force-dynamic — must not be CDN-cached
+        // Root page is auth-gated and force-dynamic.
+        // 'private' prevents Firebase App Hosting Cloud CDN from caching.
+        // 'no-store' prevents browser caching too.
+        // Both directives are required: App Hosting's adapter adds s-maxage=31536000
+        // which overrides no-store alone; 'private' takes precedence over s-maxage for CDN.
         source: '/',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-store, must-revalidate',
+            value: 'private, no-store',
           },
         ],
       },
